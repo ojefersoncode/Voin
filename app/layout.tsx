@@ -3,7 +3,6 @@ import { PropsWithChildren } from 'react';
 import { getURL } from '../utils/helpers';
 import '@/styles/main.css';
 import { PHProvider } from './providers';
-import { ThemeProvider } from '../components/landing/theme-provider';
 import { Toaster } from '../components/ui/toaster';
 import PostHogPageViewWrapper from '../components/pages/PostHogPageViewWrapper';
 
@@ -66,20 +65,18 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="pt-BR">
-      <ThemeProvider>
-        <PHProvider>
-          <body>
-            <PostHogPageViewWrapper />
-            <main
-              id="skip"
-              className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
-            >
-              {children}
-            </main>
-            <Toaster />
-          </body>
-        </PHProvider>
-      </ThemeProvider>
+      <PHProvider>
+        <body>
+          <PostHogPageViewWrapper />
+          <main
+            id="skip"
+            className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
+          >
+            {children}
+          </main>
+          <Toaster />
+        </body>
+      </PHProvider>
     </html>
   );
 }
