@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { User } from '@supabase/supabase-js';
-import { ModeToggle } from '../landing/mode-toggle';
 import { Navbar } from '../HomeComponents/NavBar';
 import { Footer } from '../landing/Footer';
 import { Step1 } from '../ConfigPage/Step1';
@@ -55,13 +54,10 @@ export default function ConfigPage({
     <div className="flex flex-col min-h-screen bg-white dark:bg-black text-white items-center">
       <nav className="flex w-full justify-between py-2 max-md:px-3 md:px-8 bg-white dark:bg-black">
         <div className="flex gap-1 text-xl font-bold items-center">
-          <img className="size-8" src="/logo.webp" alt="logo" />
-          <h1 className="text-gray-900 dark:text-gray-100 text-base">
-            Cooderfy
-          </h1>
+          <img className="size-8" src="/Voin.png" alt="logo" />
+          <h1 className="text-gray-900 dark:text-gray-100 text-base">Voin</h1>
         </div>
         <div className="flex gap-4">
-          <ModeToggle />
           <Navbar />
         </div>
       </nav>

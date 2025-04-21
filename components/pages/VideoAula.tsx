@@ -5,7 +5,6 @@ import { Button } from '../ui/button';
 import { User } from '@supabase/supabase-js';
 import { Navbar } from '../HomeComponents/NavBar';
 import { SelectAula } from '../TorneioComponents/SelectAula';
-import { ModeToggle } from '../landing/mode-toggle';
 import { ArrowLeftIcon } from 'lucide-react';
 import { Footer } from '../landing/Footer';
 import Comentarios from '../AulasComponents/Comentarios';
@@ -26,11 +25,10 @@ export default function VideoAulas({ user }: { user: User }) {
     <div className="flex flex-col items-center justify-center min-h-screen w-full bg-gray-100 dark:bg-black">
       <nav className="flex w-full justify-between px-3 md:px-4 text-gray-50 bg-black">
         <div className="flex gap-1 py-2 text-xl font-bold items-center">
-          <img className="size-8" src="/logo.webp" alt="logo" />
-          <h1 className="text-base text-gray-50">Cooderfy</h1>
+          <img className="size-8" src="/Voin.png" alt="logo" />
+          <h1 className="text-base text-gray-50">Voin</h1>
         </div>
         <div className="flex gap-2 py-2">
-          <ModeToggle />
           <Navbar />
         </div>
       </nav>

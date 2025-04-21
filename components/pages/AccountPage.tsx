@@ -9,7 +9,6 @@ import { getURL } from '@/utils/helpers';
 import { useToast } from '../ui/use-toast';
 import { useRouter } from 'next/navigation';
 import { SubscriptionWithPriceAndProduct } from '../../utils/types';
-import { ModeToggle } from '../landing/mode-toggle';
 import { Footer } from '../landing/Footer';
 
 export default function AccountPage({
@@ -57,14 +56,13 @@ export default function AccountPage({
     <div className="flex min-h-screen w-full flex-col">
       <nav className="flex w-full justify-between py-2 max-md:px-3 md:px-4 bg-white dark:bg-black">
         <div className="flex gap-1 text-xl font-bold items-center">
-          <img className="size-8" src="/logo.webp" alt="logo" />
+          <img className="size-8" src="/Voin.png" alt="logo" />
           <div className="flex">
-            <h1 className="dark:text-gray-100 text-base">Cooderfy</h1>
+            <h1 className="dark:text-gray-100 text-base">Voin</h1>
           </div>
         </div>
 
         <div className="flex gap-2">
-          <ModeToggle />
           <Navbar />
         </div>
       </nav>

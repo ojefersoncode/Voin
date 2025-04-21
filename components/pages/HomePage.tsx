@@ -4,10 +4,7 @@ import { Navbar } from '../HomeComponents/NavBar';
 import { Footer } from '../landing/Footer';
 import { useState } from 'react';
 import { SelectAula } from '../TorneioComponents/SelectAula';
-import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
 import { Button } from '../ui/button';
-import { Input } from '../ui/input';
-import { Search } from 'lucide-react';
 
 export default function HomePage({ user }: { user: User }) {
   const [hoveredId, setHoveredId] = useState<number | null>(null);

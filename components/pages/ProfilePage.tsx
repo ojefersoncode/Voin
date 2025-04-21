@@ -7,7 +7,6 @@ import { Navbar } from '../HomeComponents/NavBar';
 import { User } from '@supabase/supabase-js';
 import { Pencil } from 'lucide-react';
 import { Footer } from '../landing/Footer';
-import { ModeToggle } from '../landing/mode-toggle';
 
 export default function ProfilePage({ user }: { user: User }) {
   const [name, setName] = useState('Jeferson code');
@@ -26,13 +25,12 @@ export default function ProfilePage({ user }: { user: User }) {
       {/* Navbar */}
       <nav className="flex w-full justify-between py-4 px-4 md:px-4 bg-white dark:bg-black">
         <div className="flex gap-1 text-xl font-bold items-center select-none">
-          <img className="size-8" src="/logo.webp" alt="logo" />
+          <img className="size-8" src="/Voin.png" alt="logo" />
           <div className="flex">
-            <h1 className="dark:text-gray-50">Cooderfy</h1>
+            <h1 className="dark:text-gray-50">Voin</h1>
           </div>
         </div>
         <div className="flex gap-2">
-          <ModeToggle />
           <Navbar />
         </div>
       </nav>
