@@ -78,7 +78,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="bg-green-600 hover:bg-green-700"
+                  className="text-white bg-green-600 hover:bg-green-700"
                 >
                   <Menu className="h-4 w-4" />
                 </Button>
@@ -104,7 +104,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                   ))}
                   <Link href="/Home" passHref>
                     <Button
-                      className="px-4 py-0.5 font-bold text-sm bg-green-600 hover:bg-green-700"
+                      className="px-4 py-0.5 font-bold text-sm text-white bg-green-600 hover:bg-green-700"
                       variant="ghost"
                     >
                       Entrar
@@ -124,7 +124,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                 key={i}
                 className={`text-[14px] ${buttonVariants({
                   variant: 'ghost'
-                })} hover:text-green-600`}
+                })} hover:text-green-600 text-white`}
               >
                 {route.label}
               </a>
@@ -134,7 +134,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
           <div className="hidden md:flex gap-4 p-2">
             <Link href="/Home" passHref>
               <Button
-                className="px-4 py-0.5 font-bold text-sm bg-green-600 hover:bg-green-700"
+                className="px-4 py-0.5 font-bold text-sm text-white bg-green-600 hover:bg-green-700"
                 variant="ghost"
               >
                 Entrar

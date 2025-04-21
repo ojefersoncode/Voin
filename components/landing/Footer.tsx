@@ -13,7 +13,7 @@ export const Footer = () => {
             <a
               rel="noreferrer noopener"
               href="/"
-              className="font-bold text-xl text-black dark:text-gray-100"
+              className="font-bold text-xl text-gray-100"
             >
               Voin
             </a>
@@ -21,10 +21,8 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg text-black dark:text-gray-100">
-            Redes Sociais
-          </h3>
-          <div className="text-black dark:text-gray-100">
+          <h3 className="font-bold text-lg text-gray-100">Redes Sociais</h3>
+          <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
               href="#"
@@ -34,7 +32,7 @@ export const Footer = () => {
             </a>
           </div>
 
-          <div className="text-black dark:text-gray-100">
+          <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
               href="#"
@@ -44,7 +42,7 @@ export const Footer = () => {
             </a>
           </div>
 
-          <div className="text-black dark:text-gray-100">
+          <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
               href="#"
@@ -56,10 +54,8 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg text-black dark:text-white">
-            Plataformas
-          </h3>
-          <div className="text-black dark:text-gray-100">
+          <h3 className="font-bold text-lg text-white">Plataformas</h3>
+          <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
               href="#"
@@ -69,7 +65,7 @@ export const Footer = () => {
             </a>
           </div>
 
-          <div className="text-black dark:text-gray-100">
+          <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
               href="#"
@@ -80,7 +76,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="text-black dark:text-gray-100">
+        <div className="text-gray-100">
           <h3 className="font-bold text-lg">Sobre</h3>
           <div>
             <a
@@ -92,7 +88,7 @@ export const Footer = () => {
             </a>
           </div>
 
-          <div className="text-black dark:text-gray-100">
+          <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
               href="#"
@@ -102,7 +98,7 @@ export const Footer = () => {
             </a>
           </div>
 
-          <div className="text-black dark:text-gray-100">
+          <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
               href="#"
@@ -114,10 +110,8 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg text-black dark:text-white">
-            Comunidade
-          </h3>
-          <div className="text-black dark:text-gray-100">
+          <h3 className="font-bold text-lg text-white">Comunidade</h3>
+          <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
               href="#"
@@ -127,7 +121,7 @@ export const Footer = () => {
             </a>
           </div>
 
-          <div className="text-black dark:text-gray-100">
+          <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
               href="#"
@@ -137,7 +131,7 @@ export const Footer = () => {
             </a>
           </div>
 
-          <div className="text-black dark:text-gray-100">
+          <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
               href="#"
@@ -150,7 +144,7 @@ export const Footer = () => {
       </section>
 
       <section className="container text-center text-gray-100 pb-4 bg-[#01070f]">
-        <h3 className="text-black dark:text-white">
+        <h3 className="text-white">
           &copy; 2024 Todos os direitos reservados{' '}
           <a
             rel="noreferrer noopener"

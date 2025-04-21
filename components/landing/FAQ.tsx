@@ -49,7 +49,7 @@ const FAQList: FAQProps[] = [
 export const FAQ = () => {
   return (
     <section id="faq" className="container py-20">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
         Perguntas{' '}
         <span className="bg-gradient-to-b text-green-600 bg-clip-text">
           Frequentes
@@ -59,16 +59,18 @@ export const FAQ = () => {
       <Accordion type="single" collapsible className="w-full AccordionRoot">
         {FAQList.map(({ question, answer, value }: FAQProps) => (
           <AccordionItem key={value} value={value}>
-            <AccordionTrigger className="text-left">
+            <AccordionTrigger className="text-left text-white">
               {question}
             </AccordionTrigger>
 
-            <AccordionContent>{answer}</AccordionContent>
+            <AccordionContent className="text-slate-100">
+              {answer}
+            </AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
 
-      <h3 className="font-medium mt-4">
+      <h3 className="font-medium mt-4 text-white">
         Ainda tem mais perguntas?{' '}
         <a
           rel="noreferrer noopener"
