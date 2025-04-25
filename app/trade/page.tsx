@@ -1,10 +1,9 @@
 import { createClient } from '../../utils/supabase/server';
 import { redirect } from 'next/navigation';
 import { getUser } from '../../utils/supabase/queries';
-import Cursos from '@/components/pages/Cursos';
-import Componentes from '@/components/pages/Componentes';
+import TradePage from '@/components/pages/trade-page';
 
-export default async function componentes() {
+export default async function Profile() {
   const supabase = await createClient();
 
   const user = await getUser(supabase);
@@ -12,5 +11,5 @@ export default async function componentes() {
     return redirect('/auth/signin');
   }
 
-  return <Componentes user={user} />;
+  return <TradePage user={user} />;
 }

@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Card, CardHeader, CardContent, CardFooter } from '../ui/card';
+import { CardHeader, CardContent, CardFooter } from '../ui/card';
 import { Button } from '../ui/button';
 import { Label } from '../ui/label';
 import { Navbar } from '../HomeComponents/NavBar';
@@ -8,7 +8,7 @@ import { User } from '@supabase/supabase-js';
 import { Pencil } from 'lucide-react';
 import { Footer } from '../landing/Footer';
 
-export default function ProfilePage({ user }: { user: User }) {
+export default function Profile({ user }: { user: User }) {
   const [name, setName] = useState('Jeferson code');
   const [phone, setPhone] = useState('+55 31 91234-5678');
   const [email, setEmail] = useState('ojefersoncode@email.com');

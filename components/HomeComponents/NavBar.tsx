@@ -64,7 +64,7 @@ export function Navbar() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="text-white bg-[#01070f] border-none py-1 px-2"
+          className="text-white bg-[#0e0e0e] border-none py-1 px-2"
         >
           <Menu />
         </Button>

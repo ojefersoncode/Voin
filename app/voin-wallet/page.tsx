@@ -1,9 +1,9 @@
 import { createClient } from '../../utils/supabase/server';
 import { redirect } from 'next/navigation';
 import { getUser } from '../../utils/supabase/queries';
-import Cursos from '@/components/pages/Cursos';
+import VoinWallet from '@/components/pages/voin-wallet';
 
-export default async function cursos() {
+export default async function VoinWalletPage() {
   const supabase = await createClient();
 
   const user = await getUser(supabase);
@@ -11,5 +11,5 @@ export default async function cursos() {
     return redirect('/auth/signin');
   }
 
-  return <Cursos user={user} />;
+  return <VoinWallet user={user} />;
 }

@@ -1,7 +1,7 @@
 import { createClient } from '../../utils/supabase/server';
 import { redirect } from 'next/navigation';
 import { getUser } from '../../utils/supabase/queries';
-import ProfilePage from '../../components/pages/ProfilePage';
+import ProfilePage from '../../components/pages/profile-page';
 
 export default async function Profile() {
   const supabase = await createClient();

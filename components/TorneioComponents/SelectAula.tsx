@@ -22,10 +22,10 @@ export function SelectAula() {
 
   return (
     <Select>
-      <SelectTrigger className="w-[180px] bg-[#01070f]">
+      <SelectTrigger className="w-[180px] bg-[#181818]">
         <SelectValue placeholder="Filtrar Torneios" />
       </SelectTrigger>
-      <SelectContent className="bg-[#01070f]">
+      <SelectContent className="bg-[#181818]">
         <SelectGroup>
           {alltorneios.map((alltorneios) => (
             <SelectItem key={alltorneios.id} value={alltorneios.id}>
