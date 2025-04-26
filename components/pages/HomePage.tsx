@@ -1,11 +1,8 @@
 'use client';
 import { User } from '@supabase/supabase-js';
-import { useState } from 'react';
-import { SelectAula } from '../TorneioComponents/SelectAula';
-import { Button } from '../ui/button';
 import NavbarAll from '../All/Navbar';
 import NavBottom from '../All/NavBottom';
-import Torneios from '../TorneioComponents/Torneios';
+import Torneios from './Torneios';
 
 export default function HomePage({ user }: { user: User }) {
   return (

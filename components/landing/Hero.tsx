@@ -21,7 +21,7 @@ export const Hero = () => {
         </main>
 
         <p className="text-base text-gray-100 md:w-10/12 mx-auto lg:mx-0">
-          Com a Cooderfy, você cria seu SaaS de forma rápida, fácil e segura.
+          Com a Percentuais, você cria seu SaaS de forma rápida, fácil e segura.
           Gerencie tudo com facilidade através de uma dashboard incrível e tenha
           total controle do seu negócio.
         </p>
