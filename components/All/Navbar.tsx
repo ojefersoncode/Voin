@@ -1,4 +1,39 @@
 import Image from 'next/image';
+import {
+  Cloud,
+  CreditCard,
+  Github,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  MessageSquare,
+  Pen,
+  Plus,
+  PlusCircle,
+  Settings,
+  User,
+  UserCircle,
+  UserPlus,
+  Users
+} from 'lucide-react';
+
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu';
+import ButtonMenu from './ButtonMenu';
 
 export default function NavbarAll() {
   return (
@@ -15,14 +50,8 @@ export default function NavbarAll() {
               <h1 className="mr-1 text-xs">130.000.00</h1>
             </div>
 
-            <div className="border border-[#181818] rounded-full">
-              <Image
-                className="size-8"
-                src="/patente/Bronze.png"
-                alt="Patente"
-                width={'100'}
-                height={'100'}
-              />
+            <div>
+              <ButtonMenu />
             </div>
           </div>
         </nav>

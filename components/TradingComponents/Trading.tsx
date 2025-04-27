@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect, useState } from 'react';
 import {
   Select,
@@ -8,10 +6,12 @@ import {
   SelectContent,
   SelectItem
 } from '../ui/select';
-import { User } from '@supabase/supabase-js';
 import { ArrowUp, ArrowDown } from 'lucide-react';
 import NavBottom from '../All/NavBottom';
-import NavbarAll from '../All/Navbar';
+import Image from 'next/image';
+import ButtonMenu from '../All/ButtonMenu';
+import { Input } from '../ui/input';
+import { Label } from '../ui/label';
 
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
@@ -30,6 +30,15 @@ const availablePairs = [
   { value: 'NEARUSDT', label: 'NEAR/USDT' }
 ];
 
+const availableTimes = [
+  { value: '30s', label: 'Entrada de 30s' },
+  { value: '1min', label: 'Entrada de 1m' },
+  { value: '5min', label: 'Entrada de  5m' },
+  { value: '10min', label: 'Entrada de 10 min' },
+  { value: '30min', label: 'Entrada de 30m' },
+  { value: '1h', label: 'Entrada de 1h' }
+];
+
 declare global {
   interface Window {
     TradingView: any;
@@ -38,6 +47,7 @@ declare global {
 
 export default function TradingAll() {
   const [selectedPair, setSelectedPair] = useState('BTCUSDT');
+  const [selectedTime, setSelectedTime] = useState('30s');
   const [currentPrice, setCurrentPrice] = useState(0.0);
   const [amount] = useState(25000);
 
@@ -73,14 +83,41 @@ export default function TradingAll() {
 
   return (
     <div className=" bg-[#0e0e0e] text-white flex flex-col">
-      <NavbarAll />
+      <header className=" bg-[#0e0e0e] border-b border-green-500/20 mb-2">
+        <nav className="flex items-center justify-between px-2">
+          <div className="flex items-center gap-1 px-2">
+            <Select value={selectedPair} onValueChange={setSelectedPair}>
+              <SelectTrigger className="bg-[#0e0e0e] text-white py-2 rounded border border-gray-500/30 w-full">
+                <SelectValue placeholder="Selecione um par" />
+              </SelectTrigger>
+              <SelectContent className="bg-[#181818] text-white border border-green-500/30">
+                {availablePairs.map((pair) => (
+                  <SelectItem key={pair.value} value={pair.value}>
+                    {pair.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="flex gap-2 p-4">
+            <div className="flex items-center justify-center gap-1 px-4 rounded-md text-green-50  border border-green-50 border-opacity-20 cursor-pointer bg-[#181818]">
+              <img src="/Voin.png" alt="Logo" className="size-5" />
+              <h1 className="mr-1 text-xs">130.000.00</h1>
+            </div>
+            <div>
+              <ButtonMenu />
+            </div>
+          </div>
+        </nav>
+      </header>
       {/* DESKTOP */}
       <div className="md:flex w-full h-screen flex-1">
         {/* Gráfico */}
         <div className="flex-1 h-auto px-4 sm:pt-4 pb-4">
           <div
             id="tv_chart_container"
-            className="w-full sm:h-[500px] max-sm:h-[400px]"
+            className="w-full sm:h-[600px] max-sm:h-[400px]"
           />
         </div>
 
@@ -88,10 +125,16 @@ export default function TradingAll() {
         <div className="md:w-[350px] flex flex-col">
           <div className="flex md:hidden flex-row w-full items-center justify-center gap-4 max-sm:pt-28 pb-4 px-6">
             <button className="bg-red-500 w-1/2 px-4 py-3 flex items-center justify-center rounded">
-              <ArrowDown className="h-6 w-6" />
+              <div className="flex w-full items-center justify-between">
+                <h1>Para baixo</h1>
+                <ArrowDown className="h-6 w-6" />
+              </div>{' '}
             </button>
             <button className="bg-green-500 w-1/2 px-4 py-3 flex items-center justify-center rounded">
-              <ArrowUp className="h-6 w-6" />
+              <div className="flex w-full items-center justify-between">
+                <h1>Para cima</h1>
+                <ArrowUp className="h-6 w-6" />
+              </div>
             </button>
           </div>
 
@@ -99,34 +142,40 @@ export default function TradingAll() {
             <div className="grid grid-cols-2 bg-[#0e0e0e] border-t border-gray-500/30">
               {/* Informações */}
               <div className="flex w-full justify-center items-center border max-md:pb-1 border-gray-500/30">
-                <div className="flex w-full justify-center items-center h-full">
-                  <Select value={selectedPair} onValueChange={setSelectedPair}>
-                    <SelectTrigger className="bg-[#0e0e0e] text-white py-10 rounded border border-gray-500/30 w-full">
+                <div className="flex flex-col w-full justify-center px-2 h-full">
+                  <Label className="text-xs text-gray-400">Tempo</Label>
+                  <Select value={selectedTime} onValueChange={setSelectedTime}>
+                    <SelectTrigger className="bg-[#0e0e0e] text-white py-4 rounded border border-none w-full">
                       <SelectValue placeholder="Selecione um par" />
                     </SelectTrigger>
                     <SelectContent className="bg-[#181818] text-white border border-green-500/30">
-                      {availablePairs.map((pair) => (
-                        <SelectItem key={pair.value} value={pair.value}>
-                          {pair.label}
+                      {availableTimes.map((time) => (
+                        <SelectItem key={time.value} value={time.value}>
+                          {time.label}{' '}
+                          {/* Corrigido de pair.label para time.label */}
                         </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
                 </div>
               </div>
-              <div className="p-3 border border-gray-500/30">
-                <div className="text-xs text-gray-400">Hora</div>
-                <div className="font-bold">
-                  {new Date().toLocaleTimeString().substring(0, 5)}
+              <div className="px-3 py-2 border border-gray-500/30">
+                <Label className="text-xs text-gray-400">Valor</Label>
+                <Input
+                  placeholder="Valor"
+                  type="number"
+                  className="bg-transparent text-green-50 px-1 border-[#494949]"
+                ></Input>
+              </div>
+              <div className="px-3 py-2 border border-gray-500/30">
+                <Label className="text-xs text-gray-400">Alavancagem</Label>
+                <div className="font-bold mt-2">
+                  R$ {amount.toLocaleString()}
                 </div>
               </div>
-              <div className="p-3 border border-gray-500/30">
-                <div className="text-xs text-gray-400">Montante</div>
-                <div className="font-bold">R$ {amount.toLocaleString()}</div>
-              </div>
-              <div className="p-3 border border-gray-500/30">
-                <div className="text-xs text-gray-400">Preço atual</div>
-                <div className="font-bold">
+              <div className="px-3 py-2 border border-gray-500/30">
+                <Label className="text-xs text-gray-400">Stop loss</Label>
+                <div className="font-bold mt-2">
                   {currentPrice.toFixed(currentPrice < 1 ? 6 : 2)}
                 </div>
               </div>
@@ -137,10 +186,16 @@ export default function TradingAll() {
             {/* BOTÕES */}
             <div className="flex max-md:hidden flex-row w-full items-center justify-center gap-4 pt-2 px-2">
               <button className="bg-red-500 w-1/2 px-4 py-3 flex items-center justify-center rounded">
-                <ArrowDown className="h-6 w-6" />
+                <div className="flex w-full items-center justify-between">
+                  <h1>Para baixo</h1>
+                  <ArrowDown className="h-6 w-6" />
+                </div>
               </button>
               <button className="bg-green-500 w-1/2 px-4 py-3 flex items-center justify-center rounded">
-                <ArrowUp className="h-6 w-6" />
+                <div className="flex w-full items-center justify-between">
+                  <h1>Para cima</h1>
+                  <ArrowUp className="h-6 w-6" />
+                </div>
               </button>
             </div>
           </div>

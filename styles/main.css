@@ -76,17 +76,18 @@
   }
   /* Barra de rolagem personalizada WebKit (Chrome, Edge, Safari) */
   ::-webkit-scrollbar {
-    width: 7px; /* Largura da barra de rolagem */
+    width: 0px; /* Largura da barra de rolagem */
+    overflow: hidden;
   }
 
   ::-webkit-scrollbar-track {
     background: #5c5c5c; /* Cor do fundo */
-    border-radius: 4px;
+    border-radius: 0px;
   }
 
   ::-webkit-scrollbar-thumb {
     background: #03c23c; /* Cor da barra de rolagem */
-    border-radius: 4px;
+    border-radius: 0px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
