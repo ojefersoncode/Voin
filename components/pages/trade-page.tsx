@@ -7,7 +7,7 @@ import TradingAll from '../TradingComponents/Trading';
 export default function TradePage({ user }: { user: User }) {
   return (
     <>
-      <main>
+      <main className="touch-pan-x touch-pan-y">
         <TradingAll />
       </main>
     </>

@@ -61,7 +61,7 @@ export default function Torneios() {
   ];
 
   return (
-    <div className="relative flex min-h-screen w-full">
+    <div className="relative flex min-h-screen w-full touch-pan-x touch-pan-y">
       <main className="flex flex-1 flex-col min-h-[calc(100vh_-_theme(spacing.16))]">
         <div className="flex w-full justify-start items-center px-8 max-md:px-4 mt-6 mb-1">
           <SelectAula />

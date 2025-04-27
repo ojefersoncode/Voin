@@ -22,7 +22,7 @@ export default async function LandingPage() {
 
   return (
     <>
-      <div className="w-full overflow-hidden">
+      <div className="w-full overflow-hidden touch-pan-x touch-pan-y">
         <Navbar user={user} />
         <Hero />
         <FAQ />

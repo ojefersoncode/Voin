@@ -82,7 +82,7 @@ export default function TradingAll() {
   }, [selectedPair]);
 
   return (
-    <div className=" bg-[#0e0e0e] text-white flex flex-col">
+    <div className=" bg-[#0e0e0e] text-white flex flex-col touch-pan-x touch-pan-y">
       <header className=" bg-[#0e0e0e] border-b border-green-500/20 mb-2">
         <nav className="flex items-center justify-between px-2">
           <div className="flex items-center gap-1 px-2">

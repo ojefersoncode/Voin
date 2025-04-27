@@ -236,7 +236,7 @@ export default function MarketPage({ user }: { user: User }) {
     });
 
   return (
-    <div className="min-h-screen bg-[#0e0e0e] text-white flex flex-col">
+    <div className="min-h-screen bg-[#0e0e0e] text-white flex flex-col touch-pan-x touch-pan-y">
       {/* Header */}
       <div>
         <NavbarAll />

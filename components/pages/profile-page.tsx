@@ -36,7 +36,7 @@ export default function ProfilePage({ user }: { user: User }) {
 
       <div className="flex-1 p-4 pb-24">
         {/* Perfil do usuário */}
-        <div className="border-2 border-green-500 rounded-xl p-6 mb-6">
+        <div className="border-2 border-green-500 rounded-xl p-6 mb-6 touch-pan-x touch-pan-y">
           <div className="flex items-center gap-4">
             <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center">
               <UserCircle className="w-16 h-16 text-green-500" />

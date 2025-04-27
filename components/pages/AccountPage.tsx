@@ -53,7 +53,7 @@ export default function AccountPage({
   };
 
   return (
-    <div className="flex min-h-screen w-full flex-col">
+    <div className="flex min-h-screen w-full flex-col touch-pan-x touch-pan-y">
       <nav className="flex w-full justify-between py-2 max-md:px-3 md:px-4 bg-white dark:bg-black">
         <div className="flex gap-1 text-xl font-bold items-center">
           <img className="size-8" src="/Voin.png" alt="logo" />

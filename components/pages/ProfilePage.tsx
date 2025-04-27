@@ -21,7 +21,7 @@ export default function Profile({ user }: { user: User }) {
   };
 
   return (
-    <div className="flex flex-col w-full mx-auto bg-gray-100 dark:bg-black dark:bg-muted/40 min-h-screen">
+    <div className="flex flex-col w-full mx-auto bg-gray-100 dark:bg-black dark:bg-muted/40 min-h-screen touch-pan-x touch-pan-y">
       {/* Navbar */}
       <nav className="flex w-full justify-between py-4 px-4 md:px-4 bg-white dark:bg-black">
         <div className="flex gap-1 text-xl font-bold items-center select-none">
