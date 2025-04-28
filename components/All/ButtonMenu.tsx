@@ -43,10 +43,10 @@ export default function ButtonMenu() {
             variant="ghost"
             className="px-0 border-none outline-none bg-none"
           >
-            <div className="flex w-full justify-center items-center border border-green-600/40 p-0.5 rounded-full">
+            <div className="flex w-full justify-center items-center border border-green-600/40 p-1 rounded-full">
               <Image
-                className="size-8"
-                src="/patente/Bronze.png"
+                className="size-7"
+                src="/Level/bronze.svg"
                 alt="Patente"
                 width={'100'}
                 height={'100'}
@@ -65,12 +65,8 @@ export default function ButtonMenu() {
                   <div className="flex flex-col mt-2">
                     <h2 className="text-x gfont-bold px-1">Sr Jeferson</h2>
                     <div className="flex items-center mt-1">
-                      <img
-                        src="/patente/Bronze.png"
-                        alt=""
-                        className="size-6"
-                      />
-                      <span className="text-xs">Bronze nível 5</span>
+                      <img src="/Level/bronze.svg" alt="" className="size-4" />
+                      <span className="text-[0.60rem]">Bronze nível 5</span>
                     </div>
                   </div>
                   <Button
