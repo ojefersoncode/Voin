@@ -64,7 +64,7 @@ export default function HistoryPage({ user }: { user: User }) {
   }
 
   return (
-    <div className="flex-1 overflow-hidden flex flex-col bg-[#0e0e0e]">
+    <div className="flex-1 overflow-hidden flex flex-col bg-[#0e0e0e] touch-pan-x touch-pan-y">
       <div>
         <NavbarAll />
       </div>

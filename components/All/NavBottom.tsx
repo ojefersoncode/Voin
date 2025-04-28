@@ -7,7 +7,7 @@ export default function NavBottom() {
   const router = useRouter();
 
   const navigateToHome = () => router.push('/');
-  const navigateToWallet = () => router.push('/voin-wallet');
+  const navigateToHomePage = () => router.push('/Home');
   const navigateToHistory = () => router.push('/History');
   const navigateToMarket = () => router.push('/market');
   const navigateToTrade = () => router.push('/trade');
@@ -46,7 +46,7 @@ export default function NavBottom() {
         </button>
         <button
           className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400 hover:text-green-500"
-          onClick={navigateToWallet}
+          onClick={navigateToHomePage}
         >
           <Trophy className="h-5 w-5" />
           <span className="text-xs mt-1">Torneios</span>

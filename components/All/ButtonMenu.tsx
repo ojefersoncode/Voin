@@ -1,14 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 import {
   Copy,
-  Gift,
-  History,
   LogOut,
   Pen,
   PhoneCall,
   Plus,
   Settings,
-  Trophy,
   User,
   UserCircle,
   UserPlus,
@@ -23,12 +22,19 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
-import { Label } from 'recharts';
+import { useRouter } from 'next/navigation';
 
 export default function ButtonMenu() {
+  const router = useRouter();
+
+  const navigateToHome = () => router.push('/');
+  const navigateToWallet = () => router.push('/voin-wallet');
+  const navigateToProfile = () => router.push('/profile');
+  const navigateToMarket = () => router.push('/market');
+  const navigateToTrade = () => router.push('/trade');
+
   return (
     <>
       <DropdownMenu>
@@ -89,11 +95,11 @@ export default function ButtonMenu() {
             </div>
           </DropdownMenuLabel>
           <DropdownMenuGroup>
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={navigateToProfile}>
               <User className="size-5 mr-2" />
               <span>Perfil</span>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={navigateToWallet}>
               <Wallet className="size-5 mr-2" />
               <span>Carteira</span>
             </DropdownMenuItem>
@@ -116,7 +122,7 @@ export default function ButtonMenu() {
             <PhoneCall className="size-5 mr-2" />
             <span>Suportet</span>
           </DropdownMenuItem>
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={navigateToProfile}>
             <Settings className="size-5 mr-2" />
             <span>Configurações</span>
           </DropdownMenuItem>
