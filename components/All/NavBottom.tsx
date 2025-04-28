@@ -39,14 +39,14 @@ export default function NavBottom() {
         </button>
         <button
           className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400 hover:text-green-500"
-          onClick={navigateToWallet}
+          onClick={navigateToHistory}
         >
           <History className="h-5 w-5" />
           <span className="text-xs mt-1">Historico</span>
         </button>
         <button
           className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400 hover:text-green-500"
-          onClick={navigateToHistory}
+          onClick={navigateToWallet}
         >
           <Trophy className="h-5 w-5" />
           <span className="text-xs mt-1">Torneios</span>
