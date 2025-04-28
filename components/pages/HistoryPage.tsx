@@ -76,7 +76,7 @@ export default function HistoryPage({ user }: { user: User }) {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-4 pb-24 ">
         {mockTrades.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-gray-400">
             <p className="mb-2">Nenhuma operação realizada ainda</p>
