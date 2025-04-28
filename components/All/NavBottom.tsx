@@ -1,6 +1,6 @@
 'use client';
 
-import { Home, BarChart2, Repeat, Wallet, User } from 'lucide-react';
+import { Home, BarChart2, Repeat, History, Trophy } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export default function NavBottom() {
@@ -8,7 +8,7 @@ export default function NavBottom() {
 
   const navigateToHome = () => router.push('/');
   const navigateToWallet = () => router.push('/voin-wallet');
-  const navigateToProfile = () => router.push('/profile');
+  const navigateToHistory = () => router.push('/History');
   const navigateToMarket = () => router.push('/market');
   const navigateToTrade = () => router.push('/trade');
 
@@ -41,15 +41,15 @@ export default function NavBottom() {
           className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400 hover:text-green-500"
           onClick={navigateToWallet}
         >
-          <Wallet className="h-5 w-5" />
-          <span className="text-xs mt-1">Carteira</span>
+          <History className="h-5 w-5" />
+          <span className="text-xs mt-1">Historico</span>
         </button>
         <button
           className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-400 hover:text-green-500"
-          onClick={navigateToProfile}
+          onClick={navigateToHistory}
         >
-          <User className="h-5 w-5" />
-          <span className="text-xs mt-1">Perfil</span>
+          <Trophy className="h-5 w-5" />
+          <span className="text-xs mt-1">Torneios</span>
         </button>
       </div>
     </div>

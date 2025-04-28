@@ -49,7 +49,8 @@ export default function TradingAll() {
   const [selectedPair, setSelectedPair] = useState('BTCUSDT');
   const [selectedTime, setSelectedTime] = useState('30s');
   const [currentPrice, setCurrentPrice] = useState(0.0);
-  const [amount] = useState(25000);
+  const [amount, setAmount] = useState(25000);
+  const [inputValue, setInputValue] = useState<number>(0);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -81,27 +82,43 @@ export default function TradingAll() {
     };
   }, [selectedPair]);
 
+  const handleIncrement = () => {
+    setInputValue((prev) => prev + 1);
+  };
+
+  const handleDecrement = () => {
+    setInputValue((prev) => (prev > 0 ? prev - 1 : 0));
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
+    setInputValue(Number(value));
+  };
+
   return (
     <div className=" bg-[#0e0e0e] text-white flex flex-col touch-pan-x touch-pan-y">
       <header className=" bg-[#0e0e0e] border-b border-green-500/20 mb-2">
         <nav className="flex items-center justify-between px-2">
-          <div className="flex items-center gap-1 px-2">
-            <Select value={selectedPair} onValueChange={setSelectedPair}>
-              <SelectTrigger className="bg-[#0e0e0e] text-white py-2 rounded border border-gray-500/30 w-full">
-                <SelectValue placeholder="Selecione um par" />
-              </SelectTrigger>
-              <SelectContent className="bg-[#181818] text-white border border-green-500/30">
-                {availablePairs.map((pair) => (
-                  <SelectItem key={pair.value} value={pair.value}>
-                    {pair.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          <div className="flex items-center gap-4">
+            <img src="/Logomarca.png" alt="Logo" className="size-8" />
+            <div className="flex items-center gap-1 px-2">
+              <Select value={selectedPair} onValueChange={setSelectedPair}>
+                <SelectTrigger className="bg-[#0e0e0e] text-white py-2 px-2 rounded border border-gray-500/30 w-full">
+                  <SelectValue placeholder="Selecione um par" />
+                </SelectTrigger>
+                <SelectContent className="bg-[#181818] text-white border border-green-500/30">
+                  {availablePairs.map((pair) => (
+                    <SelectItem key={pair.value} value={pair.value}>
+                      {pair.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
           <div className="flex gap-2 p-4">
-            <div className="flex items-center justify-center gap-1 px-4 rounded-md text-green-50  border border-green-50 border-opacity-20 cursor-pointer bg-[#181818]">
+            <div className="flex items-center justify-center gap-1 px-4 rounded-md text-green-50 border border-green-50 border-opacity-20 cursor-pointer bg-[#181818]">
               <img src="/Voin.png" alt="Logo" className="size-5" />
               <h1 className="mr-1 text-xs">130.000.00</h1>
             </div>
@@ -111,6 +128,7 @@ export default function TradingAll() {
           </div>
         </nav>
       </header>
+
       {/* DESKTOP */}
       <div className="md:flex w-full h-screen flex-1">
         {/* Gráfico */}
@@ -128,7 +146,7 @@ export default function TradingAll() {
               <div className="flex w-full items-center justify-between">
                 <h1>Para baixo</h1>
                 <ArrowDown className="h-6 w-6" />
-              </div>{' '}
+              </div>
             </button>
             <button className="bg-green-500 w-1/2 px-4 py-3 flex items-center justify-center rounded">
               <div className="flex w-full items-center justify-between">
@@ -151,32 +169,35 @@ export default function TradingAll() {
                     <SelectContent className="bg-[#181818] text-white border border-green-500/30">
                       {availableTimes.map((time) => (
                         <SelectItem key={time.value} value={time.value}>
-                          {time.label}{' '}
-                          {/* Corrigido de pair.label para time.label */}
+                          {time.label}
                         </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
                 </div>
               </div>
-              <div className="px-3 py-2 border border-gray-500/30">
+              <div className="px-3 py-2 border border-gray-500/30 flex flex-col gap-2">
                 <Label className="text-xs text-gray-400">Valor</Label>
-                <Input
-                  placeholder="Valor"
-                  type="number"
-                  className="bg-transparent text-green-50 px-1 border-[#494949]"
-                ></Input>
-              </div>
-              <div className="px-3 py-2 border border-gray-500/30">
-                <Label className="text-xs text-gray-400">Alavancagem</Label>
-                <div className="font-bold mt-2">
-                  R$ {amount.toLocaleString()}
-                </div>
-              </div>
-              <div className="px-3 py-2 border border-gray-500/30">
-                <Label className="text-xs text-gray-400">Stop loss</Label>
-                <div className="font-bold mt-2">
-                  {currentPrice.toFixed(currentPrice < 1 ? 6 : 2)}
+                <div className="flex w-full justify-center items-center gap-2">
+                  <button
+                    onClick={handleDecrement}
+                    className="px-2 py-1 bg-[#212121] text-white rounded"
+                  >
+                    -
+                  </button>
+                  <Input
+                    placeholder="Valor"
+                    type="text"
+                    value={inputValue}
+                    onChange={handleChange}
+                    className="bg-transparent w-20 text-green-50 px-1 border-[#494949] text-center"
+                  />
+                  <button
+                    onClick={handleIncrement}
+                    className="px-2 py-1 bg-[#212121] text-white rounded"
+                  >
+                    +
+                  </button>
                 </div>
               </div>
             </div>

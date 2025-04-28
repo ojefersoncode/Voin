@@ -22,7 +22,7 @@ export default function VideoAulas({ user }: { user: User }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full bg-gray-100 dark:bg-black">
+    <div className="flex flex-col items-center justify-center min-h-screen w-full bg-gray-100 dark:bg-black touch-pan-x touch-pan-y">
       <nav className="flex w-full justify-between px-3 md:px-4 text-gray-50 bg-black">
         <div className="flex gap-1 py-2 text-xl font-bold items-center">
           <img className="size-8" src="/Voin.png" alt="logo" />

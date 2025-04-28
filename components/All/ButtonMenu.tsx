@@ -1,20 +1,19 @@
 import Image from 'next/image';
 import {
-  CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
+  Copy,
+  Gift,
+  History,
   LogOut,
-  Mail,
-  MessageSquare,
   Pen,
+  PhoneCall,
   Plus,
-  PlusCircle,
   Settings,
+  Trophy,
   User,
   UserCircle,
   UserPlus,
-  Users
+  Users,
+  Wallet
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -24,21 +23,21 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
+import { Label } from 'recharts';
 
 export default function ButtonMenu() {
   return (
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="px-0">
-            <div className="border border-[#181818] rounded-full">
+          <Button
+            variant="ghost"
+            className="px-0 border-none outline-none bg-none"
+          >
+            <div className="flex w-full justify-center items-center border border-green-600/40 p-0.5 rounded-full">
               <Image
                 className="size-8"
                 src="/patente/Bronze.png"
@@ -50,9 +49,9 @@ export default function ButtonMenu() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">
-          <DropdownMenuLabel>
-            <div>
-              <div className="flex flex-col items-center gap-4">
+          <DropdownMenuLabel className="p-1">
+            <div className="w-full flex flex-col rounded-lg p-1 bg-[#212121]">
+              <div className="flex flex-col items-center gap-4 py-2">
                 <div className="flex w-full items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
                     <UserCircle className="w-7 h-7 text-green-500" />
@@ -69,81 +68,60 @@ export default function ButtonMenu() {
                     </div>
                   </div>
                   <Button
-                    variant="outline"
+                    variant="ghost"
                     size="sm"
-                    className="ml-auto bg-transparent hover:bg-transparent hover:text-green-500 border-green-500 border-none text-green-500 px-1 py-0"
+                    className="ml-auto bg-transparent hover:bg-transparent hover:text-green-500 border-green-500 border-none focus:border-none text-green-500 px-1 py-0"
                   >
                     <Pen className="size-4" />
                   </Button>
                 </div>
               </div>
+
+              <form className="flex flex-col px-1 pb-2 text-green-50">
+                <label className="text-[0.70rem] text-gray-300 mr-1">
+                  Id da conta
+                </label>
+                <div className="flex w-full items-center text-xs text-green-50 gap-2 mt-2 cursor-pointer">
+                  <span className="font-light">ID: 268434192</span>
+                  <Copy className="size-3 text-gray-100" />
+                </div>
+              </form>
             </div>
           </DropdownMenuLabel>
-          <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem>
-              <User />
-              <span>Profile</span>
+              <User className="size-5 mr-2" />
+              <span>Perfil</span>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <CreditCard />
-              <span>Billing</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Settings />
-              <span>Settings</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Keyboard />
-              <span>Keyboard shortcuts</span>
+              <Wallet className="size-5 mr-2" />
+              <span>Carteira</span>
             </DropdownMenuItem>
           </DropdownMenuGroup>
-          <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem>
-              <Users />
-              <span>Team</span>
+              <Users className="size-5 mr-2" />
+              <span>Amigos</span>
             </DropdownMenuItem>
-            <DropdownMenuSub>
-              <DropdownMenuSubTrigger>
-                <UserPlus />
-                <span>Invite users</span>
-              </DropdownMenuSubTrigger>
-              <DropdownMenuPortal>
-                <DropdownMenuSubContent>
-                  <DropdownMenuItem>
-                    <Mail />
-                    <span>Email</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <MessageSquare />
-                    <span>Message</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <PlusCircle />
-                    <span>More...</span>
-                  </DropdownMenuItem>
-                </DropdownMenuSubContent>
-              </DropdownMenuPortal>
-            </DropdownMenuSub>
             <DropdownMenuItem>
-              <Plus />
+              <Plus className="size-5 mr-2" />
               <span>New Team</span>
             </DropdownMenuItem>
+            <DropdownMenuItem>
+              <UserPlus className="size-5 mr-2" />
+              <span>Indicar amigos</span>
+            </DropdownMenuItem>
           </DropdownMenuGroup>
-          <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <Github />
-            <span>GitHub</span>
+            <PhoneCall className="size-5 mr-2" />
+            <span>Suportet</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <LifeBuoy />
-            <span>Support</span>
+            <Settings className="size-5 mr-2" />
+            <span>Configurações</span>
           </DropdownMenuItem>
-
           <DropdownMenuItem>
-            <LogOut />
+            <LogOut className="size-5 mr-2" />
             <span>Sair</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
