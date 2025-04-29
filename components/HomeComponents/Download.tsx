@@ -10,7 +10,7 @@ export const Download = () => {
         <main className="text-4xl md:text-6xl font-bold">
           <h1 className="inline">
             <span className="inline bg-gradient-to-r text-slate-900 dark:text-gray-100  ">
-              Cooderfy
+              Voin
             </span>{' '}
           </h1>{' '}
           <h2 className="inline">
@@ -37,7 +37,7 @@ export const Download = () => {
           >
             <Button className="border bg-red-600 animate-bounce mb-1">
               <span className="text-lg font-semibold darK:text-gray-700 px-16">
-                Criar meu app
+                Acessar
               </span>
             </Button>
           </Link>

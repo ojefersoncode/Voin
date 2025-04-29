@@ -9,21 +9,18 @@ import {
   SelectValue
 } from '@/components/ui/select';
 
-export function SelectAula() {
+export function FilterTournament() {
   // Definindo os dados como uma constante
   const alltorneios = [
-    { id: 'batalha 1', label: 'Torneio diario' },
-    { id: 'batalha 2', label: 'Torneio semanal' },
-    { id: 'batalha 3', label: 'Torneio mensal' },
-    { id: 'batalha 4', label: 'Batalha x1' },
-    { id: 'batalha 5', label: 'Batalha 2x2' },
-    { id: 'batalha 6', label: 'Batalha 4x4' }
+    { id: 'batalha 1', label: 'Todos' },
+    { id: 'batalha 2', label: 'Torneios' },
+    { id: 'batalha 3', label: 'Batalhas' }
   ];
 
   return (
     <Select>
-      <SelectTrigger className="w-[180px] bg-[#181818]">
-        <SelectValue placeholder="Filtrar Torneios" />
+      <SelectTrigger className="w-[120px] bg-[#181818]">
+        <SelectValue placeholder="Filtrar por" />
       </SelectTrigger>
       <SelectContent className="bg-[#181818]">
         <SelectGroup>

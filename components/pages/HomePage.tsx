@@ -2,7 +2,6 @@
 import { User } from '@supabase/supabase-js';
 import NavbarAll from '../All/Navbar';
 import NavBottom from '../All/NavBottom';
-import Torneios from './Torneios';
 
 export default function HomePage({ user }: { user: User }) {
   return (
@@ -11,8 +10,6 @@ export default function HomePage({ user }: { user: User }) {
         <div>
           <NavbarAll />
         </div>
-
-        <Torneios />
       </main>
       <div>
         <NavBottom />

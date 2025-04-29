@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { SelectAula } from '../TorneioComponents/SelectAula';
+import { FilterTournament } from '../TorneioComponents/FilterTournament';
 import { Button } from '../ui/button';
+import { User } from '@supabase/supabase-js';
+
 import NavbarAll from '../All/Navbar';
 import NavBottom from '../All/NavBottom';
 
-export default function Torneios() {
+export default function Tournament({ user }: { user: User }) {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const torneios = [
@@ -16,7 +18,7 @@ export default function Torneios() {
       premio: '1,000',
       description:
         'No torneio diário você pode participar gratuitamente e recebe uma banca inicial.',
-      imageUrl: '/cooderfy.png'
+      imageUrl: '/Batalhas/Diario.png'
     },
     {
       id: 2,
@@ -24,7 +26,7 @@ export default function Torneios() {
       premio: '5,000',
       description:
         'No torneio semanal você pode participar pagando uma pequena taxa com a Voin Coin e recebe uma banca inicial.',
-      imageUrl: '/cooderfy.png'
+      imageUrl: '/Batalhas/Semanal.png'
     },
     {
       id: 3,
@@ -32,7 +34,7 @@ export default function Torneios() {
       premio: '10,000',
       description:
         'No torneio mensal você pode participar gratuitamente e recebe uma banca inicial.',
-      imageUrl: '/cooderfy.png'
+      imageUrl: '/Batalhas/Mensal.png'
     },
     {
       id: 4,
@@ -40,7 +42,7 @@ export default function Torneios() {
       premio: '500',
       description:
         'Nas batalhas de 1x1 você pode se inscrever usando Voin e recebe uma banca. Quem terminar com maior saldo ganha.',
-      imageUrl: '/cooderfy.png'
+      imageUrl: '/Batalhas/Solo.png'
     },
     {
       id: 5,
@@ -48,7 +50,7 @@ export default function Torneios() {
       premio: '2,000',
       description:
         'Nas batalhas de 2x2 você pode se inscrever usando Voin, chame um amigo para sua equipe e ambos recebem uma banca. O duo que terminar com maior saldo ganha.',
-      imageUrl: '/cooderfy.png'
+      imageUrl: '/Batalhas/Duo.png'
     },
     {
       id: 6,
@@ -56,18 +58,30 @@ export default function Torneios() {
       premio: '10,000',
       description:
         'Nas batalhas de 4x4 você pode se inscrever usando Voin, monte sua equipe para a batalha e todos recebem uma banca. O time que terminar com maior saldo ganha.',
-      imageUrl: '/cooderfy.png'
+      imageUrl: '/Batalhas/Grupo.png'
     }
   ];
 
   return (
-    <div className="relative flex min-h-screen w-full touch-pan-x touch-pan-y">
+    <div className="relative flex flex-col min-h-screen w-full touch-pan-x touch-pan-y">
+      <header>
+        <NavbarAll />
+      </header>
+
       <main className="flex flex-1 flex-col min-h-[calc(100vh_-_theme(spacing.16))]">
-        <div className="flex w-full justify-start items-center px-8 max-md:px-4 mt-6 mb-1">
-          <SelectAula />
+        <div className="py-4 px-4 sm:px-7">
+          <img
+            src="/Banner/Banner.png"
+            alt="Logomarca"
+            className="w-full sm:h-56 max-sm:h-36 rounded-lg object-cover hover:opacity-90 transition-all cursor-default select-none"
+          />
         </div>
 
-        <div className="mx-auto grid w-full px-8 max-md:px-4 gap-10 pb-7 lg:gap-14 p-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div className="flex w-full justify-start items-center px-8 max-md:px-4 mt-6 mb-1">
+          <FilterTournament />
+        </div>
+
+        <div className="mx-auto grid w-full px-8 max-md:px-4 gap-10 pb-4 mb-20 lg:gap-14 p-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {torneios.map((torneio) => (
             <div
               key={torneio.id}
