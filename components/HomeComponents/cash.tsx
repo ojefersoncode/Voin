@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Clock, Eye, Plus, Send, Target, Trophy, Upload } from 'lucide-react';
+import { Eye, Plus, Send, Upload } from 'lucide-react';
 
 const Progress = ({
   value,
@@ -31,9 +31,9 @@ export default function Cash() {
   const [showBalance, setShowBalance] = useState(true);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 p-4 bg-[#0e0e0e]">
+    <div className="flex flex-col lg:flex-row gap-6 py-4 px-6 bg-[#0e0e0e]">
       {/* Card do Saldo */}
-      <Card className="w-full lg:w-[500px] border-green-500 border-2 rounded-3xl bg-[#0e0e0e]">
+      <Card className="w-full lg:w-[550px] border-green-500 border rounded-xl bg-[#0e0e0e]">
         <CardHeader className="flex flex-row justify-between items-start text-green-100">
           <div className="flex items-center gap-2 mt-4">
             <CardTitle className="text-lg text-green-100">
@@ -50,7 +50,7 @@ export default function Cash() {
         </CardHeader>
 
         <CardContent className="text-green-100">
-          <h1 className="text-4xl font-bold mb-6">
+          <h1 className="text-4xl font-bold p-0 mb-6">
             {showBalance ? 'R$ 130.000,00' : '••••••••'}{' '}
             <span className="text-sm font-normal">voin</span>
           </h1>
@@ -87,13 +87,13 @@ export default function Cash() {
           <CardContent>
             <div className="mb-6">
               <div className="flex justify-between mb-2 text-green-100">
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 mb-1">
                   <img
-                    src="/patente/Bronze.png"
+                    src="/Level/bronze.svg"
                     alt="patente"
-                    className="size-10 select-none touch-pan-down"
+                    className="size-7 select-none touch-pan-down"
                   />
-                  <span className="mt-1">Bronze nível 5</span>
+                  <span>Bronze nível 5</span>
                 </div>
                 <span>Nível 6</span>
               </div>
@@ -108,36 +108,6 @@ export default function Cash() {
                 <div className="bg-green-100 rounded-md p-2 font-bold text-xs text-blue-950">
                   Falta 72% para nível 6
                 </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
-              {[Target, Trophy, Clock].map((Icon, i) => (
-                <div
-                  key={i}
-                  className="border-2 border-green-500 rounded-2xl p-4 flex items-center justify-center"
-                >
-                  <Icon className="h-8 w-8 text-white" />
-                </div>
-              ))}
-
-              {/* Ícone especial em SVG */}
-              <div className="border-2 border-green-500 rounded-2xl p-4 flex items-center justify-center">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18.36 12.76L14.5 8.9M14.5 8.9L10.64 12.76M14.5 8.9V19M22 8.27V4.64C22 3.74 21.26 3 20.36 3H16.73M2 15.73V19.36C2 20.26 2.74 21 3.64 21H7.27"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
               </div>
             </div>
           </CardContent>
