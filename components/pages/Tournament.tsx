@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { FilterTournament } from '../TorneioComponents/FilterTournament';
 import { Button } from '../ui/button';
 import { User } from '@supabase/supabase-js';
-
 import NavbarAll from '../All/Navbar';
 import NavBottom from '../All/NavBottom';
 

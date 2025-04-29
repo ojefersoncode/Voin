@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Button } from '../ui/button';
 import { User } from '@supabase/supabase-js';
 import { Navbar } from '../HomeComponents/NavBar';
-import { SelectAula } from '../TorneioComponents/FilterTournament';
+import { FilterTournament } from '../TorneioComponents/FilterTournament';
 import { ArrowLeftIcon } from 'lucide-react';
 import { Footer } from '../landing/Footer';
 import Comentarios from '../AulasComponents/Comentarios';
@@ -64,7 +64,7 @@ export default function VideoAulas({ user }: { user: User }) {
         </div>
 
         <div className="flex justify-between items-center w-full mt-4 px-2">
-          <SelectAula />
+          <FilterTournament />
           <Button
             variant="outline"
             onClick={() => alert('Redirecionando para a Aula 2...')}
