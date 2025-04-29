@@ -56,7 +56,7 @@ export default function NavBottom() {
 
         <button
           className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-300"
-          onClick={navigateToTournament}
+          onClick={navigateToChat}
         >
           <MessageCircleMore className="h-5 w-5" />
           <span className="text-xs mt-1">Menssagem</span>
