@@ -76,11 +76,30 @@ export default function Tournament({ user }: { user: User }) {
           />
         </div>
 
-        <div className="flex w-full justify-start items-center px-8 max-md:px-4 mt-6 mb-1">
-          <FilterTournament />
+        <div className="flex w-full items-center content-center justify-between px-8 max-md:px-4 mt-4">
+          <div className=" text-gray-50  ">
+            <h1 className="text-2xl sm:text-4xl font-black mt-4">
+              Torneios e batalhas
+            </h1>
+          </div>
+          <div className="mt-4">
+            <FilterTournament />
+          </div>
         </div>
 
-        <div className="mx-auto grid w-full px-8 max-md:px-4 gap-10 pb-4 mb-20 lg:gap-14 p-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div className="px-8 max-md:px-4 mb-6">
+          <p className="flex text-sm sm:text-lg font-thin text-gray-200 mt-4">
+            Jogue torneios e batalhas para conseguir moedas VOIN <br />
+            Essas moedas poderão ser trocadas por cripto ativos BNB
+          </p>
+          <div className="pt-4">
+            <Button className="border px-3 py-1 border-green-500 bg-green-950 hover:bg-green-800/60 transition-all">
+              <span className="text-xs">Ver regulamento</span>
+            </Button>
+          </div>
+        </div>
+
+        <div className="mx-auto grid w-full px-8 max-md:px-4 gap-10 pb-4 mb-24 lg:gap-14 p-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {torneios.map((torneio) => (
             <div
               key={torneio.id}
