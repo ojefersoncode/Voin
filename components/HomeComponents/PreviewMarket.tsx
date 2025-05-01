@@ -71,14 +71,8 @@ export default function PreviewMarket() {
   const timer = useRef<NodeJS.Timeout | null>(null);
   const router = useRouter();
 
-  // Função para navegar para a página da carteira
-  const navigateToWallet = () => {
-    router.push('/voin-wallet');
-  };
-
-  // Função para navegar para a página de perfil
-  const navigateToProfile = () => {
-    router.push('/profile');
+  const navigateToMarket = () => {
+    router.push('/market');
   };
 
   // Buscar dados da API da Binance
@@ -174,7 +168,7 @@ export default function PreviewMarket() {
     fetchCryptoData();
 
     // Atualizar dados a cada 5 segundos
-    const interval = setInterval(fetchCryptoData, 5000);
+    const interval = setInterval(fetchCryptoData, 2000);
     return () => {
       clearInterval(interval);
       if (timer.current) {
@@ -380,6 +374,7 @@ export default function PreviewMarket() {
         {/* Botão para ver mais */}
         <div className="mt-6 flex justify-center">
           <Button
+            onClick={navigateToMarket}
             variant="outline"
             className="border-green-500 text-green-500 bg-[#181818] hover:bg-green-900/20 hover:text-white"
           >

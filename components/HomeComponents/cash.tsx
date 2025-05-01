@@ -33,7 +33,7 @@ export default function Cash() {
   return (
     <div className="flex flex-col lg:flex-row gap-6 py-4 px-6 bg-[#0e0e0e]">
       {/* Card do Saldo */}
-      <Card className="w-full lg:w-[550px] border-green-500 border rounded-xl bg-[#0e0e0e]">
+      <Card className="w-full lg:w-[550px] shadow-none border-none bg-[#0e0e0e]">
         <CardHeader className="flex flex-row justify-between items-start text-green-100">
           <div className="flex items-center gap-2 mt-4">
             <CardTitle className="text-lg text-green-100">
@@ -43,9 +43,6 @@ export default function Cash() {
               className="h-5 w-5 cursor-pointer"
               onClick={() => setShowBalance(!showBalance)}
             />
-          </div>
-          <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
-            <span className="text-white font-bold">V</span>
           </div>
         </CardHeader>
 
