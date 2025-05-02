@@ -1,7 +1,14 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Send, Paperclip, Mic, Smile, EllipsisVertical } from 'lucide-react';
+import {
+  Send,
+  Paperclip,
+  Mic,
+  Smile,
+  EllipsisVertical,
+  ArrowLeft
+} from 'lucide-react';
 import { User } from '@supabase/supabase-js';
 import NavbarAll from '../All/Navbar';
 import NavBottomChat from './NavBottomChat';
@@ -106,26 +113,30 @@ export default function Mensagem({ user }: { user: User }) {
   const groupedMessages = groupMessagesByDate();
 
   return (
-    <>
-      {/* Área de mensagens */}
-      <div className="flex-1 overflow-y-auto bg-green-950/30">
-        <div className="flex w-full items-center justify-between py-2 bg-[#181818]">
-          <div className="flex items-center text-green-50 gap-3 px-3">
-            <div className="flex justify-center items-center rounded-full">
-              <img src="/Voin.png" alt="jeferson" className=" size-16" />
-            </div>
-            <div>
-              <h1 className="text-base">Jeferson</h1>
-              <span className="text-xs">Online</span>
-            </div>
+    <div className="flex flex-col h-screen">
+      {/* Header - área do contato */}
+      <div className="flex w-full items-center justify-between py-2 bg-[#181818]">
+        <div className="flex items-center text-green-50 gap-3 px-3">
+          <div className="sm:p-1 hover:cursor-pointer">
+            <ArrowLeft className="size-7" />
           </div>
-
-          <div className="text-green-50 px-3">
-            <EllipsisVertical className="size-5" />
+          <div className="flex justify-center items-center rounded-full">
+            <img src="/Voin.png" alt="jeferson" className="size-16" />
+          </div>
+          <div>
+            <h1 className="text-base">Jeferson</h1>
+            <span className="text-xs">Online</span>
           </div>
         </div>
 
-        <div className="flex flex-col space-y-4 mb-auto p-4">
+        <div className="text-green-50 px-3">
+          <EllipsisVertical className="size-5" />
+        </div>
+      </div>
+
+      {/* Área de mensagens - use flex-1 para ocupar o espaço disponível e adicione padding-bottom */}
+      <div className="flex-1 overflow-y-auto bg-green-950/30 pb-20">
+        <div className="flex flex-col space-y-4 p-4">
           {Object.keys(groupedMessages).map((date) => (
             <div key={date}>
               {/* Separador de data */}
@@ -146,7 +157,7 @@ export default function Mensagem({ user }: { user: User }) {
                   className={`flex ${message.isSent ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`relative max-w-xl px-4 py-2 rounded-lg shadow ${
+                    className={`relative max-w-xl px-4 py-2 mt-4 rounded-lg shadow ${
                       message.isSent
                         ? 'bg-green-100 rounded-tr-none'
                         : 'bg-white rounded-tl-none'
@@ -154,7 +165,7 @@ export default function Mensagem({ user }: { user: User }) {
                   >
                     <div className="text-sm">{message.text}</div>
                     <div className="text-right mt-1">
-                      <span className="text-xs text-gray-500">
+                      <span className="text-xs text-gray-700">
                         {formatTime(message.timestamp)}
                       </span>
                     </div>
@@ -167,11 +178,11 @@ export default function Mensagem({ user }: { user: User }) {
         </div>
       </div>
 
-      {/* Área de entrada de mensagem */}
-      <div className="h-16 mb-20 mx-4 p-2 bg-[#212121] border-t border-green-600 rounded-xl">
-        <div className="flex items-center gap-2">
+      {/* Área de entrada de mensagem - fixada na parte inferior */}
+      <div className="w-full h-20 fixed bottom-0 border-t bg-[#05110a] border-green-600">
+        <div className="flex items-center mt-5 gap-2 px-2">
           <button className="py-2 px-4 text-gray-100 rounded-full">
-            <Smile size={20} />
+            <Smile size={24} />
           </button>
 
           <div className="flex-1 relative">
@@ -183,7 +194,7 @@ export default function Mensagem({ user }: { user: User }) {
               className="w-full p-3 bg-white rounded-xl focus:outline-none resize-none max-h-32 min-h-10"
               rows={1}
               style={{
-                height: '40px',
+                height: '45px',
                 maxHeight: '120px',
                 overflowY: newMessage.split('\n').length > 2 ? 'auto' : 'hidden'
               }}
@@ -192,22 +203,18 @@ export default function Mensagem({ user }: { user: User }) {
 
           {newMessage.trim() ? (
             <button
-              className="py-2 px-4 text-white rounded-full"
+              className="py-2 px-2 text-white rounded-full"
               onClick={sendMessage}
             >
-              <Send className=" text-gray-50 size-5" />
+              <Send className="text-gray-50 size-5" />
             </button>
           ) : (
-            <button className="py-2 px-4 text-gray-100 rounded-full">
-              <Mic size={20} />
+            <button className="py-2 px-2 text-gray-100 rounded-full">
+              <Mic size={24} />
             </button>
           )}
         </div>
-
-        <footer className="mt-4">
-          <NavBottomChat />
-        </footer>
       </div>
-    </>
+    </div>
   );
 }
