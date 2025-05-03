@@ -32,6 +32,8 @@ export default function ButtonMenu() {
   const navigateToHome = () => router.push('/');
   const navigateToWallet = () => router.push('/voin-wallet');
   const navigateToProfile = () => router.push('/profile');
+  const navigateToSettings = () => router.push('/settings');
+
   const navigateToMarket = () => router.push('/market');
   const navigateToTrade = () => router.push('/trade');
 
@@ -116,7 +118,7 @@ export default function ButtonMenu() {
             <PhoneCall className="size-5 mr-2" />
             <span>Suportet</span>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={navigateToProfile}>
+          <DropdownMenuItem onClick={navigateToSettings}>
             <Settings className="size-5 mr-2" />
             <span>Configurações</span>
           </DropdownMenuItem>
