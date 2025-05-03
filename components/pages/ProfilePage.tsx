@@ -3,10 +3,8 @@ import { useState } from 'react';
 import { CardHeader, CardContent, CardFooter } from '../ui/card';
 import { Button } from '../ui/button';
 import { Label } from '../ui/label';
-import { Navbar } from '../HomeComponents/NavBar';
 import { User } from '@supabase/supabase-js';
 import { Pencil } from 'lucide-react';
-import { Footer } from '../landing/Footer';
 import NavbarAll from '../All/Navbar';
 import NavBottom from '../All/NavBottom';
 
@@ -23,22 +21,40 @@ export default function Profile({ user }: { user: User }) {
   };
 
   return (
-    <div className=" w-full mx-auto bg-[#0e0e0e] dark:bg-muted/40 touch-pan-x touch-pan-y">
+    <div className=" w-full mx-auto bg-[#0e0e0e] dark:bg-muted/40 min-h-screen mb-24 touch-pan-x touch-pan-y">
       <div className=" w-full">
         <NavbarAll />
       </div>
 
-      <div className="flex justify-center max-sm:px-4 mt-7 mb-24 text-green-50 bg-[#0e0e0e]">
-        <div className="w-full h-full max-w-4xl max-md:max-w-full  border border-green-600 bg-[#181818] rounded-lg">
+      <div className="flex justify-center max-sm:px-4 mt-7  text-green-50 bg-[#0e0e0e] touch-pan-x touch-pan-y">
+        <div className="w-full h-full max-w-4xl max-md:max-w-full  border border-green-600 bg-[#181818] rounded-lg touch-pan-x touch-pan-y">
           <CardHeader>
-            <h2 className="text-2xl font-medium text-green-600">
+            <h2 className="text-xl font-semibold text-green-600">
               Editar perfil
             </h2>
           </CardHeader>
 
           <CardContent>
+            {/* Image */}
+            <div className="flex flex-col items-center space-x-4 mb-6">
+              <img src="/Voin.png" alt="" className="size-28" />
+              <div className="flex items-center">
+                <Button
+                  variant={'ghost'}
+                  onClick={() =>
+                    handleEdit('name', prompt('Editar apelido:', name) || name)
+                  }
+                  className="text-sm px-1"
+                >
+                  <span className="mr-2 text-lg">Editar Foto</span>
+
+                  <Pencil className="size-5" />
+                </Button>
+              </div>
+            </div>
+
             {/* Name */}
-            <div className="flex justify-between items-center space-x-4 mb-3">
+            <div className="flex justify-between items-center space-x-4 p-2 rounded-lg border border-gray-600/70 mb-4">
               <Label htmlFor="name" className="text-lg">
                 Nome:
               </Label>
@@ -57,7 +73,7 @@ export default function Profile({ user }: { user: User }) {
             </div>
 
             {/* Name */}
-            <div className="flex justify-between items-center space-x-4 mb-3">
+            <div className="flex justify-between items-center space-x-4 p-2 rounded-lg border border-gray-600/70 mb-4">
               <Label htmlFor="name" className="text-lg">
                 Apelido:
               </Label>
@@ -76,7 +92,7 @@ export default function Profile({ user }: { user: User }) {
             </div>
 
             {/* Phone */}
-            <div className="flex justify-between items-center space-x-4 mb-3">
+            <div className="flex justify-between items-center space-x-4 p-2 rounded-lg border border-gray-600/70 mb-4">
               <Label htmlFor="phone" className="text-lg">
                 Telefone:
               </Label>
@@ -98,7 +114,7 @@ export default function Profile({ user }: { user: User }) {
             </div>
 
             {/* Email */}
-            <div className="flex justify-between items-center space-x-4 mb-3">
+            <div className="flex justify-between items-center space-x-4 p-2 rounded-lg border border-gray-600/70 mb-4">
               <Label htmlFor="email" className="text-lg">
                 Email:
               </Label>
@@ -106,7 +122,7 @@ export default function Profile({ user }: { user: User }) {
             </div>
 
             {/* ID */}
-            <div className="flex justify-between items-center space-x-4 mb-3">
+            <div className="flex justify-between items-center space-x-4 p-2 rounded-lg border border-gray-600/70  mb-4">
               <Label htmlFor="id" className="text-lg">
                 ID:
               </Label>
