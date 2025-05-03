@@ -3,9 +3,9 @@ import ButtonMenu from './ButtonMenu';
 export default function NavbarAll() {
   return (
     <>
-      <header className=" bg-[#0e0e0e] border-b border-green-600/20 mb-2">
+      <header className=" bg-[#0e0e0e] border-b border-green-600 mb-2">
         <nav className="flex items-center justify-between py-1 px-2">
-          <div className="flex items-center gap-1 px-2">
+          <div className="flex items-center gap-1 sm:px-1">
             <img src="/Logomarca.png" alt="Logomarca" className="size-8" />
           </div>
 

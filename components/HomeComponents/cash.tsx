@@ -73,7 +73,7 @@ export default function Cash() {
 
       {/* Card do Saldo */}
       <Card className="w-full lg:w-[600px] px-0 shadow-none border-none bg-[#0e0e0e]">
-        <CardHeader className="flex flex-row justify-between pb-3 items-start text-green-100">
+        <CardHeader className="flex flex-row justify-between pb-2 items-start text-green-100">
           <div className="flex items-center gap-2">
             <CardTitle className="text-lg text-green-100">
               Saldo disponível
@@ -85,9 +85,9 @@ export default function Cash() {
           </div>
         </CardHeader>
 
-        <CardContent className="text-green-100">
-          <h1 className="text-4xl font-bold p-0 mb-6">
-            {showBalance ? 'R$ 130.000,00' : '••••••••'}{' '}
+        <CardContent className="text-green-50">
+          <h1 className="text-4xl font-bold p-0 mb-4">
+            {showBalance ? '130.000,00' : '••••••••'}{' '}
             <span className="text-sm font-normal">voin</span>
           </h1>
 

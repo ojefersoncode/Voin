@@ -56,7 +56,7 @@ export default function ButtonMenu() {
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">
           <DropdownMenuLabel className="p-1">
-            <div className="w-full flex flex-col rounded-lg p-1 bg-[#212121]">
+            <div className="w-full flex flex-col rounded-lg p-2 bg-[#212121]">
               <div className="flex flex-col items-center gap-4 py-2">
                 <div className="flex w-full items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
@@ -69,13 +69,15 @@ export default function ButtonMenu() {
                       <span className="text-[0.60rem]">Bronze nível 5</span>
                     </div>
                   </div>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="ml-auto bg-transparent hover:bg-transparent hover:text-green-500 border-green-500 border-none focus:border-none text-green-500 px-1 py-0"
-                  >
-                    <Pen className="size-4" />
-                  </Button>
+                  <div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="ml-auto bg-transparent hover:bg-transparent hover:text-green-500 border-green-500 border-none focus:border-none text-green-500 px-1 py-0"
+                    >
+                      <Pen className="size-4" />
+                    </Button>
+                  </div>
                 </div>
               </div>
 
@@ -104,10 +106,6 @@ export default function ButtonMenu() {
             <DropdownMenuItem>
               <Users className="size-5 mr-2" />
               <span>Amigos</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Plus className="size-5 mr-2" />
-              <span>New Team</span>
             </DropdownMenuItem>
             <DropdownMenuItem>
               <UserPlus className="size-5 mr-2" />
