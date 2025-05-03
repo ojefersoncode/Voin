@@ -32,6 +32,45 @@ export default function Cash() {
 
   return (
     <div className="flex flex-col lg:flex-row gap-6 bg-[#0e0e0e]">
+      {/* Card da Progresso e Ações */}
+      <div className="flex-1">
+        <Card className="border-none bg-transparent">
+          <CardHeader>
+            <CardTitle className="text-2xl text-green-100">
+              Bem vindo, sr Jeferson!
+            </CardTitle>
+          </CardHeader>
+
+          <CardContent>
+            <div className="mb-6">
+              <div className="flex justify-between mb-2 text-green-100">
+                <div className="flex items-center gap-1 mb-1">
+                  <img
+                    src="/Level/bronze.svg"
+                    alt="patente"
+                    className="size-7 select-none touch-pan-down"
+                  />
+                  <span>Bronze nível 5</span>
+                </div>
+                <span>Nível 6</span>
+              </div>
+
+              <Progress value={28} className="h-4 bg-white/80">
+                <div className="absolute -bottom-6 left-[28%] transform -translate-x-1/2">
+                  <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-green-500" />
+                </div>
+              </Progress>
+
+              <div className="mt-4 flex justify-center">
+                <div className="bg-green-100 rounded-md p-2 font-bold text-xs text-blue-950">
+                  Falta 72% para nível 6
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       {/* Card do Saldo */}
       <Card className="w-full lg:w-[600px] px-0 shadow-none border-none bg-[#0e0e0e]">
         <CardHeader className="flex flex-row justify-between pb-3 items-start text-green-100">
@@ -71,45 +110,6 @@ export default function Cash() {
           </div>
         </CardContent>
       </Card>
-
-      {/* Card da Progresso e Ações */}
-      <div className="flex-1">
-        <Card className="border-none bg-transparent">
-          <CardHeader>
-            <CardTitle className="text-2xl text-green-100">
-              Bem vindo, sr Jeferson!
-            </CardTitle>
-          </CardHeader>
-
-          <CardContent>
-            <div className="mb-6">
-              <div className="flex justify-between mb-2 text-green-100">
-                <div className="flex items-center gap-1 mb-1">
-                  <img
-                    src="/Level/bronze.svg"
-                    alt="patente"
-                    className="size-7 select-none touch-pan-down"
-                  />
-                  <span>Bronze nível 5</span>
-                </div>
-                <span>Nível 6</span>
-              </div>
-
-              <Progress value={28} className="h-4 bg-white/80">
-                <div className="absolute -bottom-6 left-[28%] transform -translate-x-1/2">
-                  <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-green-500" />
-                </div>
-              </Progress>
-
-              <div className="mt-4 flex justify-center">
-                <div className="bg-green-100 rounded-md p-2 font-bold text-xs text-blue-950">
-                  Falta 72% para nível 6
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
     </div>
   );
 }
