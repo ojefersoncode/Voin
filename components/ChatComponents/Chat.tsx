@@ -7,7 +7,7 @@ import Mensagems from './Mensagems';
 export default function Chat({ user }: { user: User }) {
   return (
     <>
-      <div>
+      <div className="touch-pan-x touch-pan-y">
         <header>
           <NavbarAll />
         </header>

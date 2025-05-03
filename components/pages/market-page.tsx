@@ -73,7 +73,7 @@ export default function MarketPage({ user }: { user: User }) {
   }, []);
 
   return (
-    <div className="">
+    <div className="touch-pan-x touch-pan-y">
       <div>
         <NavbarAll />
       </div>

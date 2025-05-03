@@ -113,7 +113,7 @@ export default function Mensagem({ user }: { user: User }) {
   const groupedMessages = groupMessagesByDate();
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen touch-pan-x touch-pan-y">
       {/* Header - área do contato */}
       <div className="flex w-full items-center justify-between py-2 bg-[#181818]">
         <div className="flex items-center text-green-50 gap-3 px-3">

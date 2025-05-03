@@ -13,7 +13,7 @@ export default function HomePage({ user }: { user: User }) {
         <NavbarAll />
       </header>
 
-      <main className="flex  flex-1 flex-col mb-20">
+      <main className="flex flex-1 flex-col mb-20">
         <Cash />
 
         <SubMenu />
