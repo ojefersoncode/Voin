@@ -14,11 +14,13 @@ export default function HomePage({ user }: { user: User }) {
       </header>
 
       <main className="flex flex-1 flex-col mb-20">
-        <div className="pb-4 py-2">
+        <div className="py-2">
           <Balance />
         </div>
 
-        <SubMenu />
+        <div className="py-3">
+          <SubMenu />
+        </div>
 
         <div className="sm:px-2">
           <PreviewMarket />
