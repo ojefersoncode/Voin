@@ -24,7 +24,7 @@ export default function SubMenu() {
   ];
 
   return (
-    <div className="w-full px-4 bg-[#0e0e0e]">
+    <div className="w-full max-sm:px-4 sm:px-6 bg-[#0e0e0e]">
       <Card className="bg-[#0e0e0e] border-none">
         <div className="flex flex-col gap-3">
           {/* Primeira linha - 5 itens */}
@@ -32,10 +32,10 @@ export default function SubMenu() {
             {menuItems.slice(0, 5).map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-center items-center gap-2 h-20 p-2 text-center text-xs bg-[#181818] rounded hover:bg-[#222222] transition-colors cursor-pointer"
+                className="flex flex-col justify-center items-center gap-2 h-20 p-2 text-center text-green-600 text-xs bg-[#181818] rounded hover:bg-[#222222] transition-colors cursor-pointer"
               >
                 {item.icon}
-                <span className="mt-1">{item.label}</span>
+                <span className="mt-1 text-white">{item.label}</span>
               </div>
             ))}
           </div>
@@ -45,10 +45,10 @@ export default function SubMenu() {
             {menuItems.slice(5, 10).map((item, index) => (
               <div
                 key={index + 5}
-                className="flex flex-col justify-center items-center gap-2 h-20 p-2 text-center text-xs bg-[#181818] rounded hover:bg-[#222222] transition-colors cursor-pointer"
+                className="flex flex-col justify-center items-center gap-2 h-20 p-2 text-green-600 text-center text-xs bg-[#181818] rounded hover:bg-[#222222] transition-colors cursor-pointer"
               >
                 {item.icon}
-                <span className="mt-1">{item.label}</span>
+                <span className="mt-1 text-white">{item.label}</span>
               </div>
             ))}
           </div>
