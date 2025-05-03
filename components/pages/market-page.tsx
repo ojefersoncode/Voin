@@ -67,7 +67,7 @@ export default function MarketPage({ user }: { user: User }) {
 
     const interval = setInterval(() => {
       fetchData();
-    }, 2000); // atualiza a cada 2 segundos
+    }, 3000); // atualiza a cada 3 segundos
 
     return () => clearInterval(interval); // limpa o intervalo ao desmontar o componente
   }, []);
