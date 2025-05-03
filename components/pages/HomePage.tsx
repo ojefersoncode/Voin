@@ -4,6 +4,7 @@ import NavbarAll from '../All/Navbar';
 import NavBottom from '../All/NavBottom';
 import Cash from '../HomeComponents/cash';
 import PreviewMarket from '../HomeComponents/PreviewMarket';
+import SubMenu from '../HomeComponents/SubMenu';
 
 export default function HomePage({ user }: { user: User }) {
   return (
@@ -12,8 +13,10 @@ export default function HomePage({ user }: { user: User }) {
         <NavbarAll />
       </header>
 
-      <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col mb-20">
+      <main className="flex  flex-1 flex-col mb-20">
         <Cash />
+
+        <SubMenu />
 
         <div className="sm:px-2">
           <PreviewMarket />

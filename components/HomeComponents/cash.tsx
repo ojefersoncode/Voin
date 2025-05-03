@@ -31,11 +31,11 @@ export default function Cash() {
   const [showBalance, setShowBalance] = useState(true);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 py-4 px-6 bg-[#0e0e0e]">
+    <div className="flex flex-col lg:flex-row gap-6 bg-[#0e0e0e]">
       {/* Card do Saldo */}
-      <Card className="w-full lg:w-[550px] shadow-none border-none bg-[#0e0e0e]">
-        <CardHeader className="flex flex-row justify-between items-start text-green-100">
-          <div className="flex items-center gap-2 mt-4">
+      <Card className="w-full lg:w-[600px] px-0 shadow-none border-none bg-[#0e0e0e]">
+        <CardHeader className="flex flex-row justify-between pb-3 items-start text-green-100">
+          <div className="flex items-center gap-2">
             <CardTitle className="text-lg text-green-100">
               Saldo disponível
             </CardTitle>

@@ -229,9 +229,7 @@ export default function PreviewMarket() {
       <div className="flex-1 p-4 pb-10">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">Mercado</h2>
-          {isRefreshing && (
-            <span className="text-xs text-gray-400">Atualizando...</span>
-          )}
+          {isRefreshing && <span className="text-xs text-gray-400"></span>}
         </div>
 
         {/* Cabeçalho da tabela com opções de ordenação */}
