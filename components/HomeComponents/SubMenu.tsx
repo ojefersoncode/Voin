@@ -25,7 +25,7 @@ export default function SubMenu() {
 
   return (
     <div className="w-full px-4 bg-[#0e0e0e]">
-      <Card className="bg-[#0e0e0e]">
+      <Card className="bg-[#0e0e0e] border-none">
         <div className="flex flex-col gap-3">
           {/* Primeira linha - 5 itens */}
           <div className="grid grid-cols-5 sm:grid-cols-5 md:grid-cols-5 gap-3">
