@@ -168,7 +168,7 @@ export default function PreviewMarket() {
     fetchCryptoData();
 
     // Atualizar dados a cada 5 segundos
-    const interval = setInterval(fetchCryptoData, 2000);
+    const interval = setInterval(fetchCryptoData, 3000);
     return () => {
       clearInterval(interval);
       if (timer.current) {
