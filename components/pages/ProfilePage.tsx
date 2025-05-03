@@ -7,6 +7,8 @@ import { Navbar } from '../HomeComponents/NavBar';
 import { User } from '@supabase/supabase-js';
 import { Pencil } from 'lucide-react';
 import { Footer } from '../landing/Footer';
+import NavbarAll from '../All/Navbar';
+import NavBottom from '../All/NavBottom';
 
 export default function Profile({ user }: { user: User }) {
   const [name, setName] = useState('Jeferson code');
@@ -21,42 +23,52 @@ export default function Profile({ user }: { user: User }) {
   };
 
   return (
-    <div className="flex flex-col w-full mx-auto bg-gray-100 dark:bg-black dark:bg-muted/40 min-h-screen touch-pan-x touch-pan-y">
-      {/* Navbar */}
-      <nav className="flex w-full justify-between py-4 px-4 md:px-4 bg-white dark:bg-black">
-        <div className="flex gap-1 text-xl font-bold items-center select-none">
-          <img className="size-8" src="/Voin.png" alt="logo" />
-          <div className="flex">
-            <h1 className="dark:text-gray-50">Voin</h1>
-          </div>
-        </div>
-        <div className="flex gap-2">
-          <Navbar />
-        </div>
-      </nav>
+    <div className=" w-full mx-auto bg-[#0e0e0e] dark:bg-muted/40 touch-pan-x touch-pan-y">
+      <div className=" w-full">
+        <NavbarAll />
+      </div>
 
-      <hr />
-
-      <div className="flex justify-center py-4 dark:bg-black ">
-        <div className="w-full max-w-4xl max-md:max-w-full p-1 md:p-8 bg-gray-100 dark:bg-black rounded-lg">
+      <div className="flex justify-center max-sm:px-4 mt-7 mb-24 text-green-50 bg-[#0e0e0e]">
+        <div className="w-full h-full max-w-4xl max-md:max-w-full  border border-green-600 bg-[#181818] rounded-lg">
           <CardHeader>
-            <h2 className="text-2xl font-medium text-red-600">Editar perfil</h2>
+            <h2 className="text-2xl font-medium text-green-600">
+              Editar perfil
+            </h2>
           </CardHeader>
 
           <CardContent>
             {/* Name */}
-            <div className="flex justify-between items-center space-x-4 mb-4">
+            <div className="flex justify-between items-center space-x-4 mb-3">
               <Label htmlFor="name" className="text-lg">
                 Nome:
               </Label>
               <div className="flex items-center space-x-3">
-                <span className="text-gray-600 dark:text-gray-300">{name}</span>
+                <span className="text-gray-100">{name}</span>
                 <Button
-                  variant={'outline'}
+                  variant={'ghost'}
                   onClick={() =>
                     handleEdit('name', prompt('Enter new name:', name) || name)
                   }
-                  className="text-sm"
+                  className="text-sm px-1"
+                >
+                  <Pencil className="size-4" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Name */}
+            <div className="flex justify-between items-center space-x-4 mb-3">
+              <Label htmlFor="name" className="text-lg">
+                Apelido:
+              </Label>
+              <div className="flex items-center space-x-3">
+                <span className="text-gray-100">{name}</span>
+                <Button
+                  variant={'ghost'}
+                  onClick={() =>
+                    handleEdit('name', prompt('Editar apelido:', name) || name)
+                  }
+                  className="text-sm px-1"
                 >
                   <Pencil className="size-4" />
                 </Button>
@@ -64,23 +76,21 @@ export default function Profile({ user }: { user: User }) {
             </div>
 
             {/* Phone */}
-            <div className="flex justify-between items-center space-x-4 mb-4">
+            <div className="flex justify-between items-center space-x-4 mb-3">
               <Label htmlFor="phone" className="text-lg">
                 Telefone:
               </Label>
               <div className="flex items-center space-x-3">
-                <span className="text-gray-600 dark:text-gray-300">
-                  {phone}
-                </span>
+                <span className="text-gray-100">{phone}</span>
                 <Button
-                  variant={'outline'}
+                  variant={'ghost'}
                   onClick={() =>
                     handleEdit(
                       'phone',
                       prompt('Enter new phone number:', phone) || phone
                     )
                   }
-                  className="text-sm"
+                  className="text-sm px-1"
                 >
                   <Pencil className="size-4" />
                 </Button>
@@ -88,26 +98,26 @@ export default function Profile({ user }: { user: User }) {
             </div>
 
             {/* Email */}
-            <div className="flex justify-between items-center space-x-4 mb-4">
+            <div className="flex justify-between items-center space-x-4 mb-3">
               <Label htmlFor="email" className="text-lg">
                 Email:
               </Label>
-              <span className="text-gray-600 dark:text-gray-300">{email}</span>
+              <span className="text-gray-100">{email}</span>
             </div>
 
             {/* ID */}
-            <div className="flex justify-between items-center space-x-4 mb-4">
+            <div className="flex justify-between items-center space-x-4 mb-3">
               <Label htmlFor="id" className="text-lg">
                 ID:
               </Label>
-              <span className="text-gray-600 dark:text-gray-300">{id}</span>
+              <span className="text-gray-100">{id}</span>
             </div>
           </CardContent>
 
           <CardFooter>
             <Button
-              variant={'outline'}
-              className="w-full md:w-auto mt-4 bg-red-600 hover:bg-red-400 text-gray-50 hover:text-gray-100 "
+              variant={'ghost'}
+              className="w-full md:w-auto mt-4 bg-green-600 hover:bg-green-500 text-gray-50 hover:text-gray-100 "
             >
               Salvar Alterações
             </Button>
@@ -115,8 +125,8 @@ export default function Profile({ user }: { user: User }) {
         </div>
       </div>
 
-      <div className="bg-black">
-        <Footer />
+      <div>
+        <NavBottom />
       </div>
     </div>
   );

@@ -86,7 +86,7 @@ export default function MarketPage({ user }: { user: User }) {
               <TableHead>Moeda</TableHead>
               <TableHead className="text-right">Preço (USDT)</TableHead>
               <TableHead className="text-right">Variação 24h</TableHead>
-              <TableHead className="text-right">Volume 24h</TableHead>
+              <TableHead className="text-right">Volume</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
