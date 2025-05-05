@@ -20,7 +20,7 @@ export default function NavBottom() {
   const navigateToTournament = () => router.push('/tournament');
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-[#0e0e0e] border-t border-green-500/30 z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-[#0e0e0e] border-t border-green-900/40 z-50">
       <div className="flex justify-around items-center h-16">
         <button
           className="flex flex-col items-center justify-center w-1/5 py-1 text-gray-300 "
