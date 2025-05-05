@@ -40,7 +40,7 @@ export default function ButtonMenu() {
   return (
     <>
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
+        <DropdownMenuTrigger className="touch-pan-x touch-pan-y" asChild>
           <Button
             variant="ghost"
             className="px-0 border-none outline-none bg-none"
@@ -56,8 +56,8 @@ export default function ButtonMenu() {
             </div>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56">
-          <DropdownMenuLabel className="p-1">
+        <DropdownMenuContent className="w-56 touch-pan-x touch-pan-y">
+          <DropdownMenuLabel className="p-1 touch-pan-x touch-pan-y">
             <div className="w-full flex flex-col rounded-lg p-2 bg-[#212121]">
               <div className="flex flex-col items-center py-2">
                 <div className="flex w-full items-center gap-3">
@@ -95,7 +95,7 @@ export default function ButtonMenu() {
               </form>
             </div>
           </DropdownMenuLabel>
-          <DropdownMenuGroup>
+          <DropdownMenuGroup className="touch-pan-x touch-pan-y">
             <DropdownMenuItem className="mt-2" onClick={navigateToProfile}>
               <User className="size-5 mr-2" />
               <span>Perfil</span>
