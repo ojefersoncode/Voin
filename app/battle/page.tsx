@@ -2,8 +2,10 @@ import { createClient } from '../../utils/supabase/server';
 import { redirect } from 'next/navigation';
 import { getUser } from '../../utils/supabase/queries';
 import HistoryPage from '@/components/pages/HistoryPage';
+import ScreenHome from '@/components/BattleComponents/ScreenHome';
+import BattlePage from '@/components/pages/BattlePage';
 
-export default async function contacts() {
+export default async function Battle() {
   const supabase = await createClient();
 
   const user = await getUser(supabase);
@@ -11,5 +13,5 @@ export default async function contacts() {
     return redirect('/auth/signin');
   }
 
-  return <HistoryPage user={user} />;
+  return <BattlePage user={user} />;
 }

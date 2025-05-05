@@ -18,7 +18,11 @@ export default function SubMenu() {
   const router = useRouter();
 
   const menuItems = [
-    { icon: <Swords className="size-5" />, label: 'Batalhar', route: null },
+    {
+      icon: <Swords className="size-5" />,
+      label: 'Batalhar',
+      route: '/battle'
+    },
     { icon: <FileClock className="size-5" />, label: 'Historico', route: null },
     {
       icon: <ShoppingBag className="size-5" />,
