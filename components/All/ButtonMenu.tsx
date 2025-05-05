@@ -33,7 +33,6 @@ export default function ButtonMenu() {
   const navigateToWallet = () => router.push('/voin-wallet');
   const navigateToProfile = () => router.push('/profile');
   const navigateToSettings = () => router.push('/settings');
-
   const navigateToMarket = () => router.push('/market');
   const navigateToTrade = () => router.push('/trade');
 

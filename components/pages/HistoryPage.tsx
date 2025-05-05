@@ -1,16 +1,13 @@
 'use client';
 
 import {
-  ArrowLeft,
   ArrowUp,
   ArrowDown,
-  Clock,
   CheckCircle,
   XCircle,
   AlertCircle,
   Filter
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { User } from '@supabase/supabase-js';
 import NavBottom from '../All/NavBottom';
 import NavbarAll from '../All/Navbar';
@@ -110,24 +107,24 @@ export default function HistoryPage({ user }: { user: User }) {
                       )}
                     </div>
 
-                    <div className="text-sm text-gray-400 mt-1">
+                    <div className="text-sm text-gray-200 mt-1">
                       {new Date(trade.entryTime).toLocaleString()} •{' '}
                       {trade.selectedTime}min
                     </div>
 
-                    <div className="text-sm mt-1">
-                      <span className="text-gray-400">Entrada:</span>{' '}
+                    <div className="text-sm mt-1 text-gray-200">
+                      <span className="text-gray-200">Entrada:</span>{' '}
                       {trade.entryPrice.toFixed(6)}
                       {trade.exitPrice && (
                         <>
-                          <span className="text-gray-400 ml-2">Saída:</span>{' '}
+                          <span className="text-gray-200 ml-2">Saída:</span>{' '}
                           {trade.exitPrice.toFixed(6)}
                         </>
                       )}
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-end">
+                  <div className="flex gap-0.5 mt-5 items-end">
                     <div className="font-bold">
                       <span
                         className={`
