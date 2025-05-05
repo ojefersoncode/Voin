@@ -59,14 +59,14 @@ export default function ButtonMenu() {
         <DropdownMenuContent className="w-56">
           <DropdownMenuLabel className="p-1">
             <div className="w-full flex flex-col rounded-lg p-2 bg-[#212121]">
-              <div className="flex flex-col items-center gap-4 py-2">
+              <div className="flex flex-col items-center py-2">
                 <div className="flex w-full items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
                     <UserCircle className="w-7 h-7 text-green-500" />
                   </div>
-                  <div className="flex flex-col mt-0.5">
+                  <div className="flex flex-col">
                     <h2 className="text-x gfont-bold px-1">Sr Jeferson</h2>
-                    <div className="flex items-center mt-1">
+                    <div className="flex items-center">
                       <img src="/Level/bronze.svg" alt="" className="size-4" />
                       <span className="text-[0.60rem]">Bronze nível 5</span>
                     </div>
