@@ -64,7 +64,7 @@ export default function ButtonMenu() {
                   <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
                     <UserCircle className="w-7 h-7 text-green-500" />
                   </div>
-                  <div className="flex flex-col mt-2">
+                  <div className="flex flex-col mt-0.5">
                     <h2 className="text-x gfont-bold px-1">Sr Jeferson</h2>
                     <div className="flex items-center mt-1">
                       <img src="/Level/bronze.svg" alt="" className="size-4" />
@@ -74,8 +74,9 @@ export default function ButtonMenu() {
                   <div>
                     <Button
                       variant="ghost"
+                      onClick={navigateToProfile}
                       size="sm"
-                      className="ml-auto bg-transparent hover:bg-transparent hover:text-green-500 border-green-500 border-none focus:border-none text-green-500 px-1 py-0"
+                      className="ml-auto bg-transparent hover:bg-transparent hover:text-green-500 border-green-500 border-none focus:border-none text-green-500 px-2 py-0"
                     >
                       <Pen className="size-4" />
                     </Button>
@@ -87,7 +88,7 @@ export default function ButtonMenu() {
                 <label className="text-[0.70rem] text-gray-300 mr-1">
                   Id da conta
                 </label>
-                <div className="flex w-full items-center text-xs text-green-50 gap-2 mt-2 cursor-pointer">
+                <div className="flex w-full items-center text-xs text-green-50 gap-1 py-0 cursor-pointer">
                   <span className="font-light">ID: 268434192</span>
                   <Copy className="size-3 text-gray-100" />
                 </div>
@@ -95,34 +96,34 @@ export default function ButtonMenu() {
             </div>
           </DropdownMenuLabel>
           <DropdownMenuGroup>
-            <DropdownMenuItem onClick={navigateToProfile}>
+            <DropdownMenuItem className="mt-2" onClick={navigateToProfile}>
               <User className="size-5 mr-2" />
               <span>Perfil</span>
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={navigateToWallet}>
+            <DropdownMenuItem className="mt-2" onClick={navigateToWallet}>
               <Wallet className="size-5 mr-2" />
               <span>Carteira</span>
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuGroup>
-            <DropdownMenuItem>
+            <DropdownMenuItem className="mt-2">
               <Users className="size-5 mr-2" />
               <span>Amigos</span>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem className="mt-2">
               <UserPlus className="size-5 mr-2" />
               <span>Indicar amigos</span>
             </DropdownMenuItem>
           </DropdownMenuGroup>
-          <DropdownMenuItem>
+          <DropdownMenuItem className="mt-2">
             <PhoneCall className="size-5 mr-2" />
             <span>Suportet</span>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={navigateToSettings}>
+          <DropdownMenuItem className="mt-2" onClick={navigateToSettings}>
             <Settings className="size-5 mr-2" />
             <span>Configurações</span>
           </DropdownMenuItem>
-          <DropdownMenuItem>
+          <DropdownMenuItem className="my-2">
             <LogOut className="size-5 mr-2" />
             <span>Sair</span>
           </DropdownMenuItem>

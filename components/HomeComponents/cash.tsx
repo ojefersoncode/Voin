@@ -31,7 +31,7 @@ export default function Cash() {
   const [showBalance, setShowBalance] = useState(true);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 bg-[#0e0e0e]">
+    <div className="flex flex-col lg:flex-row bg-[#0e0e0e]">
       {/* Card da Progresso e Ações */}
       <div className="flex-1">
         <Card className="border-none bg-transparent">
@@ -42,9 +42,9 @@ export default function Cash() {
           </CardHeader>
 
           <CardContent>
-            <div className="mb-6">
-              <div className="flex justify-between mb-2 text-green-100">
-                <div className="flex items-center gap-1 mb-1">
+            <div className="mb-4">
+              <div className="flex justify-between text-green-50">
+                <div className="flex items-center gap-1 mb-2">
                   <img
                     src="/Level/bronze.svg"
                     alt="patente"
@@ -55,14 +55,14 @@ export default function Cash() {
                 <span>Nível 6</span>
               </div>
 
-              <Progress value={28} className="h-4 bg-white/80">
+              <Progress value={28} className="h-4 bg-green-800/30">
                 <div className="absolute -bottom-6 left-[28%] transform -translate-x-1/2">
                   <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-green-500" />
                 </div>
               </Progress>
 
               <div className="mt-4 flex justify-center">
-                <div className="bg-green-100 rounded-md p-2 font-bold text-xs text-blue-950">
+                <div className="bg-green-100 rounded-md p-2 font-bold text-xs text-green-900">
                   Falta 72% para nível 6
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function Cash() {
         <CardContent className="text-green-50">
           <h1 className="text-4xl font-bold p-0 mb-4">
             {showBalance ? '130.000,00' : '••••••••'}{' '}
-            <span className="text-sm font-normal">voin</span>
+            <span className="text-sm font-normal">pontos</span>
           </h1>
 
           <div className="grid grid-cols-3 gap-4 mt-4">
@@ -99,9 +99,9 @@ export default function Cash() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-green-500 rounded-xl p-4 flex flex-col items-center justify-center cursor-pointer"
+                className="border border-green-500 bg-[#181818] hover:bg-[#212121] transition-all rounded-xl py-4 flex flex-col items-center justify-center cursor-pointer"
               >
-                <item.icon className="h-8 w-8 mb-2" />
+                <item.icon className="size-6 mb-4" />
                 <span className="text-xs font-bold text-white">
                   {item.label}
                 </span>

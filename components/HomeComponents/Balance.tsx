@@ -26,7 +26,7 @@ export default function Balance() {
         <CardContent className="text-green-50">
           <h1 className="text-4xl font-bold p-0 mb-4">
             {showBalance ? '130.000,00' : '••••••••'}{' '}
-            <span className="text-sm font-normal">voin</span>
+            <span className="text-sm font-normal">pontos</span>
           </h1>
 
           <div className="grid grid-cols-3 gap-4 mt-4">
