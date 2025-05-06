@@ -27,7 +27,7 @@ export default function ScreenHome() {
         <NavbarAll />
       </header>
       <div className="flex justify-center items-center w-full my-auto">
-        <div className="flex flex-col w-full justify-between items-center my-auto h-auto m-auto md:px-7 max-md:px-4 touch-pan-x touch-pan-y">
+        <div className="flex flex-col w-full justify-between items-center my-auto h-auto my-auto md:px-7 max-md:px-4 touch-pan-x touch-pan-y">
           <Card className="bg-[#0e0e0e] border-none p-1 touch-pan-x touch-pan-y">
             <div className="flex flex-col font-sans text-white overflow-hidden">
               {/* Main Content */}
@@ -41,15 +41,15 @@ export default function ScreenHome() {
             </div>
           </Card>
 
-          <Card className="flex  bg-[#0e0e0e] border-none p-1 touch-pan-x touch-pan-y">
+          <Card className="flex  bg-[#0e0e0e] border-none touch-pan-x touch-pan-y">
             <div className="flex font-sans text-white overflow-hidden">
               {/* Card Showcase */}
-              <div className="flex flex-col justify-center pt-1">
-                <div className="flex items-center justify-center gap-6">
+              <div className="flex flex-col justify-center">
+                <div className="flex items-center justify-center gap-4">
                   {iconsRight.map(({ icon: Icon, label }, index) => (
                     <div
                       key={index}
-                      className="w-20 h-20 max-md:w-14 max-md:h-14 rounded-md flex flex-col items-center justify-center space-y-1"
+                      className="w-20 h-20 max-md:w-14 max-md:h-14 flex flex-col items-center justify-center space-y-1"
                     >
                       <Icon className="size-6 text-white" />
                       <span className="text-xs pt-2">{label}</span>
@@ -62,9 +62,9 @@ export default function ScreenHome() {
         </div>
       </div>
 
-      <div className="md:mt-20">
+      <footer className="xl:mt-24 max-sm:mt-0">
         <NavBattle />
-      </div>
+      </footer>
     </div>
   );
 }
