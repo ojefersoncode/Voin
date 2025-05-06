@@ -7,17 +7,10 @@ import ScreenHome from '../BattleComponents/ScreenHome';
 
 export default function BattlePage({ user }: { user: User }) {
   return (
-    <div className="relative flex flex-col min-h-screen bg-[0e0e0e] w-full touch-pan-x touch-pan-y">
-      <header>
-        <NavbarAll />
-      </header>
-
-      <main className="flex w-full justify-center items-center">
+    <div className="flex flex-col bg-[0e0e0e] w-full touch-pan-x touch-pan-y">
+      <main className="">
         <ScreenHome />
       </main>
-      <div>
-        <NavBottom />
-      </div>
     </div>
   );
 }
