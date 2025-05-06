@@ -14,7 +14,7 @@ export default function ScreenHome() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-dvh">
       <header>
         <NavbarAll />
       </header>
@@ -24,7 +24,7 @@ export default function ScreenHome() {
           <Card className="flex bg-[#0e0e0e] border-none touch-pan-x touch-pan-y">
             <div className="flex font-sans text-white overflow-hidden">
               <div className="flex flex-col justify-center">
-                <div className="flex items-center justify-center gap-6">
+                <div className="flex items-center justify-center gap-6 max-md:gap-4">
                   {imagensLevel.map(({ Image: imgSrc, label }, index) => (
                     <div
                       key={index}
@@ -35,7 +35,7 @@ export default function ScreenHome() {
                       <img
                         src={imgSrc}
                         alt={label}
-                        className="select-none size-16 max-md:size-12"
+                        className="select-none size-16 max-md:size-14"
                       />
                     </div>
                   ))}
