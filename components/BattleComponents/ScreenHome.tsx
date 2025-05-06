@@ -97,7 +97,7 @@ export default function ScreenHome() {
         </div>
       </div>
 
-      <div>
+      <div className="md:mt-20">
         <NavBottom />
       </div>
     </div>
