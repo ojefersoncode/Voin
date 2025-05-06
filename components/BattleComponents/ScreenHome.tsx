@@ -19,7 +19,7 @@ export default function ScreenHome() {
         <NavbarAll />
       </header>
 
-      <div className="flex justify-center items-center w-full ">
+      <div className="flex justify-center items-center w-full my-auto">
         <div className="flex flex-col w-full justify-between items-center touch-pan-x touch-pan-y">
           <Card className="flex bg-[#0e0e0e] border-none touch-pan-x touch-pan-y">
             <div className="flex font-sans text-white overflow-hidden">
