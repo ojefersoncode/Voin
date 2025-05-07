@@ -6,7 +6,7 @@ import Products from '../StoreComponents/Products';
 
 export default function StorePage({ user }: { user: User }) {
   return (
-    <div className="relative flex flex-col min-h-screen w-full touch-pan-x touch-pan-y">
+    <div className="relative flex flex-col h-dvh w-full touch-pan-x touch-pan-y">
       <header>
         <NavbarAll />
       </header>
