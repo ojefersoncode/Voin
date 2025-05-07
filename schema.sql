@@ -16,6 +16,15 @@ alter table users enable row level security;
 create policy "Can view own user data." on users for select using (auth.uid() = id);
 create policy "Can update own user data." on users for update using (auth.uid() = id);
 
+
+
+CREATE POLICY "Allow insert leads"
+ON leads
+FOR INSERT
+USING (true) -- Permite qualquer inserção
+WITH CHECK (email IS NOT NULL); -- Exemplo de condição de checagem
+
+
 /**
 * This trigger automatically creates a user entry when a new user signs up via Supabase Auth.
 */ 

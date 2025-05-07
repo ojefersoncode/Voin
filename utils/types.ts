@@ -7,6 +7,13 @@ export enum AuthState {
   UpdatePassword = 'update_password'
 }
 
+export type Lead = {
+  id?: string;
+  name: string;
+  email: string;
+  phone: string;
+};
+
 export type StateInfo = {
   title: string;
   description?: string;

@@ -1,38 +1,63 @@
 'use client';
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState, useEffect } from 'react';
 import { createClient } from '@/utils/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
+import { useRouter } from 'next/navigation';
+import { SupabaseClient } from '@supabase/supabase-js';
+import { Database } from '@/types_db';
 
 type Lead = {
   id?: string;
+  name: string;
   email: string;
+  phone: string;
 };
 
 export const CaptureLeads = () => {
-  const [email, setEmail] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(false);
-  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false);
+  const router = useRouter();
+
+  // Tipagem correta para o cliente Supabase
+  const [supabase, setSupabase] = useState<SupabaseClient<Database> | null>(
+    null
+  );
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const { toast } = useToast();
 
+  // Inicializa o cliente Supabase apenas uma vez no lado do cliente
   useEffect(() => {
-    const savedEmail = localStorage.getItem('lead_email');
-    if (savedEmail) {
-      toast({
-        title: 'Aviso',
-        description: 'Você já se cadastrou anteriormente.',
-        variant: 'destructive'
-      });
+    if (typeof window !== 'undefined') {
+      try {
+        const client = createClient();
+        setSupabase(client);
+        console.log('Supabase client initialized successfully');
+      } catch (err) {
+        console.error('Error initializing Supabase client:', err);
+        toast({
+          title: 'Erro',
+          description: 'Erro ao inicializar o cliente Supabase',
+          variant: 'destructive'
+        });
+      }
     }
   }, [toast]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) {
+
+    console.log('Campos:', { name, email, phone });
+
+    if (!email.trim() || !name.trim() || !phone.trim()) {
       toast({
         title: 'Erro',
-        description: 'Digite um email válido.',
+        description: 'Preencha todos os campos.',
         variant: 'destructive'
       });
       return;
@@ -51,54 +76,101 @@ export const CaptureLeads = () => {
     setLoading(true);
     setIsButtonDisabled(true);
 
-    setTimeout(() => {
-      setIsButtonDisabled(false);
-    }, 30000);
+    try {
+      // Verificar se o cliente Supabase foi inicializado corretamente
+      if (!supabase) {
+        throw new Error('Cliente Supabase não inicializado');
+      }
 
-    const supabase = createClient();
-    const lead: Lead = { email };
+      console.log('Iniciando inserção de lead:', { name, email, phone });
 
-    const { data, error } = await supabase.from('leads' as any).insert([lead]);
+      // Tentativa de inserção com melhor depuração
+      const { data, error, status } = await supabase
+        .from('leads')
+        .insert([
+          {
+            name,
+            email,
+            phone
+          }
+        ])
+        .select(); // Retorna os dados inseridos, caso precise de confirmação
 
-    if (error) {
+      console.log('Resposta do Supabase:', { data, error, status });
+
+      if (error) {
+        toast({
+          title: 'Erro',
+          description: `Erro ao salvar: ${error.message || 'Erro desconhecido'}`,
+          variant: 'destructive'
+        });
+        console.error('Detalhes do erro Supabase:', {
+          message: error.message,
+          code: error.code,
+          details: error.details,
+          hint: error.hint
+        });
+      } else {
+        toast({
+          title: 'Sucesso',
+          description: 'Lead cadastrado com sucesso!'
+        });
+        localStorage.setItem('lead_email', email);
+        setName('');
+        setEmail('');
+        setPhone('');
+      }
+    } catch (err) {
+      // Melhor tratamento de erros
+      const errorMessage =
+        err instanceof Error ? err.message : 'Erro desconhecido';
       toast({
         title: 'Erro',
-        description: 'Erro ao salvar. Tente novamente.',
+        description: `Ocorreu um erro ao processar seu cadastro: ${errorMessage}`,
         variant: 'destructive'
       });
-      console.error('Supabase error:', error);
-    } else {
-      toast({
-        title: 'Sucesso',
-        description: 'Email cadastrado com sucesso!'
-      });
-      localStorage.setItem('lead_email', email);
-      setEmail('');
+      console.error('Erro completo:', err);
+    } finally {
+      setLoading(false);
+      setTimeout(() => setIsButtonDisabled(false), 30000);
     }
-
-    setLoading(false);
   };
 
   return (
     <form
-      className="flex w-full items-center max-md:justify-center gap-4"
+      className="flex flex-col w-full items-center max-md:justify-center gap-4"
       onSubmit={handleSubmit}
     >
       <Input
+        type="text"
+        placeholder="Digite seu nome"
+        className="bg-green-800/80 p-3 w-full text-white"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        required
+      />
+      <Input
         type="email"
         placeholder="Digite seu e-mail"
-        className="bg-muted/50 dark:bg-muted/80 w-72 p-3 max-md:w-60"
-        aria-label="email"
+        className="bg-green-800/80 p-3 w-full text-white"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
       />
+      <Input
+        type="tel"
+        placeholder="Digite seu telefone (ex: 31999999999)"
+        className="bg-green-800/80 p-3 w-full text-white"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+        required
+      />
       <Button
-        className="p-3 max-md:text-sm"
+        className="w-full bg-[#0e0e0e] hover:bg-green-900/10 transition-colors border border-green-600 p-3 text-md max-md:text-sm"
         type="submit"
         disabled={loading || isButtonDisabled}
       >
-        {loading ? 'Enviando...' : 'Inscrever'}
+        {loading ? 'Enviando cadastro...' : 'Cadastrar'}
       </Button>
     </form>
   );
