@@ -41,7 +41,7 @@ export default function NavBattle() {
         <div className="flex flex-col justify-center items-center ">
           <button
             onClick={navigateToTrade}
-            className="flex flex-col items-center justify-center z-20 bottom-4 p-4 py-5 rounded-full border border-green-600 bg-[#181818] text-gray-100 relative"
+            className="flex flex-col items-center justify-center z-20 bottom-4 p-4 rounded-full border border-green-600 bg-[#181818] text-gray-100 relative"
           >
             <SwordIcon className="h-5 w-5" />
             <span className="text-xs mt-1 text-white">Batalha</span>
