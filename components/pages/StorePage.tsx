@@ -11,7 +11,7 @@ export default function StorePage({ user }: { user: User }) {
         <NavbarAll />
       </header>
 
-      <main className="flex flex-1 flex-col max-lg:mb-24">
+      <main className="flex flex-1 flex-col max-lg:mb-12">
         <div className="py-3">
           <Products />
         </div>
