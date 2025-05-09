@@ -25,18 +25,18 @@ export default async function LandingPage() {
       <div className="absolute w-full bg-[#0e0e0e] overflow-hidden touch-pan-x touch-pan-y">
         <Navbar user={user} />
         <HeroLeads />
-        <FAQ />
 
-        {/* <Sponsors />
+        {/* <FAQ />
+        <Sponsors />
         <Hero />     
         <About />
         <HowItWorks />
         <Cta />
         <Testimonials />
         <Pricing user={user} /> 
-        <Newsletter />*/}
+        <Newsletter />
         <Footer />
-        <ScrollToTop />
+        <ScrollToTop />*/}
       </div>
     </>
   );

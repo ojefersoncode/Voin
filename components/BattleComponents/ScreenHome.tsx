@@ -38,7 +38,12 @@ export default function ScreenHome() {
     </div>
   );
 
-  const StatusMatch = ['X1', 'X2', 'X3', 'X4'];
+  const StatusMatch = [
+    { key: 'X1', title: 'Solo' },
+    { key: 'X2', title: 'Duo' },
+    { key: 'X3', title: 'Trio' },
+    { key: 'X4', title: 'Squad' }
+  ];
 
   return (
     <div className="flex flex-col min-h-dvh">
@@ -74,22 +79,23 @@ export default function ScreenHome() {
           </div>
           <div className="flex w-full justify-center items-center py-2">
             <span className="text-xs font-semibold">
-              20 vitorias para prata
+              20 vitórias para prata
             </span>
           </div>
         </Card>
 
-        <Card className="flex w-full justify-center items-center pt-7 bg-[#0e0e0e] border-none">
+        <Card className="flex w-full justify-center items-center pt-5 bg-[#0e0e0e] border-none">
           <div className="flex justify-center items-center w-full font-sans text-white gap-6 overflow-x-auto ">
             {StatusMatch.map((item) => (
               <Toggle
-                variant={'outline'}
-                key={item}
-                pressed={selectedMatch === item}
-                onPressedChange={() => setSelectedMatch(item)}
+                key={item.key}
+                title={item.title}
+                variant="outline"
+                pressed={selectedMatch === item.key}
+                onPressedChange={() => setSelectedMatch(item.key)}
                 className="border-green-600 px-5 py-8 text-xl font-extrabold data-[state=on]:bg-green-900/20 data-[state=on]:border-green-400 data-[state=on]:border-2"
               >
-                {item}
+                {item.key}
               </Toggle>
             ))}
           </div>
