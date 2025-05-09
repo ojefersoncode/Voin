@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Card } from '../ui/card';
-import NavbarAll from '../All/Navbar';
 import NavBattle from './NavBattle';
 import { Toggle } from '../ui/toggle';
+import Battlebar from './BattleBar';
 
 export default function ScreenHome() {
   const [selectedMatch, setSelectedMatch] = useState('X1');
@@ -43,10 +43,10 @@ export default function ScreenHome() {
   return (
     <div className="flex flex-col min-h-dvh">
       <header>
-        <NavbarAll />
+        <Battlebar />
       </header>
 
-      <div className="flex flex-col w-full justify-center h-auto my-auto items-center gap-4 sm:pb-28 max-md:pb-4 px-4">
+      <div className="flex flex-col w-full justify-center h-auto my-auto items-center gap-4 sm:pb-28 max-md:pb-12 px-4">
         <Card className="bg-[#0e0e0e] border-none pt-7">
           <div className="flex flex-col font-sans text-white overflow-hidden">
             <div className="flex-grow flex flex-col items-center justify-center">
