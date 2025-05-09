@@ -69,17 +69,6 @@ export const FAQ = () => {
           </AccordionItem>
         ))}
       </Accordion>
-
-      <h3 className="font-medium mt-4 text-white">
-        Ainda tem mais perguntas?{' '}
-        <a
-          rel="noreferrer noopener"
-          href="#"
-          className="text-green-600 transition-all border-primary hover:text-green-400"
-        >
-          Entre em contato
-        </a>
-      </h3>
     </section>
   );
 };
