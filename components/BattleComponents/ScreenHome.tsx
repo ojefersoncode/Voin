@@ -31,7 +31,7 @@ export default function ScreenHome() {
     >
       <div className="w-full h-full bg-white/80" />
       <div
-        className="absolute top-0 left-0 h-full bg-green-500 transition-all"
+        className="absolute top-0 left-0 h-full bg-yellow-900/80 transition-all"
         style={{ width: `${value}%` }}
       />
       {children}
@@ -46,7 +46,7 @@ export default function ScreenHome() {
         <NavbarAll />
       </header>
 
-      <div className="flex flex-col w-full justify-between items-center gap-4 py-4 px-4">
+      <div className="flex flex-col w-full justify-center my-auto items-center gap-4 sm:pb-28 px-4">
         <Card className="bg-[#0e0e0e] border-none pt-7">
           <div className="flex flex-col font-sans text-white overflow-hidden">
             <div className="flex-grow flex flex-col items-center justify-center">
@@ -72,7 +72,7 @@ export default function ScreenHome() {
               alt="patente"
             />
           </div>
-          <div className="flex w-full justify-center items-center py-1">
+          <div className="flex w-full justify-center items-center py-2">
             <span className="text-xs font-semibold">
               20 vitorias para prata
             </span>
