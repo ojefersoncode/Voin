@@ -9,7 +9,6 @@ export default function NavBattle() {
 
   const navigateToHomePage = () => router.push('/Home');
   const navigateToHistory = () => router.push('/History');
-  const navigateToTrade = () => router.push('/trade');
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-[#0e0e0e] border-t border-green-900/40 z-50">
@@ -19,7 +18,7 @@ export default function NavBattle() {
           className="flex flex-col items-center justify-center py-1 text-gray-300"
           onClick={navigateToHomePage}
         >
-          <Home className="h-5 w-5" />
+          <Home className="h-6 w-6" />
         </button>
 
         <SerachBattle />
@@ -29,7 +28,7 @@ export default function NavBattle() {
           className="flex flex-col items-center justify-center py-1 text-gray-300"
           onClick={navigateToHistory}
         >
-          <History className="h-5 w-5" />
+          <History className="h-6 w-6" />
         </button>
       </div>
     </div>
