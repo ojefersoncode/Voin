@@ -46,7 +46,7 @@ export default function ScreenHome() {
         <Battlebar />
       </header>
 
-      <div className="flex flex-col w-full justify-center my-auto items-center gap-4 sm:pb-28 max-sm:pb-16 px-4">
+      <div className="flex flex-col w-full justify-center my-auto items-center gap-4 sm:pb-28 max-sm:pb-20 px-4">
         <Card className="bg-[#0e0e0e] border-none pt-7">
           <div className="flex flex-col font-sans text-white overflow-hidden">
             <div className="flex-grow flex flex-col items-center justify-center">
