@@ -41,14 +41,14 @@ export function PassVip() {
               {vipItems.map((item) => (
                 <div
                   key={item.id}
-                  className="grid grid-cols-4 items-center gap-4"
+                  className="flex w-full items-center justify-center gap-4"
                 >
-                  <Label className="text-right">{item.label}</Label>
+                  <span className="text-xl mr-2">{item.label}</span>
                   <div>
                     <img
                       src={item.imgSrc}
                       alt={item.label}
-                      className="size-5 mr-2"
+                      className="size-5"
                     />
                   </div>
                 </div>

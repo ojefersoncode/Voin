@@ -52,7 +52,7 @@ export default function ScreenHome() {
       </header>
 
       <div className="flex flex-col w-full justify-center my-auto items-center gap-4 sm:pb-28 max-sm:pb-20 px-4">
-        <Card className="bg-[#0e0e0e] border-none pt-7">
+        <Card className="bg-[#0e0e0e] border-none pt-4">
           <div className="flex flex-col font-sans text-white overflow-hidden">
             <div className="flex-grow flex flex-col items-center justify-center">
               <img
@@ -84,7 +84,7 @@ export default function ScreenHome() {
           </div>
         </Card>
 
-        <Card className="flex w-full justify-center items-center pt-5 bg-[#0e0e0e] border-none">
+        <Card className="flex w-full justify-center items-center pt-5 pb-4 bg-[#0e0e0e] border-none">
           <div className="flex justify-center items-center w-full font-sans text-white gap-6 overflow-x-auto ">
             {StatusMatch.map((item) => (
               <Toggle

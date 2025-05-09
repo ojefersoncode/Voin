@@ -53,7 +53,7 @@ export function SerachBattle() {
           </div>
         </Button>
       </DrawerTrigger>
-      <DrawerContent className="bg-[#0e0e0e] border-black p-1">
+      <DrawerContent className="bg-[#181818] border-none p-1">
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader className="flex flex-col w-full justify-center items-center text-white pt-10">
             <DrawerTitle>
