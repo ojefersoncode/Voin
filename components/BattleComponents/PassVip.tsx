@@ -36,7 +36,7 @@ export function PassVip() {
         </DialogHeader>
 
         <ScrollArea className="w-full justify-center items-center h-[70vh] pt-2 border-none bg-transparent scroll-smooth">
-          <div className="grid justify-center items-center gap-4">
+          <div className="grid justify-center items-center gap-4 py-4">
             <div className="grid gap-4">
               {vipItems.map((item) => (
                 <div

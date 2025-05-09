@@ -1,4 +1,3 @@
-import { ArrowLeftIcon } from 'lucide-react';
 import BalanceButton from '../All/BalanceButton';
 import ButtonMenu from '../All/ButtonMenu';
 import { Button } from '../ui/button';
