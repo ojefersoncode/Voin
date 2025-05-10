@@ -21,17 +21,15 @@ export default function Profile({ user }: { user: User }) {
   };
 
   return (
-    <div className=" w-full mx-auto bg-[#0e0e0e] dark:bg-muted/40 min-h-screen mb-24 touch-pan-x touch-pan-y">
+    <div className=" w-full mx-auto bg-background dark:bg-muted/40 min-h-screen mb-24 touch-pan-x touch-pan-y">
       <div className=" w-full">
         <NavbarAll />
       </div>
 
-      <div className="flex justify-center max-sm:px-4 mt-7  text-green-50 bg-[#0e0e0e] touch-pan-x touch-pan-y">
-        <div className="w-full h-full max-w-4xl max-md:max-w-full  border border-green-600 bg-[#181818] rounded-lg touch-pan-x touch-pan-y">
+      <div className="flex justify-center max-sm:px-4 mt-7  text-green-50 bg-background touch-pan-x touch-pan-y">
+        <div className="w-full h-full max-w-4xl max-md:max-w-full  border border-green-600 bg-btn rounded-lg touch-pan-x touch-pan-y">
           <CardHeader>
-            <h2 className="text-xl font-semibold text-green-600">
-              Editar perfil
-            </h2>
+            <h2 className="text-xl font-titan text-text">Editar perfil</h2>
           </CardHeader>
 
           <CardContent>
@@ -46,7 +44,7 @@ export default function Profile({ user }: { user: User }) {
                   }
                   className="text-sm px-1"
                 >
-                  <span className="mr-2 text-lg">Editar Foto</span>
+                  <span className="mr-2 font-inter text-lg">Editar Foto</span>
 
                   <Pencil className="size-5" />
                 </Button>
@@ -131,10 +129,7 @@ export default function Profile({ user }: { user: User }) {
           </CardContent>
 
           <CardFooter>
-            <Button
-              variant={'ghost'}
-              className="w-full md:w-auto mt-4 bg-green-600 hover:bg-green-500 text-gray-50 hover:text-gray-100 "
-            >
+            <Button className="w-full md:w-auto mt-4 border border-opacity-35 bg-background/20 hover:bg-background/40 text-gray-50 hover:text-gray-100 ">
               Salvar Alterações
             </Button>
           </CardFooter>
