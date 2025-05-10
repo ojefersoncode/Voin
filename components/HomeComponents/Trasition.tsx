@@ -107,8 +107,8 @@ export default function Trasition() {
 
   return (
     <>
-      <div className="p-4 bg-[#0e0e0e]">
-        <div className="p-4 mt-8 mb-24 border-2 border-green-500 rounded-xl">
+      <div className="p-4 bg-background">
+        <div className="p-4 mt-2 mb-24 border-2 border-green-500 rounded-xl">
           <div className="px-4">
             <h2 className="text-2xl font-bold mt-2">Histórico de Transações</h2>
           </div>
@@ -122,7 +122,7 @@ export default function Trasition() {
                   onValueChange={setTimeRange}
                   className="w-auto"
                 >
-                  <TabsList className="bg-[#181818]">
+                  <TabsList className="bg-btn">
                     <TabsTrigger value="7d">7 dias</TabsTrigger>
                     <TabsTrigger value="30d">30 dias</TabsTrigger>
                     <TabsTrigger value="90d">90 dias</TabsTrigger>
@@ -131,7 +131,7 @@ export default function Trasition() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                <div className="bg-[#181818] rounded-md p-4 flex items-center justify-between">
+                <div className="bg-btn rounded-md p-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
                       <ArrowUpRight className="h-5 w-5 text-green-500" />
@@ -146,7 +146,7 @@ export default function Trasition() {
                   </div>
                 </div>
 
-                <div className="bg-[#181818] rounded-xl p-4 flex items-center justify-between">
+                <div className="bg-btn rounded-xl p-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-red-500/30 flex items-center justify-center">
                       <ArrowDownRight className="h-5 w-5 text-white" />
