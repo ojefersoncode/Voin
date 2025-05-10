@@ -46,10 +46,10 @@ export function SerachBattle() {
           <div className="flex flex-col justify-center items-center">
             <div
               title="Batalhar"
-              className="flex flex-col items-center justify-center z-20 bottom-7 py-4 px-6 rounded-lg border bg-background text-text relative"
+              className="flex flex-col items-center justify-center z-20 bottom-8 py-4 px-6 rounded-lg border bg-background text-text relative"
             >
               <Swords className="h-7 w-7" />
-              <span className="text-xs font-inter mt-2">Batalha</span>
+              <span className="text-xs font-inter mt-1 sm:mt-2">Batalha</span>
             </div>
           </div>
         </Button>
