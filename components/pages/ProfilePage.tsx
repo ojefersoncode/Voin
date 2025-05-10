@@ -27,7 +27,7 @@ export default function Profile({ user }: { user: User }) {
       </div>
 
       <div className="flex justify-center max-sm:px-4 mt-7  text-green-50 bg-background touch-pan-x touch-pan-y">
-        <div className="w-full h-full max-w-4xl max-md:max-w-full  border border-green-600 bg-btn rounded-lg touch-pan-x touch-pan-y">
+        <div className="w-full h-full max-w-4xl max-md:max-w-full  border border/40 bg-btn rounded-lg touch-pan-x touch-pan-y">
           <CardHeader>
             <h2 className="text-xl font-titan text-text">Editar perfil</h2>
           </CardHeader>
