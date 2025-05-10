@@ -44,7 +44,7 @@ export default function ButtonMenu() {
             variant="ghost"
             className="px-0 border-none outline-none bg-none"
           >
-            <div className="flex w-full justify-center items-center border border-opacity-40 p-1 rounded-md">
+            <div className="flex w-full justify-center items-center border border-opacity-80 p-1 rounded-md">
               <Image
                 className="size-7"
                 src="/Level/bronze.svg"

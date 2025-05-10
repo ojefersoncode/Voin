@@ -54,22 +54,21 @@ export function SerachBattle() {
           </div>
         </Button>
       </DrawerTrigger>
-      <DrawerContent className="bg-background border-none p-1">
+      <DrawerContent className="bg-background border-t rounded-lg p-1">
         <div className="mx-auto w-full max-w-sm">
-          <DrawerHeader className="flex flex-col w-full justify-center items-center text-white pt-10">
+          <DrawerHeader className="flex flex-col w-full justify-center items-center text-white pt-7">
             <DrawerTitle>
-              <span className="text-2xl">Buscando Batalha</span>
+              <span className="text-2xl font-titan">Buscando Batalha</span>
             </DrawerTitle>
-            <DrawerDescription className="pt-6">
-              <span className="text-xl font-semibold text-green-100">
+            <DrawerDescription className="pt-4">
+              <span className="text-2xl font-inter text-border">
                 {formatTime(seconds)}
               </span>
             </DrawerDescription>
           </DrawerHeader>
-          <div className="pb-2"></div>
           <DrawerFooter className="pb-7">
             <DrawerClose asChild>
-              <Button className="px-2 py-6 text-base border bg-transparent hover:bg-green-950/20 transition-colors">
+              <Button className="px-2 py-6 text-base border bg-btn hover:bg-btn/40 transition-colors">
                 Cancelar
               </Button>
             </DrawerClose>
