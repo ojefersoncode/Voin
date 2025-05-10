@@ -11,11 +11,11 @@ export default function NavBattle() {
   const navigateToHistory = () => router.push('/History');
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-opacity-40 z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-background border-t  z-50">
       <div className="flex justify-center gap-14 items-center h-20">
         <button
           title="Início"
-          className="flex flex-col items-center justify-center py-2 text-text"
+          className="flex flex-col items-center justify-center py-1 text-text"
           onClick={navigateToHomePage}
         >
           <Home className="h-6 w-6" />
@@ -26,7 +26,7 @@ export default function NavBattle() {
 
         <button
           title="Histórico"
-          className="flex flex-col items-center justify-center py-2 text-text"
+          className="flex flex-col items-center justify-center py-1 text-text"
           onClick={navigateToHistory}
         >
           <History className="h-6 w-6" />

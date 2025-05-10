@@ -77,10 +77,8 @@ export default function ScreenHome() {
               alt="patente"
             />
           </div>
-          <div className="flex w-full justify-center items-center py-2">
-            <span className="text-xs font-semibold">
-              20 vitórias para prata
-            </span>
+          <div className="flex w-full justify-center items-center py-1">
+            <span className="text-xs font-inter">20 vitórias para prata</span>
           </div>
         </Card>
 
