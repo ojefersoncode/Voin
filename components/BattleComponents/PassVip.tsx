@@ -20,7 +20,7 @@ export function PassVip() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-trasnparent hover:bg-transparent border border-green-600">
+        <Button className="bg-trasnparent hover:bg-transparent border border-opacity-40">
           <div className="flex items-center">
             <img src="/Vip.png" alt="Passe vip" className="size-5 mr-2" />
             <span className="text-sm font-medium">Passe vip</span>

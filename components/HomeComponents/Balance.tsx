@@ -8,16 +8,16 @@ export default function Balance() {
   const [showBalance, setShowBalance] = useState(true);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 bg-[#0e0e0e]">
+    <div className="flex flex-col lg:flex-row gap-6 bg-background">
       {/* Card do Saldo */}
-      <Card className="w-full lg:w-[600px] px-0 shadow-none border-none bg-[#0e0e0e]">
+      <Card className="w-full lg:w-[600px] px-0 shadow-none border-none bg-background">
         <CardHeader className="flex flex-row justify-between pb-2 items-start text-green-100">
           <div className="flex items-center gap-2">
             <CardTitle className="text-lg text-green-100">
               Saldo disponível
             </CardTitle>
             <Eye
-              className="h-5 w-5 cursor-pointer"
+              className="h-5 w-5 cursor-pointer text-text"
               onClick={() => setShowBalance(!showBalance)}
             />
           </div>
@@ -37,9 +37,9 @@ export default function Balance() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="border border-green-500 bg-[#181818] hover:bg-[#212121] transition-all rounded-xl py-4 flex flex-col items-center justify-center cursor-pointer"
+                className="border bg-btn hover:bg-background/40 transition-colors rounded-xl py-4 flex flex-col items-center justify-center cursor-pointer"
               >
-                <item.icon className="size-6 mb-4" />
+                <item.icon className="size-6 mb-4 text-text" />
                 <span className="text-xs font-bold text-white">
                   {item.label}
                 </span>

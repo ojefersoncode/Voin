@@ -18,10 +18,16 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: 'hsl(var(--border))',
+        // 🔁 Substituindo apenas essas duas propriedades:
+        border: '#FCBD68',
+        background: '#001E22',
+        text: '#ffffff',
+        select: 'CCD2D3',
+        btn: '#193438',
+
+        // Mantendo os outros intactos:
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -56,7 +62,7 @@ module.exports = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
-      },
+      }
     }
   },
   plugins: [require('tailwindcss-animate')]

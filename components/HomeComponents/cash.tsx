@@ -55,9 +55,9 @@ export default function Cash() {
                 <span>Nível 6</span>
               </div>
 
-              <Progress value={28} className="h-4 bg-green-800/30">
+              <Progress value={28} className="h-4 bg-background">
                 <div className="absolute -bottom-6 left-[28%] transform -translate-x-1/2">
-                  <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-green-500" />
+                  <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px]" />
                 </div>
               </Progress>
 
@@ -72,7 +72,7 @@ export default function Cash() {
       </div>
 
       {/* Card do Saldo */}
-      <Card className="w-full lg:w-[600px] px-0 shadow-none border-none bg-[#0e0e0e]">
+      <Card className="w-full lg:w-[600px] px-0 shadow-none border-none bg-background">
         <CardHeader className="flex flex-row justify-between pb-2 items-start text-green-100">
           <div className="flex items-center gap-2">
             <CardTitle className="text-lg text-green-100">

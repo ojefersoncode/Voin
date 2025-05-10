@@ -225,7 +225,7 @@ export default function PreviewMarket() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0e0e0e] text-white flex flex-col touch-pan-x touch-pan-y">
+    <div className="min-h-screen bg-background text-white flex flex-col touch-pan-x touch-pan-y">
       <div className="flex-1 p-4 pb-10">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">Mercado</h2>
@@ -233,7 +233,7 @@ export default function PreviewMarket() {
         </div>
 
         {/* Cabeçalho da tabela com opções de ordenação */}
-        <div className="grid grid-cols-12 gap-2 px-4 py-3 bg-[#181818] rounded-t-xl text-sm text-gray-400">
+        <div className="grid grid-cols-12 gap-2 px-4 py-3 bg-btn border border-opacity-30 rounded-t-xl text-sm text-gray-400">
           <div
             className="col-span-5 flex items-center gap-1 cursor-pointer"
             onClick={() => {
@@ -307,16 +307,16 @@ export default function PreviewMarket() {
         </div>
 
         {/* Lista de criptomoedas */}
-        <div className="rounded-b-xl overflow-hidden">
+        <div className="rounded-b-xl overflow-hidden border border-opacity-30">
           {isFirstLoad ? (
-            <div className="bg-[#181818] p-8 text-center text-gray-400 rounded-b-xl">
+            <div className="bg-btn p-8 text-center text-gray-400 rounded-b-xl">
               Carregando dados...
             </div>
           ) : filteredAndSortedData.length > 0 ? (
             filteredAndSortedData.map((crypto) => (
               <div
                 key={crypto.symbol}
-                className={`grid grid-cols-12 gap-2 px-4 py-4 bg-[#181818] border-t border-[#363636] hover:bg-[#212121] cursor-pointer transition-colors ${crypto.isUpdating ? 'opacity-100' : 'opacity-100'}`}
+                className={`grid grid-cols-12 gap-2 px-4 py-4 bg-btn border-t border-opacity-40 hover:bg-background/40 cursor-pointer transition-colors ${crypto.isUpdating ? 'opacity-100' : 'opacity-100'}`}
                 onClick={() => router.push(`/crypto/${crypto.symbol}`)}
               >
                 <div className="col-span-5 flex items-center gap-3">
@@ -373,8 +373,7 @@ export default function PreviewMarket() {
         <div className="mt-6 flex justify-center">
           <Button
             onClick={navigateToMarket}
-            variant="outline"
-            className="border-green-500 text-green-500 bg-[#181818] hover:bg-green-900/20 hover:text-white"
+            className="border text-white bg-background hover:bg-background hover:text-white/70"
           >
             Ver mais criptomoedas
             <ChevronRight className="ml-1 h-4 w-4" />

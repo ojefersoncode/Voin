@@ -44,7 +44,7 @@ export default function ButtonMenu() {
             variant="ghost"
             className="px-0 border-none outline-none bg-none"
           >
-            <div className="flex w-full justify-center items-center border border-green-600 p-1 rounded-md">
+            <div className="flex w-full justify-center items-center border border-opacity-40 p-1 rounded-md">
               <Image
                 className="size-7"
                 src="/Level/bronze.svg"
@@ -55,13 +55,13 @@ export default function ButtonMenu() {
             </div>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56 touch-pan-x touch-pan-y">
+        <DropdownMenuContent className="w-56 touch-pan-x touch-pan-y bg-background">
           <DropdownMenuLabel className="p-1 touch-pan-x touch-pan-y">
-            <div className="w-full flex flex-col rounded-lg p-2 bg-[#212121]">
+            <div className="w-full flex flex-col rounded-lg p-2 bg-border/40">
               <div className="flex flex-col items-center py-2">
                 <div className="flex w-full items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                    <UserCircle className="w-7 h-7 text-green-500" />
+                  <div className="w-10 h-10 rounded-full bg-border/40 flex items-center justify-center">
+                    <UserCircle className="w-7 h-7 text-text" />
                   </div>
                   <div className="flex flex-col">
                     <h2 className="text-x gfont-bold px-1">Sr Jeferson</h2>
@@ -75,7 +75,7 @@ export default function ButtonMenu() {
                       variant="ghost"
                       onClick={navigateToProfile}
                       size="sm"
-                      className="ml-auto bg-transparent hover:bg-transparent hover:text-green-500 border-green-500 border-none focus:border-none text-green-500 px-2 py-0"
+                      className="ml-auto bg-transparent hover:bg-transparent hover:text-text border-none focus:border-none text-text px-2 py-0"
                     >
                       <Pen className="size-4" />
                     </Button>
@@ -94,38 +94,45 @@ export default function ButtonMenu() {
               </form>
             </div>
           </DropdownMenuLabel>
-          <DropdownMenuGroup className="touch-pan-x touch-pan-y">
-            <DropdownMenuItem className="mt-2" onClick={navigateToProfile}>
-              <User className="size-5 mr-2" />
-              <span>Perfil</span>
+          <DropdownMenuGroup className="touch-pan-x touch-pan-y text-white">
+            <DropdownMenuItem
+              className="mt-2 text-text hover:text-text"
+              onClick={navigateToProfile}
+            >
+              <User className="size-5 mr-2 " />
+              <span className="text-white">Perfil</span>
             </DropdownMenuItem>
-            <DropdownMenuItem className="mt-2" onClick={navigateToWallet}>
-              <Wallet className="size-5 mr-2" />
-              <span>Carteira</span>
+            <DropdownMenuItem
+              className="mt-2 text-text hover:text-text"
+              onClick={navigateToWallet}
+            >
+              <Wallet className="size-5 mr-2 " />
+              <span className="text-white">Carteira</span>
             </DropdownMenuItem>
-          </DropdownMenuGroup>
-          <DropdownMenuGroup>
-            <DropdownMenuItem className="mt-2">
+            <DropdownMenuItem className="mt-2 text-text hover:text-text">
               <Users className="size-5 mr-2" />
-              <span>Amigos</span>
+              <span className="text-white">Amigos</span>
             </DropdownMenuItem>
-            <DropdownMenuItem className="mt-2">
+            <DropdownMenuItem className="mt-2 text-text hover:text-text">
               <UserPlus className="size-5 mr-2" />
-              <span>Indicar amigos</span>
+              <span className="text-white">Indicar amigos</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="mt-2 text-text hover:text-text">
+              <PhoneCall className="size-5 mr-2" />
+              <span className="text-white">Suportet</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem
+              className="mt-2 text-text hover:text-text"
+              onClick={navigateToSettings}
+            >
+              <Settings className="size-5 mr-2" />
+              <span className="text-white">Configurações</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="my-2 text-text hover:text-text">
+              <LogOut className="size-5 mr-2" />
+              <span className="text-white">Sair</span>
             </DropdownMenuItem>
           </DropdownMenuGroup>
-          <DropdownMenuItem className="mt-2">
-            <PhoneCall className="size-5 mr-2" />
-            <span>Suportet</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem className="mt-2" onClick={navigateToSettings}>
-            <Settings className="size-5 mr-2" />
-            <span>Configurações</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem className="my-2">
-            <LogOut className="size-5 mr-2" />
-            <span>Sair</span>
-          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </>

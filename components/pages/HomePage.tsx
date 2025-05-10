@@ -8,7 +8,7 @@ import Balance from '../HomeComponents/Balance';
 
 export default function HomePage({ user }: { user: User }) {
   return (
-    <div className="relative flex flex-col min-h-screen w-full touch-pan-x touch-pan-y">
+    <div className="relative flex flex-col min-h-screen w-full bg-background touch-pan-x touch-pan-y">
       <header>
         <NavbarAll />
       </header>

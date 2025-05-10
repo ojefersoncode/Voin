@@ -24,7 +24,7 @@ export default function BalanceButton() {
             variant="ghost"
             className="px-0 border-none outline-none bg-none"
           >
-            <div className="flex w-full text-green-50 justify-center items-center border border-green-600 p-2 rounded-md">
+            <div className="flex w-full text-green-50 justify-center items-center border border-opacity-40 p-2 rounded-md">
               <img src="/Voin.png" alt="Coin" className="size-5" />
               <h1 className="mr-1 text-xs">130.000.00</h1>
             </div>

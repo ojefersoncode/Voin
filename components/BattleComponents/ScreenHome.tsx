@@ -46,17 +46,17 @@ export default function ScreenHome() {
   ];
 
   return (
-    <div className="flex flex-col min-h-dvh">
+    <div className="flex flex-col min-h-dvh bg-background">
       <header>
         <Battlebar />
       </header>
 
       <div className="flex flex-col w-full justify-center my-auto items-center gap-4 sm:pb-28 max-sm:pb-20 px-4">
-        <Card className="bg-[#0e0e0e] border-none pt-4">
+        <Card className="bg-background border-none pt-4">
           <div className="flex flex-col font-sans text-white overflow-hidden">
             <div className="flex-grow flex flex-col items-center justify-center">
               <img
-                className="animate-pulse drop-shadow-xl size-52 shadow-white select-none"
+                className=" drop-shadow-xl size-52 shadow-white select-none"
                 src={`/Level/${nivelAtual.toLowerCase()}.svg`}
                 alt="patente"
               />
@@ -64,9 +64,9 @@ export default function ScreenHome() {
           </div>
         </Card>
 
-        <Card className="flex flex-col w-full max-w-sm px-10 bg-[#0e0e0e] border-none">
+        <Card className="flex flex-col w-full max-w-sm px-10 bg-background border-none">
           <div className="flex items-center w-full font-sans text-white gap-2 overflow-hidden">
-            <Progress value={28} className="h-4 w-full bg-green-600/30">
+            <Progress value={28} className="h-4 w-full">
               <div className="absolute -bottom-6 left-[28%] transform -translate-x-1/2">
                 <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-green-500" />
               </div>
@@ -84,7 +84,7 @@ export default function ScreenHome() {
           </div>
         </Card>
 
-        <Card className="flex w-full justify-center items-center pt-5 pb-4 bg-[#0e0e0e] border-none">
+        <Card className="flex w-full justify-center items-center pt-5 pb-4 bg-background border-none">
           <div className="flex justify-center items-center w-full font-sans text-white gap-6 overflow-x-auto ">
             {StatusMatch.map((item) => (
               <Toggle
@@ -93,7 +93,7 @@ export default function ScreenHome() {
                 variant="outline"
                 pressed={selectedMatch === item.key}
                 onPressedChange={() => setSelectedMatch(item.key)}
-                className="border-green-600 px-5 py-8 text-xl font-extrabold data-[state=on]:bg-green-900/20 data-[state=on]:border-green-400 data-[state=on]:border-2"
+                className="border-2 px-5 py-8 text-xl font-extrabold data-[state=on]:text-[#836FFF]/30 data-[state=on]:bg-background/20 data-[state=on]:border-[#836FFF]/30 data-[state=on]:border-4 hover:border-[#836FFF] hover:text-[#836FFF]"
               >
                 {item.key}
               </Toggle>
