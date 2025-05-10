@@ -61,7 +61,7 @@ export default function HistoryPage({ user }: { user: User }) {
   }
 
   return (
-    <div className="flex-1 overflow-hidden flex flex-col bg-[#0e0e0e] touch-pan-x touch-pan-y">
+    <div className="flex-1 overflow-hidden flex flex-col bg-background touch-pan-x touch-pan-y">
       <div>
         <NavbarAll />
       </div>
@@ -88,8 +88,8 @@ export default function HistoryPage({ user }: { user: User }) {
                   trade.result === 'win'
                     ? 'bg-green-900/30'
                     : trade.result === 'loss'
-                      ? 'bg-red-900/30'
-                      : 'bg-gray-800/30'
+                      ? 'bg-red-700/30'
+                      : 'bg-gray-700/30'
                 }`}
               >
                 <div className="flex justify-between items-start">

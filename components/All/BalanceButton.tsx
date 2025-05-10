@@ -30,7 +30,7 @@ export default function BalanceButton() {
             </div>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56 touch-pan-x touch-pan-y">
+        <DropdownMenuContent className="w-56 touch-pan-x touch-pan-y bg-background border-opacity-40">
           <DropdownMenuItem className="mt-1 font-semibold text-sm">
             <div className="flex items-center gap-2">
               <PiggyBank className="size-4" />

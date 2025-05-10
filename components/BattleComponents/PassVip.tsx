@@ -27,7 +27,7 @@ export function PassVip() {
           </div>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] h-dvh bg-[#0e0e0e] border-none text-white">
+      <DialogContent className="sm:max-w-[425px] h-dvh bg-background border-none text-white">
         <DialogHeader>
           <DialogTitle className="flex items-center p-1">
             <img src="/Vip.png" alt="Passe vip" className="size-6 mr-2" />
@@ -59,7 +59,7 @@ export function PassVip() {
 
         <DialogFooter className="flex w-full justify-center items-center">
           <Button
-            className="flex w-full bg-transparent hover:bg-green-950/20 transition-colors border border-green-600"
+            className="flex w-full bg-transparent hover:bg-btn transition-colors border border-opacity-40"
             type="submit"
           >
             Comprar passe vip
