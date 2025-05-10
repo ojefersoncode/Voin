@@ -62,7 +62,7 @@ export default function Tournament({ user }: { user: User }) {
   ];
 
   return (
-    <div className="relative flex flex-col min-h-screen w-full touch-pan-x touch-pan-y">
+    <div className="relative flex flex-col min-h-screen w-full bg-background touch-pan-x touch-pan-y">
       <header>
         <NavbarAll />
       </header>
@@ -93,7 +93,7 @@ export default function Tournament({ user }: { user: User }) {
             Essas moedas poderão ser trocadas por cripto ativos BNB
           </p>
           <div className="pt-4">
-            <Button className="border px-3 py-1 border-green-500 bg-green-950 hover:bg-green-800/60 transition-all">
+            <Button className="px-3 py-1 border  bg-btn hover:bg-btn/40 transition-colors">
               <span className="text-xs">Ver regulamento</span>
             </Button>
           </div>
@@ -103,7 +103,7 @@ export default function Tournament({ user }: { user: User }) {
           {torneios.map((torneio) => (
             <div
               key={torneio.id}
-              className="border border-green-600 rounded-xl bg-[#0e0e0e] shadow-md hover:shadow-lg transition-all"
+              className="border border-opacity-40 rounded-xl bg-btn/40 shadow-md hover:shadow-lg transition-all"
               onMouseEnter={() => setHoveredId(torneio.id)}
               onMouseLeave={() => setHoveredId(null)}
             >

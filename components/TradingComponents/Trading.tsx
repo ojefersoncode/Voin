@@ -96,17 +96,17 @@ export default function TradingAll() {
   };
 
   return (
-    <div className=" bg-[#0e0e0e] text-white flex flex-col touch-pan-x touch-pan-y">
-      <header className=" bg-[#0e0e0e] border-b border-green-500/20 mb-2">
+    <div className=" bg-background text-white flex flex-col touch-pan-x touch-pan-y">
+      <header className="border-b border-opacity-40 mb-2">
         <nav className="flex items-center justify-between px-2">
           <div className="flex items-center gap-4">
             <img src="/Logomarca.png" alt="Logo" className="size-8" />
             <div className="flex items-center gap-1 px-2">
               <Select value={selectedPair} onValueChange={setSelectedPair}>
-                <SelectTrigger className="bg-[#0e0e0e] text-white py-2 px-2 rounded border border-gray-500/30 w-full">
+                <SelectTrigger className="bg-background text-white py-2 px-2 rounded border border-gray-500/30 w-full">
                   <SelectValue placeholder="Selecione um par" />
                 </SelectTrigger>
-                <SelectContent className="bg-[#181818] text-white border border-green-500/30">
+                <SelectContent className="bg-background text-white border border-opacity-40">
                   {availablePairs.map((pair) => (
                     <SelectItem key={pair.value} value={pair.value}>
                       {pair.label}
@@ -118,7 +118,7 @@ export default function TradingAll() {
           </div>
 
           <div className="flex gap-2 p-4">
-            <div className="flex items-center justify-center gap-1 px-4 rounded-md text-green-50 border border-green-50 border-opacity-20 cursor-pointer bg-[#181818]">
+            <div className="flex items-center justify-center gap-1 px-4 rounded-md text-green-50 border border-green-50 border-opacity-20 cursor-pointer bg-background">
               <img src="/Voin.png" alt="Logo" className="size-5" />
               <h1 className="mr-1 text-xs">130.000.00</h1>
             </div>
@@ -157,18 +157,22 @@ export default function TradingAll() {
           </div>
 
           <div className="px-4 md:pt-4">
-            <div className="grid grid-cols-2 bg-[#0e0e0e] border-t border-gray-500/30">
+            <div className="grid grid-cols-2 bg-background border-t border-gray-500/30">
               {/* Informações */}
               <div className="flex w-full justify-center items-center border max-md:pb-1 border-gray-500/30">
                 <div className="flex flex-col w-full justify-center px-2 h-full">
                   <Label className="text-xs text-gray-400">Tempo</Label>
                   <Select value={selectedTime} onValueChange={setSelectedTime}>
-                    <SelectTrigger className="bg-[#0e0e0e] text-white py-4 rounded border border-none w-full">
+                    <SelectTrigger className="bg-background text-white py-4 rounded border border-none w-full">
                       <SelectValue placeholder="Selecione um par" />
                     </SelectTrigger>
-                    <SelectContent className="bg-[#181818] text-white border border-green-500/30">
+                    <SelectContent className="bg-background text-white border border-opacity-40">
                       {availableTimes.map((time) => (
-                        <SelectItem key={time.value} value={time.value}>
+                        <SelectItem
+                          className="bg-background"
+                          key={time.value}
+                          value={time.value}
+                        >
                           {time.label}
                         </SelectItem>
                       ))}
@@ -176,12 +180,12 @@ export default function TradingAll() {
                   </Select>
                 </div>
               </div>
-              <div className="px-3 py-2 border border-gray-500/30 flex flex-col gap-2">
+              <div className="px-3 py-2 border border-opacity-40 flex flex-col gap-2">
                 <Label className="text-xs text-gray-400">Valor</Label>
                 <div className="flex w-full justify-center items-center gap-2">
                   <button
                     onClick={handleDecrement}
-                    className="px-2 py-1 bg-[#212121] text-white rounded"
+                    className="px-2 py-1 bg-background text-xl text-white rounded"
                   >
                     -
                   </button>
@@ -190,11 +194,11 @@ export default function TradingAll() {
                     type="text"
                     value={inputValue}
                     onChange={handleChange}
-                    className="bg-transparent w-20 text-green-50 px-1 border-[#494949] text-center"
+                    className="bg-transparent w-20 text-green-50 px-1 border-none text-center"
                   />
                   <button
                     onClick={handleIncrement}
-                    className="px-2 py-1 bg-[#212121] text-white rounded"
+                    className="px-2 py-1 text-xl bg-background text-white rounded"
                   >
                     +
                   </button>

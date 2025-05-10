@@ -9,7 +9,7 @@ import NavbarAll from '../All/Navbar';
 
 export default function VoinWallet({ user }: { user: User }) {
   return (
-    <div className="min-h-screen bg-[#0e0e0e] text-white flex flex-col touch-pan-x touch-pan-y">
+    <div className="min-h-screen bg-background text-white flex flex-col touch-pan-x touch-pan-y">
       <div>
         <NavbarAll />
       </div>
