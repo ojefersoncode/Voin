@@ -63,14 +63,40 @@ export default function TradingAll() {
           interval: '1',
           container_id: 'tv_chart_container',
           locale: 'br',
-          theme: 'dark',
+          theme: 'Dark',
           width: '100%',
           height: '500',
           style: '1',
           hide_top_toolbar: false,
           hide_legend: false,
           withdateranges: true,
-          allow_symbol_change: true
+          allow_symbol_change: true,
+          save_image: false,
+          toolbar_bg: '#001216',
+
+          custom_css_url: '',
+          disabled_features: [
+            'header_symbol_search',
+            'header_screenshot',
+            'adaptive_logo',
+            'left_toolbar',
+            'go_to_date',
+            'compare_symbol',
+            'border_around_the_chart',
+            'header_undo_redo',
+            'header_widget',
+            'show_chart_property_page'
+          ],
+          enabled_features: [
+            'use_localstorage_for_settings',
+            'hide_left_toolbar_by_default',
+            'side_toolbar_in_fullscreen_mode'
+          ],
+          charts_storage_url: 'https://saveload.tradingview.com',
+          client_id: 'tradingview.com',
+          user_id: 'public_user',
+          charts_storage_api_version: '1.1',
+          timezone: 'America/Sao_Paulo'
         });
       }
     };
@@ -91,12 +117,12 @@ export default function TradingAll() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
+    const value = e.target.value.replace(/\D/g, '');
     setInputValue(Number(value));
   };
 
   return (
-    <div className=" bg-background text-white flex flex-col touch-pan-x touch-pan-y">
+    <div className="bg-background text-white flex flex-col touch-pan-x touch-pan-y">
       <header className="border-b border-opacity-40 mb-2">
         <nav className="flex items-center justify-between px-2">
           <div className="flex items-center gap-4">
@@ -117,7 +143,7 @@ export default function TradingAll() {
             </div>
           </div>
 
-          <div className="flex gap-2 p-4">
+          <div className="flex gap-2 p-4 bg-background">
             <div className="flex items-center justify-center gap-1 px-4 rounded-md text-green-50 border border-green-50 border-opacity-20 cursor-pointer bg-background">
               <img src="/Voin.png" alt="Logo" className="size-5" />
               <h1 className="mr-1 text-xs">130.000.00</h1>
@@ -130,12 +156,12 @@ export default function TradingAll() {
       </header>
 
       {/* DESKTOP */}
-      <div className="md:flex w-full h-screen flex-1">
+      <div className="md:flex w-full h-screen flex-1 bg-background">
         {/* Gráfico */}
-        <div className="flex-1 h-auto px-4 sm:pt-4 pb-4">
+        <div className="flex-1 h-auto px-4 sm:pt-4 pb-4 bg-background">
           <div
             id="tv_chart_container"
-            className="w-full sm:h-[600px] max-sm:h-[400px]"
+            className="w-full sm:h-[600px] max-sm:h-[400px] bg-background"
           />
         </div>
 
@@ -157,16 +183,18 @@ export default function TradingAll() {
           </div>
 
           <div className="px-4 md:pt-4">
-            <div className="grid grid-cols-2 bg-background border-t border-gray-500/30">
+            <div className="grid grid-cols-2 bg-background  border border-border/40">
               {/* Informações */}
               <div className="flex w-full justify-center items-center border max-md:pb-1 border-gray-500/30">
                 <div className="flex flex-col w-full justify-center px-2 h-full">
-                  <Label className="text-xs text-gray-400">Tempo</Label>
+                  <Label className="text-xs text-gray-400 font-inter">
+                    Tempo
+                  </Label>
                   <Select value={selectedTime} onValueChange={setSelectedTime}>
-                    <SelectTrigger className="bg-background text-white py-4 rounded border border-none w-full">
+                    <SelectTrigger className="bg-background text-xs font-inter text-white py-4 rounded border border-none w-full">
                       <SelectValue placeholder="Selecione um par" />
                     </SelectTrigger>
-                    <SelectContent className="bg-background text-white border border-opacity-40">
+                    <SelectContent className="bg-background text-xs font-inter text-white border border-opacity-40">
                       {availableTimes.map((time) => (
                         <SelectItem
                           className="bg-background"

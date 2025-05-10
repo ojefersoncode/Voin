@@ -6,6 +6,27 @@ import { PHProvider } from './providers';
 import { ThemeProvider } from '../components/landing/theme-provider';
 import { Toaster } from '../components/ui/toaster';
 import PostHogPageViewWrapper from '../components/pages/PostHogPageViewWrapper';
+import { Inter, Titan_One, Poppins as PoppinsFont } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['700'],
+  variable: '--font-inter'
+});
+
+const titanOne = Titan_One({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-titan-one'
+});
+
+const poppins = PoppinsFont({
+  weight: ['700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins'
+});
 
 const meta = {
   title: 'Voin',
@@ -65,7 +86,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${inter.variable} ${titanOne.variable}`}>
       <ThemeProvider>
         <PHProvider>
           <body>

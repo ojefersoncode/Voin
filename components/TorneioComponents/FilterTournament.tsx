@@ -19,10 +19,10 @@ export function FilterTournament() {
 
   return (
     <Select>
-      <SelectTrigger className="w-[120px] bg-[#181818]">
+      <SelectTrigger className="w-[120px] bg-background">
         <SelectValue placeholder="Filtrar por" />
       </SelectTrigger>
-      <SelectContent className="bg-[#181818]">
+      <SelectContent className="bg-background">
         <SelectGroup>
           {alltorneios.map((alltorneios) => (
             <SelectItem key={alltorneios.id} value={alltorneios.id}>

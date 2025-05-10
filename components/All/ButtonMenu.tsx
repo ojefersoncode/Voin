@@ -64,10 +64,14 @@ export default function ButtonMenu() {
                     <UserCircle className="w-7 h-7 text-text" />
                   </div>
                   <div className="flex flex-col">
-                    <h2 className="text-x gfont-bold px-1">Sr Jeferson</h2>
+                    <h2 className="text-x gfont-bold px-1 font-titan">
+                      Sr Jeferson
+                    </h2>
                     <div className="flex items-center">
                       <img src="/Level/bronze.svg" alt="" className="size-4" />
-                      <span className="text-[0.60rem]">Bronze nível 5</span>
+                      <span className="text-[0.60rem] font-inter">
+                        Bronze nível 5
+                      </span>
                     </div>
                   </div>
                   <div>
@@ -84,7 +88,7 @@ export default function ButtonMenu() {
               </div>
 
               <form className="flex flex-col px-1 pb-2 text-green-50">
-                <label className="text-[0.70rem] text-gray-300 mr-1">
+                <label className="text-[0.70rem] text-gray-100 mr-1 font-inter">
                   Id da conta
                 </label>
                 <div className="flex w-full items-center text-xs text-green-50 gap-1 py-0 cursor-pointer">

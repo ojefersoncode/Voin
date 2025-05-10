@@ -23,7 +23,6 @@ export default function SubMenu() {
       label: 'Batalhar',
       route: '/battle'
     },
-    { icon: <FileClock className="size-5" />, label: 'Historico', route: null },
     {
       icon: <ShoppingBag className="size-5" />,
       label: 'Lojinha',
@@ -33,7 +32,6 @@ export default function SubMenu() {
     { icon: <Share className="size-5" />, label: 'Convidar', route: null },
     { icon: <Calendar className="size-5" />, label: 'Tarefas', route: null },
     { icon: <Gift className="size-5" />, label: 'Bônus', route: null },
-    { icon: <Users className="size-5" />, label: 'Grupos', route: null },
     {
       icon: <MessageCircle className="size-5" />,
       label: 'Mensagem',
@@ -46,25 +44,12 @@ export default function SubMenu() {
     <div className="w-full max-sm:px-4 sm:px-6 bg-background">
       <Card className="bg-background border-none">
         <div className="flex flex-col gap-3">
-          <div className="grid grid-cols-5 sm:grid-cols-5 md:grid-cols-5 gap-3">
-            {menuItems.slice(0, 5).map((item, index) => (
+          <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-8 gap-3">
+            {menuItems.slice(0).map((item, index) => (
               <div
                 key={index}
                 onClick={() => item.route && router.push(item.route)}
-                className="flex flex-col justify-center items-center gap-2 h-20 p-2 text-center border text-text text-xs bg-btn rounded hover:bg-background/40 transition-colors cursor-pointer"
-              >
-                {item.icon}
-                <span className="mt-1 text-white">{item.label}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-5 sm:grid-cols-5 md:grid-cols-5 gap-3">
-            {menuItems.slice(5, 10).map((item, index) => (
-              <div
-                key={index + 5}
-                onClick={() => item.route && router.push(item.route)}
-                className="flex flex-col justify-center items-center gap-2 h-20 p-2 border text-text text-center text-xs bg-btn rounded hover:bg-background/40 transition-colors cursor-pointer"
+                className="flex flex-col justify-center items-center gap-2 h-20 p-2 font-inter text-center   text-border text-xs bg-btn rounded hover:bg-background/40 transition-colors cursor-pointer"
               >
                 {item.icon}
                 <span className="mt-1 text-white">{item.label}</span>

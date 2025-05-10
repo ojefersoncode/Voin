@@ -16,16 +16,20 @@ module.exports = {
         '2xl': '1400px'
       }
     },
+
     extend: {
+      fontFamily: {
+        inter: ['var(--font-inter)', 'sans-serif'],
+        titan: ['var(--font-titan-one)', 'sans-serif'],
+        poppins: ['var(--font-poppins)', 'sans-serif']
+      },
       colors: {
-        // 🔁 Substituindo apenas essas duas propriedades:
         border: '#FCBD68',
         background: '#001E22',
         text: '#ffffff',
-        select: 'CCD2D3',
+        select: '#CCD2D3', // Corrigido: estava sem #
         btn: '#193438',
 
-        // Mantendo os outros intactos:
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         foreground: 'hsl(var(--foreground))',

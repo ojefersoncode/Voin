@@ -68,7 +68,7 @@ export default function Tournament({ user }: { user: User }) {
       </header>
 
       <main className="flex flex-1 flex-col min-h-[calc(100vh_-_theme(spacing.16))]">
-        <div className="py-4 px-4 sm:px-7">
+        <div className="pt-8 pb-2 px-4 sm:px-7">
           <img
             src="/Banner/Banner.png"
             alt="Logomarca"
@@ -78,7 +78,7 @@ export default function Tournament({ user }: { user: User }) {
 
         <div className="flex w-full items-center content-center justify-between px-8 max-md:px-4 mt-4">
           <div className=" text-gray-50  ">
-            <h1 className="text-2xl sm:text-4xl font-black mt-4">
+            <h1 className="text-2xl sm:text-4xl font-titan mt-4">
               Torneios e batalhas
             </h1>
           </div>
@@ -88,13 +88,13 @@ export default function Tournament({ user }: { user: User }) {
         </div>
 
         <div className="px-8 max-md:px-4 mb-6">
-          <p className="flex text-sm sm:text-lg font-thin text-gray-200 mt-4">
+          <p className="flex text-sm sm:text-lg font-inter text-gray-200 mt-4">
             Jogue torneios e batalhas para conseguir moedas VOIN <br />
             Essas moedas poderão ser trocadas por cripto ativos BNB
           </p>
           <div className="pt-4">
             <Button className="px-3 py-1 border  bg-btn hover:bg-btn/40 transition-colors">
-              <span className="text-xs">Ver regulamento</span>
+              <span className="text-xs font-inter">Ver regulamento</span>
             </Button>
           </div>
         </div>
@@ -116,12 +116,12 @@ export default function Tournament({ user }: { user: User }) {
               </div>
 
               <div className="p-4 text-green-50">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 font-titan">
                   <h1>{torneio.name}</h1>
                   <span>🏆</span>
                 </div>
 
-                <div className="flex w-full justify-between gap-3 mt-3">
+                <div className="flex w-full justify-between gap-3 mt-3 font-inter">
                   <span>Premiação total:</span>
                   <div className="flex gap-2 items-center">
                     <p>{torneio.premio}</p>
@@ -130,7 +130,9 @@ export default function Tournament({ user }: { user: User }) {
                 </div>
 
                 <div className="mt-3">
-                  <h2 className="line-clamp-2">{torneio.description}</h2>
+                  <h2 className="line-clamp-2 font-thin">
+                    {torneio.description}
+                  </h2>
                 </div>
               </div>
 
