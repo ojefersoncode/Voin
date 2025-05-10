@@ -57,10 +57,10 @@ export default function ButtonMenu() {
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56 touch-pan-x touch-pan-y bg-background">
           <DropdownMenuLabel className="p-1 touch-pan-x touch-pan-y">
-            <div className="w-full flex flex-col rounded-lg p-2 bg-border/40">
+            <div className="w-full flex flex-col rounded-lg p-2 bg-btn">
               <div className="flex flex-col items-center py-2">
                 <div className="flex w-full items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-border/40 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-background/40 flex items-center justify-center">
                     <UserCircle className="w-7 h-7 text-text" />
                   </div>
                   <div className="flex flex-col">
