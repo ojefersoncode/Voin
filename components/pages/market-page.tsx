@@ -73,25 +73,29 @@ export default function MarketPage({ user }: { user: User }) {
   }, []);
 
   return (
-    <div className="touch-pan-x touch-pan-y">
+    <div className="bg-background touch-pan-x touch-pan-y">
       <div>
         <NavbarAll />
       </div>
 
-      <div className="p-6 mb-24">
+      <div className="p-6 mb-24 bg-background">
         <h2 className="text-xl text-green-50 font-bold mb-4">Mercado Cripto</h2>
-        <Table className="px-2 rounded-lg bg-[#181818]">
+        <Table className="px-2 rounded-lg bg-background">
           <TableHeader>
-            <TableRow>
-              <TableHead>Moeda</TableHead>
-              <TableHead className="text-right">Preço (USDT)</TableHead>
-              <TableHead className="text-right">Variação 24h</TableHead>
-              <TableHead className="text-right">Volume</TableHead>
+            <TableRow className="bg-btn hover:bg-btn/40">
+              <TableHead className="text-text">Moeda</TableHead>
+              <TableHead className="text-right text-text">
+                Preço (USDT)
+              </TableHead>
+              <TableHead className="text-right text-text">
+                Variação 24h
+              </TableHead>
+              <TableHead className="text-right text-text">Volume</TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody className="bg-btn hover:bg-btn/40">
             {data.map((crypto) => (
-              <TableRow key={crypto.symbol}>
+              <TableRow className="bg-btn hover:bg-btn/40" key={crypto.symbol}>
                 <TableCell className="text-gray-300">
                   {crypto.symbol.replace('USDT', '')}
                 </TableCell>
@@ -116,7 +120,7 @@ export default function MarketPage({ user }: { user: User }) {
         </Table>
       </div>
 
-      <div>
+      <div className="bg-background">
         <NavBottom />
       </div>
     </div>
