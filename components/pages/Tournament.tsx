@@ -137,10 +137,7 @@ export default function Tournament({ user }: { user: User }) {
               </div>
 
               <footer className="p-4">
-                <Button
-                  variant="ghost"
-                  className="w-full bg-green-600 hover:bg-green-700 transition-all text-white"
-                >
+                <Button className="w-full bg-btn hover:bg-btn/40 border border-opacity-35 transition-co text-white">
                   <span className="font-bold">Entrar</span>
                 </Button>
               </footer>
