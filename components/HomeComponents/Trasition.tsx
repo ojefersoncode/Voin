@@ -108,7 +108,7 @@ export default function Trasition() {
   return (
     <>
       <div className="p-4 bg-background">
-        <div className="p-4 mt-2 mb-24 border-2 border-green-500 rounded-xl">
+        <div className="p-4 mt-2 mb-24 border-2 border-opacity-40 rounded-xl">
           <div className="px-4">
             <h2 className="text-2xl font-bold mt-2">Histórico de Transações</h2>
           </div>
@@ -218,7 +218,7 @@ export default function Trasition() {
             <div className="mt-4 flex justify-center">
               <Button
                 variant="outline"
-                className="border-green-500 text-green-500 hover:bg-green-500 hover:text-white"
+                className="border border-border bg-btn text-text hover:bg-btn/40 transition-colors hover:text-white"
               >
                 Ver todas as transações
               </Button>
