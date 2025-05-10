@@ -93,7 +93,7 @@ export default function ScreenHome() {
                 variant="outline"
                 pressed={selectedMatch === item.key}
                 onPressedChange={() => setSelectedMatch(item.key)}
-                className="border-2 px-5 py-8 text-xl font-extrabold data-[state=on]:text-[#836FFF]/30 data-[state=on]:bg-background/20 data-[state=on]:border-[#836FFF]/30 data-[state=on]:border-4 hover:border-[#836FFF] hover:text-[#836FFF]"
+                className="border-2 border-border px-5 py-8 text-xl font-extrabold text-border data-[state=on]:text-border/40 data-[state=on]:bg-background/20 data-[state=on]:border-border/30 data-[state=on]:border-4 hover:border-border/70 hover:text-border/70"
               >
                 {item.key}
               </Toggle>
