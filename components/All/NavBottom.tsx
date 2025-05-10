@@ -6,7 +6,8 @@ import {
   Repeat,
   History,
   Trophy,
-  MessageCircleMore
+  MessageCircleMore,
+  User2
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
@@ -21,7 +22,7 @@ export default function NavBottom() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-background border-t z-50">
-      <div className="flex justify-around items-center h-20">
+      <div className="flex w-full justify-around items-center h-20">
         <button
           className="flex flex-col items-center justify-center py-2 text-text"
           onClick={navigateToHomePage}
@@ -58,8 +59,8 @@ export default function NavBottom() {
           className="flex flex-col items-center justify-center py-2 text-text"
           onClick={navigateToChat}
         >
-          <MessageCircleMore className="h-5 w-5" />
-          <span className="text-xs font-inter mt-1 text-white">Menssagem</span>
+          <User2 className="h-5 w-5" />
+          <span className="text-xs font-inter mt-1 text-white">Perfil</span>
         </button>
       </div>
     </div>
