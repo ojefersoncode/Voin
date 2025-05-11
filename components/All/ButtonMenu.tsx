@@ -83,54 +83,54 @@ export default function ButtonMenu() {
                 </div>
               </div>
 
-              <form className="flex flex-col px-1 pb-2 text-green-50">
-                <label className="text-[0.70rem] text-gray-100 mr-1 font-inter">
+              <form className="flex flex-col px-1 pb-2 text-text">
+                <label className="text-[0.70rem] text-text mr-1 font-inter">
                   Id da conta
                 </label>
-                <div className="flex w-full items-center text-xs text-green-50 gap-1 py-0 cursor-pointer">
+                <div className="flex w-full items-center text-xs text-text gap-1 py-0 cursor-pointer">
                   <span className="font-light">ID: 268434192</span>
-                  <Copy className="size-3 text-gray-100" />
+                  <Copy className="size-3 text-text" />
                 </div>
               </form>
             </div>
           </DropdownMenuLabel>
-          <DropdownMenuGroup className="touch-pan-x touch-pan-y text-white">
+          <DropdownMenuGroup className="touch-pan-x touch-pan-y text-text font-inter">
             <DropdownMenuItem
-              className="mt-2 text-text hover:text-text"
+              className="mt-2 text-text hover:text-border"
               onClick={navigateToProfile}
             >
               <User className="size-5 mr-2 " />
-              <span className="text-white">Perfil</span>
+              <span>Perfil</span>
             </DropdownMenuItem>
             <DropdownMenuItem
               className="mt-2 text-text hover:text-text"
               onClick={navigateToWallet}
             >
               <Wallet className="size-5 mr-2 " />
-              <span className="text-white">Carteira</span>
+              <span>Carteira</span>
             </DropdownMenuItem>
             <DropdownMenuItem className="mt-2 text-text hover:text-text">
               <Users className="size-5 mr-2" />
-              <span className="text-white">Amigos</span>
+              <span>Amigos</span>
             </DropdownMenuItem>
             <DropdownMenuItem className="mt-2 text-text hover:text-text">
               <UserPlus className="size-5 mr-2" />
-              <span className="text-white">Indicar amigos</span>
+              <span>Indicar amigos</span>
             </DropdownMenuItem>
             <DropdownMenuItem className="mt-2 text-text hover:text-text">
               <PhoneCall className="size-5 mr-2" />
-              <span className="text-white">Suportet</span>
+              <span>Suporte</span>
             </DropdownMenuItem>
             <DropdownMenuItem
               className="mt-2 text-text hover:text-text"
               onClick={navigateToSettings}
             >
               <Settings className="size-5 mr-2" />
-              <span className="text-white">Configurações</span>
+              <span>Configurações</span>
             </DropdownMenuItem>
             <DropdownMenuItem className="my-2 text-text hover:text-text">
               <LogOut className="size-5 mr-2" />
-              <span className="text-white">Sair</span>
+              <span>Sair</span>
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>
