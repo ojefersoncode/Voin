@@ -7,7 +7,6 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog';
-import { Label } from '@/components/ui/label';
 import { ScrollArea } from '../ui/scroll-area';
 
 export function PassVip() {
@@ -20,17 +19,21 @@ export function PassVip() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-trasnparent hover:bg-transparent border border-opacity-80">
+        <Button className="bg-btn hover:bg-btn/60 px-2 py-1 border border-opacity-80">
           <div className="flex items-center">
-            <img src="/Vip.png" alt="Passe vip" className="size-5 mr-2" />
-            <span className="text-sm font-medium">Passe vip</span>
+            <img src="/Vip.svg" alt="Passe vip" className="size-5 mr-2" />
+            <span className="text-sm font-titan">Passe vip</span>
           </div>
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] h-dvh bg-background border-none text-white">
         <DialogHeader>
           <DialogTitle className="flex items-center p-1">
-            <img src="/Vip.png" alt="Passe vip" className="size-6 mr-2" />
+            <img
+              src="/Vip.svg"
+              alt="Passe vip"
+              className="size-6 mr-2 text-sm font-titan"
+            />
             Passe Vip
           </DialogTitle>
         </DialogHeader>

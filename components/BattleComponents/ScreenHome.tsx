@@ -6,15 +6,15 @@ import Battlebar from './BattleBar';
 
 export default function ScreenHome() {
   const [selectedMatch, setSelectedMatch] = useState('X1');
-  const nivelAtual = 'Bronze';
-  const proximoNivel = 'silver';
+  const nivelAtual = 'Rank1';
+  const proximoNivel = 'Rank2';
 
   const imagensLevel = [
-    { Image: '/Level/bronze.svg', label: 'Bronze' },
-    { Image: '/Level/silver.svg', label: 'Prata' },
-    { Image: '/Level/gold.svg', label: 'Ouro' },
-    { Image: '/Level/diamond.svg', label: 'Diamante' },
-    { Image: '/Level/elit.svg', label: 'Elite' }
+    { Image: '/Rank/Rank1.svg', label: 'Rank1' },
+    { Image: '/Rank/Rank2.svg', label: 'Rank2' },
+    { Image: '/Rank/Rank3.svg', label: 'Rank3' },
+    { Image: '/Rank/Rank4.svg', label: 'Rank4' },
+    { Image: '/Rank/Elit.svg', label: 'Elite' }
   ];
 
   const Progress = ({
@@ -31,7 +31,7 @@ export default function ScreenHome() {
     >
       <div className="w-full h-full bg-white/80" />
       <div
-        className="absolute top-0 left-0 h-full bg-yellow-900/80 transition-all"
+        className="absolute top-0 left-0 h-full bg-green-600 transition-all"
         style={{ width: `${value}%` }}
       />
       {children}
@@ -56,9 +56,9 @@ export default function ScreenHome() {
           <div className="flex flex-col font-sans text-white overflow-hidden">
             <div className="flex-grow flex flex-col items-center justify-center">
               <img
-                className=" drop-shadow-xl size-52 shadow-white select-none"
-                src={`/Level/${nivelAtual.toLowerCase()}.svg`}
-                alt="patente"
+                className=" drop-shadow-xl size-48 shadow-white select-none"
+                src={`/Rank/${nivelAtual}.svg`}
+                alt="Rank"
               />
             </div>
           </div>
@@ -73,8 +73,8 @@ export default function ScreenHome() {
             </Progress>
             <img
               className="drop-shadow-xl size-8 shadow-white select-none"
-              src={`/Level/${proximoNivel.toLowerCase()}.svg`}
-              alt="patente"
+              src={`/Rank/${proximoNivel}.svg`}
+              alt="Next rank"
             />
           </div>
           <div className="flex w-full justify-center items-center py-1">

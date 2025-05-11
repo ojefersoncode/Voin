@@ -19,40 +19,46 @@ export default function SubMenu() {
 
   const menuItems = [
     {
-      icon: <Swords className="size-5" />,
+      icon: <Swords className="size-7" />,
       label: 'Batalhar',
       route: '/battle'
     },
     {
-      icon: <ShoppingBag className="size-5" />,
+      icon: <ShoppingBag className="size-7" />,
       label: 'Lojinha',
       route: '/store'
     },
-    { icon: <Megaphone className="size-5" />, label: 'Novidades', route: null },
-    { icon: <Share className="size-5" />, label: 'Convidar', route: null },
-    { icon: <Calendar className="size-5" />, label: 'Tarefas', route: null },
-    { icon: <Gift className="size-5" />, label: 'Bônus', route: null },
+    { icon: <Megaphone className="size-7" />, label: 'Novidades', route: null },
+    { icon: <Share className="size-7" />, label: 'Convidar', route: null },
+    { icon: <Calendar className="size-7" />, label: 'Tarefas', route: null },
+    { icon: <Gift className="size-7" />, label: 'Bônus', route: null },
     {
-      icon: <MessageCircle className="size-5" />,
+      icon: <MessageCircle className="size-7" />,
       label: 'Mensagem',
       route: null
     },
-    { icon: <Bell className="size-5" />, label: 'Alertas', route: null }
+    { icon: <Bell className="size-7" />, label: 'Alertas', route: null }
   ];
 
   return (
     <div className="w-full max-sm:px-4 sm:px-6 bg-background">
       <Card className="bg-background border-none">
         <div className="flex flex-col gap-3">
-          <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-8 gap-3">
-            {menuItems.slice(0).map((item, index) => (
+          <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-8 gap-4">
+            {menuItems.map((item, index) => (
               <div
                 key={index}
-                onClick={() => item.route && router.push(item.route)}
-                className="flex flex-col justify-center items-center gap-2 h-20 p-2 font-inter text-center   text-border text-xs bg-btn rounded hover:bg-background/40 transition-colors cursor-pointer"
+                className="flex flex-col justify-center items-center"
               >
-                {item.icon}
-                <span className="mt-1 text-white">{item.label}</span>
+                <div
+                  onClick={() => item.route && router.push(item.route)}
+                  className="flex flex-col justify-center items-center p-4 font-inter text-center text-border bg-btn rounded-lg border hover:border-border/60 hover:text-border/60 hover:bg-btn/60 transition-colors cursor-pointer"
+                >
+                  {item.icon}
+                </div>
+                <span className="mt-2 font-inter text-xs sm:text-sm text-white">
+                  {item.label}
+                </span>
               </div>
             ))}
           </div>

@@ -34,22 +34,17 @@ export default function BalanceButton() {
           <DropdownMenuItem className="mt-1 font-semibold text-sm">
             <div className="flex items-center gap-2">
               <PiggyBank className="size-4" />
-              <span>Demo: 130.000,00</span>
+              <span>Pontos 130.000,00</span>
             </div>
           </DropdownMenuItem>
-          <DropdownMenuItem className="mt-1 font-semibold text-sm">
-            <div className="flex items-center gap-2">
-              <DollarSign className="size-4" />
-              <span>Real: 300,000,00</span>
-            </div>
-          </DropdownMenuItem>
+
           <DropdownMenuItem
             onClick={navigateToStore}
             className="mb-1 font-semibold text-sm"
           >
             <div className="flex items-center gap-2">
               <ShoppingCart className="size-4" />
-              <span>Comprar coins</span>
+              <span>Comprar pontos</span>
             </div>
           </DropdownMenuItem>
         </DropdownMenuContent>

@@ -4,10 +4,12 @@ import Image from 'next/image';
 import {
   Copy,
   LogOut,
+  Menu,
   Pen,
   PhoneCall,
   Plus,
   Settings,
+  SquareMenu,
   User,
   UserCircle,
   UserPlus,
@@ -45,13 +47,7 @@ export default function ButtonMenu() {
             className="px-0 border-none outline-none bg-none"
           >
             <div className="flex w-full justify-center items-center border border-opacity-80 p-1 rounded-md">
-              <Image
-                className="size-7"
-                src="/Level/bronze.svg"
-                alt="Patente"
-                width={'100'}
-                height={'100'}
-              />
+              <Menu className="text-text/90 size-7" />
             </div>
           </Button>
         </DropdownMenuTrigger>
@@ -68,9 +64,9 @@ export default function ButtonMenu() {
                       Sr Jeferson
                     </h2>
                     <div className="flex items-center">
-                      <img src="/Level/bronze.svg" alt="" className="size-4" />
+                      <img src="/Rank/Rank1.svg" alt="" className="size-4" />
                       <span className="text-[0.60rem] font-inter">
-                        Bronze nível 5
+                        Rank nível 1
                       </span>
                     </div>
                   </div>

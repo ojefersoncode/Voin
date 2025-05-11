@@ -40,7 +40,7 @@ export default function NavBottom() {
         <div className="flex flex-col justify-center items-center ">
           <button
             onClick={navigateToTrade}
-            className="flex flex-col items-center justify-center z-20 bottom-4 p-4 rounded-lg border  bg-background text-text relative"
+            className="flex flex-col items-center justify-center z-20 bottom-8  p-4 rounded-lg border  bg-background text-text relative"
           >
             <Repeat className="h-5 w-5" />
             <span className="text-xs font-inter mt-1 text-white">Negociar</span>

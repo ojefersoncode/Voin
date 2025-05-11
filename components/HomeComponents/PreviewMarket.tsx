@@ -226,7 +226,7 @@ export default function PreviewMarket() {
 
   return (
     <div className="min-h-screen bg-background text-white flex flex-col touch-pan-x touch-pan-y">
-      <div className="flex-1 p-4 pb-10">
+      <div className="flex-1 p-4 pb-14">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-titan">Mercado</h2>
           {isRefreshing && <span className="text-xs text-gray-400"></span>}
@@ -316,7 +316,7 @@ export default function PreviewMarket() {
             filteredAndSortedData.map((crypto) => (
               <div
                 key={crypto.symbol}
-                className={`grid grid-cols-12 gap-2 px-4 py-4 bg-btn border-t border-opacity-20 hover:bg-background/40 cursor-pointer transition-colors ${crypto.isUpdating ? 'opacity-100' : 'opacity-100'}`}
+                className={`grid grid-cols-12 gap-2 px-4 py-4 bg-btn border-t border-opacity-20 hover:bg-btn/60 cursor-pointer transition-colors ${crypto.isUpdating ? 'opacity-100' : 'opacity-100'}`}
                 onClick={() => router.push(`/crypto/${crypto.symbol}`)}
               >
                 <div className="col-span-5 flex items-center gap-3">
@@ -363,7 +363,7 @@ export default function PreviewMarket() {
               </div>
             ))
           ) : (
-            <div className="bg-[#0e0e0e] p-8 text-center text-gray-400 rounded-b-xl">
+            <div className="bg-background p-8 text-center text-gray-400 rounded-b-xl">
               Nenhuma criptomoeda encontrada.
             </div>
           )}
