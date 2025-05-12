@@ -10,7 +10,7 @@ export const Hero = () => {
         <main className="text-4xl md:text-6xl font-bold">
           <h1 className="inline">
             <span className="inline bg-gradient-to-r text-gray-100  ">
-              Desenvola seus projetos
+              Divirta-se e ganhe crypto
             </span>{' '}
           </h1>{' '}
           <h2 className="inline">

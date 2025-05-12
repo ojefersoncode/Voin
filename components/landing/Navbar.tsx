@@ -72,25 +72,29 @@ export const Navbar = ({ user }: { user: User | null }) => {
           </NavigationMenuItem>
 
           {/* mobile */}
-          <span className="flex md:hidden">
+          <span className="flex md:hidden bg-background">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2" asChild>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white bg-background hover:bg-btn/80"
+                  className="text-white bg-background hover:bg-background"
                 >
                   <Menu className="size-5" />
                 </Button>
               </SheetTrigger>
 
-              <SheetContent side={'left'}>
+              <SheetContent
+                className="bg-background border-none text-text"
+                side={'right'}
+              >
                 <SheetHeader>
-                  <SheetTitle className="font-titan text-xl select-none">
-                    Nex Battle
+                  <SheetTitle className="flex items-center gap-2 font-titan text-text text-xl select-none">
+                    <img className="size-10" src="/Nexbattle.png" alt="logo" />{' '}
+                    <span>Nex Battle</span>
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col justify-center items-center gap-2 mt-4">
+                <nav className="flex flex-col justify-center text-sm font-inter items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (
                     <a
                       rel="noreferrer noopener"
@@ -104,7 +108,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                   ))}
                   <Link href="/Home" passHref>
                     <Button
-                      className="px-4 py-0.5 font-bold text-sm text-white bg-btn hover:bg-btn/80"
+                      className="px-4 py-0.5 rounded-xl font-titan text-sm text-btn/80 bg-border hover:bg-border/80"
                       variant="ghost"
                     >
                       Entrar
@@ -116,7 +120,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
           </span>
 
           {/* desktop */}
-          <nav className="hidden md:flex gap-2 bg-none ">
+          <nav className="hidden md:flex gap-2 bg-none text-sm font-inter">
             {routeList.map((route: RouteProps, i) => (
               <a
                 rel="noreferrer noopener"

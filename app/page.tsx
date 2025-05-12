@@ -35,8 +35,9 @@ export default async function LandingPage() {
         <Testimonials />
         <Pricing user={user} /> 
         <Newsletter />
-        <Footer />
+       
         <ScrollToTop />*/}
+        <Footer />
       </div>
     </>
   );

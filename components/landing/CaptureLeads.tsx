@@ -144,7 +144,7 @@ export const CaptureLeads = () => {
       <Input
         type="text"
         placeholder="Digite seu nome"
-        className="bg-btn/80 p-3 w-full text-white"
+        className="bg-btn/80 p-3 w-full rounded-xl text-white"
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
@@ -152,7 +152,7 @@ export const CaptureLeads = () => {
       <Input
         type="email"
         placeholder="Digite seu e-mail"
-        className="bg-btn/80 p-3 w-full text-white"
+        className="bg-btn/80 p-3 w-full rounded-xl text-white"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
@@ -160,13 +160,13 @@ export const CaptureLeads = () => {
       <Input
         type="tel"
         placeholder="Digite seu telefone (ex: 31999999999)"
-        className="bg-btn/80 p-3 w-full text-white"
+        className="bg-btn/80 p-3 w-full rounded-xl text-white"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         required
       />
       <Button
-        className="w-full bg-btn hover:bg-btn/80 transition-colors border border-border p-3 text-md max-md:text-sm"
+        className="w-full rounded-xl text-btn font-inter bg-border hover:bg-border/80 transition-colors border-3 border-border/40 p-3 text-md max-md:text-sm"
         type="submit"
         disabled={loading || isButtonDisabled}
       >

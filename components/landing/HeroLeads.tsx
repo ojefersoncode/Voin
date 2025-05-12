@@ -6,15 +6,16 @@ export const HeroLeads = () => {
   return (
     <section className="container grid lg:grid-cols-2 place-items-center bg-background px-2 py-10 md:pt-20 gap-10 max-md:gap-7">
       <div className="text-center lg:text-start mx-7 max-md:mx-4 space-y-4">
-        <main className="text-4xl md:text-5xl font-bold">
+        <main className="text-3xl md:text-4xl font-titan">
           <h1 className="inline">
             <span className="inline bg-gradient-to-r text-gray-50">
-              Desenvola seus projetos
-            </span>{' '}
+              Divirta-se e ganhe crypto
+            </span>
           </h1>{' '}
+          <br />
           <h2 className="inline">
-            <span className="inline bg-gradient-to-r text-green-600 bg-clip-text">
-              ate 10x mais rapido.
+            <span className="inline bg-gradient-to-r text-border bg-clip-text">
+              com seus amigos.
             </span>{' '}
           </h2>
         </main>

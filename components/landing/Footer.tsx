@@ -2,17 +2,20 @@
 
 export const Footer = () => {
   return (
-    <footer id="footer" className="bg-[#0e0e0e] border-t border-green-800/40">
+    <footer
+      id="footer"
+      className="bg-background border-t rounded-xl border-border/20"
+    >
       <section className="container py-10 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8 text-gray-100">
         <div className="col-span-full xl:col-span-2">
           <div className="flex items-center select-none">
-            <img className="size-12 mr-2" src="/Voin.png" alt="logo" />
+            <img className="size-12 mr-1" src="/Nexbattle.png" alt="logo" />
             <a
               rel="noreferrer noopener"
               href="/"
-              className="font-bold text-xl text-gray-100"
+              className="font-titan text-xl text-gray-100"
             >
-              Voin
+              Nex Battle
             </a>
           </div>
         </div>
@@ -140,16 +143,16 @@ export const Footer = () => {
         </div>
       </section>
 
-      <section className="container text-center text-gray-100 pb-4">
-        <h3 className="text-white">
+      <section className="container text-center  text-gray-100 pb-4">
+        <h3 className="text-white font-sans">
           &copy; 2024 Todos os direitos reservados{' '}
           <a
             rel="noreferrer noopener"
             target="_blank"
             href="https://github.com/Ojefersoncode"
-            className="text-green-600 transition-all"
+            className="text-border font-inter transition-all"
           >
-            Voin
+            Nex Battle
           </a>
         </h3>
       </section>
