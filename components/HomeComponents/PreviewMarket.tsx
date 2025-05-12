@@ -54,9 +54,7 @@ const targetSymbols = [
   'XRPUSDT',
   'TRXUSDT',
   'ADAUSDT',
-  'TONUSDT',
-  'LTCUSDT',
-  'NEARUSDT'
+  'TONUSDT'
 ];
 
 export default function PreviewMarket() {
@@ -233,7 +231,7 @@ export default function PreviewMarket() {
         </div>
 
         {/* Cabeçalho da tabela com opções de ordenação */}
-        <div className="grid grid-cols-12 gap-2 px-4 py-3 bg-btn border border-opacity-20 rounded-t-xl text-sm text-gray-400">
+        <div className="grid grid-cols-12 gap-2 px-4 py-3 bg-btn border border-opacity-40 rounded-t-xl text-sm text-background font-titan">
           <div
             className="col-span-5 flex items-center gap-1 cursor-pointer"
             onClick={() => {
@@ -296,7 +294,7 @@ export default function PreviewMarket() {
               );
             }}
           >
-            Volume
+            Vol
             {sortBy === 'volume' &&
               (sortDirection === 'desc' ? (
                 <ArrowDown className="h-3 w-3 inline" />
@@ -307,16 +305,16 @@ export default function PreviewMarket() {
         </div>
 
         {/* Lista de criptomoedas */}
-        <div className="rounded-b-xl overflow-hidden border border-opacity-20">
+        <div className="rounded-b-xl overflow-hidden border border-btn shadow-btn shadow-md drop-shadow-md">
           {isFirstLoad ? (
-            <div className="bg-btn p-8 text-center text-gray-400 rounded-b-xl">
+            <div className="bg-btn p-8 text-center text-text font-titan rounded-b-xl shadow-btn shadow-md drop-shadow-md">
               Carregando dados...
             </div>
           ) : filteredAndSortedData.length > 0 ? (
             filteredAndSortedData.map((crypto) => (
               <div
                 key={crypto.symbol}
-                className={`grid grid-cols-12 gap-2 px-4 py-4 bg-btn border-t border-opacity-20 hover:bg-btn/60 cursor-pointer transition-colors ${crypto.isUpdating ? 'opacity-100' : 'opacity-100'}`}
+                className={`grid grid-cols-12 gap-2 px-4 py-4 bg-btn border-t border-opacity-20 text-background font-titan hover:bg-btn/90 cursor-pointer transition-colors ${crypto.isUpdating ? 'opacity-100' : 'opacity-100'}`}
                 onClick={() => router.push(`/crypto/${crypto.symbol}`)}
               >
                 <div className="col-span-5 flex items-center gap-3">
@@ -327,12 +325,12 @@ export default function PreviewMarket() {
                   </div>
                   <div>
                     <div className="font-medium">{crypto.symbol}</div>
-                    <div className="text-xs text-gray-400">{crypto.name}</div>
+                    <div className="text-xs text-background">{crypto.name}</div>
                   </div>
                 </div>
                 <div className="col-span-3 flex flex-col items-end justify-center">
                   <div
-                    className={`font-medium ${crypto.isUpdating ? 'animate-pulse' : ''}`}
+                    className={`font-titan text-background ${crypto.isUpdating ? 'animate-pulse' : ''}`}
                   >
                     $
                     {crypto.price < 1
@@ -343,20 +341,20 @@ export default function PreviewMarket() {
                         })}
                   </div>
                 </div>
-                <div className="col-span-2 flex items-center justify-end">
+                <div className="col-span-2 font-inter bg-background rounded-xl flex items-center justify-end">
                   <span
                     className={`${
                       crypto.priceChangePercent >= 0
                         ? 'text-green-500'
                         : 'text-red-500'
-                    } ${crypto.isUpdating ? 'animate-pulse' : ''}`}
+                    } ${crypto.isUpdating ? 'animate-pulse' : ''} shadow-black shadow-xs drop-shadow-lg`}
                   >
                     {crypto.priceChangePercent >= 0 ? '+' : ''}
                     {crypto.priceChangePercent.toFixed(2)}%
                   </span>
                 </div>
                 <div
-                  className={`col-span-2 flex items-center justify-end text-gray-300 ${crypto.isUpdating ? 'animate-pulse' : ''}`}
+                  className={`col-span-2 flex items-center justify-end text-background ${crypto.isUpdating ? 'animate-pulse' : ''}`}
                 >
                   {formatVolume(crypto.volume)}
                 </div>
@@ -373,10 +371,10 @@ export default function PreviewMarket() {
         <div className="mt-6 flex justify-center">
           <Button
             onClick={navigateToMarket}
-            className="border font-inter text-white bg-background hover:bg-background hover:text-white/70"
+            className="flex items-center border border-btn font-titan text-white bg-background hover:bg-background hover:text-white/70"
           >
-            Ver mais criptomoedas
-            <ChevronRight className="ml-1 h-4 w-4" />
+            Ver mais
+            <ChevronRight className="ml-2 size-5" />
           </Button>
         </div>
       </div>

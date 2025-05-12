@@ -79,39 +79,44 @@ export default function MarketPage({ user }: { user: User }) {
       </div>
 
       <div className="p-6 mb-24 bg-background">
-        <h2 className="text-xl text-green-50 font-bold mb-4">Mercado Cripto</h2>
-        <Table className="px-2 rounded-lg bg-background">
+        <h2 className="text-xl text-text font-titan mb-4">Mercado Cripto</h2>
+        <Table className="px-2 bg-background rounded-xl">
           <TableHeader>
-            <TableRow className="bg-btn hover:bg-btn/40">
-              <TableHead className="text-text">Moeda</TableHead>
-              <TableHead className="text-right text-text">
+            <TableRow className="font-titan rounded-xl bg-btn hover:bg-btn/80 border border-background/20">
+              <TableHead className="text-background">Moeda</TableHead>
+              <TableHead className="text-right text-background">
                 Preço (USDT)
               </TableHead>
-              <TableHead className="text-right text-text">
+              <TableHead className="text-right text-background">
                 Variação 24h
               </TableHead>
-              <TableHead className="text-right text-text">Volume</TableHead>
+              <TableHead className="text-right text-background">
+                Volume
+              </TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody className="bg-btn hover:bg-btn/40">
+          <TableBody className="bg-white hover:bg-btn border border-background/20 rounded-xl">
             {data.map((crypto) => (
-              <TableRow className="bg-btn hover:bg-btn/40" key={crypto.symbol}>
-                <TableCell className="text-gray-300">
+              <TableRow
+                className="bg-white hover:bg-btn font-titan border border-background/20"
+                key={crypto.symbol}
+              >
+                <TableCell className=" text-background ">
                   {crypto.symbol.replace('USDT', '')}
                 </TableCell>
-                <TableCell className="text-right text-gray-300">
+                <TableCell className="text-right  text-background ">
                   ${parseFloat(crypto.lastPrice).toFixed(2)}
                 </TableCell>
                 <TableCell
-                  className={`text-right ${
+                  className={`text-right shadow-black drop-shadow-xs ${
                     parseFloat(crypto.priceChangePercent) >= 0
                       ? 'text-green-500'
                       : 'text-red-500'
-                  }`}
+                  } `}
                 >
                   {parseFloat(crypto.priceChangePercent).toFixed(2)}%
                 </TableCell>
-                <TableCell className="text-right text-gray-300">
+                <TableCell className="text-right  text-background">
                   {formatVolume(crypto.quoteVolume)}
                 </TableCell>
               </TableRow>

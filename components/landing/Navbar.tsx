@@ -85,7 +85,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
               </SheetTrigger>
 
               <SheetContent
-                className="bg-background border-none text-text"
+                className="w-full bg-background border-none text-text"
                 side={'right'}
               >
                 <SheetHeader>
@@ -94,21 +94,25 @@ export const Navbar = ({ user }: { user: User | null }) => {
                     <span>Nex Battle</span>
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col justify-center text-sm font-inter items-center gap-2 mt-4">
+                <nav className="flex flex-col justify-center items-center text-base font-titan gap-2 mt-7">
                   {routeList.map(({ href, label }: RouteProps) => (
                     <a
                       rel="noreferrer noopener"
                       key={label}
                       href={href}
                       onClick={() => setIsOpen(false)}
-                      className={buttonVariants({ variant: 'ghost' })}
+                      className="mt-4 hover:text-btn transition-colors"
                     >
                       {label}
                     </a>
                   ))}
-                  <Link href="/Home" passHref>
+                  <Link
+                    className="w-full px-8 absolute bottom-10"
+                    href="/Home"
+                    passHref
+                  >
                     <Button
-                      className="px-4 py-0.5 rounded-xl font-titan text-sm text-text bg-btn/90 hover:bg-btn/80"
+                      className="w-full px-4 py-0.5 rounded-xl font-titan text-sm text-background bg-btn/80 hover:bg-btn/70 transition-colors shadow-btn shadow-md drop-shadow-md"
                       variant="ghost"
                     >
                       Entrar
@@ -138,7 +142,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
           <div className="hidden md:flex gap-4 p-2">
             <Link href="/Home" passHref>
               <Button
-                className="px-4 py-0.5 font-inter rounded-xl text-sm text-text bg-btn hover:bg-btn/80"
+                className="px-4 py-0.5 font-inter rounded-xl text-sm shadow-btn shadow-md drop-shadow-md text-background bg-btn hover:bg-btn/80"
                 variant="ghost"
               >
                 Entrar

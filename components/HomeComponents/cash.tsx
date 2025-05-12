@@ -60,7 +60,7 @@ export default function Cash() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="border bg-btn hover:bg-btn/60 hover:border-border/60 hover:text-text/60 transition-colors rounded-xl py-4 flex flex-col items-center justify-center cursor-pointer"
+                className="border bg-btn hover:bg-btn/60 hover:border-border/60 shadow-btn shadow-md drop-shadow-md hover:text-text/60 transition-colors rounded-xl py-4 flex flex-col items-center justify-center cursor-pointer"
               >
                 <item.icon className="size-6 mb-4" />
                 <span className="text-xs font-bold ">{item.label}</span>

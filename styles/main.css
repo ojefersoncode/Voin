@@ -70,7 +70,6 @@
   html,
   body {
     overflow-x: hidden;
-    background-color: #001e22;
   }
   .flex {
     flex-shrink: 0;
@@ -94,7 +93,4 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #02a834; /* Cor ao passar o mouse */
   }
-}
-body {
-  background-color: #001e22;
 }

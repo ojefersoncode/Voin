@@ -19,10 +19,9 @@ export function PassVip() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-btn hover:bg-btn/60 px-2 py-1 border border-opacity-80">
+        <Button className=" px-2 py-1 bg-background hover:bg-background">
           <div className="flex items-center">
-            <img src="/Vip.svg" alt="Passe vip" className="size-5 mr-2" />
-            <span className="text-sm font-titan">Passe vip</span>
+            <img src="/Vip.svg" alt="Passe vip" className="size-7" />
           </div>
         </Button>
       </DialogTrigger>

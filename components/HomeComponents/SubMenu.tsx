@@ -52,7 +52,7 @@ export default function SubMenu() {
               >
                 <div
                   onClick={() => item.route && router.push(item.route)}
-                  className="flex flex-col justify-center items-center p-4 font-inter text-center text-text bg-btn rounded-lg border hover:bg-btn/80 hover:text-text/60 transition-colors cursor-pointer"
+                  className="flex flex-col justify-center items-center p-4 font-inter text-center text-background bg-btn rounded-lg border hover:bg-btn/80 shadow-btn shadow-md drop-shadow-md hover:text-background/80 transition-colors cursor-pointer"
                 >
                   {item.icon}
                 </div>

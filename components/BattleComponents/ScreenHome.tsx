@@ -78,7 +78,7 @@ export default function ScreenHome() {
             />
           </div>
           <div className="flex w-full justify-center items-center py-1">
-            <span className="text-xs font-inter">20 vitórias para prata</span>
+            <span className="text-xs font-titan">20 vitórias para prata</span>
           </div>
         </Card>
 
@@ -91,7 +91,7 @@ export default function ScreenHome() {
                 variant="outline"
                 pressed={selectedMatch === item.key}
                 onPressedChange={() => setSelectedMatch(item.key)}
-                className="border-2 border-border px-5 py-8 text-xl font-extrabold text-border data-[state=on]:text-border/40 data-[state=on]:bg-background/20 data-[state=on]:border-border/30 data-[state=on]:border-4 hover:border-border/70 hover:text-border/70"
+                className="border-2 border-btn px-5 py-8 text-xl font-titan text-btn data-[state=on]:text-border/40 data-[state=on]:bg-background/20 data-[state=on]:border-border/30 data-[state=on]:border-4 hover:border-btn/70 hover:text-btn/70"
               >
                 {item.key}
               </Toggle>
