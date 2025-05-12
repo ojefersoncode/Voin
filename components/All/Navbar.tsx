@@ -5,7 +5,7 @@ import ButtonMenu from './ButtonMenu';
 export default function NavbarAll() {
   return (
     <>
-      <header className=" bg-background mb-2 touch-pan-x touch-pan-y">
+      <header className="border-b rounded-xl bg-background mb-2 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between py-1 px-2">
           <div className="flex items-center gap-1 sm:px-1 cursor-pointer">
             <img className="size-10" src="/Nexbattle.png" alt="logo" />
