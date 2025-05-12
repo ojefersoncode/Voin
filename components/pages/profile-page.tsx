@@ -41,27 +41,35 @@ export default function ProfilePage({ user }: { user: User }) {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-btn rounded-xl p-4">
-              <div className="text-gray-400 text-sm">Total de Transações</div>
-              <div className="text-xl font-bold mt-1">247</div>
+              <div className="text-background font-titan text-sm">
+                Total de Transações
+              </div>
+              <div className="text-xl font-inter mt-1">247</div>
             </div>
 
             <div className="bg-btn rounded-xl p-4">
-              <div className="text-gray-400 text-sm">Membro desde</div>
-              <div className="text-xl font-bold mt-1">Jan 2023</div>
+              <div className="text-background font-titan text-sm">
+                Membro desde
+              </div>
+              <div className="text-xl font-inter mt-1">Jan 2023</div>
             </div>
 
             <div className="bg-btn rounded-xl p-4">
-              <div className="text-gray-400 text-sm">Nível de Verificação</div>
-              <div className="text-xl font-bold mt-1 flex items-center">
-                <Shield className="h-5 w-5 text-green-500 mr-1" />
+              <div className="text-background font-titan text-sm">
+                Nível de Verificação
+              </div>
+              <div className="text-xl font-inter mt-1 flex items-center">
+                <Shield className="h-5 w-5 text-background mr-1" />
                 Completo
               </div>
             </div>
 
             <div className="bg-btn rounded-xl p-4">
-              <div className="text-gray-400 text-sm">Pontos de batalha</div>
-              <div className="text-xl font-bold mt-1 flex items-center">
-                <Star className="h-5 w-5 text-yellow-500 mr-1" />
+              <div className="text-background font-titan text-sm">
+                Pontos de batalha
+              </div>
+              <div className="text-xl font-inter mt-1 flex items-center">
+                <Star className="h-5 w-5 text-background mr-1" />
                 1,250
               </div>
             </div>
@@ -74,44 +82,44 @@ export default function ProfilePage({ user }: { user: User }) {
             <h3 className="text-lg font-semibold px-1 mb-4">Configurações</h3>
 
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-3 bg-btn rounded-xl">
+              <div className="flex items-center justify-between text-sm font-inter p-3 bg-btn rounded-xl">
                 <div className="flex items-center gap-3">
-                  <Bell className="h-5 w-5 text-green-500" />
+                  <Bell className="h-5 w-5 text-background" />
                   <span>Notificações</span>
                 </div>
                 <Switch
                   checked={notifications}
                   onCheckedChange={setNotifications}
-                  className="data-[state=checked]:bg-green-500"
+                  className="data-[state=checked]:bg-background"
                 />
               </div>
 
-              <div className="flex items-center justify-between p-3 bg-btn rounded-xl">
+              <div className="flex items-center justify-between text-sm font-inter p-3 bg-btn rounded-xl">
                 <div className="flex items-center gap-3">
-                  <Lock className="h-5 w-5 text-green-500" />
+                  <Lock className="h-5 w-5 text-background" />
                   <span>Autenticação Biométrica</span>
                 </div>
                 <Switch
                   checked={biometricAuth}
                   onCheckedChange={setBiometricAuth}
-                  className="data-[state=checked]:bg-green-500"
+                  className="data-[state=checked]:bg-background"
                 />
               </div>
 
-              <div className="flex items-center justify-between p-3 bg-btn rounded-xl">
+              <div className="flex items-center justify-between text-sm font-inter p-3 bg-btn rounded-xl">
                 <div className="flex items-center gap-3">
-                  <Eye className="h-5 w-5 text-green-500" />
+                  <Eye className="h-5 w-5 text-background" />
                   <span>Ocultar Saldo</span>
                 </div>
-                <ChevronRight className="h-5 w-5 text-gray-400" />
+                <ChevronRight className="h-5 w-5 text-background" />
               </div>
 
-              <div className="flex items-center justify-between p-3 bg-btn rounded-xl">
+              <div className="flex items-center justify-between text-sm font-inter p-3 bg-btn rounded-xl">
                 <div className="flex items-center gap-3">
-                  <Settings className="h-5 w-5 text-green-500" />
+                  <Settings className="h-5 w-5 text-background" />
                   <span>Preferências</span>
                 </div>
-                <ChevronRight className="h-5 w-5 text-gray-400" />
+                <ChevronRight className="h-5 w-5 text-background" />
               </div>
             </div>
           </div>
@@ -121,28 +129,28 @@ export default function ProfilePage({ user }: { user: User }) {
             <h3 className="text-lg font-semibold px-1 mb-4">Segurança</h3>
 
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-3 bg-btn rounded-xl">
+              <div className="flex items-center justify-between text-sm font-inter p-3 bg-btn rounded-xl">
                 <div className="flex items-center gap-3">
-                  <Lock className="h-5 w-5 text-green-500" />
+                  <Lock className="h-5 w-5 text-background" />
                   <span>Alterar Senha</span>
                 </div>
-                <ChevronRight className="h-5 w-5 text-gray-400" />
+                <ChevronRight className="h-5 w-5 text-background" />
               </div>
 
-              <div className="flex items-center justify-between p-3 bg-btn rounded-xl">
+              <div className="flex items-center justify-between text-sm font-inter p-3 bg-btn rounded-xl">
                 <div className="flex items-center gap-3">
-                  <Shield className="h-5 w-5 text-green-500" />
+                  <Shield className="h-5 w-5 text-background" />
                   <span>Autenticação de 2 Fatores</span>
                 </div>
-                <ChevronRight className="h-5 w-5 text-gray-400" />
+                <ChevronRight className="h-5 w-5 text-background" />
               </div>
 
-              <div className="flex items-center justify-between p-3 bg-btn rounded-xl">
+              <div className="flex items-center justify-between text-sm font-inter p-3 bg-btn rounded-xl">
                 <div className="flex items-center gap-3">
-                  <CreditCard className="h-5 w-5 text-green-500" />
+                  <CreditCard className="h-5 w-5 text-background" />
                   <span>Métodos de Pagamento</span>
                 </div>
-                <ChevronRight className="h-5 w-5 text-gray-400" />
+                <ChevronRight className="h-5 w-5 text-background" />
               </div>
             </div>
           </div>
@@ -152,20 +160,20 @@ export default function ProfilePage({ user }: { user: User }) {
             <h3 className="text-lg px-1 font-semibold mb-4">Suporte</h3>
 
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-3 bg-btn rounded-xl">
+              <div className="flex items-center justify-between text-sm font-inter p-3 bg-btn rounded-xl">
                 <div className="flex items-center gap-3">
-                  <HelpCircle className="h-5 w-5 text-green-500" />
+                  <HelpCircle className="h-5 w-5 text-background" />
                   <span>Central de Ajuda</span>
                 </div>
-                <ChevronRight className="h-5 w-5 text-gray-400" />
+                <ChevronRight className="h-5 w-5 text-background" />
               </div>
 
-              <div className="flex items-center justify-between p-3 bg-btn rounded-xl">
+              <div className="flex items-center justify-between text-sm font-inter p-3 bg-btn rounded-xl">
                 <div className="flex items-center gap-3">
-                  <Clock className="h-5 w-5 text-green-500" />
+                  <Clock className="h-5 w-5 text-background" />
                   <span>Histórico de Atividades</span>
                 </div>
-                <ChevronRight className="h-5 w-5 text-gray-400" />
+                <ChevronRight className="h-5 w-5 text-background" />
               </div>
             </div>
           </div>
@@ -175,7 +183,7 @@ export default function ProfilePage({ user }: { user: User }) {
         <div className="mb-7">
           <Button
             variant="outline"
-            className="w-full border-red-500 bg-red-500/20 text-white hover:text-white hover:bg-red-500/10 mt-4"
+            className="w-full font-inter text-sm border-red-500 bg-red-500/20 text-white hover:text-white hover:bg-red-500/10 mt-4"
           >
             <LogOut className="h-5 w-5 mr-2" />
             Sair da Conta
