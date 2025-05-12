@@ -59,14 +59,14 @@ export const Navbar = ({ user }: { user: User | null }) => {
     return router.push('/auth');
   };
   return (
-    <header className="sticky  top-0 z-40 w-full bg-[#0e0e0e] dark:border-b-slate-700 dark:bg-[#01070f]">
+    <header className="sticky top-0 z-40 w-full bg-background">
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container py-2 px-3 md:px-6 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
             <div className="flex gap-2 text-xl font-bold items-center">
-              <img className="size-10" src="/Voin.png" alt="logo" />
+              <img className="size-10" src="/Nexbattle.png" alt="logo" />
               <div className="flex">
-                <h1 className="text-gray-100">Voin</h1>
+                <h1 className="text-gray-100 font-titan">Nex Battle</h1>
               </div>
             </div>
           </NavigationMenuItem>
@@ -78,16 +78,16 @@ export const Navbar = ({ user }: { user: User | null }) => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white bg-green-600 hover:bg-green-700"
+                  className="text-white bg-background hover:bg-btn/80"
                 >
-                  <Menu className="h-4 w-4" />
+                  <Menu className="size-5" />
                 </Button>
               </SheetTrigger>
 
               <SheetContent side={'left'}>
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl select-none">
-                    Voin
+                  <SheetTitle className="font-titan text-xl select-none">
+                    Nex Battle
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
@@ -104,7 +104,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                   ))}
                   <Link href="/Home" passHref>
                     <Button
-                      className="px-4 py-0.5 font-bold text-sm text-white bg-green-600 hover:bg-green-700"
+                      className="px-4 py-0.5 font-bold text-sm text-white bg-btn hover:bg-btn/80"
                       variant="ghost"
                     >
                       Entrar
@@ -124,7 +124,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                 key={i}
                 className={`text-[14px] ${buttonVariants({
                   variant: 'ghost'
-                })} hover:text-green-600 text-white`}
+                })} hover:text-border text-white`}
               >
                 {route.label}
               </a>
@@ -134,7 +134,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
           <div className="hidden md:flex gap-4 p-2">
             <Link href="/Home" passHref>
               <Button
-                className="px-4 py-0.5 font-bold text-sm text-white bg-green-600 hover:bg-green-700"
+                className="px-4 py-0.5 font-inter rounded-xl text-sm text-btn bg-border hover:bg-border/80"
                 variant="ghost"
               >
                 Entrar
