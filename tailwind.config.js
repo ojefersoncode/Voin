@@ -24,11 +24,13 @@ module.exports = {
         poppins: ['var(--font-poppins)', 'sans-serif']
       },
       colors: {
-        border: '#FCBD68',
-        background: '#001E22',
-        text: '#ffffff',
+        border: '#F6DC43',
+        background: '#210F37',
+        secondary: '#FFB200',
+        text: '#FFFFFF',
+        subtext: '#A5158C',
         select: '#CCD2D3', // Corrigido: estava sem #
-        btn: '#193438',
+        btn: '#FBA518',
 
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

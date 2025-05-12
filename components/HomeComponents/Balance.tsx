@@ -37,9 +37,9 @@ export default function Balance() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="border bg-btn hover:bg-btn/60 hover:text-text/60 hover:border-border/60 transition-colors rounded-xl py-6 flex flex-col items-center justify-center cursor-pointer"
+                className="border bg-btn hover:bg-btn/70 text-subtext hover:text-orange-100/80 hover:border-border/60 transition-colors font-titan rounded-xl py-6 flex flex-col items-center justify-center cursor-pointer"
               >
-                <item.icon className="size-6 mb-2 " />
+                <item.icon className="size-8 mb-2 py-1" />
                 <span className="text-xs font-titan">{item.label}</span>
               </div>
             ))}

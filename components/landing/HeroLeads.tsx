@@ -14,7 +14,7 @@ export const HeroLeads = () => {
           </h1>{' '}
           <br />
           <h2 className="inline">
-            <span className="inline bg-gradient-to-r text-border bg-clip-text">
+            <span className="inline bg-gradient-to-r text-btn bg-clip-text">
               com seus amigos.
             </span>{' '}
           </h2>

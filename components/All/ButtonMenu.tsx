@@ -46,7 +46,7 @@ export default function ButtonMenu() {
             variant="ghost"
             className="px-0 border-none outline-none bg-none"
           >
-            <div className="flex w-full justify-center items-center border border-opacity-80 p-1 rounded-md">
+            <div className="flex w-full justify-center items-center bg-btn p-1 rounded-xl">
               <Menu className="text-text/90 size-7" />
             </div>
           </Button>
@@ -56,7 +56,7 @@ export default function ButtonMenu() {
             <div className="w-full flex flex-col rounded-lg p-2 bg-btn">
               <div className="flex flex-col items-center py-2">
                 <div className="flex w-full items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-background/40 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-border flex items-center justify-center">
                     <UserCircle className="w-7 h-7 text-text" />
                   </div>
                   <div className="flex flex-col">
