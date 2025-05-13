@@ -9,6 +9,7 @@ import {
 import { ArrowUp, ArrowDown, Plus, Minus } from 'lucide-react';
 import { Input } from '../ui/input';
 import BottomTrading from './BottomTrading';
+import BalanceButton from '../All/BalanceButton';
 
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
@@ -116,16 +117,15 @@ export default function TradingAll() {
 
           <div className="flex py-4 px-2 gap-4">
             <div className="flex items-center justify-center gap-1 px-2 rounded-xl text-green-50 cursor-pointer bg-background">
-              <img src="/Nexbattle.png" alt="Logo" className="size-6" />
-              <h1 className="mr-1 font-titan text-xs">130.000.00</h1>
+              <BalanceButton />
             </div>
             <div>
               <div className="flex w-full justify-center items-center">
                 <Select value={selectedPair} onValueChange={setSelectedPair}>
-                  <SelectTrigger className="bg-btn shadow-orange-400 drop-shadow-sm text-white py-2 px-2 font-inter rounded-xl border border-gray-500/30 flex w-full justify-center items-center">
+                  <SelectTrigger className="bg-btn/90 shadow-orange-400 drop-shadow-sm text-background py-2 px-2 font-titan rounded-xl border border-gray-500/30 flex w-full justify-center items-center">
                     <SelectValue placeholder="Selecione um par" />
                   </SelectTrigger>
-                  <SelectContent className="bg-background font-inter text-white border border-opacity-40">
+                  <SelectContent className="bg-background font-titan text-white border border-opacity-40">
                     {availablePairs.map((pair) => (
                       <SelectItem
                         className="hover:bg-btn hover:text-background"
