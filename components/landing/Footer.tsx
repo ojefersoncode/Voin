@@ -150,7 +150,7 @@ export const Footer = () => {
             rel="noreferrer noopener"
             target="_blank"
             href="https://github.com/Ojefersoncode"
-            className="text-border font-inter transition-all"
+            className="text-btn font-inter transition-all"
           >
             Nex Battle
           </a>
