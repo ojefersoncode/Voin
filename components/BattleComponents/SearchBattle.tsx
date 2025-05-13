@@ -61,7 +61,7 @@ export function SerachBattle() {
               <span className="text-2xl font-titan">Buscando Batalha</span>
             </DrawerTitle>
             <DrawerDescription className="pt-4">
-              <span className="text-2xl font-inter text-border">
+              <span className="text-2xl font-inter text-btn">
                 {formatTime(seconds)}
               </span>
             </DrawerDescription>
