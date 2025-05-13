@@ -24,27 +24,19 @@ export default function BalanceButton() {
             variant="ghost"
             className="px-0 border-none outline-none bg-none"
           >
-            <div className="flex w-full text-text justify-center items-center bg-btn p-2 rounded-xl">
-              <Coins className="size-5 mr-1" />
+            <div className="flex w-full text-text justify-center items-center gap-2 p-2 rounded-xl">
+              <img className="size-8" src="/Nexbattle.png" alt="logo" />
               <h1 className="mr-1 font-titan text-sm">130.000.00</h1>
             </div>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="p-2 touch-pan-x touch-pan-y rounded-xl bg-background">
-          <DropdownMenuItem className="mt-1 font-titan text-sm">
-            <div className="flex items-center gap-4">
-              <Coins className="size-5" />
-              <span>130.000,00</span>
-            </div>
-          </DropdownMenuItem>
-
+        <DropdownMenuContent className="p-2 touch-pan-x touch-pan-y rounded-xl border-btn bg-background">
           <DropdownMenuItem
             onClick={navigateToStore}
-            className="mb-1 font-titan text-sm mt-4"
+            className="mb-1 font-titan text-sm"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex w-full justify-center items-center text-btn">
               <Plus className="size-5" />
-              <span>Comprar pontos</span>
             </div>
           </DropdownMenuItem>
         </DropdownMenuContent>
