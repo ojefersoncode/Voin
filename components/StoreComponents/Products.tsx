@@ -18,21 +18,18 @@ export default function Store() {
   };
 
   return (
-    <div className="w-full px-4 bg-background">
-      <h2 className="text-xl sm:text-2xl font-titan text-white my-4">
-        Lojinha de Moedas
-      </h2>
+    <div className=" w-full justify-center items-center px-4 bg-background">
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {coinPackages.map((pkg) => (
           <Card
             key={pkg.id}
-            className="bg-btn text-white p-4 flex flex-col items-center justify-center gap-2 rounded transition-colors cursor-pointer"
+            className="bg-background text-btn border-btn p-4 py-6 flex flex-col items-center justify-center gap-2 rounded-xl  transition-colors cursor-pointer"
           >
-            <Coins className="size-6 text-yellow-400" />
+            <img className="size-12" src="/Coin/Coins.png" alt="logo" />
             <span className="text-lg font-titan">{pkg.amount} moedas</span>
-            <span className="text-text font-inter">{pkg.price}</span>
+            <span className="text-btn font-inter">{pkg.price}</span>
             <Button
-              className="mt-2 w-full border bg-btn hover:bg-background/20 text-white text-sm px-4 py-1 rounded-lg"
+              className="mt-2 w-full border bg-btn hover:bg-btn/80 font-inter text-background text-sm px-4 py-1 rounded-lg"
               onClick={() => handlePurchase(pkg)}
             >
               Comprar
