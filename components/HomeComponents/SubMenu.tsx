@@ -41,10 +41,10 @@ export default function SubMenu() {
   ];
 
   return (
-    <div className="w-full max-sm:px-4 sm:px-6 bg-background">
-      <Card className="bg-background border-none">
-        <div className="flex flex-col gap-3">
-          <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-8 gap-4">
+    <div className="w-full bg-background">
+      <div className="bg-background border-none">
+        <div className="flex flex-col">
+          <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-8 justify-between">
             {menuItems.map((item, index) => (
               <div
                 key={index}
@@ -52,18 +52,18 @@ export default function SubMenu() {
               >
                 <div
                   onClick={() => item.route && router.push(item.route)}
-                  className="flex flex-col justify-center items-center p-4 font-inter text-center text-background bg-btn rounded-lg border hover:bg-btn/80 shadow-btn shadow-md drop-shadow-md hover:text-background/80 transition-colors cursor-pointer"
+                  className="flex flex-col justify-center items-center p-4 sm:p-6 font-inter text-center text-background bg-btn rounded-lg border hover:bg-btn/80 shadow-btn shadow-md drop-shadow-md hover:text-background/80 transition-colors cursor-pointer"
                 >
                   {item.icon}
                 </div>
-                <span className="mt-2 font-inter text-xs sm:text-sm text-text">
+                <span className="mt-4 sm:mt-6 font-inter text-xs sm:text-sm text-text">
                   {item.label}
                 </span>
               </div>
             ))}
           </div>
         </div>
-      </Card>
+      </div>
     </div>
   );
 }
