@@ -195,7 +195,7 @@ export default function TradingAll() {
                   </Select>
                 </div>
               </div>
-              <div className="px-3 py-1 rounded-xl border border-orange-400 drop-shadow-md shadow-orange-700  bg-btn flex w-full flex-col gap-2">
+              <div className="px-3 py-1 rounded-xl border border-orange-400 drop-shadow-md shadow-orange-700  bg-btn flex flex-col w-full justify-center items-center gap-2">
                 <span className="text-sm font-inter text-background">
                   Valor
                 </span>
