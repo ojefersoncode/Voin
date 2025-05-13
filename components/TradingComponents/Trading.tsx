@@ -185,12 +185,12 @@ export default function TradingAll() {
             <div className="grid grid-cols-2 gap-2 sm:mt-4">
               {/* Informações */}
               <div className="flex w-full rounded-xl bg-btn justify-center items-center border max-md:pb-1 drop-shadow-md shadow-orange-700  border-orange-400">
-                <div className="flex flex-col w-full justify-center px-2">
-                  <span className="text-sm text-background font-inter">
+                <div className="flex flex-col w-full justify-center">
+                  <span className="text-sm px-2 text-background font-inter">
                     Tempo
                   </span>
                   <Select value={selectedTime} onValueChange={setSelectedTime}>
-                    <SelectTrigger className="bg-btn text-xs font-inter text-background mt-1 py-2 rounded border border-none w-full">
+                    <SelectTrigger className="bg-btn text-sm font-inter text-background mt-1 py-2 rounded border border-none w-full">
                       <SelectValue placeholder="Selecione um par" />
                     </SelectTrigger>
                     <SelectContent className="bg-background text-xs font-inter text-white border border-opacity-40">
@@ -207,14 +207,14 @@ export default function TradingAll() {
                   </Select>
                 </div>
               </div>
-              <div className="px-3 py-1 rounded-xl border border-orange-400 drop-shadow-md shadow-orange-700  bg-btn flex flex-col gap-2">
+              <div className="px-3 py-1 rounded-xl border border-orange-400 drop-shadow-md shadow-orange-700  bg-btn flex w-full flex-col gap-2">
                 <span className="text-sm font-inter text-background">
                   Valor
                 </span>
                 <div className="flex w-full justify-center items-center gap-2">
                   <button
                     onClick={handleDecrement}
-                    className="py-1 bg-btn text-xl text-background rounded"
+                    className="py-1 w-full bg-btn text-xl text-background rounded"
                   >
                     <Minus />
                   </button>
@@ -227,7 +227,7 @@ export default function TradingAll() {
                   />
                   <button
                     onClick={handleIncrement}
-                    className="py-1 text-xl bg-btn text-background rounded"
+                    className="py-1 w-full text-xl bg-btn text-background rounded"
                   >
                     <Plus />
                   </button>
