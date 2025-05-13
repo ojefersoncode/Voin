@@ -6,12 +6,10 @@ import {
   SelectContent,
   SelectItem
 } from '../ui/select';
-import { ArrowUp, ArrowDown } from 'lucide-react';
+import { ArrowUp, ArrowDown, Plus, Minus } from 'lucide-react';
 import NavBottom from '../All/NavBottom';
-import Image from 'next/image';
 import ButtonMenu from '../All/ButtonMenu';
 import { Input } from '../ui/input';
-import { Label } from '../ui/label';
 
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
@@ -65,7 +63,7 @@ export default function TradingAll() {
           locale: 'br',
           theme: 'Dark',
           width: '100%',
-          height: '500',
+          height: '700',
           style: '1',
           hide_top_toolbar: false,
           hide_legend: false,
@@ -122,76 +120,78 @@ export default function TradingAll() {
   };
 
   return (
-    <div className="bg-background text-white flex flex-col touch-pan-x touch-pan-y">
-      <header className="border-b border-opacity-40 mb-2">
+    <div className="bg-[#0e0e0e] h-dvh text-white flex flex-col touch-pan-x touch-pan-y">
+      <header className="bg-background">
         <nav className="flex items-center justify-between px-2">
           <div className="flex items-center gap-4">
-            <img src="/Logomarca.png" alt="Logo" className="size-8" />
-            <div className="flex items-center gap-1 px-2">
-              <Select value={selectedPair} onValueChange={setSelectedPair}>
-                <SelectTrigger className="bg-background text-white py-2 px-2 rounded border border-gray-500/30 w-full">
-                  <SelectValue placeholder="Selecione um par" />
-                </SelectTrigger>
-                <SelectContent className="bg-background text-white border border-opacity-40">
-                  {availablePairs.map((pair) => (
-                    <SelectItem key={pair.value} value={pair.value}>
-                      {pair.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            <img src="/Nexbattle.png" alt="Logo" className="size-8" />
           </div>
 
-          <div className="flex gap-2 p-4 bg-background">
-            <div className="flex items-center justify-center gap-1 px-4 rounded-md text-green-50 border border-green-50 border-opacity-20 cursor-pointer bg-background">
-              <img src="/Voin.png" alt="Logo" className="size-5" />
-              <h1 className="mr-1 text-xs">130.000.00</h1>
+          <div className="flex py-4 px-2 gap-4">
+            <div className="flex items-center justify-center gap-1 px-2 rounded-xl text-green-50 border border-btn cursor-pointer bg-background">
+              <img src="/Nexbattle.png" alt="Logo" className="size-6" />
+              <h1 className="mr-1 font-titan text-xs">130.000.00</h1>
             </div>
             <div>
-              <ButtonMenu />
+              <div className="flex w-full justify-center items-center">
+                <Select value={selectedPair} onValueChange={setSelectedPair}>
+                  <SelectTrigger className="bg-btn shadow-orange-400 drop-shadow-sm text-white py-2 px-2 font-inter rounded-xl border border-gray-500/30 flex w-full justify-center items-center">
+                    <SelectValue placeholder="Selecione um par" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-background font-inter text-white border border-opacity-40">
+                    {availablePairs.map((pair) => (
+                      <SelectItem
+                        className="hover:bg-btn hover:text-background"
+                        key={pair.value}
+                        value={pair.value}
+                      >
+                        {pair.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
           </div>
         </nav>
       </header>
 
-      {/* DESKTOP */}
-      <div className="md:flex w-full h-screen flex-1 bg-background">
+      <div className="md:flex w-full flex-1 bg-[#0e0e0e]">
         {/* Gráfico */}
-        <div className="flex-1 h-auto px-4 sm:pt-4 pb-4 bg-background">
+        <div className="flex-1 pb-4">
           <div
             id="tv_chart_container"
-            className="w-full sm:h-[600px] max-sm:h-[400px] bg-background"
+            className="w-full sm:h-[600px] max-sm:h-[400px]"
           />
         </div>
 
         {/* Info + Select + Botões */}
         <div className="md:w-[350px] flex flex-col">
-          <div className="flex md:hidden flex-row w-full items-center justify-center gap-4 max-sm:pt-28 pb-4 px-6">
-            <button className="bg-red-500 w-1/2 px-4 py-3 flex items-center justify-center rounded">
+          <div className="flex md:hidden flex-row w-full items-center justify-center gap-4 max-sm:pt-28 pb-4 px-3">
+            <button className="bg-red-600 shadow-red-800 drop-shadow-md w-1/2 px-4 py-3 flex items-center justify-center rounded-xl">
               <div className="flex w-full items-center justify-between">
-                <h1>Para baixo</h1>
-                <ArrowDown className="h-6 w-6" />
+                <h1 className="font-inter">Para baixo</h1>
+                <ArrowDown className="size-5" />
               </div>
             </button>
-            <button className="bg-green-500 w-1/2 px-4 py-3 flex items-center justify-center rounded">
+            <button className="bg-green-600 shadow-green-800 drop-shadow-md w-1/2 px-4 py-3 flex items-center justify-center rounded-xl">
               <div className="flex w-full items-center justify-between">
-                <h1>Para cima</h1>
-                <ArrowUp className="h-6 w-6" />
+                <h1 className="font-inter">Para cima</h1>
+                <ArrowUp className="size-5" />
               </div>
             </button>
           </div>
 
-          <div className="px-4 md:pt-4">
-            <div className="grid grid-cols-2 bg-background  border border-border/40">
+          <div className="sm:px-4 px-1">
+            <div className="grid grid-cols-2 gap-2 sm:mt-4">
               {/* Informações */}
-              <div className="flex w-full justify-center items-center border max-md:pb-1 border-gray-500/30">
-                <div className="flex flex-col w-full justify-center px-2 h-full">
-                  <Label className="text-xs text-gray-400 font-inter">
+              <div className="flex w-full rounded-xl bg-btn justify-center items-center border max-md:pb-1 drop-shadow-md shadow-orange-700  border-orange-400">
+                <div className="flex flex-col w-full justify-center px-2">
+                  <span className="text-sm text-background font-inter">
                     Tempo
-                  </Label>
+                  </span>
                   <Select value={selectedTime} onValueChange={setSelectedTime}>
-                    <SelectTrigger className="bg-background text-xs font-inter text-white py-4 rounded border border-none w-full">
+                    <SelectTrigger className="bg-btn text-xs font-inter text-background mt-1 py-2 rounded border border-none w-full">
                       <SelectValue placeholder="Selecione um par" />
                     </SelectTrigger>
                     <SelectContent className="bg-background text-xs font-inter text-white border border-opacity-40">
@@ -208,45 +208,47 @@ export default function TradingAll() {
                   </Select>
                 </div>
               </div>
-              <div className="px-3 py-2 border border-opacity-40 flex flex-col gap-2">
-                <Label className="text-xs text-gray-400">Valor</Label>
+              <div className="px-3 py-1 rounded-xl border border-orange-400 drop-shadow-md shadow-orange-700  bg-btn flex flex-col gap-2">
+                <span className="text-sm font-inter text-background">
+                  Valor
+                </span>
                 <div className="flex w-full justify-center items-center gap-2">
                   <button
                     onClick={handleDecrement}
-                    className="px-2 py-1 bg-background text-xl text-white rounded"
+                    className="py-1 bg-btn text-xl text-background rounded"
                   >
-                    -
+                    <Minus />
                   </button>
                   <Input
                     placeholder="Valor"
                     type="text"
                     value={inputValue}
                     onChange={handleChange}
-                    className="bg-transparent w-20 text-green-50 px-1 border-none text-center"
+                    className="bg-transparent w-20 text-background px-1 text-xl border-none text-center"
                   />
                   <button
                     onClick={handleIncrement}
-                    className="px-2 py-1 text-xl bg-background text-white rounded"
+                    className="py-1 text-xl bg-btn text-background rounded"
                   >
-                    +
+                    <Plus />
                   </button>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="flex w-full flex-wrap items-center gap-4 pt-4 pb-20 px-4">
+          <div className="flex w-full flex-wrap items-center gap-4 pt-4 max-sm:pb-10 px-4">
             {/* BOTÕES */}
             <div className="flex max-md:hidden flex-row w-full items-center justify-center gap-4 pt-2 px-2">
-              <button className="bg-red-500 w-1/2 px-4 py-3 flex items-center justify-center rounded">
+              <button className="bg-red-600 shadow-red-800 drop-shadow-md w-1/2 px-4 py-3 flex items-center justify-center rounded-xl">
                 <div className="flex w-full items-center justify-between">
-                  <h1>Para baixo</h1>
+                  <h1 className="font-inter">Para baixo</h1>
                   <ArrowDown className="h-6 w-6" />
                 </div>
               </button>
-              <button className="bg-green-500 w-1/2 px-4 py-3 flex items-center justify-center rounded">
+              <button className="bg-green-600 shadow-green-800 drop-shadow-md w-1/2 px-4 py-3 flex items-center justify-center rounded-xl">
                 <div className="flex w-full items-center justify-between">
-                  <h1>Para cima</h1>
+                  <h1 className="font-inter">Para cima</h1>
                   <ArrowUp className="h-6 w-6" />
                 </div>
               </button>
@@ -254,8 +256,6 @@ export default function TradingAll() {
           </div>
         </div>
       </div>
-
-      <NavBottom />
     </div>
   );
 }
