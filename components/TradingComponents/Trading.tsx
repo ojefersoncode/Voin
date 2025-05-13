@@ -69,21 +69,9 @@ export default function TradingAll() {
           withdateranges: true,
           allow_symbol_change: true,
           save_image: false,
-          toolbar_bg: '#001216',
+          toolbar_bg: '#0e0e0e',
+          border: '#0e0e0e',
 
-          custom_css_url: '',
-          disabled_features: [
-            'header_symbol_search',
-            'header_screenshot',
-            'adaptive_logo',
-            'left_toolbar',
-            'go_to_date',
-            'compare_symbol',
-            'border_around_the_chart',
-            'header_undo_redo',
-            'header_widget',
-            'show_chart_property_page'
-          ],
           enabled_features: [
             'use_localstorage_for_settings',
             'hide_left_toolbar_by_default',
@@ -157,7 +145,7 @@ export default function TradingAll() {
 
       <div className="md:flex w-full flex-1 bg-[#0e0e0e]">
         {/* Gráfico */}
-        <div className="flex-1 pb-4">
+        <div className="flex-1 max-sm:pb-4">
           <div
             id="tv_chart_container"
             className="w-full sm:h-[600px] max-sm:h-[400px]"

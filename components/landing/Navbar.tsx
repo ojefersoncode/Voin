@@ -74,18 +74,18 @@ export const Navbar = ({ user }: { user: User | null }) => {
           {/* mobile */}
           <span className="flex md:hidden bg-background">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger className="px-2" asChild>
+              <SheetTrigger className="px-2 text-btn" asChild>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white bg-background hover:bg-background"
+                  className="text-btn bg-background hover:bg-background"
                 >
-                  <Menu className="size-5" />
+                  <Menu className="size-5 text-btn" />
                 </Button>
               </SheetTrigger>
 
               <SheetContent
-                className="w-full bg-background border-none text-text"
+                className="w-full bg-background border-none text-btn"
                 side={'right'}
               >
                 <SheetHeader>
@@ -94,7 +94,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                     <span>Nex Battle</span>
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col justify-center items-center text-base font-titan gap-2 mt-7">
+                <nav className="flex flex-col justify-center items-center text-xl text-text font-titan gap-2 mt-7">
                   {routeList.map(({ href, label }: RouteProps) => (
                     <a
                       rel="noreferrer noopener"
@@ -112,7 +112,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                     passHref
                   >
                     <Button
-                      className="w-full px-4 py-0.5 rounded-xl font-titan text-sm text-background bg-btn/80 hover:bg-btn/70 transition-colors shadow-btn shadow-md drop-shadow-md"
+                      className="w-full px-4 py-0.5 rounded-xl font-inter text-base text-background bg-btn/80 hover:bg-btn/70 transition-colors shadow-btn shadow-md drop-shadow-md"
                       variant="ghost"
                     >
                       Entrar
@@ -139,10 +139,10 @@ export const Navbar = ({ user }: { user: User | null }) => {
             ))}
           </nav>
 
-          <div className="hidden md:flex gap-4 p-2">
+          <div className="hidden md:flex gap-4">
             <Link href="/Home" passHref>
               <Button
-                className="px-4 py-0.5 font-inter rounded-xl text-sm shadow-btn shadow-md drop-shadow-md text-background bg-btn hover:bg-btn/80"
+                className="px-4 py-0.5 font-inter rounded-xl text-base shadow-btn shadow-md drop-shadow-md text-background bg-btn hover:bg-btn/80"
                 variant="ghost"
               >
                 Entrar

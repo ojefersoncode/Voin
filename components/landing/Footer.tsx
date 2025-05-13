@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer
       id="footer"
-      className="bg-background border-t rounded-xl border-border/20"
+      className="bg-background border-t rounded-xl border-border"
     >
       <section className="container py-10 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8 text-gray-100">
         <div className="col-span-full xl:col-span-2">
@@ -21,7 +21,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg text-gray-100">Redes Sociais</h3>
+          <h3 className="font-inter text-lg text-btn">Redes Sociais</h3>
           <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
@@ -54,7 +54,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg text-white">Plataformas</h3>
+          <h3 className="font-inter text-lg text-btn">Plataformas</h3>
           <div className="text-gray-100">
             <a
               rel="noreferrer noopener"
@@ -76,8 +76,8 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="text-gray-100">
-          <h3 className="font-bold text-lg">Sobre</h3>
+        <div className="text-gray-btn">
+          <h3 className="font-inter text-btn text-lg">Sobre</h3>
           <div>
             <a
               rel="noreferrer noopener"
@@ -110,7 +110,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg text-white">Comunidade</h3>
+          <h3 className="font-inter text-lg text-btn">Comunidade</h3>
           <div className="text-gray-100">
             <a
               rel="noreferrer noopener"

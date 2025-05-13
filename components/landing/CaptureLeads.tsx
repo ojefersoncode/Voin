@@ -137,10 +137,7 @@ export const CaptureLeads = () => {
   };
 
   return (
-    <form
-      className="flex flex-col w-full items-center max-md:justify-center gap-4"
-      onSubmit={handleSubmit}
-    >
+    <form className="flex flex-col w-full gap-4" onSubmit={handleSubmit}>
       <Input
         type="text"
         placeholder="Digite seu nome"

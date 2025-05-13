@@ -4,8 +4,8 @@ import { CaptureLeads } from './CaptureLeads';
 
 export const HeroLeads = () => {
   return (
-    <section className="container grid lg:grid-cols-2 place-items-center bg-background px-2 py-10 md:pt-20 gap-10 max-md:gap-7">
-      <div className="text-center lg:text-start mx-7 max-md:mx-4 space-y-4">
+    <section className="container grid lg:grid-cols-2 place-items-center bg-background py-10 max-md:gap-7">
+      <div className="text-center lg:text-start max-md:mx-4 space-y-4">
         <main className="text-3xl md:text-4xl font-titan">
           <h1 className="inline">
             <span className="inline bg-gradient-to-r text-gray-50">
@@ -20,12 +20,12 @@ export const HeroLeads = () => {
           </h2>
         </main>
 
-        <div className=" max-sm:justify-center items-center py-4">
+        <div className="max-sm:justify-center items-center">
           <CaptureLeads />
         </div>
       </div>
 
-      <div className="z-10 mt-20 max-md:mt-16">
+      <div className="z-10">
         <HeroCards />
       </div>
     </section>
