@@ -7,9 +7,8 @@ import {
   SelectItem
 } from '../ui/select';
 import { ArrowUp, ArrowDown, Plus, Minus } from 'lucide-react';
-import NavBottom from '../All/NavBottom';
-import ButtonMenu from '../All/ButtonMenu';
 import { Input } from '../ui/input';
+import BottomTrading from './BottomTrading';
 
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
@@ -63,7 +62,7 @@ export default function TradingAll() {
           locale: 'br',
           theme: 'Dark',
           width: '100%',
-          height: '700',
+          height: '500',
           style: '1',
           hide_top_toolbar: false,
           hide_legend: false,
@@ -256,6 +255,8 @@ export default function TradingAll() {
           </div>
         </div>
       </div>
+
+      <BottomTrading />
     </div>
   );
 }
