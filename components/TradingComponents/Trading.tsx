@@ -119,7 +119,7 @@ export default function TradingAll() {
   };
 
   return (
-    <div className="bg-[#0e0e0e] h-dvh text-white flex flex-col touch-pan-x touch-pan-y">
+    <div className="bg-[#0e0e0e] h-screen text-white flex flex-col touch-pan-x touch-pan-y">
       <header className="bg-background">
         <nav className="flex items-center justify-between px-2">
           <div className="flex items-center gap-4">
@@ -127,7 +127,7 @@ export default function TradingAll() {
           </div>
 
           <div className="flex py-4 px-2 gap-4">
-            <div className="flex items-center justify-center gap-1 px-2 rounded-xl text-green-50 border border-btn cursor-pointer bg-background">
+            <div className="flex items-center justify-center gap-1 px-2 rounded-xl text-green-50 cursor-pointer bg-background">
               <img src="/Nexbattle.png" alt="Logo" className="size-6" />
               <h1 className="mr-1 font-titan text-xs">130.000.00</h1>
             </div>
