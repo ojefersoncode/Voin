@@ -25,8 +25,8 @@ export default function BalanceButton() {
             className="px-0 border-none outline-none bg-none"
           >
             <div className="flex w-full text-text justify-center items-center gap-2 p-2 rounded-xl">
-              <img className="size-7" src="/Coin/Nexcoin.png" alt="logo" />
-              <h1 className="mr-1 font-titan text-base">130.000.00</h1>
+              <img className="size-6" src="/Coin/Nexcoin.png" alt="logo" />
+              <h1 className="mr-1 font-titan text-sm">130.000.00</h1>
             </div>
           </Button>
         </DropdownMenuTrigger>
