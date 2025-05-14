@@ -29,21 +29,22 @@ export default function Balance() {
             <span className="text-sm font-inter">pontos</span>
           </h1>
 
-          <div className="grid grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-3 gap-4 pt-4">
             {[
               { icon: Plus, label: 'ADICIONAR' },
               { icon: Send, label: 'ENVIAR' },
               { icon: Upload, label: 'TRANSFERIR' }
             ].map((item, i) => (
-              <div
-                key={i}
-                className="button w-40 h-28 bg-blue-500  select-none
-                  active:translate-y-2 active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841]
-                  active:border-b-[0px] [box-shadow:0_10px_0_0_#1b6ff8,0_15px_0_0_#1b70f841]
-                  border-b-[1px] border-blue-400 transition-colors duration-300 font-titan rounded-xl py-6 flex flex-col items-center justify-center cursor-pointer"
-              >
-                <item.icon className="size-8 mb-2 py-1" />
-                <span className="text-xs font-titan">{item.label}</span>
+              <div className="flex flex-col justify-center items-center drop-shadow-md shadow-btn bg-blue-500 active:scale-90 active:bg-blue-400 rounded-xl pb-1 transition-all duration-300">
+                <div
+                  key={i}
+                  className="button py-6 w-full bg-blue-500  select-none
+            
+                  border-b-[1px] border-blue-300 transition-colors duration-300 font-titan rounded-xl flex flex-col items-center justify-center cursor-pointer"
+                >
+                  <item.icon className="size-8 mb-2 py-1" />
+                  <span className="text-xs font-titan">{item.label}</span>
+                </div>
               </div>
             ))}
           </div>

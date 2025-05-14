@@ -41,7 +41,7 @@ export default function SubMenu() {
   ];
 
   return (
-    <div className="w-full bg-background">
+    <div className="w-full bg-background py-7 max-md:px-6">
       <div className="bg-background border-none">
         <div className="flex flex-col">
           <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-8 justify-between gap-7">
@@ -53,7 +53,7 @@ export default function SubMenu() {
                 <div className="flex flex-col justify-center items-center drop-shadow-md shadow-btn bg-btn/70 active:scale-90 active:bg-btn rounded-xl pb-1 transition-all duration-300">
                   <div
                     onClick={() => item.route && router.push(item.route)}
-                    className="button bg-btn border-high duration-300 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer font-inter text-center active:scale-90 transition-all"
+                    className="button bg-btn border-yellow-200 duration-300 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer font-inter text-center active:scale-90 transition-all"
                   >
                     {item.icon}
                   </div>{' '}
