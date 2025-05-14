@@ -163,7 +163,7 @@ export const CaptureLeads = () => {
         required
       />
       <Button
-        className="w-full rounded-xl text-background font-inter bg-btn hover:bg-btn/80 transition-colors shadow-btn shadow-md drop-shadow-md border-3 border-orange-800/40 p-3 text-md max-md:text-sm"
+        className="w-full rounded-xl text-background font-inter bg-btn hover:bg-btn/80 transition-colors shadow-btn shadow-md drop-shadow-md border-3 border-orange-800/40 mt-4 p-4 text-md max-md:text-sm"
         type="submit"
         disabled={loading || isButtonDisabled}
       >
