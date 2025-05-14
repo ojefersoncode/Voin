@@ -53,12 +53,12 @@ export default function SubMenu() {
                 <div className="flex flex-col justify-center items-center drop-shadow-md shadow-btn bg-btn/70 active:scale-90 active:bg-btn rounded-xl pb-1 transition-all duration-300">
                   <div
                     onClick={() => item.route && router.push(item.route)}
-                    className="button bg-btn border-yellow-200 duration-300 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer font-inter text-center active:scale-90 transition-all"
+                    className="button bg-btn border-yellow-200 duration-300 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer font-inter text-center active:scale-90 transition-all text-blue-600"
                   >
                     {item.icon}
                   </div>{' '}
                 </div>
-                <span className="mt-4 sm:mt-6 font-inter text-xs sm:text-sm text-text">
+                <span className="mt-4 sm:mt-6 font-inter text-xs sm:text-base text-text">
                   {item.label}
                 </span>
               </div>
