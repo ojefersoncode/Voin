@@ -143,7 +143,7 @@ export default function TradingAll() {
         </nav>
       </header>
 
-      <div className="xl:flex w-full flex-1 bg-[#0e0e0e]">
+      <div className="flex max-xl:flex-col w-full sm:flex-1 bg-[#0e0e0e]">
         {/* Gráfico */}
         <div className="flex-1 max-sm:pb-4">
           <div
@@ -153,7 +153,7 @@ export default function TradingAll() {
         </div>
 
         {/* Info + Select + Botões */}
-        <div className="sm:w-[350px] max-lg:w-full flex flex-col">
+        <div className="sm:w-[350px] w-full flex flex-col">
           <div className="flex flex-row w-full items-center justify-center gap-4 max-sm:pt-28 sm:px-6 pt-4 px-3">
             <button className="bg-red-600 shadow-red-800 drop-shadow-md w-1/2 px-4 py-3 flex items-center justify-center rounded-xl">
               <div className="flex w-full items-center justify-between">
@@ -172,7 +172,7 @@ export default function TradingAll() {
           <div className="sm:px-4 px-1">
             <div className="grid grid-cols-2 gap-2 mt-4">
               {/* Informações */}
-              <div className="flex w-full rounded-xl bg-btn justify-center items-center border max-md:pb-1 drop-shadow-md shadow-orange-700  border-orange-400">
+              <div className="flex w-full rounded-xl bg-btn border max-md:pb-1 drop-shadow-md shadow-orange-700  border-orange-400">
                 <div className="flex flex-col w-full justify-center">
                   <span className="text-sm px-2 text-background font-inter">
                     Tempo
@@ -202,7 +202,7 @@ export default function TradingAll() {
                 <div className="flex w-full justify-center items-center gap-2">
                   <button
                     onClick={handleDecrement}
-                    className="py-1 max-sm:px-1 w-full bg-btn text-xl text-background rounded"
+                    className="py-1 max-sm:px-1 w-full bg-btn text-background rounded"
                   >
                     <Minus />
                   </button>
@@ -215,7 +215,7 @@ export default function TradingAll() {
                   />
                   <button
                     onClick={handleIncrement}
-                    className="py-1 w-full text-xl bg-btn text-background rounded"
+                    className="py-1 w-full bg-btn text-background rounded"
                   >
                     <Plus />
                   </button>
