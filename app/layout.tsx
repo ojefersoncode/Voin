@@ -29,11 +29,11 @@ const poppins = PoppinsFont({
 });
 
 const meta = {
-  title: 'Voin',
+  title: 'Nex Battle',
   description: 'Participe de torneios de trading.',
-  cardImage: '/cooderfy.png',
+  cardImage: '/Banner/Banner.png',
   robots: 'follow, index',
-  favicon: '/Voin.png',
+  favicon: '/Nexbattle.png',
   url: getURL()
 };
 
@@ -59,7 +59,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'Game',
       'Jogos'
     ],
-    authors: [{ name: 'Voin', url: 'https://voin.com/' }],
+    authors: [{ name: 'Nex battle', url: 'https://Nexbattle.com/' }],
     creator: 'OjersonCode',
     publisher: 'OjefersonCode',
     robots: meta.robots,
@@ -75,7 +75,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      site: '@cooderfy',
+      site: '@nexbattle',
       creator: 'ojefersoncode',
       title: meta.title,
       description: meta.description,

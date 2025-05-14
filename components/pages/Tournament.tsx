@@ -34,30 +34,6 @@ export default function Tournament({ user }: { user: User }) {
       description:
         'No torneio mensal você pode participar gratuitamente e recebe uma banca inicial.',
       imageUrl: '/Batalhas/Mensal.png'
-    },
-    {
-      id: 4,
-      name: 'Batalha 1x1',
-      premio: '500',
-      description:
-        'Nas batalhas de 1x1 você pode se inscrever usando Voin e recebe uma banca. Quem terminar com maior saldo ganha.',
-      imageUrl: '/Batalhas/Solo.png'
-    },
-    {
-      id: 5,
-      name: 'Batalha 2x2',
-      premio: '2,000',
-      description:
-        'Nas batalhas de 2x2 você pode se inscrever usando Voin, chame um amigo para sua equipe e ambos recebem uma banca. O duo que terminar com maior saldo ganha.',
-      imageUrl: '/Batalhas/Duo.png'
-    },
-    {
-      id: 6,
-      name: 'Batalha 4x4',
-      premio: '10,000',
-      description:
-        'Nas batalhas de 4x4 você pode se inscrever usando Voin, monte sua equipe para a batalha e todos recebem uma banca. O time que terminar com maior saldo ganha.',
-      imageUrl: '/Batalhas/Grupo.png'
     }
   ];
 
@@ -72,7 +48,7 @@ export default function Tournament({ user }: { user: User }) {
           <img
             src="/Banner/Banner.png"
             alt="Logomarca"
-            className="w-full sm:h-56 max-sm:h-36 rounded-lg object-cover hover:opacity-90 transition-all cursor-default select-none"
+            className="w-full sm:h-56 max-sm:h-36 rounded-2xl object-cover border-2 border-btn hover:opacity-80 hover:border- hover:border-btn/80 transition-all duration-400 cursor-default select-none"
           />
         </div>
 
@@ -89,12 +65,14 @@ export default function Tournament({ user }: { user: User }) {
 
         <div className="px-8 max-md:px-4 mb-6">
           <p className="flex text-sm sm:text-lg font-inter text-gray-200 mt-4">
-            Jogue torneios e batalhas para conseguir moedas VOIN <br />
+            Jogue torneios e batalhas para conseguir moedas NEX <br />
             Essas moedas poderão ser trocadas por cripto ativos BNB
           </p>
           <div className="pt-4">
-            <Button className="px-3 py-1 border  bg-btn hover:bg-btn/40 transition-colors">
-              <span className="text-xs font-inter">Ver regulamento</span>
+            <Button className="px-3 py-1 shadow-md drop-shadow-lg shadow-orange-400 border border-btn bg-btn hover:bg-btn/80 transition-colors">
+              <span className="text-base font-inter text-background hover:text-balance/80">
+                Ver regulamento
+              </span>
             </Button>
           </div>
         </div>
@@ -103,11 +81,11 @@ export default function Tournament({ user }: { user: User }) {
           {torneios.map((torneio) => (
             <div
               key={torneio.id}
-              className="border border-opacity-40 rounded-xl bg-btn/40 shadow-md hover:shadow-lg transition-all"
+              className="text-text shadow-md drop-shadow-xl shadow-orange-400 border border-btn rounded-xl bg-background hover:scale-105 transition-all duration-500"
               onMouseEnter={() => setHoveredId(torneio.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              <div className="bg-[#181818] m-3 rounded-xl overflow-hidden">
+              <div className=" rounded-xl overflow-hidden">
                 <img
                   src={torneio.imageUrl}
                   alt={torneio.name}
@@ -115,7 +93,7 @@ export default function Tournament({ user }: { user: User }) {
                 />
               </div>
 
-              <div className="p-4 text-green-50">
+              <div className="p-4 ">
                 <div className="flex items-center gap-2 font-titan">
                   <h1>{torneio.name}</h1>
                   <span>🏆</span>
@@ -123,21 +101,25 @@ export default function Tournament({ user }: { user: User }) {
 
                 <div className="flex w-full justify-between gap-3 mt-3 font-inter">
                   <span>Premiação total:</span>
-                  <div className="flex gap-2 items-center">
+                  <div className="flex gap-1 items-center">
+                    <img
+                      src="/Coin/Nexcoin.png"
+                      alt="Voin Coin"
+                      className="size-5"
+                    />
                     <p>{torneio.premio}</p>
-                    <img src="/Voin.png" alt="Voin Coin" className="size-6" />
                   </div>
                 </div>
 
-                <div className="mt-3">
-                  <h2 className="line-clamp-2 font-thin">
+                <div className="mt-4">
+                  <h2 className="line-clamp-2 font-inter">
                     {torneio.description}
                   </h2>
                 </div>
               </div>
 
               <footer className="p-4">
-                <Button className="w-full bg-btn hover:bg-btn/40 border border-opacity-35 transition-co text-white">
+                <Button className="w-full bg-btn hover:bg-btn/90 border text-background transition-colors">
                   <span className="font-bold">Entrar</span>
                 </Button>
               </footer>

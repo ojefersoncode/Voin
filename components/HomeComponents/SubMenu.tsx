@@ -44,7 +44,7 @@ export default function SubMenu() {
     <div className="w-full bg-background">
       <div className="bg-background border-none">
         <div className="flex flex-col">
-          <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-8 justify-between">
+          <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-8 justify-between gap-7">
             {menuItems.map((item, index) => (
               <div
                 key={index}
