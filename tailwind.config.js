@@ -26,9 +26,11 @@ module.exports = {
       colors: {
         border: '#F6DC43',
         background: '#210F37',
-        secondary: '#FFB200',
+        subbackground: '#2632D9',
+        high: '#FFB200',
         text: '#FFFFFF',
-        subtext: '#A5158C',
+        textocean: '#2632D9',
+        subtext: '#227CF2',
         select: '#CCD2D3', // Corrigido: estava sem #
         btn: '#FBA518',
 
