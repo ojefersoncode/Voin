@@ -53,10 +53,10 @@ export default function ScreenHome() {
 
       <div className="flex flex-col w-full justify-center my-auto items-center gap-4 sm:pb-28 max-sm:pb-20 px-4">
         <Card className="bg-background border-none pt-4">
-          <div className="flex flex-col font-sans text-white overflow-hidden">
+          <div className="flex flex-col font-sans">
             <div className="flex-grow flex flex-col items-center justify-center">
               <img
-                className=" drop-shadow-xl size-48 shadow-white select-none"
+                className="size-48 select-none"
                 src={`/Rank/${nivelAtual}.svg`}
                 alt="Rank"
               />
@@ -72,13 +72,13 @@ export default function ScreenHome() {
               </div>
             </Progress>
             <img
-              className="drop-shadow-xl size-8 shadow-white select-none"
+              className="drop-shadow-xl size-7 opacity-90 shadow-white select-none"
               src={`/Rank/${proximoNivel}.svg`}
               alt="Next rank"
             />
           </div>
           <div className="flex w-full justify-center items-center py-1">
-            <span className="text-xs font-titan">20 vitórias para prata</span>
+            <span className="text-xs font-titan">20 vitórias para nivel 2</span>
           </div>
         </Card>
 
