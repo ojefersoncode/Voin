@@ -25,7 +25,7 @@ export const HeroLeads = () => {
         </div>
       </div>
 
-      <div className="z-10">
+      <div className="z-10 max-md:pt-7">
         <HeroCards />
       </div>
     </section>
