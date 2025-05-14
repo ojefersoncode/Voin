@@ -143,7 +143,7 @@ export default function TradingAll() {
         </nav>
       </header>
 
-      <div className="md:flex w-full flex-1 bg-[#0e0e0e]">
+      <div className="lg:flex w-full flex-1 bg-[#0e0e0e]">
         {/* Gráfico */}
         <div className="flex-1 max-sm:pb-4">
           <div
@@ -153,8 +153,8 @@ export default function TradingAll() {
         </div>
 
         {/* Info + Select + Botões */}
-        <div className="md:w-[350px] flex flex-col">
-          <div className="flex md:hidden flex-row w-full items-center justify-center gap-4 max-sm:pt-28 pb-4 px-3">
+        <div className="md:w-[350px] max-lg:w-full flex flex-col">
+          <div className="flex flex-row w-full items-center justify-center gap-4 max-sm:pt-28 sm:px-6 pt-4 px-3">
             <button className="bg-red-600 shadow-red-800 drop-shadow-md w-1/2 px-4 py-3 flex items-center justify-center rounded-xl">
               <div className="flex w-full items-center justify-between">
                 <h1 className="font-inter">Para baixo</h1>
@@ -195,14 +195,14 @@ export default function TradingAll() {
                   </Select>
                 </div>
               </div>
-              <div className="px-3 py-1 rounded-xl border border-orange-400 drop-shadow-md shadow-orange-700  bg-btn flex flex-col w-full justify-center items-center gap-2">
+              <div className="px-3 py-1 rounded-xl border border-orange-400 drop-shadow-md shadow-orange-700  bg-btn flex flex-col w-full gap-2">
                 <span className="text-sm font-inter text-background">
                   Valor
                 </span>
                 <div className="flex w-full justify-center items-center gap-2">
                   <button
                     onClick={handleDecrement}
-                    className="py-1 w-full bg-btn text-xl text-background rounded"
+                    className="py-1 max-sm:px-1 w-full bg-btn text-xl text-background rounded"
                   >
                     <Minus />
                   </button>
@@ -221,24 +221,6 @@ export default function TradingAll() {
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="flex w-full flex-wrap items-center gap-4 pt-4 max-sm:pb-10 px-4">
-            {/* BOTÕES */}
-            <div className="flex max-md:hidden flex-row w-full items-center justify-center gap-4 pt-2 px-2">
-              <button className="bg-red-600 shadow-red-800 drop-shadow-md w-1/2 px-4 py-3 flex items-center justify-center rounded-xl">
-                <div className="flex w-full items-center justify-between">
-                  <h1 className="font-inter">Para baixo</h1>
-                  <ArrowDown className="h-6 w-6" />
-                </div>
-              </button>
-              <button className="bg-green-600 shadow-green-800 drop-shadow-md w-1/2 px-4 py-3 flex items-center justify-center rounded-xl">
-                <div className="flex w-full items-center justify-between">
-                  <h1 className="font-inter">Para cima</h1>
-                  <ArrowUp className="h-6 w-6" />
-                </div>
-              </button>
             </div>
           </div>
         </div>
