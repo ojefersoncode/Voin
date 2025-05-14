@@ -56,17 +56,17 @@ export default function ButtonMenu() {
             <div className="w-full flex flex-col rounded-lg p-2 bg-btn">
               <div className="flex flex-col items-center py-2">
                 <div className="flex w-full items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-border flex items-center justify-center">
-                    <UserCircle className="w-7 h-7 text-text" />
+                  <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center">
+                    <UserCircle className="w-8 h-8 text-btn" />
                   </div>
                   <div className="flex flex-col">
-                    <h2 className="text-x gfont-bold px-1 font-titan">
+                    <h2 className="text-x px-1 font-titan text-background">
                       Sr Jeferson
                     </h2>
-                    <div className="flex items-center">
+                    <div className="flex items-center mt-1 gap-1">
                       <img src="/Rank/Rank1.svg" alt="" className="size-4" />
-                      <span className="text-[0.60rem] font-inter">
-                        Rank nível 1
+                      <span className="text-sm font-inter text-background">
+                        Nível 1
                       </span>
                     </div>
                   </div>
@@ -75,7 +75,7 @@ export default function ButtonMenu() {
                       variant="ghost"
                       onClick={navigateToProfile}
                       size="sm"
-                      className="ml-auto bg-transparent hover:bg-transparent hover:text-text border-none focus:border-none text-text px-2 py-0"
+                      className="ml-auto bg-transparent hover:bg-transparent hover:text-background border-none focus:border-none text-background px-2 py-0"
                     >
                       <Pen className="size-4" />
                     </Button>
@@ -83,13 +83,13 @@ export default function ButtonMenu() {
                 </div>
               </div>
 
-              <form className="flex flex-col px-1 pb-2 text-text">
-                <label className="text-[0.70rem] text-text mr-1 font-inter">
+              <form className="flex flex-col px-1 pb-2 text-background">
+                <label className="text-[0.70rem] mr-1 font-inter">
                   Id da conta
                 </label>
-                <div className="flex w-full items-center text-xs text-text gap-1 py-0 cursor-pointer">
-                  <span className="font-light">ID: 268434192</span>
-                  <Copy className="size-3 text-text" />
+                <div className="flex w-full items-center text-xs gap-1 py-0 cursor-pointer">
+                  <span className="font-bold">ID: 268434192</span>
+                  <Copy className="size-3" />
                 </div>
               </form>
             </div>
