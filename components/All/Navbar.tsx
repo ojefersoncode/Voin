@@ -11,7 +11,7 @@ export default function NavbarAll() {
             <img className="size-10" src="/Nexbattle.png" alt="Nexcoin" />
           </div>
 
-          <div className="flex gap-6 py-2 px-2">
+          <div className="flex gap-4 py-2 px-2">
             <div>
               <BalanceButton />
             </div>
