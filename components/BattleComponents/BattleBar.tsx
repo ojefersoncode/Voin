@@ -13,9 +13,10 @@ export default function Battlebar() {
           </div>
 
           <div className="flex gap-6 py-2 px-2">
+            {/* 
             <div>
               <BalanceButton />
-            </div>
+            </div> */}
 
             <div>
               <ButtonMenu />
