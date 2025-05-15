@@ -61,7 +61,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
   return (
     <header className="sticky top-0 z-40 w-full bg-background">
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container py-2 px-3 md:py-4 md:px-0 w-screen flex justify-between ">
+        <NavigationMenuList className="container py-2 px-3 md:p-6 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
             <div className="flex gap-2 text-xl font-bold items-center">
               <img className="size-10" src="/Nexbattle.png" alt="logo" />

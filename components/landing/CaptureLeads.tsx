@@ -137,7 +137,10 @@ export const CaptureLeads = () => {
   };
 
   return (
-    <form className="flex flex-col w-full gap-4" onSubmit={handleSubmit}>
+    <form
+      className="flex flex-col justify-center items-center w-full gap-4"
+      onSubmit={handleSubmit}
+    >
       <Input
         type="text"
         placeholder="Digite seu nome"
@@ -162,13 +165,15 @@ export const CaptureLeads = () => {
         onChange={(e) => setPhone(e.target.value)}
         required
       />
-      <Button
-        className="w-full rounded-xl text-background font-inter bg-btn hover:bg-btn/80 transition-colors shadow-btn shadow-md drop-shadow-md border-3 border-orange-800/40 mt-2 p-4 text-md max-md:text-sm"
-        type="submit"
-        disabled={loading || isButtonDisabled}
-      >
-        {loading ? 'Enviando cadastro...' : 'Cadastrar'}
-      </Button>
+      <div className="w-full rounded-xl active:scale-95 active:border-none border-b-4 border-blue-800 transition-all duration-300">
+        <Button
+          className="w-full rounded-xl text-btn font-inter pb-2 bg-blue-700 hover:bg-blue-600 transition-all border border-blue-400 mt-2 p-4 text-md max-md:text-sm"
+          type="submit"
+          disabled={loading || isButtonDisabled}
+        >
+          {loading ? 'Enviando cadastro...' : 'Cadastrar'}
+        </Button>
+      </div>
     </form>
   );
 };

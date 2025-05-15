@@ -2,7 +2,7 @@
 
 export const HeroCards = () => {
   return (
-    <div className="w-full">
+    <div className="flex w-full justify-center items-center">
       <img
         src="/landing/Callimage.png" // Alterna as imagens conforme o tema
         alt="Voin"

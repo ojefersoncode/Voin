@@ -4,23 +4,19 @@ import { CaptureLeads } from './CaptureLeads';
 
 export const HeroLeads = () => {
   return (
-    <section className="container grid lg:grid-cols-2 place-items-center bg-background py-10 max-md:gap-7">
+    <section className="container w-full justify-center items-center grid lg:grid-cols-2 bg-background py-10">
       <div className="text-center lg:text-start space-y-4">
-        <main className="text-2xl md:text-4xl font-titan">
+        <main className="text-3xl md:text-6xl text-nowrap font-extrabold">
           <h1 className="inline">
-            <span className="inline bg-gradient-to-r text-gray-50">
-              Jogue com seus amigos
-            </span>
+            <span className="inline text-text">Jogue com seus amigos</span>
           </h1>
-          <br />
+          <p></p>
           <h2 className="inline">
-            <span className="inline bg-gradient-to-r text-btn bg-clip-text">
-              e ganhe crypto moedas.
-            </span>
+            <span className="inline text-btn">e ganhe crypto moedas.</span>
           </h2>
         </main>
 
-        <div className="max-sm:justify-center items-center pt-6">
+        <div className="flex w-full justify-center items-center pt-6">
           <CaptureLeads />
         </div>
       </div>
