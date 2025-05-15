@@ -130,7 +130,7 @@ export default function TradingAll() {
   return (
     <div className="bg-background h-screen text-white flex flex-col">
       {/* Header */}
-      <header className="bg-background sticky top-0 z-10">
+      <header className="bg-background sticky top-0 z-30">
         <nav className="flex items-center justify-between p-2">
           <div className="flex items-center gap-4">
             <img src="/Nexbattle.png" alt="Logo" className="h-8 w-8" />
@@ -180,7 +180,7 @@ export default function TradingAll() {
           />
           <button
             onClick={toggleChartFullscreen}
-            className="absolute top-2 right-2 bg-background p-1 rounded text-xs z-20"
+            className="absolute top-2 right-2 bg-btn text-black p-1 rounded-md z-20"
           >
             {isChartFullscreen ? (
               <Minimize size={18} />
@@ -195,7 +195,7 @@ export default function TradingAll() {
           className={`${isChartFullscreen ? 'hidden' : ''} lg:w-[350px] w-full flex flex-col bg-background border-l border-gray-800`}
         >
           {/* Price Info */}
-          <div className="p-4 border-b border-gray-800">
+          <div className="p-4 border-b border-btn/20">
             <div className="flex justify-between items-center">
               <div>
                 <h2 className="text-md font-titan">
@@ -264,7 +264,7 @@ export default function TradingAll() {
                   <button
                     key={value}
                     onClick={() => setInputValue(value)}
-                    className="bg-subbackground py-1 px-2 rounded text-sm transition-all duration-300 hover:bg-black/10"
+                    className="bg-subbackground font-bold py-1 px-2 rounded text-sm transition-all duration-300 hover:bg-purple-900/80"
                   >
                     {value}
                   </button>
