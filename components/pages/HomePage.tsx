@@ -1,7 +1,6 @@
 'use client';
 import { User } from '@supabase/supabase-js';
 import NavbarAll from '../All/Navbar';
-import NavBottom from '../All/NavBottom';
 import PreviewMarket from '../HomeComponents/PreviewMarket';
 import SubMenu from '../HomeComponents/SubMenu';
 import Balance from '../HomeComponents/Balance';
@@ -13,7 +12,7 @@ export default function HomePage({ user }: { user: User }) {
         <NavbarAll />
       </header>
 
-      <main className="flex flex-1 flex-col mb-20">
+      <main className="flex flex-1 flex-col">
         <div className="pb-2">
           <Balance />
         </div>
@@ -26,9 +25,6 @@ export default function HomePage({ user }: { user: User }) {
           <PreviewMarket />
         </div>
       </main>
-      <div>
-        <NavBottom />
-      </div>
     </div>
   );
 }

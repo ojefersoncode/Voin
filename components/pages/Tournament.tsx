@@ -6,6 +6,7 @@ import { Button } from '../ui/button';
 import { User } from '@supabase/supabase-js';
 import NavbarAll from '../All/Navbar';
 import NavBottom from '../All/NavBottom';
+import Pageback from '../All/Pageback';
 
 export default function Tournament({ user }: { user: User }) {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -42,6 +43,9 @@ export default function Tournament({ user }: { user: User }) {
       <header>
         <NavbarAll />
       </header>
+      <div>
+        <Pageback />
+      </div>
 
       <main className="flex flex-1 flex-col min-h-[calc(100vh_-_theme(spacing.16))]">
         <div className="pt-8 pb-2 px-4 sm:px-7">
@@ -77,7 +81,7 @@ export default function Tournament({ user }: { user: User }) {
           </div>
         </div>
 
-        <div className="mx-auto grid w-full px-8 max-md:px-4 gap-10 pb-4 mb-24 lg:gap-14 p-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mx-auto grid w-full px-8 max-md:px-4 gap-10 mb-8 lg:gap-14 p-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {torneios.map((torneio) => (
             <div
               key={torneio.id}
@@ -127,8 +131,6 @@ export default function Tournament({ user }: { user: User }) {
           ))}
         </div>
       </main>
-
-      <NavBottom />
     </div>
   );
 }

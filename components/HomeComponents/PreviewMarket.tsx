@@ -118,10 +118,6 @@ export default function PreviewMarket() {
           </TableBody>
         </Table>
       </div>
-
-      <div className="bg-background">
-        <NavBottom />
-      </div>
     </div>
   );
 }

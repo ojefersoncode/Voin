@@ -2,13 +2,11 @@
 import {
   Bell,
   Calendar,
-  FileClock,
   Gift,
   Megaphone,
-  MessageCircle,
   Share,
-  ShoppingBag,
   Swords,
+  Trophy,
   Users
 } from 'lucide-react';
 import { Card } from '../ui/card';
@@ -24,17 +22,17 @@ export default function SubMenu() {
       route: '/battle'
     },
     {
-      icon: <ShoppingBag className="size-7" />,
-      label: 'Lojinha',
-      route: '/store'
+      icon: <Trophy className="size-7" />,
+      label: 'Torneios',
+      route: '/tournament'
     },
     { icon: <Megaphone className="size-7" />, label: 'Novidades', route: null },
     { icon: <Share className="size-7" />, label: 'Convidar', route: null },
     { icon: <Calendar className="size-7" />, label: 'Tarefas', route: null },
     { icon: <Gift className="size-7" />, label: 'Bônus', route: null },
     {
-      icon: <MessageCircle className="size-7" />,
-      label: 'Mensagem',
+      icon: <Users className="size-7" />,
+      label: 'Amigos',
       route: null
     },
     { icon: <Bell className="size-7" />, label: 'Alertas', route: null }

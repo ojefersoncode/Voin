@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/table';
 import NavbarAll from '../All/Navbar';
 import NavBottom from '../All/NavBottom';
+import Pageback from '../All/Pageback';
 
 interface Crypto {
   symbol: string;
@@ -77,9 +78,11 @@ export default function MarketPage({ user }: { user: User }) {
       <div>
         <NavbarAll />
       </div>
-
-      <div className="p-6 mb-24 bg-background">
-        <h2 className="text-xl text-text font-titan mb-4">Mercado Cripto</h2>
+      <div>
+        <Pageback />
+      </div>
+      <div className="p-6 mb-4 bg-background">
+        <h2 className="text-xl text-text font-titan pb-6">Mercado Cripto</h2>
         <Table className="px-2 bg-background rounded-xl">
           <TableHeader>
             <TableRow className="font-titan rounded-xl bg-btn hover:bg-btn/80 border border-background/20">
@@ -123,10 +126,6 @@ export default function MarketPage({ user }: { user: User }) {
             ))}
           </TableBody>
         </Table>
-      </div>
-
-      <div className="bg-background">
-        <NavBottom />
       </div>
     </div>
   );
