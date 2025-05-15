@@ -35,12 +35,14 @@ export default function Balance() {
               { icon: Send, label: 'ENVIAR' },
               { icon: Upload, label: 'TRANSFERIR' }
             ].map((item, i) => (
-              <div className="flex flex-col justify-center items-center drop-shadow-md shadow-btn bg-blue-500 active:scale-90 active:bg-blue-400 rounded-xl pb-1 transition-all duration-300">
+              <div
+                key={i}
+                className="flex flex-col justify-center items-center drop-shadow-md shadow-btn bg-blue-500 active:scale-90 active:bg-blue-400 rounded-xl pb-1 transition-all duration-300"
+              >
                 <div
-                  key={i}
                   className="button py-6 w-full bg-blue-500  select-none
             
-                  border-b-[1px] border-blue-300 transition-colors duration-300 font-titan rounded-xl flex flex-col items-center justify-center cursor-pointer"
+                  border-b border-blue-300 transition-colors duration-300 font-titan rounded-xl flex flex-col items-center justify-center cursor-pointer"
                 >
                   <item.icon className="size-8 mb-2 py-1" />
                   <span className="text-xs font-titan">{item.label}</span>

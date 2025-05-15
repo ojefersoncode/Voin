@@ -30,13 +30,13 @@ export default function BalanceButton() {
             </div>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="p-2 touch-pan-x touch-pan-y rounded-xl border-btn bg-btn">
+        <DropdownMenuContent className="touch-pan-x touch-pan-y rounded-xl transition-all duration-300 active:border-none active:scale-95 border-b-4 border-yellow-700 p-0">
           <DropdownMenuItem
             onClick={navigateToStore}
-            className="mb-1 font-titan text-sm"
+            className="p-1 font-titan text-sm border-yellow-400 bg-btn"
           >
             <div className="flex w-full justify-center items-center text-background">
-              <Plus className="size-5" />
+              <Plus className="size-6" />
             </div>
           </DropdownMenuItem>
         </DropdownMenuContent>

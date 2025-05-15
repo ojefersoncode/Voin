@@ -72,7 +72,7 @@ export default function PreviewMarket() {
   }, []);
 
   return (
-    <div className="bg-background touch-pan-x touch-pan-y">
+    <div className="bg-background touch-pan-x touch-pan-y pb-4">
       <div className="sm:px-6 px-4 my-4 bg-background">
         <Table className="px-2 bg-background rounded-xl border-btn">
           <TableHeader>

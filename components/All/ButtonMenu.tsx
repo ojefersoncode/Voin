@@ -44,13 +44,14 @@ export default function ButtonMenu() {
         <DropdownMenuTrigger className="touch-pan-x touch-pan-y" asChild>
           <Button
             variant="ghost"
-            className="px-0 border-none outline-none bg-none"
+            className="px-0 border-none outline-none bg-none transition-transform data-[state=open]:rotate-90"
           >
             <div className="flex w-full justify-center items-center bg-btn p-1 rounded-xl">
-              <Menu className="text-text/90 size-7" />
+              <Menu className="text-text/90 size-7 " />
             </div>
           </Button>
         </DropdownMenuTrigger>
+
         <DropdownMenuContent className="w-56 touch-pan-x touch-pan-y bg-background">
           <DropdownMenuLabel className="p-1 touch-pan-x touch-pan-y">
             <div className="w-full flex flex-col rounded-lg p-2 bg-btn">
@@ -65,9 +66,9 @@ export default function ButtonMenu() {
                     </h2>
                     <div className="flex items-center mt-1 gap-1">
                       <img src="/Rank/Rank1.svg" alt="" className="size-4" />
-                      <span className="text-sm font-inter text-background">
+                      <p className="text-sm font-titan text-background">
                         Nível 1
-                      </span>
+                      </p>
                     </div>
                   </div>
                   <div>
