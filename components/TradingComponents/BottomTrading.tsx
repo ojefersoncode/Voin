@@ -7,7 +7,7 @@ export default function BottomTrading() {
   return (
     <div className="bg-background w-full">
       <Tabs defaultValue="orders" className="w-full">
-        <div className="border-b border-blue-800">
+        <div className="border-b border-btn/40">
           <TabsList className="bg-transparent w-full flex justify-start px-2">
             <TabsTrigger
               value="orders"
