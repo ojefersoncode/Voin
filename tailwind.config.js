@@ -26,7 +26,7 @@ module.exports = {
       colors: {
         border: '#F6DC43',
         background: '#210F37',
-        subbackground: '#2632D9',
+        subbackground: '#311652',
         high: '#FFB200',
         text: '#FFFFFF',
         textocean: '#2632D9',

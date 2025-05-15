@@ -142,13 +142,13 @@ export default function TradingAll() {
             </div>
             <div>
               <Select value={selectedPair} onValueChange={setSelectedPair}>
-                <SelectTrigger className="bg-btn text-black py-1.5 px-3 font-medium rounded-lg border-none h-9 ">
+                <SelectTrigger className="bg-btn text-black py-1.5 px-3 font-titan rounded-lg border-none h-9 ">
                   <SelectValue placeholder="Selecione um par" />
                 </SelectTrigger>
-                <SelectContent className="bg-[#1e2329] text-white border border-gray-700">
+                <SelectContent className="bg-btn text-black border border-gray-700">
                   {availablePairs.map((pair) => (
                     <SelectItem
-                      className="hover:bg-[#f0b90b] hover:text-black focus:bg-[#f0b90b] focus:text-black"
+                      className="font-inter hover:bg-background hover:text-black focus:bg-background focus:text-text"
                       key={pair.value}
                       value={pair.value}
                     >
@@ -198,10 +198,10 @@ export default function TradingAll() {
           <div className="p-4 border-b border-gray-800">
             <div className="flex justify-between items-center">
               <div>
-                <h2 className="text-xl font-bold">
+                <h2 className="text-md font-titan">
                   {selectedPair.replace('USDT', '')}/USDT
                 </h2>
-                <p className="text-green-500 text-lg font-medium">$29,876.54</p>
+                <p className="text-green-500 text-sm font-inter">$29,876.54</p>
               </div>
               <div className="text-right">
                 <p className="text-green-500">+2.34%</p>
@@ -217,13 +217,13 @@ export default function TradingAll() {
             {/* Time Selection */}
             <div className="mb-6">
               <Select value={selectedTime} onValueChange={setSelectedTime}>
-                <SelectTrigger className="w-full bg-[#2b2b2b] border-gray-700 text-white mb-4">
+                <SelectTrigger className="w-full border-none bg-subbackground text-text mb-4 font-bold">
                   <SelectValue placeholder="Selecione um tempo" />
                 </SelectTrigger>
-                <SelectContent className="bg-[#1e2329] text-white border border-gray-700">
+                <SelectContent className="bg-btn text-white border border-gray-700">
                   {availableTimes.map((time) => (
                     <SelectItem
-                      className="hover:bg-[#2b2b2b]"
+                      className="hover:bg-background text-black hover:text-black focus:bg-background font-inter"
                       key={time.value}
                       value={time.value}
                     >
@@ -237,10 +237,10 @@ export default function TradingAll() {
             {/* Amount Input */}
             <div className="mb-6">
               <h3 className="text-sm text-gray-400 mb-2">Valor da Entrada</h3>
-              <div className="flex items-center bg-[#2b2b2b] rounded-md p-1">
+              <div className="flex items-center bg-subbackground rounded-md p-1">
                 <button
                   onClick={handleDecrement}
-                  className="p-2 text-gray-400 hover:text-white"
+                  className="p-2 text-btn hover:text-btn/80"
                 >
                   <Minus size={18} />
                 </button>
@@ -248,11 +248,11 @@ export default function TradingAll() {
                   type="text"
                   value={inputValue}
                   onChange={handleChange}
-                  className="bg-transparent border-none text-center text-lg flex-1 text-white"
+                  className="bg-transparent border-none text-center text-lg font-inter flex-1 text-white"
                 />
                 <button
                   onClick={handleIncrement}
-                  className="p-2 text-gray-400 hover:text-white"
+                  className="p-2 text-btn hover:text-btn/80"
                 >
                   <Plus size={18} />
                 </button>
@@ -264,7 +264,7 @@ export default function TradingAll() {
                   <button
                     key={value}
                     onClick={() => setInputValue(value)}
-                    className="bg-[#2b2b2b] py-1 px-2 rounded text-sm hover:bg-[#3b3b3b]"
+                    className="bg-subbackground py-1 px-2 rounded text-sm transition-all duration-300 hover:bg-black/10"
                   >
                     {value}
                   </button>
