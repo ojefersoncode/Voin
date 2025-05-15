@@ -1,3 +1,7 @@
+'use client';
+
+import type React from 'react';
+
 import { useEffect, useState } from 'react';
 import {
   Select,
@@ -5,9 +9,16 @@ import {
   SelectValue,
   SelectContent,
   SelectItem
-} from '../ui/select';
-import { ArrowUp, ArrowDown, Plus, Minus } from 'lucide-react';
-import { Input } from '../ui/input';
+} from '@/components/ui/select';
+import {
+  ArrowUp,
+  ArrowDown,
+  Plus,
+  Minus,
+  Minimize,
+  Maximize
+} from 'lucide-react';
+import { Input } from '@/components/ui/input';
 import BottomTrading from './BottomTrading';
 import BalanceButton from '../All/BalanceButton';
 
@@ -31,7 +42,7 @@ const availablePairs = [
 const availableTimes = [
   { value: '30s', label: 'Entrada de 30s' },
   { value: '1min', label: 'Entrada de 1m' },
-  { value: '5min', label: 'Entrada de  5m' },
+  { value: '5min', label: 'Entrada de 5m' },
   { value: '10min', label: 'Entrada de 10 min' },
   { value: '30min', label: 'Entrada de 30m' },
   { value: '1h', label: 'Entrada de 1h' }
@@ -49,6 +60,7 @@ export default function TradingAll() {
   const [currentPrice, setCurrentPrice] = useState(0.0);
   const [amount, setAmount] = useState(25000);
   const [inputValue, setInputValue] = useState<number>(0);
+  const [isChartFullscreen, setIsChartFullscreen] = useState(false);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -63,7 +75,7 @@ export default function TradingAll() {
           locale: 'br',
           theme: 'Dark',
           width: '100%',
-          height: '500',
+          height: '100%',
           style: '1',
           hide_top_toolbar: false,
           hide_legend: false,
@@ -72,12 +84,15 @@ export default function TradingAll() {
           save_image: false,
           toolbar_bg: '#0e0e0e',
           border: '#0e0e0e',
-
           enabled_features: [
             'use_localstorage_for_settings',
             'hide_left_toolbar_by_default',
-            'side_toolbar_in_fullscreen_mode'
+            'side_toolbar_in_fullscreen_mode',
+            'chart_property_page_scales',
+            'chart_property_page_style',
+            'chart_property_page_timezone'
           ],
+          disabled_features: ['header_compare', 'header_symbol_search'],
           charts_storage_url: 'https://saveload.tradingview.com',
           client_id: 'tradingview.com',
           user_id: 'public_user',
@@ -91,6 +106,7 @@ export default function TradingAll() {
     return () => {
       const container = document.getElementById('tv_chart_container');
       if (container) container.innerHTML = '';
+      document.body.removeChild(script);
     };
   }, [selectedPair]);
 
@@ -107,126 +123,174 @@ export default function TradingAll() {
     setInputValue(Number(value));
   };
 
+  const toggleChartFullscreen = () => {
+    setIsChartFullscreen(!isChartFullscreen);
+  };
+
   return (
-    <div className="bg-[#0e0e0e] h-screen text-white flex flex-col touch-pan-x touch-pan-y">
-      <header className="bg-background">
-        <nav className="flex items-center justify-between px-2">
+    <div className="bg-background h-screen text-white flex flex-col">
+      {/* Header */}
+      <header className="bg-background sticky top-0 z-10">
+        <nav className="flex items-center justify-between p-2">
           <div className="flex items-center gap-4">
-            <img src="/Nexbattle.png" alt="Logo" className="size-8" />
+            <img src="/Nexbattle.png" alt="Logo" className="h-8 w-8" />
           </div>
 
-          <div className="flex py-4 px-2 gap-4">
-            <div className="flex items-center justify-center gap-1 px-2 rounded-xl text-green-50 cursor-pointer bg-background">
+          <div className="flex items-center gap-3 md:gap-6">
+            <div className="flex items-center justify-center gap-1 px-2 py-1 rounded-xl text-green-50 cursor-pointer">
               <BalanceButton />
             </div>
             <div>
-              <div className="flex w-full justify-center items-center">
-                <Select value={selectedPair} onValueChange={setSelectedPair}>
-                  <SelectTrigger className="bg-btn/90 shadow-orange-400 drop-shadow-sm text-background py-2 px-2 font-titan rounded-xl border border-gray-500/30 flex w-full justify-center items-center">
-                    <SelectValue placeholder="Selecione um par" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-background font-titan text-white border border-opacity-40">
-                    {availablePairs.map((pair) => (
-                      <SelectItem
-                        className="hover:bg-btn hover:text-background"
-                        key={pair.value}
-                        value={pair.value}
-                      >
-                        {pair.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
+              <Select value={selectedPair} onValueChange={setSelectedPair}>
+                <SelectTrigger className="bg-btn text-black py-1.5 px-3 font-medium rounded-lg border-none h-9 ">
+                  <SelectValue placeholder="Selecione um par" />
+                </SelectTrigger>
+                <SelectContent className="bg-[#1e2329] text-white border border-gray-700">
+                  {availablePairs.map((pair) => (
+                    <SelectItem
+                      className="hover:bg-[#f0b90b] hover:text-black focus:bg-[#f0b90b] focus:text-black"
+                      key={pair.value}
+                      value={pair.value}
+                    >
+                      {pair.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </nav>
       </header>
 
-      <div className="flex max-xl:flex-col w-full sm:flex-1 bg-[#0e0e0e]">
-        {/* Gráfico */}
-        <div className="flex-1 max-sm:pb-4">
+      {/* Main Content */}
+      <div
+        className={`flex flex-col lg:flex-row w-full flex-1 ${isChartFullscreen ? 'lg:flex-col' : ''}`}
+      >
+        {/* Chart Container */}
+        <div
+          className={`w-full lg:flex-1 relative ${
+            isChartFullscreen
+              ? 'h-[calc(100vh-120px)]'
+              : 'h-[500px] sm:h-[550px] md:h-[600px] lg:h-[calc(100vh-180px)] '
+          }`}
+        >
           <div
             id="tv_chart_container"
-            className="w-full sm:h-[600px] max-sm:h-[400px]"
+            className="w-full h-full max-lg:min-h-[500px] max-sm:h-[500px]"
           />
+          <button
+            onClick={toggleChartFullscreen}
+            className="absolute top-2 right-2 bg-background p-1 rounded text-xs z-20"
+          >
+            {isChartFullscreen ? (
+              <Minimize size={18} />
+            ) : (
+              <Maximize size={18} />
+            )}
+          </button>
         </div>
 
-        {/* Info + Select + Botões */}
-        <div className="sm:w-[350px] w-full flex flex-col">
-          <div className="flex flex-row w-full items-center justify-center gap-4 max-sm:pt-28 sm:px-6 pt-4 px-3">
-            <button className="bg-red-600 shadow-red-800 drop-shadow-md w-1/2 px-4 py-3 flex items-center justify-center rounded-xl">
-              <div className="flex w-full items-center justify-between">
-                <h1 className="font-inter">Para baixo</h1>
-                <ArrowDown className="size-5" />
+        {/* Trading Panel */}
+        <div
+          className={`${isChartFullscreen ? 'hidden' : ''} lg:w-[350px] w-full flex flex-col bg-background border-l border-gray-800`}
+        >
+          {/* Price Info */}
+          <div className="p-4 border-b border-gray-800">
+            <div className="flex justify-between items-center">
+              <div>
+                <h2 className="text-xl font-bold">
+                  {selectedPair.replace('USDT', '')}/USDT
+                </h2>
+                <p className="text-green-500 text-lg font-medium">$29,876.54</p>
               </div>
-            </button>
-            <button className="bg-green-600 shadow-green-800 drop-shadow-md w-1/2 px-4 py-3 flex items-center justify-center rounded-xl">
-              <div className="flex w-full items-center justify-between">
-                <h1 className="font-inter">Para cima</h1>
-                <ArrowUp className="size-5" />
+              <div className="text-right">
+                <p className="text-green-500">+2.34%</p>
+                <p className="text-xs text-gray-400">24h Change</p>
               </div>
-            </button>
+            </div>
           </div>
 
-          <div className="sm:px-4 px-1">
-            <div className="grid grid-cols-2 gap-2 mt-4">
-              {/* Informações */}
-              <div className="flex w-full rounded-xl bg-btn border max-md:pb-1 drop-shadow-md shadow-orange-700  border-orange-400">
-                <div className="flex flex-col w-full justify-center">
-                  <span className="text-sm px-2 text-background font-inter">
-                    Tempo
-                  </span>
-                  <Select value={selectedTime} onValueChange={setSelectedTime}>
-                    <SelectTrigger className="bg-btn text-sm font-inter text-background mt-1 py-2 rounded border border-none w-full">
-                      <SelectValue placeholder="Selecione um par" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-background text-xs font-inter text-white border border-opacity-40">
-                      {availableTimes.map((time) => (
-                        <SelectItem
-                          className="bg-background"
-                          key={time.value}
-                          value={time.value}
-                        >
-                          {time.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
+          {/* Trading Controls */}
+          <div className="p-4">
+            <h3 className="text-sm text-gray-400 mb-2">Tipo de Entrada</h3>
+
+            {/* Time Selection */}
+            <div className="mb-6">
+              <Select value={selectedTime} onValueChange={setSelectedTime}>
+                <SelectTrigger className="w-full bg-[#2b2b2b] border-gray-700 text-white mb-4">
+                  <SelectValue placeholder="Selecione um tempo" />
+                </SelectTrigger>
+                <SelectContent className="bg-[#1e2329] text-white border border-gray-700">
+                  {availableTimes.map((time) => (
+                    <SelectItem
+                      className="hover:bg-[#2b2b2b]"
+                      key={time.value}
+                      value={time.value}
+                    >
+                      {time.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Amount Input */}
+            <div className="mb-6">
+              <h3 className="text-sm text-gray-400 mb-2">Valor da Entrada</h3>
+              <div className="flex items-center bg-[#2b2b2b] rounded-md p-1">
+                <button
+                  onClick={handleDecrement}
+                  className="p-2 text-gray-400 hover:text-white"
+                >
+                  <Minus size={18} />
+                </button>
+                <Input
+                  type="text"
+                  value={inputValue}
+                  onChange={handleChange}
+                  className="bg-transparent border-none text-center text-lg flex-1 text-white"
+                />
+                <button
+                  onClick={handleIncrement}
+                  className="p-2 text-gray-400 hover:text-white"
+                >
+                  <Plus size={18} />
+                </button>
               </div>
-              <div className="px-3 py-1 rounded-xl border border-orange-400 drop-shadow-md shadow-orange-700  bg-btn flex flex-col w-full gap-2">
-                <span className="text-sm font-inter text-background">
-                  Valor
-                </span>
-                <div className="flex w-full justify-center items-center gap-2">
+
+              {/* Quick Amount Buttons */}
+              <div className="grid grid-cols-4 gap-2 mt-3">
+                {[25, 50, 75, 100].map((value) => (
                   <button
-                    onClick={handleDecrement}
-                    className="py-1 max-sm:px-1 w-full bg-btn text-background rounded"
+                    key={value}
+                    onClick={() => setInputValue(value)}
+                    className="bg-[#2b2b2b] py-1 px-2 rounded text-sm hover:bg-[#3b3b3b]"
                   >
-                    <Minus />
+                    {value}
                   </button>
-                  <Input
-                    placeholder="Valor"
-                    type="text"
-                    value={inputValue}
-                    onChange={handleChange}
-                    className="bg-transparent w-20 text-background px-1 text-xl border-none text-center"
-                  />
-                  <button
-                    onClick={handleIncrement}
-                    className="py-1 w-full bg-btn text-background rounded"
-                  >
-                    <Plus />
-                  </button>
-                </div>
+                ))}
               </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="grid grid-cols-2 gap-4 mt-6">
+              <button className="bg-[#f6465d] hover:bg-[#e0414d] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-between">
+                <span>Para baixo</span>
+                <ArrowDown className="h-5 w-5" />
+              </button>
+              <button className="bg-[#0ecb81] hover:bg-[#0bb974] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-between">
+                <span>Para cima</span>
+                <ArrowUp className="h-5 w-5" />
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      <BottomTrading />
+      {/* Bottom Trading Component */}
+      <div className={`${isChartFullscreen ? 'hidden' : ''}`}>
+        <BottomTrading />
+      </div>
     </div>
   );
 }
