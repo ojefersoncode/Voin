@@ -172,8 +172,7 @@ export default function TradingAll() {
             pan: true,
             reset: true,
             customIcons: []
-          },
-          autoSelected: 'zoom'
+          }
         },
         zoom: {
           enabled: true,
@@ -187,7 +186,7 @@ export default function TradingAll() {
         style: { color: '#fff' }
       },
       xaxis: {
-        type: 'category',
+        type: 'datetime',
         labels: {
           formatter: (value: string | number | Date) => {
             // Simplifica o formato de hora para mostrar apenas horas e minutos
@@ -201,7 +200,7 @@ export default function TradingAll() {
           rotateAlways: false,
           hideOverlappingLabels: true,
           showDuplicates: false,
-          trim: true,
+          trim: false,
           style: {
             colors: '#f0f0f0',
             fontSize: '11px'
@@ -220,7 +219,7 @@ export default function TradingAll() {
       },
       yaxis: {
         tooltip: {
-          enabled: true
+          enabled: false
         },
         labels: {
           style: { colors: '#f0f0f0' }
