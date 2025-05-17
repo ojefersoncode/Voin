@@ -250,11 +250,11 @@ export default function TradingAll() {
   }, [selectedPair]);
 
   const handleIncrement = () => {
-    setInputValue((prev) => prev + 1);
+    setInputValue((prev) => prev + 5);
   };
 
   const handleDecrement = () => {
-    setInputValue((prev) => (prev > 0 ? prev - 1 : 0));
+    setInputValue((prev) => (prev >= 5 ? prev - 5 : 0));
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -322,7 +322,7 @@ export default function TradingAll() {
         <div
           className={`${
             isChartFullscreen ? 'hidden' : ''
-          } lg:w-[350px] w-full flex flex-col bg-background border-l border-gray-800`}
+          } lg:w-[350px] w-full flex flex-col bg-background`}
         >
           {/* Price Info */}
           <div className="p-4 border-b border-btn/20">
@@ -352,18 +352,18 @@ export default function TradingAll() {
 
           {/* Trading Controls */}
           <div className="p-4 touch-pan-x touch-pan-y">
-            <h3 className="text-sm text-gray-400 mb-2">Tipo de Entrada</h3>
+            <h3 className="text-sm text-gray-400 mb-2">Tempo</h3>
 
             {/* Time Selection */}
             <div className="mb-6">
               <Select value={selectedTime} onValueChange={setSelectedTime}>
-                <SelectTrigger className="w-full border-none bg-subbackground text-text mb-4 font-bold">
+                <SelectTrigger className="w-full border-none bg-subbackground text-text mb-4 font-semibold">
                   <SelectValue placeholder="Selecione um tempo" />
                 </SelectTrigger>
                 <SelectContent className="bg-btn text-white border border-gray-700">
                   {availableTimes.map((time) => (
                     <SelectItem
-                      className="hover:bg-background text-black hover:text-black focus:bg-background font-inter"
+                      className="hover:bg-background text-black hover:text-black focus:bg-background font-bold"
                       key={time.value}
                       value={time.value}
                     >
@@ -376,7 +376,7 @@ export default function TradingAll() {
 
             {/* Amount Input */}
             <div className="mb-6 touch-pan-x touch-pan-y">
-              <h3 className="text-sm text-gray-400 mb-2">Valor da Entrada</h3>
+              <h3 className="text-sm text-gray-400 mb-2">Valor</h3>
               <div className="flex items-center bg-subbackground rounded-md p-1">
                 <button
                   onClick={handleDecrement}
@@ -397,19 +397,6 @@ export default function TradingAll() {
                   <Plus size={18} />
                 </button>
               </div>
-
-              {/* Quick Amount Buttons */}
-              <div className="grid grid-cols-4 gap-2 mt-3">
-                {[25, 50, 75, 100].map((value) => (
-                  <button
-                    key={value}
-                    onClick={() => setInputValue(value)}
-                    className="bg-subbackground font-bold py-1 px-2 rounded text-sm transition-all duration-300 hover:bg-purple-900/80"
-                  >
-                    {value}
-                  </button>
-                ))}
-              </div>
             </div>
 
             {/* Action Buttons */}
@@ -428,7 +415,9 @@ export default function TradingAll() {
       </div>
 
       {/* Bottom Component */}
-      <BottomTrading />
+      <div className="pt-4">
+        <BottomTrading />
+      </div>
     </div>
   );
 }
