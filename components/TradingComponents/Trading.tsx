@@ -147,8 +147,8 @@ export default function TradingAll() {
 
     fetchCandlestickData();
 
-    // Configurar um intervalo para atualizar os dados a cada 10 segundos
-    const intervalId = setInterval(fetchCandlestickData, 10000);
+    // Configurar um intervalo para atualizar os dados a cada 3 segundos
+    const intervalId = setInterval(fetchCandlestickData, 3000);
 
     // Limpar o intervalo quando o componente for desmontado
     return () => clearInterval(intervalId);
