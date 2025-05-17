@@ -176,7 +176,9 @@ export default function TradingAll() {
           autoSelected: 'zoom'
         },
         zoom: {
-          enabled: true
+          enabled: true,
+          type: 'xy',
+          autoScaleYaxis: true
         }
       },
       title: {
