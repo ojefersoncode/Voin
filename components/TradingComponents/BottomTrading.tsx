@@ -5,7 +5,7 @@ import { Clock, BarChart2, History } from 'lucide-react';
 
 export default function BottomTrading() {
   return (
-    <div className="bg-background w-full">
+    <div className="bg-background w-full touch-pan-x touch-pan-y">
       <Tabs defaultValue="orders" className="w-full">
         <div className="border-b border-btn/40">
           <TabsList className="bg-transparent w-full flex justify-start px-2">

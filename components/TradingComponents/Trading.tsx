@@ -264,7 +264,7 @@ export default function TradingAll() {
   return (
     <div className="bg-background h-screen text-white flex flex-col">
       {/* Header */}
-      <header className="bg-background sticky top-0 z-30">
+      <header className="bg-background sticky top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between p-2">
           <div className="flex items-center gap-4">
             <img src="/Nexbattle.png" alt="Logo" className="h-8 w-8" />
@@ -350,7 +350,7 @@ export default function TradingAll() {
           </div>
 
           {/* Trading Controls */}
-          <div className="p-4">
+          <div className="p-4 touch-pan-x touch-pan-y">
             <h3 className="text-sm text-gray-400 mb-2">Tipo de Entrada</h3>
 
             {/* Time Selection */}
@@ -374,7 +374,7 @@ export default function TradingAll() {
             </div>
 
             {/* Amount Input */}
-            <div className="mb-6">
+            <div className="mb-6 touch-pan-x touch-pan-y">
               <h3 className="text-sm text-gray-400 mb-2">Valor da Entrada</h3>
               <div className="flex items-center bg-subbackground rounded-md p-1">
                 <button
@@ -412,7 +412,7 @@ export default function TradingAll() {
             </div>
 
             {/* Action Buttons */}
-            <div className="grid grid-cols-2 gap-4 mt-6">
+            <div className="grid grid-cols-2 gap-4 mt-6 touch-pan-x touch-pan-y">
               <button className="bg-[#f6465d] hover:bg-[#e0414d] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-between">
                 <span>Para baixo</span>
                 <ArrowDown className="h-5 w-5" />
