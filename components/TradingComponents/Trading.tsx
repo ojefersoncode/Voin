@@ -169,7 +169,7 @@ export default function TradingAll() {
             zoom: true,
             zoomin: true,
             zoomout: true,
-            pan: false,
+            pan: true,
             reset: true,
             customIcons: []
           },
@@ -344,7 +344,7 @@ export default function TradingAll() {
                 >
                   {priceChangePercent}%
                 </p>
-                <p className="text-xs text-gray-400">24h Change</p>
+                <p className="text-xs text-gray-400">24h </p>
               </div>
             </div>
           </div>
