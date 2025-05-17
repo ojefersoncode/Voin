@@ -324,32 +324,6 @@ export default function TradingAll() {
             isChartFullscreen ? 'hidden' : ''
           } lg:w-[350px] w-full flex flex-col bg-background`}
         >
-          {/* Price Info */}
-          <div className="p-4 border-b border-btn/20">
-            <div className="flex justify-between items-center">
-              <div>
-                <h2 className="text-md font-titan">
-                  {selectedPair.replace('USDT', '')}/USDT
-                </h2>
-                <p className="text-green-500 text-sm font-inter">
-                  ${currentPrice}
-                </p>
-              </div>
-              <div className="text-right">
-                <p
-                  className={
-                    priceChangePercent.startsWith('-')
-                      ? 'text-red-500'
-                      : 'text-green-500'
-                  }
-                >
-                  {priceChangePercent}%
-                </p>
-                <p className="text-xs text-gray-400">24h </p>
-              </div>
-            </div>
-          </div>
-
           {/* Trading Controls */}
           <div className="p-4 touch-pan-x touch-pan-y">
             <h3 className="text-sm text-gray-400 mb-2">Tempo</h3>
