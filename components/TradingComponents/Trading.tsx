@@ -10,7 +10,7 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import { ArrowUp, ArrowDown, Plus, Minus } from 'lucide-react';
+import { ArrowUp, ArrowDown, Plus, Minus, RefreshCw } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import BottomTrading from './BottomTrading';
 import BalanceButton from '../All/BalanceButton';
@@ -169,15 +169,11 @@ export default function TradingAll() {
             zoom: true,
             zoomin: false,
             zoomout: false,
-            pan: true,
-            reset: true,
-            customIcons: []
+            reset: true
           }
         },
         zoom: {
-          enabled: true,
-          type: 'xy',
-          autoScaleYaxis: true
+          enabled: true
         }
       },
       title: {
@@ -203,23 +199,23 @@ export default function TradingAll() {
           trim: false,
           style: {
             colors: '#f0f0f0',
-            fontSize: '11px'
+            fontSize: '12px'
           },
           offsetY: 2
         },
         axisBorder: {
           show: true,
-          color: '#444'
+          color: '#fff'
         },
         axisTicks: {
           show: true,
-          color: '#444'
+          color: '#fff'
         },
         tickAmount: 8 // Reduz o número de rótulos exibidos
       },
       yaxis: {
         tooltip: {
-          enabled: false
+          enabled: true
         },
         labels: {
           style: { colors: '#f0f0f0' }
