@@ -1,8 +1,8 @@
 'use client';
 
 import type React from 'react';
-
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import {
   Select,
   SelectTrigger,
@@ -10,17 +10,24 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import {
-  ArrowUp,
-  ArrowDown,
-  Plus,
-  Minus,
-  Minimize,
-  Maximize
-} from 'lucide-react';
+import { ArrowUp, ArrowDown, Plus, Minus } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import BottomTrading from './BottomTrading';
 import BalanceButton from '../All/BalanceButton';
+
+// Importação dinâmica do Chart para evitar o erro "window is not defined"
+const Chart = dynamic(() => import('react-apexcharts'), {
+  ssr: false, // Não renderiza no servidor
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center bg-[#311652] text-white">
+      <img
+        src="/Nexbattle.png"
+        alt="Logo"
+        className="h-48 w-48 animate-pulse"
+      />
+    </div>
+  )
+});
 
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
@@ -48,66 +55,197 @@ const availableTimes = [
   { value: '1h', label: 'Entrada de 1h' }
 ];
 
-declare global {
-  interface Window {
-    TradingView: any;
-  }
-}
-
 export default function TradingAll() {
   const [selectedPair, setSelectedPair] = useState('BTCUSDT');
   const [selectedTime, setSelectedTime] = useState('30s');
-  const [currentPrice, setCurrentPrice] = useState(0.0);
-  const [amount, setAmount] = useState(25000);
   const [inputValue, setInputValue] = useState<number>(0);
   const [isChartFullscreen, setIsChartFullscreen] = useState(false);
+  const [series, setSeries] = useState<any[]>([]);
+  const [options, setOptions] = useState<any>({});
+  const [currentPrice, setCurrentPrice] = useState<string>('0');
+  const [priceChange, setPriceChange] = useState<string>('0');
+  const [priceChangePercent, setPriceChangePercent] = useState<string>('0');
 
+  // Simulando dados para o gráfico — você pode trocar para dados reais via API
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://s3.tradingview.com/tv.js';
-    script.async = true;
-    script.onload = () => {
-      if (window.TradingView) {
-        new window.TradingView.widget({
-          symbol: `BINANCE:${selectedPair}`,
-          interval: '1',
-          container_id: 'tv_chart_container',
-          locale: 'br',
-          theme: 'Dark',
-          width: '100%',
-          height: '100%',
-          style: '1',
-          hide_top_toolbar: false,
-          hide_legend: false,
-          withdateranges: true,
-          allow_symbol_change: true,
-          save_image: false,
-          toolbar_bg: '#0e0e0e',
-          border: '#0e0e0e',
-          enabled_features: [
-            'use_localstorage_for_settings',
-            'hide_left_toolbar_by_default',
-            'side_toolbar_in_fullscreen_mode',
-            'chart_property_page_scales',
-            'chart_property_page_style',
-            'chart_property_page_timezone'
-          ],
-          disabled_features: ['header_compare', 'header_symbol_search'],
-          charts_storage_url: 'https://saveload.tradingview.com',
-          client_id: 'tradingview.com',
-          user_id: 'public_user',
-          charts_storage_api_version: '1.1',
-          timezone: 'America/Sao_Paulo'
-        });
+    // Mapear o valor de selectedTime para o intervalo da API da Binance
+    const getInterval = () => {
+      switch (selectedTime) {
+        case '1min':
+          return '1m';
+        case '5min':
+          return '5m';
+        case '10min':
+          return '15m'; // Binance não tem 10m, usando 15m
+        case '30min':
+          return '30m';
+        case '1h':
+          return '1h';
+        default:
+          return '1m'; // Para 30s, usamos 1m como mais próximo
       }
     };
-    document.body.appendChild(script);
 
-    return () => {
-      const container = document.getElementById('tv_chart_container');
-      if (container) container.innerHTML = '';
-      document.body.removeChild(script);
+    const fetchCandlestickData = async () => {
+      try {
+        const interval = getInterval();
+        const limit = 100; // Número de candles a serem retornados
+
+        // Usando a API pública da Binance
+        const response = await fetch(
+          `https://api.binance.com/api/v3/klines?symbol=${selectedPair}&interval=${interval}&limit=${limit}`
+        );
+
+        if (!response.ok) {
+          throw new Error('Falha ao buscar dados da API da Binance');
+        }
+
+        const data = await response.json();
+
+        // Transformar os dados para o formato esperado pelo ApexCharts
+        const formattedData = data.map((candle: string[]) => ({
+          x: new Date(candle[0]), // Usar objeto Date diretamente em vez de string
+          y: [
+            Number.parseFloat(candle[1]), // Open
+            Number.parseFloat(candle[2]), // High
+            Number.parseFloat(candle[3]), // Low
+            Number.parseFloat(candle[4]) // Close
+          ]
+        }));
+
+        setSeries([{ data: formattedData }]);
+
+        // Atualizar o preço atual e a variação percentual
+        if (formattedData.length > 0) {
+          const lastCandle = formattedData[formattedData.length - 1];
+          const closePrice = lastCandle.y[3];
+          const openPrice = formattedData[0].y[0];
+          const priceChange = closePrice - openPrice;
+          const priceChangePercent = (priceChange / openPrice) * 100;
+
+          setCurrentPrice(closePrice.toFixed(2));
+          setPriceChange(priceChange.toFixed(2));
+          setPriceChangePercent(priceChangePercent.toFixed(2));
+        }
+      } catch (error) {
+        console.error('Erro ao buscar dados:', error);
+        // Fallback para dados simulados em caso de erro
+        const now = Date.now();
+        const fallbackData = Array.from({ length: 30 }).map((_, i) => ({
+          x: new Date(now - (29 - i) * 60000).toLocaleTimeString(),
+          y: [
+            Math.random() * 30000 + 20000,
+            Math.random() * 30000 + 20000,
+            Math.random() * 30000 + 20000,
+            Math.random() * 30000 + 20000
+          ].map((v) => Number(v.toFixed(2)))
+        }));
+
+        setSeries([{ data: fallbackData }]);
+      }
     };
+
+    fetchCandlestickData();
+
+    // Configurar um intervalo para atualizar os dados a cada 10 segundos
+    const intervalId = setInterval(fetchCandlestickData, 10000);
+
+    // Limpar o intervalo quando o componente for desmontado
+    return () => clearInterval(intervalId);
+  }, [selectedPair, selectedTime]);
+
+  useEffect(() => {
+    setOptions({
+      chart: {
+        type: 'candlestick',
+        height: '100%',
+        background: '#311652', // Cor de fundo do gráfico
+        foreColor: '#fff', // Cor do texto
+        toolbar: {
+          show: true,
+          tools: {
+            download: false,
+            selection: false,
+            zoom: true,
+            zoomin: true,
+            zoomout: true,
+            pan: false,
+            reset: true,
+            customIcons: []
+          },
+          autoSelected: 'zoom'
+        },
+        zoom: {
+          enabled: true
+        }
+      },
+      title: {
+        text: `${selectedPair.replace('USDT', '')}/USDT`,
+        align: 'left',
+        style: { color: '#fff' }
+      },
+      xaxis: {
+        type: 'category',
+        labels: {
+          formatter: (value: string | number | Date) => {
+            // Simplifica o formato de hora para mostrar apenas horas e minutos
+            const time = new Date(value);
+            return (
+              time.getHours().toString().padStart(2, '0') +
+              ':' +
+              time.getMinutes().toString().padStart(2, '0')
+            );
+          },
+          rotateAlways: false,
+          hideOverlappingLabels: true,
+          showDuplicates: false,
+          trim: true,
+          style: {
+            colors: '#f0f0f0',
+            fontSize: '11px'
+          },
+          offsetY: 2
+        },
+        axisBorder: {
+          show: true,
+          color: '#444'
+        },
+        axisTicks: {
+          show: true,
+          color: '#444'
+        },
+        tickAmount: 8 // Reduz o número de rótulos exibidos
+      },
+      yaxis: {
+        tooltip: {
+          enabled: true
+        },
+        labels: {
+          style: { colors: '#f0f0f0' }
+        }
+      },
+      grid: {
+        borderColor: '#2d2d2d'
+      },
+      plotOptions: {
+        candlestick: {
+          colors: {
+            upward: '#20b476',
+            downward: '#f6465d'
+          }
+        }
+      },
+      theme: {
+        mode: 'dark',
+        palette: 'palette1'
+      },
+      tooltip: {
+        enabled: true,
+        shared: true,
+        followCursor: true,
+        theme: 'dark'
+      }
+    });
   }, [selectedPair]);
 
   const handleIncrement = () => {
@@ -121,10 +259,6 @@ export default function TradingAll() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\D/g, '');
     setInputValue(Number(value));
-  };
-
-  const toggleChartFullscreen = () => {
-    setIsChartFullscreen(!isChartFullscreen);
   };
 
   return (
@@ -174,25 +308,20 @@ export default function TradingAll() {
               : 'h-[500px] sm:h-[550px] md:h-[600px] lg:h-[calc(100vh-180px)] '
           }`}
         >
-          <div
-            id="tv_chart_container"
-            className="w-full h-full max-lg:min-h-[500px] max-sm:h-[500px]"
+          <Chart
+            options={options}
+            series={series}
+            type="candlestick"
+            height="100%"
+            width="100%"
           />
-          <button
-            onClick={toggleChartFullscreen}
-            className="absolute top-2 right-2 bg-btn text-black p-1 rounded-md z-20"
-          >
-            {isChartFullscreen ? (
-              <Minimize size={18} />
-            ) : (
-              <Maximize size={18} />
-            )}
-          </button>
         </div>
 
         {/* Trading Panel */}
         <div
-          className={`${isChartFullscreen ? 'hidden' : ''} lg:w-[350px] w-full flex flex-col bg-background border-l border-gray-800`}
+          className={`${
+            isChartFullscreen ? 'hidden' : ''
+          } lg:w-[350px] w-full flex flex-col bg-background border-l border-gray-800`}
         >
           {/* Price Info */}
           <div className="p-4 border-b border-btn/20">
@@ -201,10 +330,20 @@ export default function TradingAll() {
                 <h2 className="text-md font-titan">
                   {selectedPair.replace('USDT', '')}/USDT
                 </h2>
-                <p className="text-green-500 text-sm font-inter">$29,876.54</p>
+                <p className="text-green-500 text-sm font-inter">
+                  ${currentPrice}
+                </p>
               </div>
               <div className="text-right">
-                <p className="text-green-500">+2.34%</p>
+                <p
+                  className={
+                    priceChangePercent.startsWith('-')
+                      ? 'text-red-500'
+                      : 'text-green-500'
+                  }
+                >
+                  {priceChangePercent}%
+                </p>
                 <p className="text-xs text-gray-400">24h Change</p>
               </div>
             </div>
@@ -278,7 +417,7 @@ export default function TradingAll() {
                 <span>Para baixo</span>
                 <ArrowDown className="h-5 w-5" />
               </button>
-              <button className="bg-[#0ecb81] hover:bg-[#0bb974] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-between">
+              <button className="bg-[#20b476] hover:bg-[#1e9f6d] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-between">
                 <span>Para cima</span>
                 <ArrowUp className="h-5 w-5" />
               </button>
@@ -287,10 +426,8 @@ export default function TradingAll() {
         </div>
       </div>
 
-      {/* Bottom Trading Component */}
-      <div className={`${isChartFullscreen ? 'hidden' : ''}`}>
-        <BottomTrading />
-      </div>
+      {/* Bottom Component */}
+      <BottomTrading />
     </div>
   );
 }
