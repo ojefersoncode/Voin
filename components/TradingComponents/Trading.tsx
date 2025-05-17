@@ -167,8 +167,8 @@ export default function TradingAll() {
             download: false,
             selection: false,
             zoom: true,
-            zoomin: true,
-            zoomout: true,
+            zoomin: false,
+            zoomout: false,
             pan: true,
             reset: true,
             customIcons: []
