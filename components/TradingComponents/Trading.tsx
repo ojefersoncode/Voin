@@ -319,11 +319,7 @@ export default function TradingAll() {
         </div>
 
         {/* Trading Panel */}
-        <div
-          className={`${
-            isChartFullscreen ? 'hidden' : ''
-          } lg:w-[350px] w-full flex flex-col bg-background`}
-        >
+        <div className={`lg:w-[350px] w-full flex flex-col bg-background`}>
           {/* Trading Controls */}
           <div className="p-4 touch-pan-x touch-pan-y">
             <h3 className="text-sm text-gray-400 mb-2">Tempo</h3>
