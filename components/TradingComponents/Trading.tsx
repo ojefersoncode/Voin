@@ -265,7 +265,7 @@ export default function TradingAll() {
   return (
     <div className="bg-background h-screen text-white flex flex-col touch-pan-x touch-pan-y">
       {/* Header */}
-      <header className="bg-background sticky top-0 z-30 touch-pan-x touch-pan-y">
+      <header className="bg-background  top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between p-2">
           <div className="flex items-center gap-4">
             <img src="/Nexbattle.png" alt="Logo" className="h-8 w-8" />
