@@ -306,7 +306,7 @@ export default function TradingAll() {
           className={`w-full lg:flex-1 relative ${
             isChartFullscreen
               ? 'h-[calc(100vh-120px)]'
-              : 'h-[500px] sm:h-[550px] md:h-[600px] lg:h-[calc(100vh-180px)] '
+              : 'h-[500px] sm:h-[550px] md:h-[600px] lg:h-[calc(100vh-180px)] px-4'
           }`}
         >
           <Chart
