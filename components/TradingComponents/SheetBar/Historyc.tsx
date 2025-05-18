@@ -91,7 +91,7 @@ export function Historyc() {
         </Button>
       </DrawerTrigger>
 
-      <DrawerContent className="w-full bg-background border-t rounded-lg p-1">
+      <DrawerContent className="w-full bg-background border-t border-purple-500 rounded-lg p-1">
         <div className="mx-auto w-full max-w-xl h-[80vh] flex flex-col">
           <DrawerHeader className="flex flex-col w-full justify-center items-center text-white pt-7">
             <DrawerTitle>

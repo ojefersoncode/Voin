@@ -34,7 +34,7 @@ export function Order() {
           </div>
         </Button>
       </DrawerTrigger>
-      <DrawerContent className="bg-background border-t rounded-lg p-1">
+      <DrawerContent className="bg-background border-t border-purple-500 rounded-lg p-1">
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader className="flex flex-col w-full justify-center items-center text-white pt-7">
             <DrawerTitle>
