@@ -247,7 +247,7 @@ export default function TradingAll() {
   };
 
   return (
-    <div className="bg-background h-screen text-white flex flex-col touch-pan-x touch-pan-y">
+    <div className="bg-background h-full text-white flex flex-col touch-pan-x touch-pan-y">
       {/* Header */}
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between p-4">
