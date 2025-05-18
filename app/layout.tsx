@@ -31,7 +31,7 @@ const poppins = PoppinsFont({
 const meta = {
   title: 'Nex Battle',
   description: 'Participe de torneios de trading.',
-  cardImage: '/Banner/Banner.png',
+  cardImage: '/Banner.png',
   robots: 'follow, index',
   favicon: '/Nexbattle.png',
   url: getURL()
