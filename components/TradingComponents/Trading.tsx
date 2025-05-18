@@ -249,17 +249,14 @@ export default function TradingAll() {
   return (
     <div className="bg-background h-screen text-white flex flex-col touch-pan-x touch-pan-y">
       {/* Header */}
-      <header className="bg-background  top-0 z-30 touch-pan-x touch-pan-y">
-        <nav className="flex items-center justify-between p-2">
+      <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
+        <nav className="flex items-center justify-between p-4">
           <div className="flex items-center gap-4">
             <img src="/Nexbattle.png" alt="Logo" className="h-8 w-8" />
           </div>
 
-          <div className="flex items-center gap-3 md:gap-6">
-            <div className="flex items-center justify-center gap-2 px-2 rounded-xl text-green-50 cursor-pointer bg-subbackground sm:mr-7">
-              <BalanceButton />
-            </div>
-            <div className="pr-2">
+          <div className="flex items-center">
+            <div>
               <Select value={selectedPair} onValueChange={setSelectedPair}>
                 <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none h-9 ">
                   <SelectValue placeholder="Selecione um par" />
@@ -290,7 +287,7 @@ export default function TradingAll() {
           className={`w-full lg:flex-1 relative px-2 ${
             isChartFullscreen
               ? 'h-[calc(100vh-120px)]'
-              : 'h-[400px] sm:h-[400px] md:h-[500px] lg:h-[calc(100vh-280px)]'
+              : 'h-[400px] sm:h-[400px] md:h-[500px] lg:h-[calc(100vh-180px)]'
           }`}
         >
           <Chart
@@ -369,9 +366,7 @@ export default function TradingAll() {
       </div>
 
       {/* Bottom Component */}
-      <div className="pt-4">
-        <BottomTrading />
-      </div>
+      <BottomTrading />
     </div>
   );
 }
