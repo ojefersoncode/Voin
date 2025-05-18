@@ -256,10 +256,10 @@ export default function TradingAll() {
           </div>
 
           <div className="flex items-center gap-3 md:gap-6">
-            <div className="flex items-center justify-center gap-1 px-2 py-1 rounded-xl text-green-50 cursor-pointer">
+            <div className="flex items-center justify-center gap-2 px-2 py-1 rounded-xl text-green-50 cursor-pointer bg-subbackground sm:mr-7">
               <BalanceButton />
             </div>
-            <div>
+            <div className="pr-2">
               <Select value={selectedPair} onValueChange={setSelectedPair}>
                 <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none h-9 ">
                   <SelectValue placeholder="Selecione um par" />
