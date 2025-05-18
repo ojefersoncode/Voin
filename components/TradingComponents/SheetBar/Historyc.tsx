@@ -187,8 +187,8 @@ export function Historyc() {
 
           <DrawerFooter className="pb-4 px-0">
             <DrawerClose asChild>
-              <Button className="p-2 text-base border bg-btn hover:bg-btn/40 transition-colors">
-                Cancelar
+              <Button className="p-2 text-base border-b-2 border-purple-900 bg-subbackground hover:bg-subbackground/90 transition-colors">
+                Fechar
               </Button>
             </DrawerClose>
           </DrawerFooter>
