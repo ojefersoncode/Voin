@@ -14,24 +14,32 @@ import {
   DrawerTitle,
   DrawerTrigger
 } from '@/components/ui/drawer';
+import { useRouter } from 'next/navigation'; // ou 'next/router' se estiver usando versão antiga
 
 export function SerachBattle() {
   const [seconds, setSeconds] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
 
     if (isOpen) {
       timer = setInterval(() => {
-        setSeconds((prev) => prev + 1);
+        setSeconds((prev) => {
+          const newTime = prev + 1;
+          if (newTime === 7) {
+            router.push('/trade'); // Substitua pela rota desejada
+          }
+          return newTime;
+        });
       }, 1000);
     } else {
       setSeconds(1); // Reset ao fechar
     }
 
     return () => clearInterval(timer);
-  }, [isOpen]);
+  }, [isOpen, router]);
 
   const formatTime = (sec: number) => {
     const minutes = String(Math.floor(sec / 60)).padStart(2, '0');
