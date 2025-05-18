@@ -32,18 +32,7 @@ const Chart = dynamic(() => import('react-apexcharts'), {
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
   { value: 'ETHUSDT', label: 'ETH/USDT' },
-  { value: 'BNBUSDT', label: 'BNB/USDT' },
-  { value: 'USDCUSDT', label: 'USDC/USDT' },
-  { value: 'SOLUSDT', label: 'SOL/USDT' },
-  { value: 'XRPUSDT', label: 'XRP/USDT' },
-  { value: 'TRXUSDT', label: 'TRX/USDT' },
-  { value: 'ADAUSDT', label: 'ADA/USDT' },
-  { value: 'PEPEUSDT', label: 'PEPE/USDT' },
-  { value: 'TONUSDT', label: 'TON/USDT' },
-  { value: 'DOGEUSDT', label: 'DOGE/USDT' },
-  { value: 'LINKUSDT', label: 'LINK/USDT' },
-  { value: 'LTCUSDT', label: 'LTC/USDT' },
-  { value: 'NEARUSDT', label: 'NEAR/USDT' }
+  { value: 'BNBUSDT', label: 'BNB/USDT' }
 ];
 
 const availableTimes = [
@@ -66,9 +55,11 @@ export default function TradingAll() {
   const [priceChange, setPriceChange] = useState<string>('0');
   const [priceChangePercent, setPriceChangePercent] = useState<string>('0');
 
-  // Simulando dados para o gráfico — você pode trocar para dados reais via API
+  const [zoomLevel, setZoomLevel] = useState(100); // percentual de dados visíveis (100% = todos)
+
+  // Enviado dados para o gráfico via API
   useEffect(() => {
-    // Mapear o valor de selectedTime para o intervalo da API da Binance
+    // Mapear o valor de selectedTime para o intervalo da API
     const getInterval = () => {
       switch (selectedTime) {
         case '1min':
@@ -76,13 +67,13 @@ export default function TradingAll() {
         case '5min':
           return '5m';
         case '10min':
-          return '15m'; // Binance não tem 10m, usando 15m
+          return '15m';
         case '30min':
           return '30m';
         case '1h':
           return '1h';
         default:
-          return '1m'; // Para 30s, usamos 1m como mais próximo
+          return '1m';
       }
     };
 
@@ -104,12 +95,12 @@ export default function TradingAll() {
 
         // Transformar os dados para o formato esperado pelo ApexCharts
         const formattedData = data.map((candle: string[]) => ({
-          x: new Date(candle[0]), // Usar objeto Date diretamente em vez de string
+          x: new Date(candle[0]),
           y: [
-            Number.parseFloat(candle[1]), // Open
-            Number.parseFloat(candle[2]), // High
-            Number.parseFloat(candle[3]), // Low
-            Number.parseFloat(candle[4]) // Close
+            Number.parseFloat(candle[1]), // Abertura
+            Number.parseFloat(candle[2]), // Maxima
+            Number.parseFloat(candle[3]), // Minima
+            Number.parseFloat(candle[4]) // Fechamento
           ]
         }));
 
@@ -155,17 +146,53 @@ export default function TradingAll() {
   }, [selectedPair, selectedTime]);
 
   useEffect(() => {
+    const allData = series[0]?.data || [];
+
+    let xaxisOptions: any = {
+      type: 'datetime',
+      labels: {
+        formatter: (value: string | number | Date) => {
+          const time = new Date(value);
+          return (
+            time.getHours().toString().padStart(2, '0') +
+            ':' +
+            time.getMinutes().toString().padStart(2, '0')
+          );
+        },
+        style: {
+          colors: '#f0f0f0',
+          fontSize: '11px'
+        },
+        offsetY: 2
+      },
+      tickAmount: 8
+    };
+
+    // Aplicar range com base no zoom
+    if (allData.length > 0 && zoomLevel < 100) {
+      const total = allData.length;
+      const visible = Math.floor((zoomLevel / 100) * total);
+      const start = total - visible;
+      const min = allData[start]?.x;
+      const max = allData[total - 1]?.x;
+
+      xaxisOptions = {
+        ...xaxisOptions,
+        min,
+        max
+      };
+    }
+
     setOptions({
       chart: {
         type: 'candlestick',
-        height: '100%',
-        background: '#210F37', // Cor de fundo do gráfico
-        foreColor: '#311652', // Cor do texto
+        background: '#210F37',
+        foreColor: '#311652',
         toolbar: {
           show: false
         },
         zoom: {
-          enabled: false
+          enabled: true
         }
       },
       title: {
@@ -173,38 +200,7 @@ export default function TradingAll() {
         align: 'left',
         style: { color: '#fff' }
       },
-      xaxis: {
-        type: 'datetime',
-        labels: {
-          formatter: (value: string | number | Date) => {
-            // Simplifica o formato de hora para mostrar apenas horas e minutos
-            const time = new Date(value);
-            return (
-              time.getHours().toString().padStart(2, '0') +
-              ':' +
-              time.getMinutes().toString().padStart(2, '0')
-            );
-          },
-          rotateAlways: false,
-          hideOverlappingLabels: true,
-          showDuplicates: false,
-          trim: false,
-          style: {
-            colors: '#f0f0f0',
-            fontSize: '11px'
-          },
-          offsetY: 2
-        },
-        axisBorder: {
-          show: false,
-          color: '#311652'
-        },
-        axisTicks: {
-          show: true,
-          color: '#311652'
-        },
-        tickAmount: 8 // Reduz o número de rótulos exibidos
-      },
+      xaxis: xaxisOptions,
       yaxis: {
         tooltip: {
           enabled: true
@@ -235,7 +231,7 @@ export default function TradingAll() {
         theme: 'dark'
       }
     });
-  }, [selectedPair]);
+  }, [selectedPair, zoomLevel, series]);
 
   const handleIncrement = () => {
     setInputValue((prev) => prev + 5);
@@ -265,13 +261,13 @@ export default function TradingAll() {
             </div>
             <div>
               <Select value={selectedPair} onValueChange={setSelectedPair}>
-                <SelectTrigger className="bg-btn text-black py-1.5 px-3 font-titan rounded-lg border-none h-9 ">
+                <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none h-9 ">
                   <SelectValue placeholder="Selecione um par" />
                 </SelectTrigger>
-                <SelectContent className="bg-btn text-black border border-gray-700">
+                <SelectContent className="bg-background text-white border border-gray-700">
                   {availablePairs.map((pair) => (
                     <SelectItem
-                      className="font-inter hover:bg-background hover:text-black focus:bg-background focus:text-text"
+                      className="font-inter hover:bg-subbackground hover:text-black focus:bg-subbackground focus:text-text"
                       key={pair.value}
                       value={pair.value}
                     >
@@ -285,13 +281,13 @@ export default function TradingAll() {
         </nav>
       </header>
 
-      {/* Main Content */}
+      {/* Main */}
       <div
         className={`flex flex-col lg:flex-row w-full flex-1 ${isChartFullscreen ? 'lg:flex-col' : ''}`}
       >
-        {/* Chart Container */}
+        {/* Chart */}
         <div
-          className={`w-full lg:flex-1 relative ${
+          className={`w-full lg:flex-1 relative px-2 ${
             isChartFullscreen
               ? 'h-[calc(100vh-120px)]'
               : 'h-[500px] sm:h-[550px] md:h-[600px] lg:h-[calc(100vh-180px)]'
