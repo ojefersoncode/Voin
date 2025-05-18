@@ -314,7 +314,7 @@ export default function TradingAll() {
                 <SelectTrigger className="w-full border-none bg-subbackground text-text mb-4 font-semibold">
                   <SelectValue placeholder="Selecione um tempo" />
                 </SelectTrigger>
-                <SelectContent className="bg-btn text-white border border-gray-700">
+                <SelectContent className="bg-btn text-white border border-gray-700 touch-pan-x touch-pan-y">
                   {availableTimes.map((time) => (
                     <SelectItem
                       className="hover:bg-background text-black hover:text-black focus:bg-background font-bold"
@@ -329,7 +329,7 @@ export default function TradingAll() {
             </div>
 
             {/* Amount Input */}
-            <div className="mb-6 touch-pan-x touch-pan-y">
+            <div className="mb-6">
               <h3 className="text-sm text-gray-400 mb-2">Valor</h3>
               <div className="flex items-center bg-subbackground rounded-md p-1">
                 <button
