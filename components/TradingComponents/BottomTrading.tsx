@@ -8,8 +8,8 @@ export default function BottomTrading() {
   return (
     <div className="flex w-full justify-center bg-btn rounded-t-xl  touch-pan-x touch-pan-y gap-7 p-2">
       <Status />
-      <Historyc />
       <Order />
+      <Historyc />
     </div>
   );
 }
