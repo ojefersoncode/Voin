@@ -6,7 +6,7 @@ import { Order } from './SheetBar/Order';
 
 export default function BottomTrading() {
   return (
-    <div className="flex w-full justify-center bg-btn rounded-t-xl  touch-pan-x touch-pan-y gap-7 p-2">
+    <div className="flex w-full justify-around fixed z-40 bottom-0 bg-btn rounded-t-xl touch-pan-x touch-pan-y  p-2">
       <Status />
       <Order />
       <Historyc />

@@ -366,7 +366,9 @@ export default function TradingAll() {
       </div>
 
       {/* Bottom Component */}
-      <BottomTrading />
+      <div>
+        <BottomTrading />
+      </div>
     </div>
   );
 }

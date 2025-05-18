@@ -26,7 +26,7 @@ export function Order() {
           <div className="flex flex-col justify-center items-center">
             <div
               title="Batalhar"
-              className="flex items-center justify-center p-2 gap-2 rounded-lg hover:text-background/90 text-background relative"
+              className="flex items-center justify-center py-2 gap-2 rounded-lg hover:text-background/90 text-background relative"
             >
               <ScrollText className="size-5" />
               <span className="text-md font-titan">Ordens</span>
