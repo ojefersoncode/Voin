@@ -256,7 +256,7 @@ export default function TradingAll() {
           </div>
 
           <div className="flex items-center gap-3 md:gap-6">
-            <div className="flex items-center justify-center gap-2 px-2 py-1 rounded-xl text-green-50 cursor-pointer bg-subbackground sm:mr-7">
+            <div className="flex items-center justify-center gap-2 px-2 rounded-xl text-green-50 cursor-pointer bg-subbackground sm:mr-7">
               <BalanceButton />
             </div>
             <div className="pr-2">
