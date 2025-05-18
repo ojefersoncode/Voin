@@ -185,7 +185,7 @@ export function Historyc() {
             )}
           </ScrollArea>
 
-          <DrawerFooter className="pb-4 px-0">
+          <DrawerFooter className="pb-4 px-2">
             <DrawerClose asChild>
               <Button className="p-2 text-base border-b-2 border-purple-900 bg-subbackground hover:bg-subbackground/90 transition-colors">
                 Fechar

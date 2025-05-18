@@ -42,7 +42,7 @@ export function Order() {
             </DrawerTitle>
             <DrawerDescription className="pt-4"></DrawerDescription>
           </DrawerHeader>
-          <DrawerFooter className="pb-7">
+          <DrawerFooter className="pb-4 px-2">
             <DrawerClose asChild>
               <Button className="p-2 text-base border-b-2 border-purple-900 bg-subbackground hover:bg-subbackground/90 transition-colors">
                 Fechar
