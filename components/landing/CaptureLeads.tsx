@@ -165,9 +165,9 @@ export const CaptureLeads = () => {
         onChange={(e) => setPhone(e.target.value)}
         required
       />
-      <div className="w-full rounded-xl active:scale-95 active:border-none border-b-4 border-blue-800 transition-all duration-300">
+      <div className="w-full rounded-xl active:scale-95 active:border-none border-b-4 border-yellow-800 transition-all duration-300">
         <Button
-          className="w-full rounded-xl text-btn font-inter pb-2 bg-blue-700 hover:bg-blue-600 transition-all border border-blue-400 mt-2 p-4 text-md max-md:text-sm"
+          className="w-full rounded-xl text-background font-inter pb-2 bg-btn hover:bg-btn/80 transition-all border-b border-yellow-400 mt-2 p-4 text-md max-md:text-sm"
           type="submit"
           disabled={loading || isButtonDisabled}
         >

@@ -19,7 +19,7 @@ import BalanceButton from '../All/BalanceButton';
 const Chart = dynamic(() => import('react-apexcharts'), {
   ssr: false, // Não renderiza no servidor
   loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-[#311652] text-white">
+    <div className="w-full h-full flex items-center justify-center bg-background text-white">
       <img
         src="/Nexbattle.png"
         alt="Logo"
@@ -159,21 +159,13 @@ export default function TradingAll() {
       chart: {
         type: 'candlestick',
         height: '100%',
-        background: '#311652', // Cor de fundo do gráfico
-        foreColor: '#fff', // Cor do texto
+        background: '#210F37', // Cor de fundo do gráfico
+        foreColor: '#311652', // Cor do texto
         toolbar: {
-          show: true,
-          tools: {
-            download: false,
-            selection: false,
-            zoom: true,
-            zoomin: false,
-            zoomout: false,
-            reset: true
-          }
+          show: false
         },
         zoom: {
-          enabled: true
+          enabled: false
         }
       },
       title: {
@@ -199,17 +191,17 @@ export default function TradingAll() {
           trim: false,
           style: {
             colors: '#f0f0f0',
-            fontSize: '12px'
+            fontSize: '11px'
           },
           offsetY: 2
         },
         axisBorder: {
-          show: true,
-          color: '#fff'
+          show: false,
+          color: '#311652'
         },
         axisTicks: {
           show: true,
-          color: '#fff'
+          color: '#311652'
         },
         tickAmount: 8 // Reduz o número de rótulos exibidos
       },
@@ -222,7 +214,7 @@ export default function TradingAll() {
         }
       },
       grid: {
-        borderColor: '#2d2d2d'
+        borderColor: '#311652'
       },
       plotOptions: {
         candlestick: {
@@ -302,7 +294,7 @@ export default function TradingAll() {
           className={`w-full lg:flex-1 relative ${
             isChartFullscreen
               ? 'h-[calc(100vh-120px)]'
-              : 'h-[500px] sm:h-[550px] md:h-[600px] lg:h-[calc(100vh-180px)] px-4'
+              : 'h-[500px] sm:h-[550px] md:h-[600px] lg:h-[calc(100vh-180px)]'
           }`}
         >
           <Chart
