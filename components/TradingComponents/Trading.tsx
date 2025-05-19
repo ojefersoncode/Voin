@@ -13,7 +13,7 @@ import {
 import { ArrowUp, ArrowDown, Plus, Minus, RefreshCw } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import BottomTrading from './BottomTrading';
-import BalanceButton from '../All/BalanceButton';
+import { useToast } from '../ui/use-toast';
 
 // Importação dinâmica do Chart para evitar o erro "window is not defined"
 const Chart = dynamic(() => import('react-apexcharts'), {
@@ -38,13 +38,12 @@ const availablePairs = [
 const availableTimes = [
   { value: '30s', label: 'Entrada de 30s' },
   { value: '1min', label: 'Entrada de 1m' },
-  { value: '5min', label: 'Entrada de 5m' },
-  { value: '10min', label: 'Entrada de 10 min' },
-  { value: '30min', label: 'Entrada de 30m' },
-  { value: '1h', label: 'Entrada de 1h' }
+  { value: '5min', label: 'Entrada de 5m' }
 ];
 
 export default function TradingAll() {
+  // Hooks
+  const { toast } = useToast();
   const [selectedPair, setSelectedPair] = useState('BTCUSDT');
   const [selectedTime, setSelectedTime] = useState('30s');
   const [inputValue, setInputValue] = useState<number>(0);
@@ -54,7 +53,6 @@ export default function TradingAll() {
   const [currentPrice, setCurrentPrice] = useState<string>('0');
   const [priceChange, setPriceChange] = useState<string>('0');
   const [priceChangePercent, setPriceChangePercent] = useState<string>('0');
-
   const [zoomLevel, setZoomLevel] = useState(100); // percentual de dados visíveis (100% = todos)
 
   // Enviado dados para o gráfico via API
@@ -246,9 +244,46 @@ export default function TradingAll() {
     setInputValue(Number(value));
   };
 
+  const handleUpOperation = () => {
+    const now = new Date();
+    const formattedDate = now.toLocaleString('pt-BR', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+
+    toast({
+      title: 'Operação: Para cima',
+      description: `${formattedDate}`,
+      variant: 'success'
+    });
+  };
+
+  const handleDownOperation = () => {
+    const now = new Date();
+    const formattedDate = now.toLocaleString('pt-BR', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+
+    toast({
+      title: 'Operação: Para baixo',
+      description: `${formattedDate}`,
+      variant: 'destructive'
+    });
+  };
+
   return (
     <div className="bg-background h-full text-white flex flex-col touch-pan-x touch-pan-y">
       {/* Header */}
+
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between p-4">
           <div className="flex items-center gap-4">
@@ -352,11 +387,18 @@ export default function TradingAll() {
 
             {/* Action Buttons */}
             <div className="grid grid-cols-2 gap-4 mt-6 touch-pan-x touch-pan-y">
-              <button className="bg-[#f6465d] hover:bg-[#e0414d] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-between">
+              <button
+                onClick={handleDownOperation}
+                className="bg-[#f6465d] hover:bg-[#e0414d] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-between"
+              >
                 <span>Para baixo</span>
                 <ArrowDown className="h-5 w-5" />
               </button>
-              <button className="bg-[#20b476] hover:bg-[#1e9f6d] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-between">
+
+              <button
+                onClick={handleUpOperation}
+                className="bg-[#20b476] hover:bg-[#1e9f6d] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-between"
+              >
                 <span>Para cima</span>
                 <ArrowUp className="h-5 w-5" />
               </button>

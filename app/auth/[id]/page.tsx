@@ -27,7 +27,7 @@ export default async function SignIn(props: {
   }
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-dvh">
       <Navbar user={user} />
       <div className="flex grow justify-center items-center">
         <AuthForm state={currState} />

@@ -152,7 +152,7 @@ export function AuthForm({ state }: { state: AuthState }) {
 
   const currState = stateInfo[authState];
   return (
-    <Card className="mx-auto w-96 px-4 bg-[#181818] touch-pan-x touch-pan-y">
+    <Card className="mx-auto w-96 px-4 bg-background touch-pan-x touch-pan-y">
       <CardHeader>
         <CardTitle className="text-2xl">{currState.title}</CardTitle>
         {currState.description && (
@@ -203,7 +203,7 @@ export function AuthForm({ state }: { state: AuthState }) {
           <Button
             type="submit"
             variant={'ghost'}
-            className="w-full bg-green-600 font-bold"
+            className="w-full bg-subbackground font-bold"
             onClick={currState.onSubmit}
             disabled={loading}
           >
@@ -252,7 +252,7 @@ export function AuthForm({ state }: { state: AuthState }) {
                   <span className="w-full border-t"></span>
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-[#181818] px-2 text-white/50">
+                  <span className="bg-background px-2 text-white/50">
                     Ou continue com
                   </span>
                 </div>
