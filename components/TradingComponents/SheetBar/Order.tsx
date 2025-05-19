@@ -1,22 +1,18 @@
 'use client';
 
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ScrollText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger
 } from '@/components/ui/drawer';
 
 export function Order() {
-  const [seconds, setSeconds] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -25,7 +21,7 @@ export function Order() {
         <Button className="bg-transparent hover:bg-transparent">
           <div className="flex flex-col justify-center items-center">
             <div
-              title="Batalhar"
+              title="Ordens"
               className="flex items-center justify-center py-2 gap-2 rounded-lg hover:text-background/90 text-background relative"
             >
               <ScrollText className="size-5" />
@@ -40,15 +36,7 @@ export function Order() {
             <DrawerTitle>
               <span className="text-xl font-inter">Ordens abertas</span>
             </DrawerTitle>
-            <DrawerDescription className="pt-4"></DrawerDescription>
           </DrawerHeader>
-          <DrawerFooter className="pb-4 px-2">
-            <DrawerClose asChild>
-              <Button className="p-2 text-base border-b-2 border-purple-900 bg-subbackground hover:bg-subbackground/90 transition-colors">
-                Fechar
-              </Button>
-            </DrawerClose>
-          </DrawerFooter>
         </div>
       </DrawerContent>
     </Drawer>

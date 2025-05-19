@@ -161,7 +161,7 @@ export default function TradingAll() {
     setOptions({
       chart: {
         type: 'candlestick',
-        background: '#210F37',
+        background: 'transparent',
         foreColor: '#311652',
         toolbar: { show: false },
         zoom: {
@@ -295,9 +295,16 @@ export default function TradingAll() {
       <div
         className={`flex flex-col lg:flex-row w-full flex-1 touch-pan-x touch-pan-y ${isChartFullscreen ? 'lg:flex-col' : ''}`}
       >
+        <div className="w-full flex justify-center items-center top-28 sm:right-44 z-10 absolute">
+          <img
+            src="/Nexbattle.png"
+            alt="Logo"
+            className="h-72 w-72 opacity-10"
+          />
+        </div>
         {/* Chart */}
         <div
-          className={`w-full lg:flex-1 relative px-2 ${
+          className={`w-full lg:flex-1 relative px-2 z-20 ${
             isChartFullscreen
               ? 'h-[calc(100vh-120px)]'
               : 'h-[400px] sm:h-[400px] md:h-[500px] lg:h-[calc(100vh-180px)]'
