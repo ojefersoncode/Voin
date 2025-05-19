@@ -14,6 +14,7 @@ import { ArrowUp, ArrowDown, Plus, Minus } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import BottomTrading from './BottomTrading';
 import { useToast } from '../ui/use-toast';
+import { Button } from '../ui/button';
 
 // Importação dinâmica do Chart para evitar o erro "window is not defined"
 const Chart = dynamic(() => import('react-apexcharts'), {
@@ -35,7 +36,11 @@ const availablePairs = [
   { value: 'BNBUSDT', label: 'BNB/USDT' }
 ];
 
-const availableTimes = [{ value: '1min', label: 'Entrada de 1m' }];
+const availableTimes = [
+  { value: '1min', label: 'Entrada de 1m' },
+  { value: '5min', label: 'Entrada de 5m' },
+  { value: '10min', label: 'Entrada de 10m' }
+];
 
 export default function TradingAll() {
   // Hooks
@@ -57,14 +62,6 @@ export default function TradingAll() {
       switch (selectedTime) {
         case '1min':
           return '1m';
-        case '5min':
-          return '5m';
-        case '10min':
-          return '15m';
-        case '30min':
-          return '30m';
-        case '1h':
-          return '1h';
         default:
           return '1m';
       }
@@ -322,23 +319,16 @@ export default function TradingAll() {
             <h3 className="text-sm text-gray-400 mb-2">Tempo</h3>
 
             {/* Time Selection */}
-            <div className="mb-6 touch-pan-x touch-pan-y">
-              <Select value={selectedTime} onValueChange={setSelectedTime}>
-                <SelectTrigger className="w-full border-none bg-subbackground text-text mb-4 font-semibold">
-                  <SelectValue placeholder="Selecione um tempo" />
-                </SelectTrigger>
-                <SelectContent className="bg-btn text-white border border-gray-700 touch-pan-x touch-pan-y">
-                  {availableTimes.map((time) => (
-                    <SelectItem
-                      className="hover:bg-background text-black hover:text-black focus:bg-background font-bold"
-                      key={time.value}
-                      value={time.value}
-                    >
-                      {time.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+            <div className="flex w-full justify-between items-center mb-6 touch-pan-x touch-pan-y">
+              <Button className="bg-subbackground hover:bg-subbackground/70">
+                <span>1 Minuto</span>
+              </Button>
+              <Button className="bg-subbackground hover:bg-subbackground/70">
+                <span>5 Minutos</span>
+              </Button>
+              <Button className="bg-subbackground hover:bg-subbackground/70">
+                <span>10 Minutos</span>
+              </Button>
             </div>
 
             {/* Amount Input */}
