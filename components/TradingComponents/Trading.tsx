@@ -10,7 +10,7 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import { ArrowUp, ArrowDown, Plus, Minus, RefreshCw } from 'lucide-react';
+import { ArrowUp, ArrowDown, Plus, Minus } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import BottomTrading from './BottomTrading';
 import { useToast } from '../ui/use-toast';
@@ -35,11 +35,7 @@ const availablePairs = [
   { value: 'BNBUSDT', label: 'BNB/USDT' }
 ];
 
-const availableTimes = [
-  { value: '30s', label: 'Entrada de 30s' },
-  { value: '1min', label: 'Entrada de 1m' },
-  { value: '5min', label: 'Entrada de 5m' }
-];
+const availableTimes = [{ value: '1min', label: 'Entrada de 1m' }];
 
 export default function TradingAll() {
   // Hooks
@@ -47,13 +43,12 @@ export default function TradingAll() {
   const [selectedPair, setSelectedPair] = useState('BTCUSDT');
   const [selectedTime, setSelectedTime] = useState('30s');
   const [inputValue, setInputValue] = useState<number>(0);
-  const [isChartFullscreen, setIsChartFullscreen] = useState(false);
+  const [isChartFullscreen] = useState(false);
   const [series, setSeries] = useState<any[]>([]);
   const [options, setOptions] = useState<any>({});
   const [currentPrice, setCurrentPrice] = useState<string>('0');
   const [priceChange, setPriceChange] = useState<string>('0');
   const [priceChangePercent, setPriceChangePercent] = useState<string>('0');
-  const [zoomLevel, setZoomLevel] = useState(100); // percentual de dados visíveis (100% = todos)
 
   // Enviado dados para o gráfico via API
   useEffect(() => {
@@ -166,35 +161,19 @@ export default function TradingAll() {
       tickAmount: 8
     };
 
-    // Aplicar range com base no zoom
-    if (allData.length > 0 && zoomLevel < 100) {
-      const total = allData.length;
-      const visible = Math.floor((zoomLevel / 100) * total);
-      const start = total - visible;
-      const min = allData[start]?.x;
-      const max = allData[total - 1]?.x;
-
-      xaxisOptions = {
-        ...xaxisOptions,
-        min,
-        max
-      };
-    }
-
     setOptions({
       chart: {
         type: 'candlestick',
         background: '#210F37',
         foreColor: '#311652',
-        toolbar: {
-          show: true
-        },
+        toolbar: { show: false },
         zoom: {
           enabled: true,
           type: 'x',
           autoScaleYaxis: true
         }
       },
+
       title: {
         text: `${selectedPair.replace('USDT', '')}/USDT`,
         align: 'left',
@@ -231,7 +210,7 @@ export default function TradingAll() {
         theme: 'dark'
       }
     });
-  }, [selectedPair, zoomLevel, series]);
+  }, [selectedPair, series]);
 
   const handleIncrement = () => {
     setInputValue((prev) => prev + 5);
