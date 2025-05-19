@@ -321,13 +321,16 @@ export default function TradingAll() {
             {/* Time Selection */}
             <div className="flex w-full justify-between items-center mb-6 touch-pan-x touch-pan-y">
               <Button className="bg-subbackground hover:bg-subbackground/70">
-                <span>1 Minuto</span>
+                <span>30 S</span>
               </Button>
               <Button className="bg-subbackground hover:bg-subbackground/70">
-                <span>5 Minutos</span>
+                <span>1 Min</span>
               </Button>
               <Button className="bg-subbackground hover:bg-subbackground/70">
-                <span>10 Minutos</span>
+                <span>5 Min</span>
+              </Button>
+              <Button className="bg-subbackground hover:bg-subbackground/70">
+                <span>10 Min</span>
               </Button>
             </div>
 
