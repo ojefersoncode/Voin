@@ -187,10 +187,12 @@ export default function TradingAll() {
         background: '#210F37',
         foreColor: '#311652',
         toolbar: {
-          show: false
+          show: true
         },
         zoom: {
-          enabled: true
+          enabled: true,
+          type: 'x',
+          autoScaleYaxis: true
         }
       },
       title: {
