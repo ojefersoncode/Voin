@@ -290,7 +290,7 @@ export default function TradingAll() {
             <img src="/Nexbattle.png" alt="Logo" className="h-8 w-8" />
           </div>
 
-          <div className="flex items-center">
+          <div className="flex items-center touch-pan-x touch-pan-y">
             <div>
               <Select value={selectedPair} onValueChange={setSelectedPair}>
                 <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none h-9 ">
@@ -315,7 +315,7 @@ export default function TradingAll() {
 
       {/* Main */}
       <div
-        className={`flex flex-col lg:flex-row w-full flex-1 ${isChartFullscreen ? 'lg:flex-col' : ''}`}
+        className={`flex flex-col lg:flex-row w-full flex-1 touch-pan-x touch-pan-y ${isChartFullscreen ? 'lg:flex-col' : ''}`}
       >
         {/* Chart */}
         <div
@@ -341,7 +341,7 @@ export default function TradingAll() {
             <h3 className="text-sm text-gray-400 mb-2">Tempo</h3>
 
             {/* Time Selection */}
-            <div className="mb-6">
+            <div className="mb-6 touch-pan-x touch-pan-y">
               <Select value={selectedTime} onValueChange={setSelectedTime}>
                 <SelectTrigger className="w-full border-none bg-subbackground text-text mb-4 font-semibold">
                   <SelectValue placeholder="Selecione um tempo" />
@@ -361,7 +361,7 @@ export default function TradingAll() {
             </div>
 
             {/* Amount Input */}
-            <div className="mb-6">
+            <div className="mb-6 touch-pan-x touch-pan-y">
               <h3 className="text-sm text-gray-400 mb-2">Valor</h3>
               <div className="flex items-center bg-subbackground rounded-md p-1">
                 <button
@@ -408,7 +408,7 @@ export default function TradingAll() {
       </div>
 
       {/* Bottom Component */}
-      <div>
+      <div className="touch-pan-x touch-pan-y">
         <BottomTrading />
       </div>
     </div>
