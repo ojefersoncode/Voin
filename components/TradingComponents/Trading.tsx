@@ -14,7 +14,6 @@ import { ArrowUp, ArrowDown, Plus, Minus, Swords } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import BottomTrading from './BottomTrading';
 import { useToast } from '../ui/use-toast';
-import { Button } from '../ui/button';
 
 // Importação dinâmica do Chart para evitar o erro "window is not defined"
 const Chart = dynamic(() => import('react-apexcharts'), {
@@ -36,11 +35,7 @@ const availablePairs = [
   { value: 'BNBUSDT', label: 'BNB/USDT' }
 ];
 
-const availableTimes = [
-  { value: '1min', label: 'Entrada de 1m' },
-  { value: '5min', label: 'Entrada de 5m' },
-  { value: '10min', label: 'Entrada de 10m' }
-];
+const availableTimes = [{ value: '1min', label: 'Entrada de 1m' }];
 
 export default function TradingAll() {
   // Hooks
