@@ -10,7 +10,7 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import { ArrowUp, ArrowDown, Plus, Minus } from 'lucide-react';
+import { ArrowUp, ArrowDown, Plus, Minus, Swords } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import BottomTrading from './BottomTrading';
 import { useToast } from '../ui/use-toast';
@@ -268,24 +268,16 @@ export default function TradingAll() {
             <img src="/Nexbattle.png" alt="Logo" className="h-8 w-8" />
           </div>
 
-          <div className="flex items-center touch-pan-x touch-pan-y">
-            <div>
-              <Select value={selectedPair} onValueChange={setSelectedPair}>
-                <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none h-9 ">
-                  <SelectValue placeholder="Selecione um par" />
-                </SelectTrigger>
-                <SelectContent className="bg-background text-white border border-gray-700">
-                  {availablePairs.map((pair) => (
-                    <SelectItem
-                      className="font-inter hover:bg-subbackground hover:text-black focus:bg-subbackground focus:text-text"
-                      key={pair.value}
-                      value={pair.value}
-                    >
-                      {pair.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+          <div className="flex items-center gap-6 touch-pan-x touch-pan-y">
+            <div className="flex items-center gap-3 font-titan text-xl bg-subbackground rounded-lg py-1 px-3">
+              <span className="text-yellow-600">1</span>
+              <div>
+                <Swords className="size-5" />
+              </div>
+              <span className="text-red-600">0</span>
+            </div>
+            <div className="font-titan text-sm bg-subbackground rounded-lg py-2 px-3">
+              <span>Tempo: 10 Min</span>
             </div>
           </div>
         </nav>
@@ -316,22 +308,26 @@ export default function TradingAll() {
         <div className={`lg:w-[350px] w-full flex flex-col bg-background`}>
           {/* Trading Controls */}
           <div className="p-4 touch-pan-x touch-pan-y">
-            <h3 className="text-sm text-gray-400 mb-2">Tempo</h3>
+            <h3 className="text-sm text-gray-400 mb-3">Par de moedas</h3>
 
             {/* Time Selection */}
             <div className="flex w-full justify-between items-center mb-6 touch-pan-x touch-pan-y">
-              <Button className="bg-subbackground hover:bg-subbackground/70">
-                <span>30 S</span>
-              </Button>
-              <Button className="bg-subbackground hover:bg-subbackground/70">
-                <span>1 Min</span>
-              </Button>
-              <Button className="bg-subbackground hover:bg-subbackground/70">
-                <span>5 Min</span>
-              </Button>
-              <Button className="bg-subbackground hover:bg-subbackground/70">
-                <span>10 Min</span>
-              </Button>
+              <Select value={selectedPair} onValueChange={setSelectedPair}>
+                <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none h-10">
+                  <SelectValue placeholder="Selecione um par" />
+                </SelectTrigger>
+                <SelectContent className="bg-background text-white border border-gray-700">
+                  {availablePairs.map((pair) => (
+                    <SelectItem
+                      className="font-inter hover:bg-subbackground hover:text-black focus:bg-subbackground focus:text-text"
+                      key={pair.value}
+                      value={pair.value}
+                    >
+                      {pair.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             {/* Amount Input */}
@@ -363,7 +359,7 @@ export default function TradingAll() {
             <div className="grid grid-cols-2 gap-4 mt-6 touch-pan-x touch-pan-y">
               <button
                 onClick={handleDownOperation}
-                className="bg-[#f6465d] hover:bg-[#e0414d] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-between"
+                className="bg-red-600 hover:bg-red-700 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
               >
                 <span>Para baixo</span>
                 <ArrowDown className="h-5 w-5" />
@@ -371,7 +367,7 @@ export default function TradingAll() {
 
               <button
                 onClick={handleUpOperation}
-                className="bg-[#20b476] hover:bg-[#1e9f6d] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-between"
+                className="bg-green-600 hover:bg-green-700 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
               >
                 <span>Para cima</span>
                 <ArrowUp className="h-5 w-5" />
