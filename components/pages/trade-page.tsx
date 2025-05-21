@@ -5,7 +5,7 @@ import TradingAll from '../TradingComponents/Trading';
 export default function TradePage({ user }: { user: User }) {
   return (
     <>
-      <main className="bg-background touch-pan-x touch-pan-y">
+      <main className="bg-background touch-pan-x touch-pan-y h-screen">
         <TradingAll />
       </main>
     </>

@@ -2,7 +2,6 @@
 
 import type React from 'react';
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import {
   Select,
   SelectTrigger,
@@ -15,20 +14,6 @@ import { Input } from '@/components/ui/input';
 import BottomTrading from './BottomTrading';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
-
-// Importação dinâmica do Chart para evitar o erro "window is not defined"
-const Chart = dynamic(() => import('react-apexcharts'), {
-  ssr: false, // Não renderiza no servidor
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-background text-white">
-      <img
-        src="/Nexbattle.png"
-        alt="Logo"
-        className="h-48 w-48 animate-pulse"
-      />
-    </div>
-  )
-});
 
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
@@ -93,7 +78,7 @@ export default function TradingAll() {
   };
 
   return (
-    <div className="bg-background h-dvh text-white flex flex-col touch-pan-x touch-pan-y">
+    <div className="bg-background h-screen text-white flex flex-col touch-pan-x touch-pan-y">
       {/* Header */}
 
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
@@ -123,18 +108,14 @@ export default function TradingAll() {
         className={`flex flex-col lg:flex-row w-full flex-1 touch-pan-x touch-pan-y ${isChartFullscreen ? 'lg:flex-col' : ''}`}
       >
         {/* Chart */}
-        <div
-          className={`w-full lg:flex-1 relative max-sm:px-0 md:px-2 px-4 z-20 ${
-            isChartFullscreen
-              ? 'h-[calc(100vh-120px)]'
-              : 'h-[400px] sm:h-[400px] md:h-[500px] lg:h-[500px]'
-          }`}
-        >
+        <div className={`w-full lg:flex-1 relative max-sm:px-0 md:px-2 px-4`}>
           <TradingViewWidget symbol={selectedPair} />
         </div>
 
         {/* Trading Panel */}
-        <div className={`lg:w-[350px] w-full flex flex-col bg-background`}>
+        <div
+          className={`lg:w-[350px] w-full flex flex-col max-lg:mb-20 bg-background`}
+        >
           {/* Trading Controls */}
           <div className="p-4 touch-pan-x touch-pan-y">
             <h3 className="text-sm text-gray-400 mb-3">Par de moedas</h3>
@@ -207,7 +188,7 @@ export default function TradingAll() {
       </div>
 
       {/* Bottom Component */}
-      <div className="touch-pan-x touch-pan-y sm:mt-20">
+      <div className="touch-pan-x touch-pan-y">
         <BottomTrading />
       </div>
     </div>
