@@ -190,7 +190,7 @@ export default function TradingAll() {
       </div>
 
       {/* Bottom Component */}
-      <div className="touch-pan-x touch-pan-y pt-16">
+      <div className="touch-pan-x touch-pan-y pt-4 sm:pt-16">
         <BottomTrading />
       </div>
     </div>
