@@ -108,7 +108,9 @@ export default function TradingAll() {
         className={`flex flex-col lg:flex-row w-full flex-1 touch-pan-x touch-pan-y ${isChartFullscreen ? 'lg:flex-col' : ''}`}
       >
         {/* Chart */}
-        <div className={`w-full lg:flex-1 relative max-sm:px-0 md:px-2 px-4`}>
+        <div
+          className={`w-full lg:flex-1 relative max-sm:h-full max-sm:px-0 md:px-2 px-4`}
+        >
           <TradingViewWidget symbol={selectedPair} />
         </div>
 
