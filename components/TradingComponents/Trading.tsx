@@ -78,7 +78,7 @@ export default function TradingAll() {
   };
 
   return (
-    <div className="bg-background h-screen text-white flex flex-col touch-pan-x touch-pan-y">
+    <div className="bg-background h-dvh text-white flex flex-col touch-pan-x touch-pan-y">
       {/* Header */}
 
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
@@ -190,7 +190,7 @@ export default function TradingAll() {
       </div>
 
       {/* Bottom Component */}
-      <div className="touch-pan-x touch-pan-y pt-16 sm:pt-20">
+      <div className="touch-pan-x touch-pan-y pt-16">
         <BottomTrading />
       </div>
     </div>
