@@ -25,7 +25,7 @@ export default function TradingViewWidget({ symbol }: Props) {
           locale: 'br',
           container_id: 'tv_chart_container',
           width: '100%',
-          height: '90%',
+          height: '100%',
           hide_side_toolbar: false,
           allow_symbol_change: true,
           autosize: true
