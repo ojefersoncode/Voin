@@ -115,9 +115,7 @@ export default function TradingAll() {
         </div>
 
         {/* Trading Panel */}
-        <div
-          className={`lg:w-[350px] w-full flex flex-col max-lg:mb-20 bg-background`}
-        >
+        <div className={`lg:w-[350px] w-full flex flex-col bg-background`}>
           {/* Trading Controls */}
           <div className="px-4 touch-pan-x touch-pan-y">
             <h3 className="text-sm text-gray-400 mb-3">Par de moedas</h3>
@@ -190,7 +188,7 @@ export default function TradingAll() {
       </div>
 
       {/* Bottom Component */}
-      <div className="touch-pan-x touch-pan-y pt-4 sm:pt-16">
+      <div className="touch-pan-x touch-pan-y pt-20">
         <BottomTrading />
       </div>
     </div>
