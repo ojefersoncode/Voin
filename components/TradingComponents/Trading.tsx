@@ -82,12 +82,12 @@ export default function TradingAll() {
       {/* Header */}
 
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
-        <nav className="flex items-center justify-between px-3 py-3">
+        <nav className="flex items-center justify-between px-3 py-2">
           <div className="flex items-center gap-4">
             <img src="/Nexbattle.png" alt="Logo" className="h-8 w-8" />
           </div>
 
-          <div className="flex items-center gap-3 font-titan text-xl bg-subbackground rounded-lg py-1 px-3">
+          <div className="flex items-center gap-3 font-titan text-xl bg-none rounded-lg py-1">
             <span className="text-yellow-600">1</span>
             <div>
               <Swords className="size-5" />
@@ -96,7 +96,7 @@ export default function TradingAll() {
           </div>
 
           <div className="flex items-center touch-pan-x touch-pan-y">
-            <div className="font-titan text-sm bg-subbackground rounded-lg py-2 px-3">
+            <div className="font-titan text-sm bg-none rounded-lg py-2 px-3">
               <span>10:00</span>
             </div>
           </div>
