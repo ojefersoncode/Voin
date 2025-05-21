@@ -117,11 +117,11 @@ export default function TradingAll() {
           className={`lg:w-[350px] w-full flex flex-col max-lg:mb-20 bg-background`}
         >
           {/* Trading Controls */}
-          <div className="p-4 touch-pan-x touch-pan-y">
+          <div className="px-4 touch-pan-x touch-pan-y">
             <h3 className="text-sm text-gray-400 mb-3">Par de moedas</h3>
 
             {/* Time Selection */}
-            <div className="flex w-full justify-between items-center mb-6 touch-pan-x touch-pan-y">
+            <div className="flex w-full justify-between items-center mb-4 touch-pan-x touch-pan-y">
               <Select value={selectedPair} onValueChange={setSelectedPair}>
                 <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none h-10">
                   <SelectValue placeholder="Selecione um par" />
@@ -141,7 +141,7 @@ export default function TradingAll() {
             </div>
 
             {/* Amount Input */}
-            <div className="mb-6 touch-pan-x touch-pan-y">
+            <div className="mb-4 touch-pan-x touch-pan-y">
               <h3 className="text-sm text-gray-400 mb-2">Ordens</h3>
               <div className="flex items-center bg-subbackground rounded-md p-1">
                 <button
