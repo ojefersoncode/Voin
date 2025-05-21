@@ -14,6 +14,7 @@ import { ArrowUp, ArrowDown, Plus, Minus, Swords } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import BottomTrading from './BottomTrading';
 import { useToast } from '../ui/use-toast';
+import TradingViewWidget from './TradingViewWidget';
 
 // Importação dinâmica do Chart para evitar o erro "window is not defined"
 const Chart = dynamic(() => import('react-apexcharts'), {
@@ -35,174 +36,12 @@ const availablePairs = [
   { value: 'BNBUSDT', label: 'BNB/USDT' }
 ];
 
-const availableTimes = [{ value: '1min', label: 'Entrada de 1m' }];
-
 export default function TradingAll() {
   // Hooks
   const { toast } = useToast();
   const [selectedPair, setSelectedPair] = useState('BTCUSDT');
-  const [selectedTime, setSelectedTime] = useState('30s');
   const [inputValue, setInputValue] = useState<number>(0);
   const [isChartFullscreen] = useState(false);
-  const [series, setSeries] = useState<any[]>([]);
-  const [options, setOptions] = useState<any>({});
-  const [currentPrice, setCurrentPrice] = useState<string>('0');
-  const [priceChange, setPriceChange] = useState<string>('0');
-  const [priceChangePercent, setPriceChangePercent] = useState<string>('0');
-
-  // Enviado dados para o gráfico via API
-  useEffect(() => {
-    // Mapear o valor de selectedTime para o intervalo da API
-    const getInterval = () => {
-      switch (selectedTime) {
-        case '1min':
-          return '1m';
-        default:
-          return '1m';
-      }
-    };
-
-    const fetchCandlestickData = async () => {
-      try {
-        const interval = getInterval();
-        const limit = 100; // Número de candles a serem retornados
-
-        // Usando a API pública da Binance
-        const response = await fetch(
-          `https://api.binance.com/api/v3/klines?symbol=${selectedPair}&interval=${interval}&limit=${limit}`
-        );
-
-        if (!response.ok) {
-          throw new Error('Falha ao buscar dados da API da Binance');
-        }
-
-        const data = await response.json();
-
-        // Transformar os dados para o formato esperado pelo ApexCharts
-        const formattedData = data.map((candle: string[]) => ({
-          x: new Date(candle[0]),
-          y: [
-            Number.parseFloat(candle[1]), // Abertura
-            Number.parseFloat(candle[2]), // Maxima
-            Number.parseFloat(candle[3]), // Minima
-            Number.parseFloat(candle[4]) // Fechamento
-          ]
-        }));
-
-        setSeries([{ data: formattedData }]);
-
-        // Atualizar o preço atual e a variação percentual
-        if (formattedData.length > 0) {
-          const lastCandle = formattedData[formattedData.length - 1];
-          const closePrice = lastCandle.y[3];
-          const openPrice = formattedData[0].y[0];
-          const priceChange = closePrice - openPrice;
-          const priceChangePercent = (priceChange / openPrice) * 100;
-
-          setCurrentPrice(closePrice.toFixed(2));
-          setPriceChange(priceChange.toFixed(2));
-          setPriceChangePercent(priceChangePercent.toFixed(2));
-        }
-      } catch (error) {
-        console.error('Erro ao buscar dados:', error);
-        // Fallback para dados simulados em caso de erro
-        const now = Date.now();
-        const fallbackData = Array.from({ length: 30 }).map((_, i) => ({
-          x: new Date(now - (29 - i) * 60000).toLocaleTimeString(),
-          y: [
-            Math.random() * 30000 + 20000,
-            Math.random() * 30000 + 20000,
-            Math.random() * 30000 + 20000,
-            Math.random() * 30000 + 20000
-          ].map((v) => Number(v.toFixed(2)))
-        }));
-
-        setSeries([{ data: fallbackData }]);
-      }
-    };
-
-    fetchCandlestickData();
-
-    // Configurar um intervalo para atualizar os dados a cada 3 segundos
-    const intervalId = setInterval(fetchCandlestickData, 3000);
-
-    // Limpar o intervalo quando o componente for desmontado
-    return () => clearInterval(intervalId);
-  }, [selectedPair, selectedTime]);
-
-  useEffect(() => {
-    const allData = series[0]?.data || [];
-
-    let xaxisOptions: any = {
-      type: 'datetime',
-      labels: {
-        formatter: (value: string | number | Date) => {
-          const time = new Date(value);
-          return (
-            time.getHours().toString().padStart(2, '0') +
-            ':' +
-            time.getMinutes().toString().padStart(2, '0')
-          );
-        },
-        style: {
-          colors: '#f0f0f0',
-          fontSize: '11px'
-        },
-        offsetY: 2
-      },
-      tickAmount: 8
-    };
-
-    setOptions({
-      chart: {
-        type: 'candlestick',
-        background: 'transparent',
-        foreColor: '#311652',
-        toolbar: { show: false },
-        zoom: {
-          enabled: true,
-          type: 'x',
-          autoScaleYaxis: true
-        }
-      },
-
-      title: {
-        text: `${selectedPair.replace('USDT', '')}/USDT`,
-        align: 'left',
-        style: { color: '#fff' }
-      },
-      xaxis: xaxisOptions,
-      yaxis: {
-        tooltip: {
-          enabled: true
-        },
-        labels: {
-          style: { colors: '#f0f0f0' }
-        }
-      },
-      grid: {
-        borderColor: '#311652'
-      },
-      plotOptions: {
-        candlestick: {
-          colors: {
-            upward: '#20b476',
-            downward: '#f6465d'
-          }
-        }
-      },
-      theme: {
-        mode: 'dark',
-        palette: 'palette1'
-      },
-      tooltip: {
-        enabled: true,
-        shared: true,
-        followCursor: true,
-        theme: 'dark'
-      }
-    });
-  }, [selectedPair, series]);
 
   const handleIncrement = () => {
     setInputValue((prev) => prev + 5);
@@ -254,25 +93,26 @@ export default function TradingAll() {
   };
 
   return (
-    <div className="bg-background h-full text-white flex flex-col touch-pan-x touch-pan-y">
+    <div className="bg-background h-dvh text-white flex flex-col touch-pan-x touch-pan-y">
       {/* Header */}
 
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
-        <nav className="flex items-center justify-between p-4">
+        <nav className="flex items-center justify-between px-3 py-3">
           <div className="flex items-center gap-4">
             <img src="/Nexbattle.png" alt="Logo" className="h-8 w-8" />
           </div>
 
-          <div className="flex items-center gap-6 touch-pan-x touch-pan-y">
-            <div className="flex items-center gap-3 font-titan text-xl bg-subbackground rounded-lg py-1 px-3">
-              <span className="text-yellow-600">1</span>
-              <div>
-                <Swords className="size-5" />
-              </div>
-              <span className="text-red-600">0</span>
+          <div className="flex items-center gap-3 font-titan text-xl bg-subbackground rounded-lg py-1 px-3">
+            <span className="text-yellow-600">1</span>
+            <div>
+              <Swords className="size-5" />
             </div>
+            <span className="text-red-600">0</span>
+          </div>
+
+          <div className="flex items-center touch-pan-x touch-pan-y">
             <div className="font-titan text-sm bg-subbackground rounded-lg py-2 px-3">
-              <span>Tempo: 10 Min</span>
+              <span>10:00</span>
             </div>
           </div>
         </nav>
@@ -284,19 +124,13 @@ export default function TradingAll() {
       >
         {/* Chart */}
         <div
-          className={`w-full lg:flex-1 relative px-2 z-20 ${
+          className={`w-full lg:flex-1 relative max-sm:px-0 md:px-2 px-4 z-20 ${
             isChartFullscreen
               ? 'h-[calc(100vh-120px)]'
-              : 'h-[400px] sm:h-[400px] md:h-[500px] lg:h-[calc(100vh-180px)]'
+              : 'h-[400px] sm:h-[400px] md:h-[500px] lg:h-[500px]'
           }`}
         >
-          <Chart
-            options={options}
-            series={series}
-            type="candlestick"
-            height="100%"
-            width="100%"
-          />
+          <TradingViewWidget symbol={selectedPair} />
         </div>
 
         {/* Trading Panel */}
@@ -327,7 +161,7 @@ export default function TradingAll() {
 
             {/* Amount Input */}
             <div className="mb-6 touch-pan-x touch-pan-y">
-              <h3 className="text-sm text-gray-400 mb-2">Valor</h3>
+              <h3 className="text-sm text-gray-400 mb-2">Ordens</h3>
               <div className="flex items-center bg-subbackground rounded-md p-1">
                 <button
                   onClick={handleDecrement}
@@ -373,7 +207,7 @@ export default function TradingAll() {
       </div>
 
       {/* Bottom Component */}
-      <div className="touch-pan-x touch-pan-y">
+      <div className="touch-pan-x touch-pan-y sm:mt-20">
         <BottomTrading />
       </div>
     </div>

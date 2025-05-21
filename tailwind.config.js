@@ -25,8 +25,8 @@ module.exports = {
       },
       colors: {
         border: '#F6DC43',
-        background: '#210F37',
-        subbackground: '#311652',
+        background: '#0e0e0e',
+        subbackground: '#181818',
         high: '#FFB200',
         text: '#FFFFFF',
         textocean: '#2632D9',
