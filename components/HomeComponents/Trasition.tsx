@@ -28,7 +28,7 @@ export default function Trasition() {
       time: '09:15',
       type: 'saída',
       amount: 1200.0,
-      description: 'Pagamento para João Silva',
+      description: 'Retirada',
       status: 'concluída'
     },
     {
@@ -37,7 +37,7 @@ export default function Trasition() {
       time: '16:45',
       type: 'entrada',
       amount: 8500.0,
-      description: 'Transferência recebida',
+      description: 'Depósito',
       status: 'concluída'
     },
     {
@@ -46,7 +46,7 @@ export default function Trasition() {
       time: '11:20',
       type: 'saída',
       amount: 3200.0,
-      description: 'Compra de tokens',
+      description: 'Retirada',
       status: 'concluída'
     },
     {
@@ -55,7 +55,7 @@ export default function Trasition() {
       time: '08:05',
       type: 'saída',
       amount: 750.0,
-      description: 'Pagamento de serviço',
+      description: 'Retirada',
       status: 'pendente'
     }
   ];
@@ -122,7 +122,7 @@ export default function Trasition() {
                   onValueChange={setTimeRange}
                   className="w-auto"
                 >
-                  <TabsList className="bg-btn">
+                  <TabsList className="bg-subbackground">
                     <TabsTrigger value="7d">7 dias</TabsTrigger>
                     <TabsTrigger value="30d">30 dias</TabsTrigger>
                     <TabsTrigger value="90d">90 dias</TabsTrigger>
@@ -131,7 +131,7 @@ export default function Trasition() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                <div className="bg-btn rounded-md p-4 flex items-center justify-between">
+                <div className="bg-subbackground rounded-md p-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
                       <ArrowUpRight className="h-5 w-5 text-green-500" />
@@ -146,14 +146,14 @@ export default function Trasition() {
                   </div>
                 </div>
 
-                <div className="bg-btn rounded-xl p-4 flex items-center justify-between">
+                <div className="bg-subbackground rounded-xl p-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-red-500/30 flex items-center justify-center">
                       <ArrowDownRight className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <p className="text-sm text-gray-400">Total de saídas</p>
-                      <p className="text-xl font-bold">5.150,00 voin</p>
+                      <p className="text-xl font-bold">5.150,00 NEX</p>
                     </div>
                   </div>
                   <div className="text-red-500 text-sm font-medium">-3.2%</div>
@@ -166,7 +166,7 @@ export default function Trasition() {
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-green-500/30">
+                  <tr className="border-b border-btn/30">
                     <th className="text-left py-3 px-4">Data/Hora</th>
                     <th className="text-left py-3 px-4">Descrição</th>
                     <th className="text-right py-3 px-4">Valor</th>
@@ -177,7 +177,7 @@ export default function Trasition() {
                   {transactions.map((transaction) => (
                     <tr
                       key={transaction.id}
-                      className="border-b border-green-500/10 hover:bg-green-500/5 transition-colors"
+                      className="border-b border-yellow-500/10 hover:bg-btn/5 transition-colors"
                     >
                       <td className="py-4 px-4">
                         <div className="flex flex-col">
@@ -196,7 +196,7 @@ export default function Trasition() {
                         }`}
                       >
                         {transaction.type === 'entrada' ? '+' : '-'}{' '}
-                        {transaction.amount.toLocaleString('pt-BR')} voin
+                        {transaction.amount.toLocaleString('pt-BR')} NEX
                       </td>
                       <td className="py-4 px-4 text-right">
                         <span
@@ -218,7 +218,7 @@ export default function Trasition() {
             <div className="mt-4 flex justify-center">
               <Button
                 variant="outline"
-                className="border border-border bg-btn text-text hover:bg-btn/40 transition-colors hover:text-white"
+                className="border border-btn bg-subbackground text-text hover:bg-yellow-100/10 transition-colors duration-300 hover:text-white"
               >
                 Ver todas as transações
               </Button>

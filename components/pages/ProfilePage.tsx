@@ -135,10 +135,6 @@ export default function Profile({ user }: { user: User }) {
           </CardFooter>
         </div>
       </div>
-
-      <div>
-        <NavBottom />
-      </div>
     </div>
   );
 }

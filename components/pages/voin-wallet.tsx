@@ -2,10 +2,10 @@
 
 import type React from 'react';
 import { User } from '@supabase/supabase-js';
-import Cash from '../HomeComponents/cash';
-import NavBottom from '../All/NavBottom';
 import Trasition from '../HomeComponents/Trasition';
 import NavbarAll from '../All/Navbar';
+import Balance from '../HomeComponents/Balance';
+import Pageback from '../All/Pageback';
 
 export default function VoinWallet({ user }: { user: User }) {
   return (
@@ -15,15 +15,14 @@ export default function VoinWallet({ user }: { user: User }) {
       </div>
 
       <div>
-        <Cash />
+        <Pageback />
+      </div>
+      <div>
+        <Balance />
       </div>
 
       <div>
         <Trasition />
-      </div>
-
-      <div>
-        <NavBottom />
       </div>
     </div>
   );
