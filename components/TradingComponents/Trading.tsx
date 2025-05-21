@@ -169,7 +169,7 @@ export default function TradingAll() {
             <div className="grid grid-cols-2 gap-4 mt-6 touch-pan-x touch-pan-y">
               <button
                 onClick={handleDownOperation}
-                className="bg-red-600 hover:bg-red-700 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
+                className="bg-red-700 hover:bg-red-800 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
               >
                 <span>Para baixo</span>
                 <ArrowDown className="h-5 w-5" />
@@ -177,7 +177,7 @@ export default function TradingAll() {
 
               <button
                 onClick={handleUpOperation}
-                className="bg-green-600 hover:bg-green-700 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
+                className="bg-green-700 hover:bg-green-800 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
               >
                 <span>Para cima</span>
                 <ArrowUp className="h-5 w-5" />
