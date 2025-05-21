@@ -48,10 +48,10 @@ export default function SubMenu() {
                 key={index}
                 className="flex flex-col justify-center items-center"
               >
-                <div className="flex flex-col justify-center items-center drop-shadow-md shadow-subbackground bg-purple-700/70 active:scale-90 active:bg-subbackground rounded-xl pb-1 transition-all duration-300">
+                <div className="flex flex-col justify-center items-center drop-shadow-md shadow-subbackground bg-subbackground active:scale-90 active:bg-subbackground rounded-xl pb-1 transition-all duration-300">
                   <div
                     onClick={() => item.route && router.push(item.route)}
-                    className="button bg-subbackground border-purple-200 duration-300 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer font-inter text-center active:scale-90 transition-all text-text"
+                    className="button bg-subbackground border-purple-200 duration-300 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer font-inter text-center active:scale-90 transition-all text-btn"
                   >
                     {item.icon}
                   </div>{' '}

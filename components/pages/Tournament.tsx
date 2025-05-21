@@ -50,7 +50,7 @@ export default function Tournament({ user }: { user: User }) {
       <main className="flex flex-1 flex-col min-h-[calc(100vh_-_theme(spacing.16))]">
         <div className="pt-8 pb-2 px-4 sm:px-7">
           <img
-            src="/Banner/Banner.png"
+            src="/Banner.png"
             alt="Logomarca"
             className="w-full sm:h-56 max-sm:h-36 rounded-2xl object-cover border-2 border-btn hover:opacity-80 hover:border- hover:border-btn/80 transition-all duration-400 cursor-default select-none"
           />
