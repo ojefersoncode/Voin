@@ -30,16 +30,27 @@ export default function TradingAll() {
   const [isChartFullscreen] = useState(false);
 
   const handleIncrement = () => {
-    setInputValue((prev) => prev + 5);
+    setInputValue((prev) => {
+      if (prev < 10) {
+        return prev + 1;
+      } else {
+        return prev;
+      }
+    });
   };
 
   const handleDecrement = () => {
-    setInputValue((prev) => (prev >= 5 ? prev - 5 : 0));
+    setInputValue((prev) => (prev > 1 ? prev - 1 : 1));
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\D/g, '');
-    setInputValue(Number(value));
+    const numericValue = Number(value);
+    if (numericValue >= 1 && numericValue <= 10) {
+      setInputValue(numericValue);
+    } else if (numericValue < 1) {
+      setInputValue(1);
+    }
   };
 
   const handleUpOperation = () => {
@@ -140,14 +151,23 @@ export default function TradingAll() {
 
             {/* Amount Input */}
             <div className="mb-4 touch-pan-x touch-pan-y">
-              <h3 className="text-sm text-gray-400 mb-2">Ordens</h3>
+              <div className="flex justify-between items-center">
+                <h3 className="text-sm text-gray-400 mb-2">Ordens</h3>
+                <div className="flex items-center gap-2 px-1 font-inter text-xs">
+                  <p className="font-sans text-slate-300">Disponivel: </p>
+                  <span>10</span>
+                </div>
+              </div>
+
               <div className="flex items-center bg-subbackground rounded-md p-1">
                 <button
                   onClick={handleDecrement}
-                  className="p-2 text-btn hover:text-btn/80"
+                  disabled={inputValue <= 1}
+                  className={`p-2 text-btn ${inputValue <= 1 ? 'opacity-50 cursor-not-allowed' : 'hover:text-btn/80'}`}
                 >
                   <Minus size={18} />
                 </button>
+
                 <Input
                   type="text"
                   value={inputValue}
@@ -156,7 +176,8 @@ export default function TradingAll() {
                 />
                 <button
                   onClick={handleIncrement}
-                  className="p-2 text-btn hover:text-btn/80"
+                  disabled={inputValue >= 10}
+                  className={`p-2 text-btn hover:text-btn/80 ${inputValue >= 10 ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
                   <Plus size={18} />
                 </button>
@@ -164,7 +185,7 @@ export default function TradingAll() {
             </div>
 
             {/* Action Buttons */}
-            <div className="grid grid-cols-2 gap-4 mt-6 touch-pan-x touch-pan-y">
+            <div className="grid grid-cols-2 gap-4 mt-6 mb-2 touch-pan-x touch-pan-y">
               <button
                 onClick={handleDownOperation}
                 className="bg-[#dd3240] hover:bg-[#af2732] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
