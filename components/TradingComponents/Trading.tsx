@@ -86,7 +86,11 @@ export default function TradingAll() {
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between px-3 py-2">
           <div className="flex items-center gap-4">
-            <Image src="/Nexbattle.png" alt="Logo" width={27} height={27} />
+            <Image src="/Nexbattle.png" alt="Logo" width={32} height={32} />
+          </div>
+
+          <div className="flex justify-center items-center">
+            <Order />
           </div>
 
           <div className="flex items-center touch-pan-x touch-pan-y">
@@ -176,10 +180,6 @@ export default function TradingAll() {
                 <span>Para cima</span>
                 <ArrowUp className="h-5 w-5" />
               </button>
-            </div>
-
-            <div className="flex w-full justify-center items-center mt-4 mb-2 pr-5">
-              <Order />
             </div>
           </div>
         </div>
