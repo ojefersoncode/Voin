@@ -87,7 +87,7 @@ export default function TradingAll() {
         <nav className="flex items-center justify-between px-3 py-2">
           <div className="flex items-center">
             <Image src="/Rank/Rank1.svg" alt="Logo" width={30} height={30} />
-            <span className="font-titan text-base pl-2">Jeferson</span>
+            <span className="font-titan text-base pl-1">Jeferson</span>
           </div>
 
           <div className="flex justify-center items-center">
