@@ -22,10 +22,10 @@ export function Order() {
         <Button className="bg-transparent hover:bg-transparent">
           <div className="flex flex-col justify-center items-center">
             <div title="Ordens" className="flex items-center justify-center">
-              <div className="flex items-center gap-3 font-titan text-3xl sm:text-4xl bg-none rounded-lg">
+              <div className="flex items-center gap-3 font-titan text-2xl bg-none rounded-lg">
                 <span className="text-yellow-600">1</span>
                 <div>
-                  <Swords className="size-5 sm:size-7 text-text" />
+                  <Swords className="size-5 text-text" />
                 </div>
                 <span className="text-red-600">0</span>
               </div>
