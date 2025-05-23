@@ -90,7 +90,7 @@ export default function TradingAll() {
             <span className="font-titan text-base pl-1">Jeferson</span>
           </div>
 
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center pr-5">
             <Order />
           </div>
 
