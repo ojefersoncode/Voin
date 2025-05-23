@@ -14,6 +14,8 @@ import { Input } from '@/components/ui/input';
 import BottomTrading from './BottomTrading';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
+import { Order } from './SheetBar/Order';
+import Image from 'next/image';
 
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
@@ -84,15 +86,7 @@ export default function TradingAll() {
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between px-3 py-2">
           <div className="flex items-center gap-4">
-            <img src="/Nexbattle.png" alt="Logo" className="h-8 w-8" />
-          </div>
-
-          <div className="flex items-center gap-3 font-titan text-xl bg-none rounded-lg py-1">
-            <span className="text-yellow-600">1</span>
-            <div>
-              <Swords className="size-5" />
-            </div>
-            <span className="text-red-600">0</span>
+            <Image src="/Nexbattle.png" alt="Logo" width={27} height={27} />
           </div>
 
           <div className="flex items-center touch-pan-x touch-pan-y">
@@ -105,7 +99,7 @@ export default function TradingAll() {
 
       {/* Main */}
       <div
-        className={`flex flex-col lg:flex-row w-full flex-1 touch-pan-x touch-pan-y ${isChartFullscreen ? 'lg:flex-col' : ''}`}
+        className={`flex flex-col lg:flex-row w-full flex-1 mb-1 touch-pan-x touch-pan-y ${isChartFullscreen ? 'lg:flex-col' : ''}`}
       >
         {/* Chart */}
         <div
@@ -117,7 +111,7 @@ export default function TradingAll() {
         {/* Trading Panel */}
         <div className={`lg:w-[350px] w-full flex flex-col bg-background`}>
           {/* Trading Controls */}
-          <div className="px-4 touch-pan-x touch-pan-y">
+          <div className="px-4 max-md:pt-2 touch-pan-x touch-pan-y">
             <h3 className="text-sm text-gray-400 mb-3">Par de moedas</h3>
 
             {/* Time Selection */}
@@ -183,13 +177,12 @@ export default function TradingAll() {
                 <ArrowUp className="h-5 w-5" />
               </button>
             </div>
+
+            <div className="flex w-full justify-center items-center mt-4 mb-2 pr-5">
+              <Order />
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Bottom Component */}
-      <div className="touch-pan-x touch-pan-y pt-20">
-        <BottomTrading />
       </div>
     </div>
   );

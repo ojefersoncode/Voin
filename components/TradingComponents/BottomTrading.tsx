@@ -6,11 +6,9 @@ import { Order } from './SheetBar/Order';
 
 export default function BottomTrading() {
   return (
-    <div className="flex w-full fixed z-40 bottom-1 px-3">
-      <div className="flex w-full justify-around  bg-btn rounded-xl touch-pan-x touch-pan-y p-2">
-        <Status />
+    <div className="flex w-full fixed z-40 bottom-0">
+      <div className="flex w-full justify-around  bg-subbackground rounded-xl touch-pan-x touch-pan-y p-2">
         <Order />
-        <Historyc />
       </div>
     </div>
   );
