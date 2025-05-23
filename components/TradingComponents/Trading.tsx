@@ -94,7 +94,7 @@ export default function TradingAll() {
             <Order />
           </div>
 
-          <div className="flex justify-center items-center touch-pan-x touch-pan-y">
+          <div className="flex justify-center items-center pr-2 touch-pan-x touch-pan-y">
             <div className="font-titan text-lg bg-none rounded-lg">
               <span className="text-btn">10:00</span>
             </div>
