@@ -1,7 +1,7 @@
 'use client';
 
 import type React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   Select,
   SelectTrigger,
@@ -9,9 +9,8 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import { ArrowUp, ArrowDown, Plus, Minus, Swords } from 'lucide-react';
+import { ArrowUp, ArrowDown, Plus, Minus } from 'lucide-react';
 import { Input } from '@/components/ui/input';
-import BottomTrading from './BottomTrading';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
 import { Order } from './SheetBar/Order';
@@ -168,7 +167,7 @@ export default function TradingAll() {
             <div className="grid grid-cols-2 gap-4 mt-6 touch-pan-x touch-pan-y">
               <button
                 onClick={handleDownOperation}
-                className="bg-red-700 hover:bg-red-800 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
+                className="bg-[#dd3240] hover:bg-[#af2732] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
               >
                 <span>Para baixo</span>
                 <ArrowDown className="h-5 w-5" />
@@ -176,7 +175,7 @@ export default function TradingAll() {
 
               <button
                 onClick={handleUpOperation}
-                className="bg-green-700 hover:bg-green-800 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
+                className="bg-[#097261] hover:bg-[#135a4e] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
               >
                 <span>Para cima</span>
                 <ArrowUp className="h-5 w-5" />
