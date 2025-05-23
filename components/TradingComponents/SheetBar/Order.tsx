@@ -26,7 +26,7 @@ export function Order() {
               className="flex items-center justify-center py-1 gap-2 rounded-lg hover:text-background/90 text-background relative"
             >
               <ScrollText className="size-5" />
-              <div className="flex items-center gap-3 font-titan text-xl sm:text-4xl bg-none rounded-lg">
+              <div className="flex items-center gap-3 font-titan text-2xl sm:text-4xl bg-none rounded-lg">
                 <span className="text-yellow-600">1</span>
                 <div>
                   <Swords className="size-5 sm:size-7 text-text" />
