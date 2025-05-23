@@ -21,10 +21,7 @@ export function Order() {
       <DrawerTrigger asChild>
         <Button className="bg-transparent hover:bg-transparent">
           <div className="flex flex-col justify-center items-center">
-            <div
-              title="Ordens"
-              className="flex items-center justify-center py-1 relative"
-            >
+            <div title="Ordens" className="flex items-center justify-center">
               <div className="flex items-center gap-3 font-titan text-3xl sm:text-4xl bg-none rounded-lg">
                 <span className="text-yellow-600">1</span>
                 <div>

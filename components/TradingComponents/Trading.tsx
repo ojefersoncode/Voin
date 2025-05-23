@@ -84,7 +84,7 @@ export default function TradingAll() {
       {/* Header */}
 
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
-        <nav className="flex items-center justify-between px-3 py-4">
+        <nav className="flex items-center justify-between px-3 py-2">
           <div className="flex items-center">
             <Image src="/Nexbattle.png" alt="Logo" width={42} height={42} />
           </div>
@@ -94,7 +94,7 @@ export default function TradingAll() {
           </div>
 
           <div className="flex justify-center items-center touch-pan-x touch-pan-y">
-            <div className="font-titan text-xl bg-none rounded-lg py-2">
+            <div className="font-titan text-xl bg-none rounded-lg">
               <span>10:00</span>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function TradingAll() {
 
       {/* Main */}
       <div
-        className={`flex flex-col lg:flex-row w-full flex-1 mb-1 touch-pan-x touch-pan-y ${isChartFullscreen ? 'lg:flex-col' : ''}`}
+        className={`flex flex-col lg:flex-row w-full flex-1 sm:mb-2 touch-pan-x touch-pan-y ${isChartFullscreen ? 'lg:flex-col' : ''}`}
       >
         {/* Chart */}
         <div
