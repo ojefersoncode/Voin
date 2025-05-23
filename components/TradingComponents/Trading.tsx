@@ -85,7 +85,7 @@ export default function TradingAll() {
 
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between px-3 py-2">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center">
             <Image src="/Nexbattle.png" alt="Logo" width={32} height={32} />
           </div>
 
@@ -93,7 +93,7 @@ export default function TradingAll() {
             <Order />
           </div>
 
-          <div className="flex items-center touch-pan-x touch-pan-y">
+          <div className="flex justify-center items-center touch-pan-x touch-pan-y">
             <div className="font-titan text-xl bg-none rounded-lg py-2">
               <span>10:00</span>
             </div>
