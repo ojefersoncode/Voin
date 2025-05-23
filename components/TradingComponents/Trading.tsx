@@ -94,7 +94,7 @@ export default function TradingAll() {
           </div>
 
           <div className="flex items-center touch-pan-x touch-pan-y">
-            <div className="font-titan text-sm bg-none rounded-lg py-2">
+            <div className="font-titan text-xl bg-none rounded-lg py-2">
               <span>10:00</span>
             </div>
           </div>
