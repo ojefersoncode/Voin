@@ -8,12 +8,13 @@ import {
   DialogTrigger
 } from '@/components/ui/dialog';
 import { ScrollArea } from '../ui/scroll-area';
+import Image from 'next/image';
 
 export function PassVip() {
   const vipItems = Array.from({ length: 20 }, (_, i) => ({
     id: i + 1,
     label: `Item ${i + 1}`,
-    imgSrc: '/Vip.png'
+    imgSrc: '/Pass.png'
   }));
 
   return (
@@ -21,16 +22,18 @@ export function PassVip() {
       <DialogTrigger asChild>
         <Button className=" px-2 py-1 bg-background hover:bg-background">
           <div className="flex items-center">
-            <img src="/Vip.svg" alt="Passe vip" className="size-7" />
+            <Image src="/Vip.svg" alt="Passe vip" height={34} width={34} />
           </div>
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] h-dvh bg-background border-none text-white">
         <DialogHeader>
           <DialogTitle className="flex items-center p-1">
-            <img
+            <Image
               src="/Vip.svg"
               alt="Passe vip"
+              height={34}
+              width={34}
               className="size-6 mr-2 text-sm font-titan"
             />
             Passe Vip
@@ -47,10 +50,11 @@ export function PassVip() {
                 >
                   <span className="text-xl mr-2">{item.label}</span>
                   <div>
-                    <img
+                    <Image
                       src={item.imgSrc}
                       alt={item.label}
-                      className="size-5"
+                      height={24}
+                      width={24}
                     />
                   </div>
                 </div>
@@ -61,10 +65,10 @@ export function PassVip() {
 
         <DialogFooter className="flex w-full justify-center items-center">
           <Button
-            className="flex w-full bg-transparent hover:bg-btn transition-colors border border-opacity-40"
+            className="flex w-full border border-btn bg-subbackground hover:bg-subbackground/70 transition-colors"
             type="submit"
           >
-            Comprar passe vip
+            <span className="text-text font-titan">Desbloquear passe vip</span>
           </Button>
         </DialogFooter>
       </DialogContent>

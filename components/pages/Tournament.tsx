@@ -7,6 +7,7 @@ import { User } from '@supabase/supabase-js';
 import NavbarAll from '../All/Navbar';
 import NavBottom from '../All/NavBottom';
 import Pageback from '../All/Pageback';
+import Image from 'next/image';
 
 export default function Tournament({ user }: { user: User }) {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -49,10 +50,12 @@ export default function Tournament({ user }: { user: User }) {
 
       <main className="flex flex-1 flex-col min-h-[calc(100vh_-_theme(spacing.16))]">
         <div className="pt-8 pb-2 px-4 sm:px-7">
-          <img
+          <Image
             src="/Banner.png"
+            height={2000}
+            width={1400}
             alt="Logomarca"
-            className="w-full sm:h-56 max-sm:h-36 rounded-2xl object-cover border-2 border-btn hover:opacity-80 hover:border- hover:border-btn/80 transition-all duration-400 cursor-default select-none"
+            className="w-full sm:h-56 max-sm:h-36 rounded-2xl object-cover border-2 border-btn hover:opacity-90  hover:border-btn/90 transition-all duration-400 cursor-default select-none"
           />
         </div>
 
@@ -85,13 +88,15 @@ export default function Tournament({ user }: { user: User }) {
           {torneios.map((torneio) => (
             <div
               key={torneio.id}
-              className="text-text shadow-md drop-shadow-xl shadow-orange-400 border border-btn rounded-xl bg-background hover:scale-105 transition-all duration-500"
+              className="text-text shadow-md drop-shadow-xl shadow-orange-400 border border-btn rounded-xl bg-background active:opacity-70 transition-all duration-200"
               onMouseEnter={() => setHoveredId(torneio.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
               <div className=" rounded-xl overflow-hidden">
-                <img
+                <Image
                   src={torneio.imageUrl}
+                  height={1000}
+                  width={1000}
                   alt={torneio.name}
                   className="w-full object-cover"
                 />
@@ -106,8 +111,10 @@ export default function Tournament({ user }: { user: User }) {
                 <div className="flex w-full justify-between gap-3 mt-3 font-inter">
                   <span>Premiação total:</span>
                   <div className="flex gap-1 items-center">
-                    <img
+                    <Image
                       src="/Coin/Nexcoin.png"
+                      height={14}
+                      width={14}
                       alt="Voin Coin"
                       className="size-5"
                     />

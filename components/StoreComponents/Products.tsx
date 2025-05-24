@@ -1,6 +1,6 @@
-import { Coins } from 'lucide-react';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
+import Image from 'next/image';
 
 export default function Store() {
   const coinPackages = [
@@ -25,7 +25,13 @@ export default function Store() {
             key={pkg.id}
             className="bg-background text-btn border-btn p-4 py-6 flex flex-col items-center justify-center gap-2 rounded-xl  transition-colors cursor-pointer"
           >
-            <img className="size-12" src="/Coin/Coins.png" alt="logo" />
+            <Image
+              height={960}
+              width={960}
+              className="size-12"
+              src="/Coin/Coins.png"
+              alt="logo"
+            />
             <span className="text-lg font-titan">{pkg.amount} moedas</span>
             <span className="text-btn font-inter">{pkg.price}</span>
             <Button

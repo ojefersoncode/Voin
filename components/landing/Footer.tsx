@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export const Footer = () => {
   return (
     <footer
@@ -9,7 +11,13 @@ export const Footer = () => {
       <section className="container py-10 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8 text-gray-100">
         <div className="col-span-full xl:col-span-2">
           <div className="flex items-center select-none">
-            <img className="size-12 mr-1" src="/Nexbattle.png" alt="logo" />
+            <Image
+              height={44}
+              width={44}
+              className="size-12 mr-1"
+              src="/Nexbattle.png"
+              alt="logo"
+            />
             <a
               rel="noreferrer noopener"
               href="/"
