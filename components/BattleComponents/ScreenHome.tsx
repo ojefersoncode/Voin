@@ -39,10 +39,8 @@ export default function ScreenHome() {
   );
 
   const StatusMatch = [
-    { key: 'X1', title: 'Solo' },
-    { key: 'X2', title: 'Duo' },
-    { key: 'X3', title: 'Trio' },
-    { key: 'X4', title: 'Squad' }
+    { key: 'Rankeada', title: 'Solo' },
+    { key: 'Classica', title: 'Duo' }
   ];
 
   return (
