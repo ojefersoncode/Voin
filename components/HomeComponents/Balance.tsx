@@ -37,10 +37,9 @@ export default function Balance() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="button py-7 w-full bg-btn select-none active:scale-90 text-background
-                  border-b border-yellow-400 transition-all duration-200 font-titan rounded-xl flex flex-col items-center justify-center cursor-pointer"
+                className="px-5 py-7 w-full items-center justify-center gap-4 bg-btn select-none active:scale-90 text-background transition-all duration-200 font-titan rounded-xl flex flex-col  cursor-pointer"
               >
-                <item.icon className="size-8 max-sm:size-7 mb-3" />
+                <item.icon className="size-8 max-sm:size-7" />
                 <span className="text-xs sm:text-base font-titan">
                   {item.label}
                 </span>
