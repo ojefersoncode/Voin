@@ -60,7 +60,11 @@ export const Navbar = ({ user }: { user: User | null }) => {
     return router.push('/auth');
   };
   return (
-    <BlurFade className="bg-transparent " delay={0.2 * 0.03} inView>
+    <BlurFade
+      className="bg-transparent sticky top-0 z-40"
+      delay={0.2 * 0.03}
+      inView
+    >
       <header className="sticky top-0 z-40 w-full">
         <NavigationMenu className="mx-auto">
           <NavigationMenuList className="container py-2 px-3 md:p-6 w-screen flex justify-between ">
