@@ -5,9 +5,11 @@ import { Toggle } from '../ui/toggle';
 import Battlebar from './BattleBar';
 
 export default function ScreenHome() {
-  const [selectedMatch, setSelectedMatch] = useState('X1');
+  const [selectedMatch, setSelectedMatch] = useState('Rankeada');
   const nivelAtual = 'Rank1';
   const proximoNivel = 'Rank2';
+
+  const StatusMatch = [{ key: 'Rankeada', title: 'Solo' }];
 
   const imagensLevel = [
     { Image: '/Rank/Rank1.svg', label: 'Rank1' },
@@ -37,11 +39,6 @@ export default function ScreenHome() {
       {children}
     </div>
   );
-
-  const StatusMatch = [
-    { key: 'Rankeada', title: 'Solo' },
-    { key: 'Classica', title: 'Duo' }
-  ];
 
   return (
     <div className="flex flex-col min-h-dvh bg-background">

@@ -54,9 +54,9 @@ export function SerachBattle() {
           <div className="flex flex-col justify-center items-center">
             <div
               title="Batalhar"
-              className="flex flex-col items-center justify-center z-20 bottom-8 py-4 px-6 rounded-xl border border-btn bg-btn hover:bg-btn/90 hover:text-background/90 text-background relative"
+              className="flex flex-col items-center justify-center z-20 bottom-0 ml-4 text-btn relative"
             >
-              <Swords className="h-7 w-7" />
+              <Swords className="size-5" />
               <span className="text-xs font-titan mt-1 sm:mt-2">Batalha</span>
             </div>
           </div>
