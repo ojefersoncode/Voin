@@ -5,7 +5,6 @@ import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { TextAnimate } from '../magicui/text-animate';
 import { BlurFade } from '../magicui/blur-fade';
-import { CoolMode } from '../magicui/cool-mode';
 import { Button } from '../ui/button';
 
 export const HeroLeads = () => {
@@ -14,23 +13,17 @@ export const HeroLeads = () => {
       <main className="flex flex-col w-full justify-center items-center sm:ml-10">
         <BlurFade className="bg-transparent " delay={0.25 * 0.05} inView>
           <div className="flex items-center justify-center text-center gap-3 px-3 rounded-full border border-gray-700 mb-2 bg-subbackground hover:bg-white/10 hover:shadow-lg drop-shadow-md shadow-white transition-colors duration-200">
-            <CoolMode
-              options={{
-                particle: 'https://www.svgrepo.com/show/362107/gift.svg'
-              }}
-            >
-              <Button className="flex justify-center items-center bg-transparent hover:bg-transparent p-0">
-                <div className="flex items-center justify-center border-r h-full border-gray-700">
-                  <Image
-                    src={'/LandingImage/gift.png'}
-                    alt=""
-                    width={900}
-                    height={900}
-                    className="size-6 max-sm:size-5 mr-3"
-                  />
-                </div>
-              </Button>
-            </CoolMode>
+            <Button className="flex justify-center items-center bg-transparent hover:bg-transparent p-0">
+              <div className="flex items-center justify-center border-r h-full border-gray-700">
+                <Image
+                  src={'/LandingImage/gift.png'}
+                  alt=""
+                  width={900}
+                  height={900}
+                  className="size-6 max-sm:size-5 mr-3"
+                />
+              </div>
+            </Button>
             <span className="max-sm:text-xs text-sm font-medium text-text opacity-90">
               Jogue para ganhar
             </span>
