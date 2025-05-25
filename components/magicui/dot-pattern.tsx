@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { cn } from "@/utils/cn";
-import { motion } from "motion/react";
-import React, { useEffect, useId, useRef, useState } from "react";
+import { cn } from '@/utils/cn';
+import { motion } from 'motion/react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 
 /**
  *  DotPattern Component Props
@@ -85,15 +85,15 @@ export function DotPattern({
     };
 
     updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
   const dots = Array.from(
     {
       length:
         Math.ceil(dimensions.width / width) *
-        Math.ceil(dimensions.height / height),
+        Math.ceil(dimensions.height / height)
     },
     (_, i) => {
       const col = i % Math.ceil(dimensions.width / width);
@@ -102,9 +102,9 @@ export function DotPattern({
         x: col * width + cx,
         y: row * height + cy,
         delay: Math.random() * 5,
-        duration: Math.random() * 3 + 2,
+        duration: Math.random() * 3 + 2
       };
-    },
+    }
   );
 
   return (
@@ -112,8 +112,8 @@ export function DotPattern({
       ref={containerRef}
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 h-full w-full",
-        className,
+        'pointer-events-none absolute z-10 inset-0 h-full w-full',
+        className
       )}
       {...props}
     >
@@ -129,14 +129,14 @@ export function DotPattern({
           cx={dot.x}
           cy={dot.y}
           r={cr}
-          fill={glow ? `url(#${id}-gradient)` : "currentColor"}
+          fill={glow ? `url(#${id}-gradient)` : 'currentColor'}
           className="text-neutral-400/80"
           initial={glow ? { opacity: 0.4, scale: 1 } : {}}
           animate={
             glow
               ? {
                   opacity: [0.4, 1, 0.4],
-                  scale: [1, 1.5, 1],
+                  scale: [1, 1.5, 1]
                 }
               : {}
           }
@@ -145,9 +145,9 @@ export function DotPattern({
               ? {
                   duration: dot.duration,
                   repeat: Infinity,
-                  repeatType: "reverse",
+                  repeatType: 'reverse',
                   delay: dot.delay,
-                  ease: "easeInOut",
+                  ease: 'easeInOut'
                 }
               : {}
           }
