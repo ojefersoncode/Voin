@@ -8,6 +8,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
 import { SupabaseClient } from '@supabase/supabase-js';
 import { Database } from '@/types_db';
+import { BlurFade } from '../magicui/blur-fade';
 
 type Lead = {
   id?: string;
@@ -137,43 +138,45 @@ export const CaptureLeads = () => {
   };
 
   return (
-    <form
-      className="flex flex-col justify-center items-center w-full gap-4"
-      onSubmit={handleSubmit}
-    >
-      <Input
-        type="text"
-        placeholder="Digite seu nome"
-        className="bg-background/80 border-2 border-btn p-3 w-full rounded-xl text-text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-      />
-      <Input
-        type="email"
-        placeholder="Digite seu e-mail"
-        className="bg-background/80 border-2 border-btn p-3 w-full rounded-xl text-text"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <Input
-        type="tel"
-        placeholder="Digite seu telefone (ex: 31999999999)"
-        className="bg-background/80 border-2 border-btn p-3 w-full rounded-xl text-text"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-        required
-      />
-      <div className="w-full rounded-xl active:scale-95 active:border-none border-b-4 border-yellow-800 transition-all duration-300">
-        <Button
-          className="w-full rounded-xl text-background font-inter pb-2 bg-btn hover:bg-btn/80 transition-all border-b border-yellow-400 mt-2 p-4 text-md max-md:text-sm"
-          type="submit"
-          disabled={loading || isButtonDisabled}
-        >
-          {loading ? 'Enviando cadastro...' : 'Cadastrar'}
-        </Button>
-      </div>
-    </form>
+    <BlurFade className="w-full bg-transparent" delay={0.25 * 0.05} inView>
+      <form
+        className="flex flex-col justify-center items-center w-full gap-4"
+        onSubmit={handleSubmit}
+      >
+        <Input
+          type="text"
+          placeholder="Digite seu nome"
+          className="bg-background/80 border-2 border-btn p-3 w-full rounded-xl text-text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <Input
+          type="email"
+          placeholder="Digite seu e-mail"
+          className="bg-background/80 border-2 border-btn p-3 w-full rounded-xl text-text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <Input
+          type="tel"
+          placeholder="Digite seu telefone (ex: 31999999999)"
+          className="bg-background/80 border-2 border-btn p-3 w-full rounded-xl text-text"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+        />
+        <div className="w-full rounded-xl active:scale-95 active:border-none border-b-4 border-yellow-800 transition-all duration-300">
+          <Button
+            className="w-full rounded-xl text-background font-inter pb-2 bg-btn hover:bg-btn/80 transition-all border-b border-yellow-400 mt-2 p-4 text-md max-md:text-sm"
+            type="submit"
+            disabled={loading || isButtonDisabled}
+          >
+            {loading ? 'Enviando cadastro...' : 'Cadastrar'}
+          </Button>
+        </div>
+      </form>
+    </BlurFade>
   );
 };

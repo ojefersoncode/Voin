@@ -59,7 +59,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
     return router.push('/auth');
   };
   return (
-    <header className="sticky top-0 z-40 w-full bg-background">
+    <header className="sticky top-0 z-40 w-full">
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container py-2 px-3 md:p-6 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">

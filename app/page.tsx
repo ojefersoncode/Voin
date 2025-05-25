@@ -9,6 +9,8 @@ import { Newsletter } from '../components/landing/Newsletter';
 import { ScrollToTop } from '../components/landing/ScrollToTop';
 import { Sponsors } from '../components/landing/Sponsors';
 import { Testimonials } from '../components/landing/Testimonials';
+import { DotPattern } from '@/components/magicui/dot-pattern';
+import { cn } from '@/utils/cn';
 
 export default async function LandingPage() {
   const supabase = await createClient();
@@ -19,7 +21,13 @@ export default async function LandingPage() {
 
   return (
     <>
-      <div className="absolute w-full cursor-yellow bg-background overflow-hidden touch-pan-x touch-pan-y">
+      <div className=" bg-background w-full cursor-yellow overflow-hidden touch-pan-x touch-pan-y">
+        <DotPattern
+          className={cn(
+            '[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]'
+          )}
+        />
+
         <Navbar user={user} />
         <HeroLeads />
 
@@ -30,7 +38,9 @@ export default async function LandingPage() {
         <Testimonials />
         <Newsletter />
         <ScrollToTop />*/}
-        <Footer />
+        <div className="bg-background w-full absolute">
+          <Footer />
+        </div>
       </div>
     </>
   );
