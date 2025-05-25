@@ -4,6 +4,7 @@ import NavbarAll from '../All/Navbar';
 import PreviewMarket from '../HomeComponents/PreviewMarket';
 import SubMenu from '../HomeComponents/SubMenu';
 import Balance from '../HomeComponents/Balance';
+import { Footer } from '../landing/Footer';
 
 export default function HomePage({ user }: { user: User }) {
   return (
@@ -25,6 +26,8 @@ export default function HomePage({ user }: { user: User }) {
           <PreviewMarket />
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }
