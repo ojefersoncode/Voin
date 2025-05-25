@@ -22,6 +22,7 @@ import { createApiClient } from '@/utils/supabase/api';
 import { createClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 import { useToast } from '../../components/ui/use-toast';
+import { BlurFade } from '../magicui/blur-fade';
 
 interface RouteProps {
   href: string;
@@ -59,100 +60,106 @@ export const Navbar = ({ user }: { user: User | null }) => {
     return router.push('/auth');
   };
   return (
-    <header className="sticky top-0 z-40 w-full">
-      <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container py-2 px-3 md:p-6 w-screen flex justify-between ">
-          <NavigationMenuItem className="font-bold flex">
-            <div className="flex gap-2 text-xl font-bold items-center">
-              <img className="size-8" src="/Nexbattle.png" alt="logo" />
-              <div className="flex">
-                <h1 className="text-gray-100 text-base font-titan">
-                  Nex Battle
-                </h1>
+    <BlurFade className="bg-transparent " delay={0.2 * 0.03} inView>
+      <header className="sticky top-0 z-40 w-full">
+        <NavigationMenu className="mx-auto">
+          <NavigationMenuList className="container py-2 px-3 md:p-6 w-screen flex justify-between ">
+            <NavigationMenuItem className="font-bold flex">
+              <div className="flex gap-2 text-xl font-bold items-center">
+                <img className="size-8" src="/Nexbattle.png" alt="logo" />
+                <div className="flex">
+                  <h1 className="text-gray-100 text-base font-titan">
+                    Nex Battle
+                  </h1>
+                </div>
               </div>
-            </div>
-          </NavigationMenuItem>
+            </NavigationMenuItem>
 
-          {/* mobile */}
-          <span className="flex md:hidden bg-background">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger className="px-2 text-btn" asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-btn bg-background hover:bg-background"
-                >
-                  <Menu className="size-5 text-btn" />
-                </Button>
-              </SheetTrigger>
-
-              <SheetContent
-                className="w-full bg-background border-none text-btn"
-                side={'right'}
-              >
-                <SheetHeader>
-                  <SheetTitle className="flex items-center gap-2 font-titan text-text text-xl select-none">
-                    <img className="size-10" src="/Nexbattle.png" alt="logo" />{' '}
-                    <span>Nex Battle</span>
-                  </SheetTitle>
-                </SheetHeader>
-                <nav className="flex flex-col justify-center items-center text-xl text-text font-titan gap-2 mt-7">
-                  {routeList.map(({ href, label }: RouteProps) => (
-                    <a
-                      rel="noreferrer noopener"
-                      key={label}
-                      href={href}
-                      onClick={() => setIsOpen(false)}
-                      className="mt-4 hover:text-btn transition-colors"
-                    >
-                      {label}
-                    </a>
-                  ))}
-                  <Link
-                    className="w-full px-8 absolute bottom-10"
-                    href="/Home"
-                    passHref
+            {/* mobile */}
+            <span className="flex md:hidden bg-background">
+              <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                <SheetTrigger className="px-2 text-btn" asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-btn bg-background hover:bg-background"
                   >
-                    <Button
-                      className="w-full px-4 py-0.5 rounded-xl font-inter text-base text-background bg-btn/80 hover:bg-btn/70 transition-colors shadow-btn shadow-md drop-shadow-md"
-                      variant="ghost"
+                    <Menu className="size-5 text-btn" />
+                  </Button>
+                </SheetTrigger>
+
+                <SheetContent
+                  className="w-full bg-background border-none text-btn"
+                  side={'right'}
+                >
+                  <SheetHeader>
+                    <SheetTitle className="flex items-center gap-2 font-titan text-text text-xl select-none">
+                      <img
+                        className="size-10"
+                        src="/Nexbattle.png"
+                        alt="logo"
+                      />{' '}
+                      <span>Nex Battle</span>
+                    </SheetTitle>
+                  </SheetHeader>
+                  <nav className="flex flex-col justify-center items-center text-xl text-text font-titan gap-2 mt-7">
+                    {routeList.map(({ href, label }: RouteProps) => (
+                      <a
+                        rel="noreferrer noopener"
+                        key={label}
+                        href={href}
+                        onClick={() => setIsOpen(false)}
+                        className="mt-4 hover:text-btn transition-colors"
+                      >
+                        {label}
+                      </a>
+                    ))}
+                    <Link
+                      className="w-full px-8 absolute bottom-10"
+                      href="/Home"
+                      passHref
                     >
-                      Entrar
-                    </Button>
-                  </Link>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </span>
+                      <Button
+                        className="w-full px-4 py-0.5 rounded-xl font-inter text-base text-background bg-btn/80 hover:bg-btn/70 transition-colors shadow-btn shadow-md drop-shadow-md"
+                        variant="ghost"
+                      >
+                        Entrar
+                      </Button>
+                    </Link>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </span>
 
-          {/* desktop */}
-          <nav className="hidden md:flex gap-2 bg-none text-sm font-inter">
-            {routeList.map((route: RouteProps, i) => (
-              <a
-                rel="noreferrer noopener"
-                href={route.href}
-                key={i}
-                className={`text-[14px] ${
-                  route.label === 'Inicio' ? 'text-btn' : 'text-white'
-                } ${buttonVariants({ variant: 'ghost' })} hover:text-btn`}
-              >
-                {route.label}
-              </a>
-            ))}
-          </nav>
+            {/* desktop */}
+            <nav className="hidden md:flex gap-2 bg-none text-sm font-inter">
+              {routeList.map((route: RouteProps, i) => (
+                <a
+                  rel="noreferrer noopener"
+                  href={route.href}
+                  key={i}
+                  className={`text-[14px] ${
+                    route.label === 'Inicio' ? 'text-btn' : 'text-white'
+                  } ${buttonVariants({ variant: 'ghost' })} hover:text-btn`}
+                >
+                  {route.label}
+                </a>
+              ))}
+            </nav>
 
-          <div className="hidden md:flex gap-4">
-            <Link href="/Home" passHref>
-              <Button
-                className="px-4 py-0.5 font-inter rounded-xl text-base shadow-btn shadow-md drop-shadow-md text-background bg-btn hover:bg-btn/80"
-                variant="ghost"
-              >
-                Entrar
-              </Button>
-            </Link>
-          </div>
-        </NavigationMenuList>
-      </NavigationMenu>
-    </header>
+            <div className="hidden md:flex gap-4">
+              <Link href="/Home" passHref>
+                <Button
+                  className="px-4 py-0.5 font-inter rounded-xl text-base shadow-btn shadow-md drop-shadow-md text-background bg-btn hover:bg-btn/80"
+                  variant="ghost"
+                >
+                  Entrar
+                </Button>
+              </Link>
+            </div>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </header>
+    </BlurFade>
   );
 };
