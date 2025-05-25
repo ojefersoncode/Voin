@@ -72,11 +72,11 @@ export default function PreviewMarket() {
   }, []);
 
   return (
-    <div className="bg-background touch-pan-x touch-pan-y pb-4">
+    <div className="bg-none touch-pan-x touch-pan-y pb-4">
       <div className="sm:px-6 px-4 my-4 bg-background">
-        <Table className="px-2 bg-background rounded-xl border-btn">
+        <Table className="px-2 bg-background border-btn">
           <TableHeader>
-            <TableRow className="font-titan rounded-xl bg-btn hover:bg-btn/80 border border-background/20">
+            <TableRow className="font-titan bg-btn hover:bg-btn/80 border border-background">
               <TableHead className="text-background">Moeda</TableHead>
               <TableHead className="text-right text-background">
                 Preço (USDT)
@@ -89,16 +89,16 @@ export default function PreviewMarket() {
               </TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody className="bg-white hover:bg-btn border border-background/20 rounded-xl">
+          <TableBody className="bg-subbackground hover:bg-btn border border-background/20">
             {data.map((crypto) => (
               <TableRow
-                className="bg-white hover:bg-btn font-titan border border-background/20"
+                className="bg-subbackground font-titan border border-background/20"
                 key={crypto.symbol}
               >
-                <TableCell className=" text-background ">
+                <TableCell className=" text-text ">
                   {crypto.symbol.replace('USDT', '')}
                 </TableCell>
-                <TableCell className="text-right  text-background ">
+                <TableCell className="text-right  text-text ">
                   ${parseFloat(crypto.lastPrice).toFixed(2)}
                 </TableCell>
                 <TableCell
@@ -110,7 +110,7 @@ export default function PreviewMarket() {
                 >
                   {parseFloat(crypto.priceChangePercent).toFixed(2)}%
                 </TableCell>
-                <TableCell className="text-right  text-background">
+                <TableCell className="text-right  text-text">
                   {formatVolume(crypto.quoteVolume)}
                 </TableCell>
               </TableRow>
