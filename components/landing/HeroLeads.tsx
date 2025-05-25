@@ -24,10 +24,10 @@ export const HeroLeads = () => {
                 />
               </div>
             </Button>
-            <span className="max-sm:text-xs text-sm font-medium text-text opacity-90">
+            <span className="max-sm:text-xs text-xs font-inter text-text opacity-90">
               Jogue para ganhar
             </span>
-            <ChevronRight className="text-text size-4 max-sm:size-3 opacity-95" />
+            <ChevronRight className="text-text size-5 max-sm:size-4 opacity-95" />
           </div>
         </BlurFade>
 
