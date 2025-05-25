@@ -138,7 +138,11 @@ export const CaptureLeads = () => {
   };
 
   return (
-    <BlurFade className="w-full bg-transparent" delay={0.25 * 0.05} inView>
+    <BlurFade
+      className="w-full bg-transparent sticky z-40"
+      delay={0.25 * 0.05}
+      inView
+    >
       <form
         className="flex flex-col justify-center items-center w-full gap-4"
         onSubmit={handleSubmit}
