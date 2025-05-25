@@ -61,11 +61,11 @@ export const Navbar = ({ user }: { user: User | null }) => {
   };
   return (
     <BlurFade
-      className="bg-transparent sticky top-0 z-40"
+      className="bg-transparent sticky top-0 z-50 w-full"
       delay={0.2 * 0.03}
       inView
     >
-      <header className="sticky top-0 z-40 w-full">
+      <header className="">
         <NavigationMenu className="mx-auto">
           <NavigationMenuList className="container py-2 px-3 md:p-6 w-screen flex justify-between ">
             <NavigationMenuItem className="font-bold flex">

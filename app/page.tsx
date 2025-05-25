@@ -22,13 +22,13 @@ export default async function LandingPage() {
   return (
     <>
       <div className=" bg-background w-full cursor-yellow overflow-hidden touch-pan-x touch-pan-y">
+        <Navbar user={user} />
         <DotPattern
           className={cn(
             '[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]'
           )}
         />
 
-        <Navbar user={user} />
         <HeroLeads />
 
         {/* <FAQ />
