@@ -25,7 +25,7 @@ export const HeroLeads = () => {
             <ChevronRight className="text-text size-4 max-sm:size-3 opacity-95" />
           </div>
 
-          <div className="text-4xl max-sm:text-2xl font-titan text-btn">
+          <div className="text-4xl max-sm:text-2xl font-titan text-btn mt-2">
             <h1 className="text-text max-sm:text-xl">
               Participe da nossa comunidade
             </h1>

@@ -64,9 +64,11 @@ export const Navbar = ({ user }: { user: User | null }) => {
         <NavigationMenuList className="container py-2 px-3 md:p-6 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
             <div className="flex gap-2 text-xl font-bold items-center">
-              <img className="size-10" src="/Nexbattle.png" alt="logo" />
+              <img className="size-8" src="/Nexbattle.png" alt="logo" />
               <div className="flex">
-                <h1 className="text-gray-100 font-titan">Nex Battle</h1>
+                <h1 className="text-gray-100 text-base font-titan">
+                  Nex Battle
+                </h1>
               </div>
             </div>
           </NavigationMenuItem>
