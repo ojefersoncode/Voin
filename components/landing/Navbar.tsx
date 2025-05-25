@@ -132,9 +132,9 @@ export const Navbar = ({ user }: { user: User | null }) => {
                 rel="noreferrer noopener"
                 href={route.href}
                 key={i}
-                className={`text-[14px] ${buttonVariants({
-                  variant: 'ghost'
-                })} hover:text-border text-white`}
+                className={`text-[14px] ${
+                  route.label === 'Inicio' ? 'text-btn' : 'text-white'
+                } ${buttonVariants({ variant: 'ghost' })} hover:text-btn`}
               >
                 {route.label}
               </a>

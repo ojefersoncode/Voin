@@ -23,6 +23,9 @@ module.exports = {
         titan: ['var(--font-titan-one)', 'sans-serif'],
         poppins: ['var(--font-poppins)', 'sans-serif']
       },
+      cursor: {
+        yellow: 'url("/cursor.png"), auto'
+      },
       colors: {
         border: '#F6DC43',
         background: '#0e0e0e',

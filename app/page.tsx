@@ -19,7 +19,7 @@ export default async function LandingPage() {
 
   return (
     <>
-      <div className="absolute w-full bg-background overflow-hidden touch-pan-x touch-pan-y">
+      <div className="absolute w-full cursor-yellow bg-background overflow-hidden touch-pan-x touch-pan-y">
         <Navbar user={user} />
         <HeroLeads />
 
