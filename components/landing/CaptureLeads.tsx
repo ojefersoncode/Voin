@@ -146,7 +146,7 @@ export const CaptureLeads = () => {
         <Input
           type="text"
           placeholder="Digite seu nome"
-          className="bg-background/80 border-2 border-btn p-3 w-full rounded-xl text-text"
+          className="bg-subbackground border-2 border-btn p-3 w-full rounded-xl text-text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -154,7 +154,7 @@ export const CaptureLeads = () => {
         <Input
           type="email"
           placeholder="Digite seu e-mail"
-          className="bg-background/80 border-2 border-btn p-3 w-full rounded-xl text-text"
+          className="bg-subbackground border-2 border-btn p-3 w-full rounded-xl text-text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -162,7 +162,7 @@ export const CaptureLeads = () => {
         <Input
           type="tel"
           placeholder="Digite seu telefone (ex: 31999999999)"
-          className="bg-background/80 border-2 border-btn p-3 w-full rounded-xl text-text"
+          className="bg-subbackground border-2 border-btn p-3 w-full rounded-xl text-text"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           required
