@@ -61,7 +61,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
   };
   return (
     <BlurFade
-      className="bg-transparent sticky top-0 z-50 w-full"
+      className="max-sm:bg-background rounded-b-xl sticky top-0 z-50 w-full"
       delay={0.2 * 0.03}
       inView
     >

@@ -41,7 +41,7 @@ export default async function LandingPage() {
         <Testimonials />
         <Newsletter />
         <ScrollToTop />*/}
-        <div className="bg-background w-full z-20 absolute">
+        <div className="bg-background w-full z-50 absolute">
           <Footer />
         </div>
       </div>
