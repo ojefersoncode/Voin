@@ -5,7 +5,6 @@ import { FilterTournament } from '../TorneioComponents/FilterTournament';
 import { Button } from '../ui/button';
 import { User } from '@supabase/supabase-js';
 import NavbarAll from '../All/Navbar';
-import NavBottom from '../All/NavBottom';
 import Pageback from '../All/Pageback';
 import Image from 'next/image';
 

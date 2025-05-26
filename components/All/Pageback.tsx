@@ -6,12 +6,12 @@ export default function Pageback() {
   const router = useRouter();
 
   return (
-    <div className="px-4 ">
+    <div>
       <Button
         onClick={() => router.back()}
-        className="text-text hover:text-btn px-2 py-0 bg-background hover:bg-background transition-all duration-200 cursor-pointer"
+        className="text-text hover:text-btn px-2 py-0 bg-background hover:bg-background transition-all duration-300 cursor-pointer"
       >
-        <ArrowLeft className="size-7 hover:size-8 transition-all duration-300" />
+        <ArrowLeft className="size-7" />
       </Button>
     </div>
   );
