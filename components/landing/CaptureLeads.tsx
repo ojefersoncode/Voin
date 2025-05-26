@@ -139,7 +139,7 @@ export const CaptureLeads = () => {
 
   return (
     <BlurFade
-      className="w-full bg-transparent sticky z-40"
+      className="w-full justify-center items-center bg-transparent sticky z-40"
       delay={0.25 * 0.05}
       inView
     >
@@ -165,7 +165,7 @@ export const CaptureLeads = () => {
         />
         <Input
           type="tel"
-          placeholder="Digite seu telefone (ex: 31999999999)"
+          placeholder="Digite seu telefone"
           className="bg-subbackground border-2 border-btn p-3 w-full rounded-xl text-text"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}

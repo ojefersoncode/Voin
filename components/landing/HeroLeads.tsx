@@ -5,7 +5,6 @@ import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { TextAnimate } from '../magicui/text-animate';
 import { BlurFade } from '../magicui/blur-fade';
-import { Button } from '../ui/button';
 
 export const HeroLeads = () => {
   return (
@@ -13,17 +12,15 @@ export const HeroLeads = () => {
       <main className="flex flex-col w-full justify-center items-center sm:ml-10">
         <BlurFade className="bg-transparent py-0" delay={0.2 * 0.5} inView>
           <div className="flex items-center justify-center text-center gap-3 px-3 rounded-full border border-gray-700 mb-2 bg-subbackground hover:bg-white/10 hover:shadow-lg drop-shadow-md shadow-white transition-colors duration-200">
-            <Button className="flex justify-center items-center bg-transparent hover:bg-transparent p-0">
-              <div className="flex items-center justify-center border-r h-full border-gray-700">
-                <Image
-                  src={'/LandingImage/gift.png'}
-                  alt=""
-                  width={900}
-                  height={900}
-                  className="size-6 max-sm:size-5 mr-3"
-                />
-              </div>
-            </Button>
+            <div className="flex items-center justify-center py-1 border-r h-full border-gray-700">
+              <Image
+                src={'/LandingImage/gift.png'}
+                alt=""
+                width={900}
+                height={900}
+                className="size-5 max-sm:size-4 mr-3"
+              />
+            </div>
             <span className="max-sm:text-xs text-xs font-inter text-text opacity-90">
               Jogue para ganhar
             </span>
@@ -31,9 +28,9 @@ export const HeroLeads = () => {
           </div>
         </BlurFade>
 
-        <div className="w-full justify-center text-center items-center text-4xl max-sm:text-2xl font-titan text-btn mt-2">
+        <div className="w-full justify-center text-center items-center font-titan text-btn mt-2">
           <TextAnimate
-            className="text-text max-sm:text-xl"
+            className="text-text text-4xl max-sm:text-xl"
             animation="slideUp"
             by="word"
           >
@@ -41,7 +38,7 @@ export const HeroLeads = () => {
           </TextAnimate>
 
           <TextAnimate
-            className="max-sm:text-xl"
+            className="text-4xl max-sm:text-xl"
             animation="blurInUp"
             by="character"
             duration={1}
@@ -49,12 +46,12 @@ export const HeroLeads = () => {
             faça amizades e ganhe cryptos.
           </TextAnimate>
         </div>
-        <div className="flex w-full justify-center items-center pt-4">
+        <div className="flex w-full max-w-lg max-sm:max-w-64 justify-center items-center pt-10">
           <CaptureLeads />
         </div>
       </main>
 
-      <div className="z-10 max-md:pt-7 sm:ml-10">
+      <div className="z-10 max-sm:pt-4">
         <HeroCards />
       </div>
     </section>
