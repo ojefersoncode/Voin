@@ -16,14 +16,13 @@ export const Cta = () => {
         </TextAnimate>
 
         <TextAnimate
-          className="text-start max-w-lg text-sm font-inter my-6"
+          className="text-start max-w-lg md:text-base text-xs font-inter my-6"
           animation="blurInUp"
           by="character"
           duration={1}
         >
-          Explore o mundo cripto de forma interativa e educativa. Participe da
-          comunidade, jogue, aprenda e prepare-se para a chegada dos nossos
-          jogos NFT e da moeda NEX
+          Participe da comunidade, jogue, aprenda e prepare-se para a chegada
+          dos nossos jogos NFT e da moeda NEX
         </TextAnimate>
       </div>
 

@@ -39,10 +39,6 @@ const routeList: RouteProps[] = [
     label: 'Sobre'
   },
   {
-    href: '/#pricing',
-    label: 'Preços'
-  },
-  {
     href: '/#faq',
     label: 'FAQ'
   }
@@ -67,9 +63,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
             <div className="flex gap-2 text-xl font-bold items-center">
               <img className="size-8" src="/Nexbattle.png" alt="logo" />
               <div className="flex">
-                <h1 className="text-gray-100 text-base font-titan">
-                  Nex Battle
-                </h1>
+                <h1 className="text-gray-100 text-sm font-titan">Nex Battle</h1>
               </div>
             </div>
           </NavigationMenuItem>
@@ -135,7 +129,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                 key={i}
                 className={`text-[14px] ${
                   route.label === 'Inicio' ? 'text-btn' : 'text-white'
-                } ${buttonVariants({ variant: 'ghost' })} hover:text-btn`}
+                } ${buttonVariants({ variant: 'ghost' })} hover:text-text/70`}
               >
                 {route.label}
               </a>

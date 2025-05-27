@@ -150,14 +150,14 @@ export const CaptureLeads = () => {
         <Input
           type="email"
           placeholder="Digite seu e-mail"
-          className="flex-1 bg-subbackground border-2 border-btn p-3 rounded-xl text-text min-w-0"
+          className="flex-1 bg-subbackground p-3 border border-white focus:border-btn rounded-xl text-text min-w-0"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
 
         <Button
-          className="rounded-xl text-background font-inter bg-btn hover:bg-btn/80 transition-all border-b border-yellow-400 p-4 text-md max-md:text-sm"
+          className="rounded-xl text-background font-inter bg-btn hover:bg-btn/80 transition-all p-4 text-md max-md:text-sm"
           type="submit"
           disabled={loading || isButtonDisabled}
         >
