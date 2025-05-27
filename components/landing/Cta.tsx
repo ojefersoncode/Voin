@@ -1,35 +1,34 @@
 'use client';
 
-import { Button } from '../../components/ui/button';
+import { TextAnimate } from '../magicui/text-animate';
+import { CaptureLeads } from './CaptureLeads';
 
 export const Cta = () => {
   return (
-    <section id="cta" className="bg-muted/50 py-7 my-7 sm:my-10">
-      <div className="container lg:grid lg:grid-cols-2 place-items-center">
-        <div className="lg:col-start-1">
-          <h2 className="text-3xl md:text-4xl font-bold ">
-            Aqui suas
-            <span className="bg-gradient-to-b text-red-600 bg-clip-text">
-              {' '}
-              Ideas & Projetos{' '}
-            </span>
-            Ganham vida.
-          </h2>
-          <p className="text-muted-foreground text-xl mt-4 mb-8 lg:mb-0">
-            Comece hoje mesmo a transformar suas ideias em projetos de sucesso e
-            aproveite os melhores templates do mercado para acelerar o seu
-            produto com qualidade e eficiência.
-          </p>
-        </div>
+    <section id="cta" className="w-full text-btn mt-2">
+      <div>
+        <TextAnimate
+          className="text-text text-4xl max-sm:text-2xl font-titan"
+          animation="slideUp"
+          by="word"
+        >
+          Participe da nossa comunidade faça amizades e ganhe cryptos.
+        </TextAnimate>
 
-        <div className="space-y-4 lg:col-start-2">
-          <Button className="w-full md:mr-4 md:w-auto">
-            Receber Novidades
-          </Button>
-          <Button variant="outline" className="w-full md:w-auto">
-            Quero Meu Template
-          </Button>
-        </div>
+        <TextAnimate
+          className="text-start max-w-lg text-sm font-inter my-6"
+          animation="blurInUp"
+          by="character"
+          duration={1}
+        >
+          Explore o mundo cripto de forma interativa e educativa. Participe da
+          comunidade, jogue, aprenda e prepare-se para a chegada dos nossos
+          jogos NFT e da moeda NEX
+        </TextAnimate>
+      </div>
+
+      <div className="w-full">
+        <CaptureLeads />
       </div>
     </section>
   );
