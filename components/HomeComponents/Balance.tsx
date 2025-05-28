@@ -27,7 +27,7 @@ export default function Balance() {
           </h1>
         </div>
 
-        <Card className="flex items-center bg-transparent border-none text-text py-2">
+        <Card className="flex items-center bg-transparent border-none text-text my-2">
           <div className="flex w-full justify-around items-center space-x-4">
             {[{ label: 'Adicionar' }, { label: 'Enviar' }].map((item, i) => (
               <button
