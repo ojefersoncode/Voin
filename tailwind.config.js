@@ -27,7 +27,7 @@ module.exports = {
         yellow: 'url("/cursor.png"), auto'
       },
       colors: {
-        border: '#F6DC43',
+        border: '#363636',
         background: '#0e0e0e',
         subbackground: '#181818',
         high: '#FFB200',
