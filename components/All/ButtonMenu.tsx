@@ -28,9 +28,48 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 import { useRouter } from 'next/navigation';
+import { useToast } from '../ui/use-toast';
+import { createClient } from '../../utils/supabase/client';
+import { useState } from 'react';
 
 export default function ButtonMenu() {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
+  const supabase = createClient();
+
+  const handleSignOut = async () => {
+    setLoading(true);
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+
+      toast({
+        title: 'Desconectado com sucesso!'
+      });
+
+      router.push('/');
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast({
+          title: 'Erro ao sair',
+          description: error.message,
+          variant: 'destructive'
+        });
+      } else {
+        toast({
+          title: 'Erro desconhecido',
+          description: 'Ocorreu um erro ao tentar sair.',
+          variant: 'destructive'
+        });
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const navigateToHome = () => router.push('/');
   const navigateToWallet = () => router.push('/nex-wallet');
@@ -130,7 +169,11 @@ export default function ButtonMenu() {
               <Settings className="size-5 mr-2" />
               <span>Configurações</span>
             </DropdownMenuItem>
-            <DropdownMenuItem className="my-2 text-text hover:text-text">
+            <DropdownMenuItem
+              onClick={handleSignOut}
+              disabled={loading}
+              className="my-2 text-text hover:text-text"
+            >
               <LogOut className="size-5 mr-2" />
               <span>Sair</span>
             </DropdownMenuItem>
