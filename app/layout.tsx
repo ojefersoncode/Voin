@@ -7,6 +7,7 @@ import { ThemeProvider } from '../components/landing/theme-provider';
 import { Toaster } from '../components/ui/toaster';
 import PostHogPageViewWrapper from '../components/pages/PostHogPageViewWrapper';
 import { Inter, Titan_One, Poppins as PoppinsFont } from 'next/font/google';
+import Image from 'next/image';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -31,7 +32,7 @@ const poppins = PoppinsFont({
 const meta = {
   title: 'Nex Battle',
   description: 'Participe de torneios de trading.',
-  cardImage: '/Banner.png',
+  cardImage: '/banner.png',
   robots: 'follow, index',
   favicon: '/Nexbattle.png',
   url: getURL()

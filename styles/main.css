@@ -68,10 +68,6 @@
     @apply bg-background text-foreground;
   }
   html,
-  body {
-    overflow-x: hidden;
-    cursor: url('/cursor.png'), auto;
-  }
   .flex {
     flex-shrink: 0;
   }
