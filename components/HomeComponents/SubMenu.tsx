@@ -39,7 +39,7 @@ export default function SubMenu() {
   ];
 
   return (
-    <div className="w-full bg-background py-4 max-md:px-6">
+    <div className="w-full bg-background mt-4 pb-2 max-md:px-6">
       <div className="bg-background border-none">
         <div className="flex flex-col">
           <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-8 justify-between gap-7">
