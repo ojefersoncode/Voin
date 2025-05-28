@@ -110,11 +110,11 @@ export default function Trasition() {
             </div>
           </div>
 
-          <div className="py-4 mt-4 overflow-hidden border border-btn rounded-lg">
+          <div className="py-4 mt-4 overflow-hidden border border-subbackground rounded-lg">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-btn/30">
+                  <tr className="border-b border-subbackground text-btn">
                     <th className="text-left py-3 px-4">Data/Hora</th>
                     <th className="text-right py-3 px-4">Valor</th>
                     <th className="text-right py-3 px-4">Status</th>
@@ -124,7 +124,7 @@ export default function Trasition() {
                   {transactions.map((transaction) => (
                     <tr
                       key={transaction.id}
-                      className="border-b border-yellow-500/10 hover:bg-btn/5 transition-colors"
+                      className="border-b border-subbackground hover:bg-btn/5 transition-colors"
                     >
                       <td className="py-4 px-4">
                         <div className="flex flex-col">
@@ -164,7 +164,7 @@ export default function Trasition() {
           <div className="pt-6 flex justify-center">
             <Button
               variant="outline"
-              className="border border-btn bg-subbackground text-text hover:bg-yellow-100/10 transition-colors duration-300 hover:text-white"
+              className="border border-btn bg-subbackground text-text hover:bg-yellow-100/10 transition-colors duration-300 hover:text-white font-inter"
             >
               Ver todas as transações
             </Button>

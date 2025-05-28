@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Eye, Plus, Send, Upload } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Eye, Wallet2 } from 'lucide-react';
 import { Button } from '../ui/button';
 export default function Balance() {
   const [showBalance, setShowBalance] = useState(true);
@@ -28,21 +28,24 @@ export default function Balance() {
         </div>
 
         <Card className="flex items-center bg-transparent border-none text-text">
-          <div className="flex w-full justify-around items-center gap-6">
-            {[
-              { label: 'Adicionar' },
-              { label: 'Enviar' },
-              { label: 'Receber' }
-            ].map((item, i) => (
+          <div className="flex w-full justify-around items-center space-x-4">
+            {[{ label: 'Adicionar' }, { label: 'Enviar' }].map((item, i) => (
               <button
                 key={i}
-                className="p-4 items-center justify-center border-transparent bg-subbackground select-none text-btn font-titan rounded-lg flex flex-co hover:bg-subbackground/80 transition-all duration-200 cursor-pointer"
+                className="p-4 items-center justify-center bg-subbackground text-btn font-titan rounded-lg flex hover:bg-subbackground/80 transition-all duration-200"
               >
-                <span className=" text-sm max-sm:text-xs text-btn font-inter">
+                <span className="text-sm max-sm:text-xs text-btn font-inter">
                   {item.label}
                 </span>
               </button>
             ))}
+
+            <button className="flex items-center gap-2 p-4 rounded-lg text-btn bg-subbackground hover:bg-subbackground/80 transition-all duration-200">
+              <Wallet2 className="size-4" />
+              <span className="font-inter text-sm max-sm:text-xs">
+                Conectar
+              </span>
+            </button>
           </div>
         </Card>
       </div>
