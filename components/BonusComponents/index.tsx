@@ -13,8 +13,7 @@ export default function HomeBonus() {
 
       <Card className="flex mx-4 items-center justify-between bg-subbackground">
         <div className="p-6">
-          <div className="flex items-center space-x-1">
-            <Circle className="size-2" />
+          <div className="flex items-center">
             <span className="text-xs">Pontos</span>
           </div>
           <div className="text-extrabold text-xl">7</div>
