@@ -29,7 +29,7 @@ export default function HomeBonus() {
           <div className="font-inter text-xs">Tarefas</div>
 
           <div className="text-extrabold text-xl pt-2">0</div>
-          <div className="flex items-center text-btn space-x-1 pt-4">
+          <div className="flex items-center text-btn space-x-1 pt-2">
             <p className="text-xs font-inter">ver tarefas</p>
 
             <ChevronRight className="size-4" />
