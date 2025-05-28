@@ -14,7 +14,7 @@ export default function HomeBonus() {
       <Card className="flex mx-4 items-center justify-between bg-subbackground">
         <div className="p-6">
           <div className="flex items-center">
-            <span className="text-xs">Pontos</span>
+            <span className="font-inter text-xs">Pontos</span>
           </div>
           <div className="text-extrabold text-xl">7</div>
 
@@ -26,11 +26,13 @@ export default function HomeBonus() {
         </div>
 
         <div className="p-6">
-          <div className="font-inter text-xs">Tarefas</div>
+          <div className="flex items-center">
+            <span className="font-inter text-xs">Tarefas</span>
+          </div>
+          <div className="text-extrabold text-xl">0</div>
 
-          <div className="text-extrabold text-xl pt-2">0</div>
           <div className="flex items-center text-btn space-x-1 pt-2">
-            <p className="text-xs font-inter">ver tarefas</p>
+            <p className="text-xs font-bold">Ver tarefas</p>
 
             <ChevronRight className="size-4" />
           </div>
