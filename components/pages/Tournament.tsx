@@ -50,7 +50,8 @@ export default function Tournament({ user }: { user: User }) {
       <main className="flex flex-1 flex-col min-h-[calc(100vh_-_theme(spacing.16))]">
         <div className="pt-8 pb-2 px-4 sm:px-7">
           <Image
-            src="/Banner.png"
+            src="/banner.png"
+            priority={true}
             height={2000}
             width={1400}
             alt="Logomarca"
@@ -93,6 +94,7 @@ export default function Tournament({ user }: { user: User }) {
             >
               <div className=" rounded-xl overflow-hidden">
                 <Image
+                  priority={true}
                   src={torneio.imageUrl}
                   height={1000}
                   width={1000}
@@ -112,6 +114,7 @@ export default function Tournament({ user }: { user: User }) {
                   <div className="flex gap-1 items-center">
                     <Image
                       src="/Coin/Nexcoin.png"
+                      priority={true}
                       height={14}
                       width={14}
                       alt="Voin Coin"
