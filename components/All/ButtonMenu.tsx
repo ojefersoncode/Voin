@@ -32,7 +32,7 @@ export default function ButtonMenu() {
   const router = useRouter();
 
   const navigateToHome = () => router.push('/');
-  const navigateToWallet = () => router.push('/voin-wallet');
+  const navigateToWallet = () => router.push('/nex-wallet');
   const navigateToProfile = () => router.push('/profile');
   const navigateToSettings = () => router.push('/settings');
   const navigateToMarket = () => router.push('/market');

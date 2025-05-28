@@ -10,14 +10,14 @@ import { Button } from '../ui/button';
 import { Wallet2 } from 'lucide-react';
 import { Footer } from '../landing/Footer';
 
-export default function VoinWallet({ user }: { user: User }) {
+export default function NexWallet({ user }: { user: User }) {
   return (
     <div className="min-h-screen bg-background text-white flex flex-col touch-pan-x touch-pan-y">
       <div>
         <NavbarAll />
       </div>
 
-      <div className="flex w-full items-center justify-between px-2 pt-2">
+      <div className="flex w-full items-center justify-between px-2 pt-4">
         <Pageback />
 
         <div className="px-4">
@@ -27,7 +27,7 @@ export default function VoinWallet({ user }: { user: User }) {
           </Button>
         </div>
       </div>
-      <div>
+      <div className="pt-2">
         <Balance />
       </div>
 
