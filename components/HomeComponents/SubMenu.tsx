@@ -33,7 +33,7 @@ export default function SubMenu() {
     {
       icon: <Users className="size-7" />,
       label: 'Amigos',
-      route: null
+      route: '/chat'
     },
     { icon: <Bell className="size-7" />, label: 'Alertas', route: null }
   ];
