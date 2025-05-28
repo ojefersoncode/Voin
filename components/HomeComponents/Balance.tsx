@@ -8,7 +8,7 @@ export default function Balance() {
   const [showBalance, setShowBalance] = useState(true);
 
   return (
-    <Card className="rounded-xl mt-4 p-4 mx-4 border border-[#363636]/80 bg-background">
+    <Card className="rounded-xl mt-4 p-4 mx-4 border border-[#363636] bg-background">
       {/* Card do Saldo */}
       <div className="w-full flex max-md:flex-col justify-between md:items-center md:gap-12 my-2">
         <div className="flex flex-col items-start text-text max-md:mb-2">
