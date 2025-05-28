@@ -34,7 +34,7 @@ export default function Balance() {
                 key={i}
                 className="p-4 items-center justify-center bg-subbackground text-btn font-titan rounded-lg flex hover:bg-subbackground/80 transition-all duration-200"
               >
-                <span className="text-sm max-sm:text-xs text-btn font-inter">
+                <span className="text-sm max-sm:text-xs text-text font-inter">
                   {item.label}
                 </span>
               </button>
