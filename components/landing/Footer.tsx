@@ -21,13 +21,9 @@ export const Footer = () => {
                 src="/Nexbattle.png"
                 alt="logo"
               />
-              <a
-                rel="noreferrer noopener"
-                href="/"
-                className="font-titan text-xl text-gray-100"
-              >
+              <span className="font-titan text-xl text-gray-100">
                 Nex Battle
-              </a>
+              </span>
             </div>
           </div>
 
