@@ -29,7 +29,7 @@ export default function SubMenu() {
     { icon: <Megaphone className="size-7" />, label: 'Novidades', route: null },
     { icon: <Share className="size-7" />, label: 'Convidar', route: '/Invite' },
     { icon: <Calendar className="size-7" />, label: 'Tarefas', route: null },
-    { icon: <Gift className="size-7" />, label: 'Bônus', route: null },
+    { icon: <Gift className="size-7" />, label: 'Bônus', route: 'bonus' },
     {
       icon: <Users className="size-7" />,
       label: 'Amigos',

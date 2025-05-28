@@ -5,8 +5,9 @@ import NavbarAll from '../All/Navbar';
 import Products from '../StoreComponents/Products';
 import { useRouter } from 'next/navigation';
 import Pageback from '../All/Pageback';
+import HomeBonus from '../BonusComponents';
 
-export default function StorePage({ user }: { user: User }) {
+export default function BonusPage({ user }: { user: User }) {
   const router = useRouter();
 
   return (
@@ -15,12 +16,12 @@ export default function StorePage({ user }: { user: User }) {
         <NavbarAll />
       </header>
 
-      <div>
+      <div className="px-2">
         <Pageback />
       </div>
 
       <main className="flex w-full justify-center items-center py-4">
-        <Products />
+        <HomeBonus />
       </main>
     </div>
   );
