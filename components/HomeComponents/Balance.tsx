@@ -10,7 +10,7 @@ export default function Balance() {
   return (
     <Card className="rounded-xl mt-4 p-4 mx-4 border border-[#363636] bg-background">
       {/* Card do Saldo */}
-      <div className="w-full flex max-md:flex-col justify-between md:items-center md:gap-12 my-2">
+      <div className="w-full flex max-md:flex-col justify-between md:items-center md:gap-12 py-3">
         <div className="flex flex-col items-start text-text max-md:mb-2">
           <div className="flex items-center gap-2 font-titan">
             <span className="text-lg max-md:text-sm font-inter text-text">
@@ -21,7 +21,7 @@ export default function Balance() {
               onClick={() => setShowBalance(!showBalance)}
             />
           </div>
-          <h1 className="text-4xl max-md:text-2xl font-titan py-3">
+          <h1 className="text-4xl max-md:text-2xl font-titan ">
             {showBalance ? '130.000,00' : '••••••••'}{' '}
             <span className="text-sm max-md:text-xs font-inter">pontos</span>
           </h1>
