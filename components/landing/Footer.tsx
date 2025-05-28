@@ -16,6 +16,7 @@ export const Footer = () => {
               <Image
                 height={44}
                 width={44}
+                priority={true}
                 className="size-12 mr-1"
                 src="/Nexbattle.png"
                 alt="logo"

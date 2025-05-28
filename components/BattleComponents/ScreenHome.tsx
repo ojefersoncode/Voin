@@ -3,6 +3,7 @@ import { Card } from '../ui/card';
 import NavBattle from './NavBattle';
 import { Toggle } from '../ui/toggle';
 import Battlebar from './BattleBar';
+import Image from 'next/image';
 
 export default function ScreenHome() {
   const [selectedMatch, setSelectedMatch] = useState('Rankeada');
@@ -50,7 +51,10 @@ export default function ScreenHome() {
         <Card className="bg-background border-none pt-4">
           <div className="flex flex-col font-sans">
             <div className="flex-grow flex flex-col items-center justify-center">
-              <img
+              <Image
+                width={600}
+                height={1200}
+                priority={true}
                 className="size-48 select-none"
                 src={`/Rank/${nivelAtual}.svg`}
                 alt="Rank"
@@ -66,7 +70,10 @@ export default function ScreenHome() {
                 <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-green-500" />
               </div>
             </Progress>
-            <img
+            <Image
+              width={500}
+              height={900}
+              priority={true}
               className="drop-shadow-xl size-7 opacity-90 shadow-white select-none"
               src={`/Rank/${proximoNivel}.svg`}
               alt="Next rank"
@@ -86,7 +93,7 @@ export default function ScreenHome() {
                 variant="outline"
                 pressed={selectedMatch === item.key}
                 onPressedChange={() => setSelectedMatch(item.key)}
-                className="border-2 border-btn px-5 py-8 text-xl font-titan text-btn data-[state=on]:text-border/40 data-[state=on]:bg-background/20 data-[state=on]:border-border/30 data-[state=on]:border-4 hover:border-btn/70 hover:text-btn/70"
+                className="border-2 border-btn px-5 py-8 text-xl font-titan text-btn data-[state=on]:text-btn/40 data-[state=on]:bg-background/20 data-[state=on]:border-btn/30 data-[state=on]:border-4 hover:border-btn/70 hover:text-btn/70"
               >
                 {item.key}
               </Toggle>

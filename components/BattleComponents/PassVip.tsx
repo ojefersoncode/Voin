@@ -22,7 +22,13 @@ export function PassVip() {
       <DialogTrigger asChild>
         <Button className=" px-2 py-1 bg-background hover:bg-background">
           <div className="flex items-center">
-            <Image src="/Vip.svg" alt="Passe vip" height={34} width={34} />
+            <Image
+              src="/Vip.svg"
+              priority={true}
+              alt="Passe vip"
+              height={34}
+              width={34}
+            />
           </div>
         </Button>
       </DialogTrigger>
@@ -31,6 +37,7 @@ export function PassVip() {
           <DialogTitle className="flex items-center p-1">
             <Image
               src="/Vip.svg"
+              priority={true}
               alt="Passe vip"
               height={34}
               width={34}
@@ -51,6 +58,7 @@ export function PassVip() {
                   <span className="text-xl mr-2">{item.label}</span>
                   <div>
                     <Image
+                      priority={true}
                       src={item.imgSrc}
                       alt={item.label}
                       height={24}
