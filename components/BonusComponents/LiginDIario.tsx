@@ -20,7 +20,9 @@ export default function LoginDiario() {
           <h1 className="text-base font-inter">Login Diário</h1>
           <h2 className="text-xs font-bold text-text/70 mt-1">07/12/2025</h2>
         </div>
-        <Button>Resgatar</Button>
+        <Button className="bg-subbackground hover:bg-subbackground/80">
+          Resgatar
+        </Button>
       </div>
 
       <div className=" w-full mx-auto text-white rounded-xl shadow-lg space-y-4">
