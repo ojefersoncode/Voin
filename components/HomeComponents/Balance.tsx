@@ -3,51 +3,49 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Eye, Plus, Send, Upload } from 'lucide-react';
-
+import { Button } from '../ui/button';
 export default function Balance() {
   const [showBalance, setShowBalance] = useState(true);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 bg-background">
+    <Card className="rounded-xl mt-4 p-4 mx-4 border-btn bg-background">
       {/* Card do Saldo */}
-      <Card className="w-full lg:w-[600px] px-0 shadow-none border-none bg-background">
-        <CardHeader className="flex flex-row justify-between pb-2 items-start text-text">
+      <div className="w-full flex max-md:flex-col justify-between md:items-center md:gap-12 my-2">
+        <div className="flex flex-col items-start text-text max-md:mb-2">
           <div className="flex items-center gap-2 font-titan">
-            <CardTitle className="text-lg font-inter text-text">
+            <span className="text-lg font-inter text-text">
               Saldo disponível
-            </CardTitle>
+            </span>
             <Eye
               className="h-5 w-5 cursor-pointer text-text"
               onClick={() => setShowBalance(!showBalance)}
             />
           </div>
-        </CardHeader>
-
-        <CardContent className="text-text">
-          <h1 className="text-4xl font-titan p-0 mb-4">
+          <h1 className="text-4xl font-titan py-3">
             {showBalance ? '130.000,00' : '••••••••'}{' '}
             <span className="text-sm font-inter">pontos</span>
           </h1>
+        </div>
 
-          <div className="grid grid-cols-3 gap-4 pt-4">
+        <Card className="flex items-center bg-transparent border-none text-text">
+          <div className="flex w-full justify-around items-center gap-6">
             {[
-              { icon: Plus, label: 'ADICIONAR' },
-              { icon: Send, label: 'ENVIAR' },
-              { icon: Upload, label: 'TRANSFERIR' }
+              { label: 'Adicionar' },
+              { label: 'Enviar' },
+              { label: 'Receber' }
             ].map((item, i) => (
-              <div
+              <button
                 key={i}
-                className="px-6 py-7 w-full items-center justify-center gap-4 bg-btn select-none active:scale-90 text-background transition-all duration-200 font-titan rounded-xl flex flex-col  cursor-pointer"
+                className="p-4 items-center justify-center border-transparent bg-subbackground select-none text-btn font-titan rounded-xl flex flex-co hover:bg-subbackground/80 transition-all duration-200 cursor-pointer"
               >
-                <item.icon className="size-8 max-sm:size-6" />
-                <span className="text-xs sm:text-base font-titan">
+                <span className="px-2 text-sm sm:text-sm text-text font-inter">
                   {item.label}
                 </span>
-              </div>
+              </button>
             ))}
           </div>
-        </CardContent>
-      </Card>
-    </div>
+        </Card>
+      </div>
+    </Card>
   );
 }
