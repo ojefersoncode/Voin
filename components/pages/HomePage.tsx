@@ -14,7 +14,7 @@ export default function HomePage({ user }: { user: User }) {
       </header>
 
       <main className="flex flex-1 flex-col">
-        <div className="p-2">
+        <div className="px-1">
           <Balance />
         </div>
 
