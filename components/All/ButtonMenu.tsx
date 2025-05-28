@@ -5,16 +5,11 @@ import {
   Copy,
   Grip,
   LogOut,
-  Menu,
   Pen,
   PhoneCall,
-  Plus,
   Settings,
-  SquareMenu,
   User,
   UserCircle,
-  UserPlus,
-  Users,
   Wallet
 } from 'lucide-react';
 
@@ -137,10 +132,10 @@ export default function ButtonMenu() {
           </DropdownMenuLabel>
           <DropdownMenuGroup className="touch-pan-x touch-pan-y text-text font-inter">
             <DropdownMenuItem
-              className="mt-2 text-text hover:text-border"
+              className="mt-2 text-text hover:text-btn"
               onClick={navigateToProfile}
             >
-              <User className="size-5 mr-2 " />
+              <User className="size-5 mr-2 hover:text-btn" />
               <span>Perfil</span>
             </DropdownMenuItem>
             <DropdownMenuItem
@@ -150,14 +145,7 @@ export default function ButtonMenu() {
               <Wallet className="size-5 mr-2 " />
               <span>Carteira</span>
             </DropdownMenuItem>
-            <DropdownMenuItem className="mt-2 text-text hover:text-text">
-              <Users className="size-5 mr-2" />
-              <span>Amigos</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem className="mt-2 text-text hover:text-text">
-              <UserPlus className="size-5 mr-2" />
-              <span>Indicar amigos</span>
-            </DropdownMenuItem>
+
             <DropdownMenuItem className="mt-2 text-text hover:text-text">
               <PhoneCall className="size-5 mr-2" />
               <span>Suporte</span>
