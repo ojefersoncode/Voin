@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import {
   Copy,
+  Grip,
   LogOut,
   Menu,
   Pen,
@@ -46,8 +47,8 @@ export default function ButtonMenu() {
             variant="ghost"
             className="px-0 border-none outline-none bg-none transition-transform data-[state=open]:rotate-90"
           >
-            <div className="flex w-full justify-center items-center bg-btn p-1 rounded-xl">
-              <Menu className="text-text/90 size-7 " />
+            <div className="flex w-full justify-center items-center bg-subbackground p-2 rounded-xl">
+              <Grip className="text-text/90 size-6 " />
             </div>
           </Button>
         </DropdownMenuTrigger>
