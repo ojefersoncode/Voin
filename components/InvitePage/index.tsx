@@ -3,11 +3,10 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Share2 } from 'lucide-react';
+import { Coins, Copy, UserCheck } from 'lucide-react';
 import { User } from '@supabase/supabase-js';
 import { Footer } from '../landing/Footer';
 import NavbarAll from '../All/Navbar';
-import Pageback from '../All/Pageback';
 
 export default function InvitePage({ user }: { user: User }) {
   return (
@@ -31,7 +30,7 @@ export default function InvitePage({ user }: { user: User }) {
               />
 
               <Button className="bg-btn hover:bg-btn/80">
-                <Share2 className="text-background" size={18} />
+                <Copy className="text-background" size={18} />
               </Button>
             </div>
           </CardContent>
@@ -41,23 +40,23 @@ export default function InvitePage({ user }: { user: User }) {
           <Card className="bg-subbackground w-full">
             <CardContent className="p-4 flex items-center gap-4">
               <div className="w-10 h-10 flex items-center justify-center font-bold">
-                👥
+                <UserCheck className="text-btn" />
               </div>
               <div>
-                <p className="text-sm">Convites qualificados</p>
-                <p className="text-lg font-semibold">0</p>
+                <p className="text-base font-inter">Convites qualificados</p>
+                <p className="text-md font-medium">0</p>
               </div>
             </CardContent>
           </Card>
 
           <Card className="bg-subbackground w-full">
             <CardContent className="p-4 flex items-center gap-4">
-              <div className="w-10 h-10 flex items-center justify-center font-bold">
-                💰
+              <div className="w-10 h-10 flex items-center justify-center">
+                <Coins className="text-btn" />
               </div>
               <div>
-                <p className="text-sm">Pontos ganhos</p>
-                <p className="text-lg font-semibold">0</p>
+                <p className="text-base font-inter">Pontos ganhos</p>
+                <p className="text-md font-medium">0</p>
               </div>
             </CardContent>
           </Card>
