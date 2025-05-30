@@ -22,7 +22,6 @@ import { createApiClient } from '@/utils/supabase/api';
 import { createClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 import { useToast } from '../../components/ui/use-toast';
-import { BlurFade } from '../magicui/blur-fade';
 
 interface RouteProps {
   href: string;

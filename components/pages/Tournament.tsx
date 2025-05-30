@@ -43,7 +43,7 @@ export default function Tournament({ user }: { user: User }) {
       <header>
         <NavbarAll />
       </header>
-      <div>
+      <div className="px-2 md:px-4">
         <Pageback />
       </div>
 
@@ -76,7 +76,7 @@ export default function Tournament({ user }: { user: User }) {
             Essas moedas poderão ser trocadas por cripto ativos BNB
           </p>
           <div className="pt-4">
-            <Button className="px-3 py-1 shadow-md drop-shadow-lg shadow-orange-400 border border-btn bg-btn hover:bg-btn/80 transition-colors">
+            <Button className="px-3 py-1 bg-btn hover:bg-btn/80 transition-colors">
               <span className="text-base font-inter text-background hover:text-balance/80">
                 Ver regulamento
               </span>
@@ -88,7 +88,7 @@ export default function Tournament({ user }: { user: User }) {
           {torneios.map((torneio) => (
             <div
               key={torneio.id}
-              className="text-text shadow-md drop-shadow-xl shadow-orange-400 border border-btn rounded-xl bg-background active:opacity-70 transition-all duration-200"
+              className="text-text border border-btn rounded-xl bg-background active:opacity-70 transition-all duration-200"
               onMouseEnter={() => setHoveredId(torneio.id)}
               onMouseLeave={() => setHoveredId(null)}
             >

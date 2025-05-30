@@ -17,11 +17,11 @@ export const Footer = () => {
                 height={44}
                 width={44}
                 priority={true}
-                className="size-12 mr-1"
+                className="size-8 mr-1"
                 src="/Nexbattle.png"
                 alt="logo"
               />
-              <span className="font-titan text-xl text-gray-100">
+              <span className="font-titan text-sm text-gray-100">
                 Nex Battle
               </span>
             </div>
