@@ -35,7 +35,8 @@ module.exports = {
         textocean: '#2632D9',
         subtext: '#227CF2',
         select: '#CCD2D3', // Corrigido: estava sem #
-        btn: '#FBA518',
+        btn: '#3A86FF',
+        btn2: '#FBA518',
 
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
