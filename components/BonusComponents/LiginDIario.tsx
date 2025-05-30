@@ -3,13 +3,13 @@ import { Button } from '@/components/ui/button';
 import clsx from 'clsx';
 
 const days = [
-  { day: 'DIA 1', checked: true },
-  { day: 'DIA 2', checked: true },
-  { day: 'HOJE', checked: true, isToday: true },
-  { day: 'DIA 4', checked: false },
-  { day: 'DIA 5', checked: false },
-  { day: 'DIA 6', checked: false },
-  { day: 'DIA 7', checked: false }
+  { day: 'Dia 1', points: '5', checked: true },
+  { day: 'Dia 2', points: '10', checked: true },
+  { day: 'Hoje', points: '15', checked: true, isToday: true },
+  { day: 'Dia 4', points: '20', checked: false },
+  { day: 'Dia 5', points: '40', checked: false },
+  { day: 'Dia 6', points: '50', checked: false },
+  { day: 'Dia 7', points: '100', checked: false }
 ];
 
 export default function LoginDiario() {
@@ -32,7 +32,7 @@ export default function LoginDiario() {
               key={index}
               className={clsx(
                 'text-center py-3 space-y-2',
-                item.isToday && 'bg-yellow-500/40 text-text',
+                item.isToday && 'bg-blue-500/40 text-text',
                 !item.isToday && 'bg-subbackground'
               )}
             >
@@ -53,7 +53,7 @@ export default function LoginDiario() {
                     />
                   )}
                 </div>
-                <p className="text-sm font-inter"> 1</p>
+                <p className="text-sm font-inter">{item.points}</p>
               </div>
             </Card>
           ))}
