@@ -1,6 +1,5 @@
-import Image from 'next/image';
-import { Card, CardContent } from '../ui/card';
-import { ChevronRight, Circle, Tickets } from 'lucide-react';
+import { Card } from '../ui/card';
+import { ChevronRight, Tickets } from 'lucide-react';
 import LoginDiario from './LiginDIario';
 import { Footer } from '../landing/Footer';
 

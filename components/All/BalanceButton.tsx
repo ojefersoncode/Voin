@@ -1,6 +1,6 @@
 'use client';
 
-import { Coins, DollarSign, PiggyBank, Plus, ShoppingCart } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
