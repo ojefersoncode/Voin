@@ -42,7 +42,7 @@ export default function ScreenHome() {
   );
 
   return (
-    <div className="flex flex-col min-h-dvh bg-gradient-to-r from-background via-blue-950 to-background">
+    <div className="flex flex-col min-h-dvh bg-[#09122C]">
       <header>
         <Battlebar />
       </header>
