@@ -35,7 +35,7 @@ export default function Balance() {
                   key={i}
                   className="p-4 items-center justify-center bg-btn/60 text-btn rounded-lg flex hover:bg-btn/40  hover:text-text/40 transition-all duration-200"
                 >
-                  <span className="text-sm max-sm:text-xs text-text hover:text-text/60 transition-all font-inter">
+                  <span className="text-base max-sm:text-sm text-text hover:text-text/60 transition-all font-inter">
                     {item.label}
                   </span>
                 </button>
@@ -43,7 +43,7 @@ export default function Balance() {
 
               <button className="flex items-center gap-2 p-4 rounded-lg text-text bg-btn/60 hover:bg-btn/40 hover:text-text/40 transition-all duration-200">
                 <Wallet2 className="size-4" />
-                <span className="font-inter text-sm max-sm:text-xs">
+                <span className="font-inter text-base max-sm:text-sm">
                   Conectar
                 </span>
               </button>
