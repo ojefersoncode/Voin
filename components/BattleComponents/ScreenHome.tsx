@@ -42,13 +42,13 @@ export default function ScreenHome() {
   );
 
   return (
-    <div className="flex flex-col min-h-dvh bg-background">
+    <div className="flex flex-col min-h-dvh bg-gradient-to-r from-background via-blue-950 to-background">
       <header>
         <Battlebar />
       </header>
 
       <div className="flex flex-col w-full justify-center my-auto items-center gap-4 sm:pb-28 max-sm:pb-20 px-4">
-        <Card className="bg-background border-none pt-4">
+        <Card className="bg-transparent border-none pt-4">
           <div className="flex flex-col font-sans">
             <div className="flex-grow flex flex-col items-center justify-center">
               <Image
@@ -63,7 +63,7 @@ export default function ScreenHome() {
           </div>
         </Card>
 
-        <Card className="flex flex-col w-full max-w-sm px-10 bg-background border-none">
+        <Card className="flex flex-col w-full max-w-sm px-10 bg-transparent border-none">
           <div className="flex items-center w-full font-sans text-white gap-2 overflow-hidden">
             <Progress value={28} className="h-4 w-full">
               <div className="absolute -bottom-6 left-[28%] transform -translate-x-1/2">
@@ -84,7 +84,7 @@ export default function ScreenHome() {
           </div>
         </Card>
 
-        <Card className="flex w-full justify-center items-center pt-5 pb-4 bg-background border-none">
+        <Card className="flex w-full justify-center items-center pt-5 pb-4 bg-transparent border-none">
           <div className="flex justify-center items-center w-full font-sans text-white gap-6 overflow-x-auto ">
             {StatusMatch.map((item) => (
               <Toggle

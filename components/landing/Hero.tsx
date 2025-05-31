@@ -11,12 +11,12 @@ export const Hero = () => {
           <h1 className="inline">
             <span className="inline bg-gradient-to-r text-gray-100  ">
               Divirta-se e ganhe crypto
-            </span>{' '}
-          </h1>{' '}
+            </span>
+          </h1>
           <h2 className="inline">
             <span className="inline bg-gradient-to-r text-green-600 bg-clip-text">
               ate 10x mais rapido.
-            </span>{' '}
+            </span>
           </h2>
         </main>
 

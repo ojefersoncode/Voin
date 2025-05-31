@@ -20,7 +20,7 @@ export function PassVip() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className=" px-2 py-1 bg-background hover:bg-background">
+        <Button className=" px-2 py-1 bg-transparent hover:bg-transparent">
           <div className="flex items-center">
             <Image
               src="/Vip.svg"

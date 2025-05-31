@@ -138,11 +138,7 @@ export const CaptureLeads = () => {
   };
 
   return (
-    <BlurFade
-      className="w-full bg-transparent sticky z-40"
-      delay={0.25 * 0.05}
-      inView
-    >
+    <div>
       <form
         className="flex w-full flex-wrap items-center gap-4"
         onSubmit={handleSubmit}
@@ -164,6 +160,6 @@ export const CaptureLeads = () => {
           {loading ? 'Enviando cadastro...' : 'Cadastrar'}
         </Button>
       </form>
-    </BlurFade>
+    </div>
   );
 };
