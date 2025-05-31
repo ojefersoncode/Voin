@@ -115,7 +115,7 @@ export default function Mensagem({ user }: { user: User }) {
   return (
     <div className="flex flex-col h-screen touch-pan-x touch-pan-y">
       {/* Header - área do contato */}
-      <div className="flex w-full items-center justify-between py-2 bg-[#181818]">
+      <div className="flex w-full items-center justify-between py-2 bg-background">
         <div className="flex items-center text-green-50 gap-3 px-3">
           <div className="sm:p-1 hover:cursor-pointer">
             <ArrowLeft className="size-7" />
@@ -135,7 +135,7 @@ export default function Mensagem({ user }: { user: User }) {
       </div>
 
       {/* Área de mensagens - use flex-1 para ocupar o espaço disponível e adicione padding-bottom */}
-      <div className="flex-1 overflow-y-auto bg-green-950/30 pb-20">
+      <div className="flex-1 overflow-y-auto bg-blue-950/40 pb-20">
         <div className="flex flex-col space-y-4 p-4">
           {Object.keys(groupedMessages).map((date) => (
             <div key={date}>
@@ -179,7 +179,7 @@ export default function Mensagem({ user }: { user: User }) {
       </div>
 
       {/* Área de entrada de mensagem - fixada na parte inferior */}
-      <div className="w-full h-20 fixed bottom-0 border-t bg-[#05110a] border-green-600">
+      <div className="w-full h-20 fixed bottom-0 border-t bg-background border-btn">
         <div className="flex items-center mt-5 gap-2 px-2">
           <button className="py-2 px-4 text-gray-100 rounded-full">
             <Smile size={24} />

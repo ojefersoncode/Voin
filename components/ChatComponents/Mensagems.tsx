@@ -156,7 +156,7 @@ export default function Mensagems() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#181818]">
+    <div className="flex flex-col h-full bg-background">
       {/* Área de pesquisa */}
       <div className="py-2 px-6 pb-4">
         <div className="relative">
@@ -166,7 +166,7 @@ export default function Mensagems() {
           <input
             type="text"
             placeholder="Pesquisar ou começar nova conversa"
-            className="w-full pl-10 pr-4 py-2 bg-green-900/20 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 placeholder:text-green-50"
+            className="w-full pl-10 pr-4 py-2 bg-blue-950/40 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 placeholder:text-green-50"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -179,7 +179,7 @@ export default function Mensagems() {
           filteredChats.map((chat) => (
             <div
               key={chat.id}
-              className="flex items-center py-4 px-3 hover:bg-green-950/20 rounded-lg cursor-pointer"
+              className="flex items-center py-4 px-3 hover:bg-blue-950/20 rounded-lg cursor-pointer"
               onClick={() => openChat(chat.id)}
             >
               {/* Avatar */}
@@ -188,7 +188,7 @@ export default function Mensagems() {
                   {chat.avatar}
                 </div>
                 {chat.isOnline && (
-                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-blue-500 rounded-full border-2 border-white"></div>
                 )}
               </div>
 
@@ -199,7 +199,7 @@ export default function Mensagems() {
                     {chat.name}
                   </h3>
                   <span
-                    className={`text-xs ${chat.unreadCount > 0 ? 'text-green-600 font-medium' : 'text-gray-400'}`}
+                    className={`text-xs ${chat.unreadCount > 0 ? 'text-blue-600 font-medium' : 'text-gray-400'}`}
                   >
                     {formatTime(chat.timestamp)}
                   </span>
@@ -209,14 +209,14 @@ export default function Mensagems() {
                     className={`text-sm truncate ${chat.unreadCount > 0 ? 'text-green-50' : 'text-gray-300'}`}
                   >
                     {chat.isTyping ? (
-                      <span className="text-green-500">digitando...</span>
+                      <span className="text-blue-500">digitando...</span>
                     ) : (
                       chat.lastMessage
                     )}
                   </p>
                   <div className="flex items-center ml-2">
                     {chat.unreadCount > 0 ? (
-                      <div className="w-5 h-5 rounded-full bg-green-500 text-white text-xs flex items-center justify-center">
+                      <div className="w-5 h-5 rounded-full bg-blue-700 text-white text-xs flex items-center justify-center">
                         {chat.unreadCount}
                       </div>
                     ) : chat.id === '4' || chat.id === '9' ? (
