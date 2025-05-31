@@ -21,7 +21,7 @@ export default async function LandingPage() {
 
   return (
     <>
-      <div className="bg-[#09122C] w-full cursor-yellow overflow-hidden touch-pan-x touch-pan-y">
+      <div className="bg-gradient-to-t from-background to-[#09122C] w-full cursor-yellow overflow-hidden touch-pan-x touch-pan-y">
         <div className="sticky top-0 z-50 w-full">
           <Navbar user={user} />
         </div>

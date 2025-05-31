@@ -83,7 +83,7 @@ export const CaptureLeads = () => {
         throw new Error('Cliente Supabase não inicializado');
       }
 
-      console.log('Iniciando inserção de lead:', { name, email, phone });
+      console.log('Iniciando inserção de lead:', { email });
 
       // Tentativa de inserção com melhor depuração
       const { data, error, status } = await supabase
@@ -146,7 +146,7 @@ export const CaptureLeads = () => {
         <Input
           type="email"
           placeholder="Digite seu e-mail"
-          className="flex-1 bg-subbackground p-3 border border-white focus:border-btn rounded-xl text-text min-w-0"
+          className="flex-1 bg-background p-3 border-btn rounded-xl text-text min-w-0"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required

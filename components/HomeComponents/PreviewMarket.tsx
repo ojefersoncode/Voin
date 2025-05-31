@@ -79,11 +79,9 @@ export default function PreviewMarket() {
             <TableRow className="font-titan bg-btn hover:bg-btn/80 border border-background">
               <TableHead className="text-background">Moeda</TableHead>
               <TableHead className="text-right text-background">
-                Preço (USDT)
+                Preço
               </TableHead>
-              <TableHead className="text-right text-background">
-                Variação 24h
-              </TableHead>
+              <TableHead className="text-right text-background">24h</TableHead>
               <TableHead className="text-right text-background">
                 Volume
               </TableHead>

@@ -68,13 +68,13 @@ export const Navbar = ({ user }: { user: User | null }) => {
           </NavigationMenuItem>
 
           {/* mobile */}
-          <span className="flex md:hidden bg-background">
+          <span className="flex md:hidden bg-transparent">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2 text-btn" asChild>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-btn bg-background hover:bg-background"
+                  className="text-btn bg-transparent hover:bg-transparent"
                 >
                   <Menu className="size-5 text-btn" />
                 </Button>
