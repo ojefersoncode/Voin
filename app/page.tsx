@@ -21,7 +21,7 @@ export default async function LandingPage() {
 
   return (
     <>
-      <div className="bg-gradient-to-r from-background via-blue-950 to-background w-full cursor-yellow overflow-hidden touch-pan-x touch-pan-y">
+      <div className="bg-[#09122C] w-full cursor-yellow overflow-hidden touch-pan-x touch-pan-y">
         <div className="sticky top-0 z-50 w-full">
           <Navbar user={user} />
         </div>
@@ -35,7 +35,7 @@ export default async function LandingPage() {
         <Testimonials />
         <Newsletter />
         <ScrollToTop />*/}
-        <div className="bg-background w-full z-50 absolute">
+        <div className="bg-transparent  w-full z-50 absolute">
           <Footer />
         </div>
       </div>
