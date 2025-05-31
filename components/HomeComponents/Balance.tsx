@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Eye, Wallet2 } from 'lucide-react';
-import { Button } from '../ui/button';
+
 export default function Balance() {
   const [showBalance, setShowBalance] = useState(true);
 
