@@ -1,7 +1,7 @@
 import { createClient } from '../../utils/supabase/server';
 import { redirect } from 'next/navigation';
 import { getUser } from '../../utils/supabase/queries';
-import StorePage from '@/components/pages/StorePage';
+import TaskPage from '@/components/TaskComponent';
 
 export default async function TournamentPage() {
   const supabase = await createClient();
@@ -11,5 +11,5 @@ export default async function TournamentPage() {
     return redirect('/auth/signin');
   }
 
-  return <StorePage user={user} />;
+  return <TaskPage user={user} />;
 }

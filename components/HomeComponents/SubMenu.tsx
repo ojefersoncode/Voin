@@ -4,6 +4,7 @@ import {
   Calendar,
   Gift,
   Megaphone,
+  Send,
   Share,
   Swords,
   Trophy,
@@ -26,16 +27,22 @@ export default function SubMenu() {
       label: 'Torneios',
       route: '/tournament'
     },
-    { icon: <Megaphone className="size-7" />, label: 'Novidades', route: null },
-    { icon: <Share className="size-7" />, label: 'Convidar', route: '/Invite' },
-    { icon: <Calendar className="size-7" />, label: 'Tarefas', route: null },
     { icon: <Gift className="size-7" />, label: 'Bônus', route: '/bonus' },
+    { icon: <Share className="size-7" />, label: 'Convidar', route: '/Invite' },
     {
-      icon: <Users className="size-7" />,
-      label: 'Amigos',
+      icon: <Send className="size-7" />,
+      label: 'Mensagem',
       route: '/chat'
     },
-    { icon: <Bell className="size-7" />, label: 'Alertas', route: null }
+    {
+      icon: <Megaphone className="size-7" />,
+      label: 'Novidades',
+      route: '/blog'
+    },
+
+    { icon: <Calendar className="size-7" />, label: 'Tarefas', route: null },
+
+    { icon: <Bell className="size-7" />, label: 'Notificação', route: null }
   ];
 
   return (
