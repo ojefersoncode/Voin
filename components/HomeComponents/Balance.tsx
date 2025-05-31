@@ -32,15 +32,15 @@ export default function Balance() {
             {[{ label: 'Adicionar' }, { label: 'Enviar' }].map((item, i) => (
               <button
                 key={i}
-                className="p-4 items-center justify-center bg-subbackground text-btn font-titan rounded-lg flex hover:bg-subbackground/80 transition-all duration-200"
+                className="p-4 items-center justify-center bg-btn/60 text-btn rounded-lg flex hover:bg-btn/40  hover:text-text/40 transition-all duration-200"
               >
-                <span className="text-sm max-sm:text-xs text-text font-inter">
+                <span className="text-sm max-sm:text-xs text-text hover:text-text/60 transition-all font-inter">
                   {item.label}
                 </span>
               </button>
             ))}
 
-            <button className="flex items-center gap-2 p-4 rounded-lg text-btn bg-subbackground hover:bg-subbackground/80 transition-all duration-200">
+            <button className="flex items-center gap-2 p-4 rounded-lg text-text bg-btn/60 hover:bg-btn/40 hover:text-text/40 transition-all duration-200">
               <Wallet2 className="size-4" />
               <span className="font-inter text-sm max-sm:text-xs">
                 Conectar
