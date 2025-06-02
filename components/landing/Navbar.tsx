@@ -108,7 +108,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                     passHref
                   >
                     <Button
-                      className="w-full px-4 py-0.5 rounded-xl font-inter text-base text-background bg-btn/80 hover:bg-btn/70 transition-colors shadow-btn shadow-md drop-shadow-md"
+                      className="w-full px-4 py-0.5 rounded-xl font-inter text-base text-text bg-btn/80 hover:bg-btn/70 transition-colors shadow-btn shadow-md drop-shadow-md"
                       variant="ghost"
                     >
                       Entrar
@@ -138,7 +138,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
           <div className="hidden md:flex gap-4">
             <Link href="/Home" passHref>
               <Button
-                className="px-4 py-0.5 font-inter rounded-xl text-base shadow-btn shadow-md drop-shadow-md text-background bg-btn hover:bg-btn/80"
+                className="px-4 py-0.5 font-inter rounded-xl text-base shadow-btn shadow-md drop-shadow-md text-text bg-btn hover:bg-btn/80"
                 variant="ghost"
               >
                 Entrar
