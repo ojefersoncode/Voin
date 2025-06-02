@@ -7,7 +7,7 @@ export const Cta = () => {
     <section id="cta" className="w-full mt-2">
       <div>
         <h1 className="text-btn text-4xl max-sm:text-2xl font-titan">
-          Ganhe cryptos jogando e faça parte da nova comunidade gamer
+          Ganhe cryptos e faça parte da nova comunidade gamer
         </h1>
 
         <h2 className="text-start text-text/80 md:text-base text-base font-semibold my-6">
