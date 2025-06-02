@@ -95,9 +95,13 @@ export default function ButtonMenu() {
                     <h2 className="text-x px-1 font-titan text-text">
                       Sr Jeferson
                     </h2>
-                    <div className="flex items-center mt-1 gap-1">
-                      <img src="/Rank/Rank1.svg" alt="" className="size-4" />
-                      <p className="text-sm font-titan text-text">Nível 1</p>
+                    <div className="flex items-center mt-0.5 gap-1">
+                      <img
+                        src="/Rank/Rank1.svg"
+                        alt="Rank"
+                        className="size-5"
+                      />
+                      <p className="text-xs font-inter text-text">Nível 1</p>
                     </div>
                   </div>
                   <div>
