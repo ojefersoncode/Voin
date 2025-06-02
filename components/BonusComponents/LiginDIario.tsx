@@ -17,7 +17,7 @@ export default function LoginDiario() {
     <div className="w-full justify-center items-center touch-pan-x touch-pan-y">
       <div className="flex items-center justify-between py-6">
         <div className="text-text">
-          <h1 className="text-base font-inter">Login Diário</h1>
+          <h1 className="text-base font-inter">Recompensa Diária</h1>
           <h2 className="text-xs font-bold text-text/70 mt-1">07/12/2025</h2>
         </div>
         <Button className="bg-subbackground hover:bg-subbackground/80">

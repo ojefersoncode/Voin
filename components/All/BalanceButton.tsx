@@ -20,10 +20,12 @@ export default function BalanceButton() {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger className="touch-pan-x touch-pan-y" asChild>
-          <Button className="px-0 border-none outline-none rounded-lg bg-none">
+          <Button className="px-0 border-none outline-none rounded-lg bg-subbackground hover:bg-subbackground/80">
             <div className="flex w-full text-text justify-center items-center gap-2 p-2 rounded-xl">
               <img className="size-6" src="/Coin/Nexcoin.png" alt="logo" />
-              <h1 className="mr-1 font-titan text-sm">130.000.00</h1>
+              <h1 className="mr-1 font-titan text-text/90 text-sm">
+                130.000.00
+              </h1>
             </div>
           </Button>
         </DropdownMenuTrigger>

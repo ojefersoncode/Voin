@@ -23,7 +23,7 @@ export default function Store() {
         {coinPackages.map((pkg) => (
           <Card
             key={pkg.id}
-            className="bg-background text-btn border-btn p-4 py-6 flex flex-col items-center justify-center gap-2 rounded-xl  transition-colors cursor-pointer"
+            className="bg-background text-btn border-btn p-4 py-6 flex flex-col items-center justify-center gap-2 rounded-xl transition-colors cursor-pointer"
           >
             <Image
               height={960}
@@ -35,7 +35,7 @@ export default function Store() {
             <span className="text-lg font-titan">{pkg.amount} moedas</span>
             <span className="text-btn font-inter">{pkg.price}</span>
             <Button
-              className="mt-2 w-full border bg-btn hover:bg-btn/80 font-inter text-background text-sm px-4 py-1 rounded-lg"
+              className="mt-2 w-full border-b border-btn/40 bg-btn hover:bg-btn/80 font-inter text-background text-sm px-4 py-1 rounded-lg"
               onClick={() => handlePurchase(pkg)}
             >
               Comprar

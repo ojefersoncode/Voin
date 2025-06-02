@@ -15,7 +15,7 @@ export default function StorePage({ user }: { user: User }) {
         <NavbarAll />
       </header>
 
-      <div>
+      <div className="px-2">
         <Pageback />
       </div>
 

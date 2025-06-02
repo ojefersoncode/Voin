@@ -27,15 +27,15 @@ module.exports = {
         yellow: 'url("/cursor.png"), auto'
       },
       colors: {
-        border: '#414141',
-        background: '#0e0e0e',
-        subbackground: '#181818',
+        border: '#F5C45E',
+        background: '#161622',
+        subbackground: '#27273a',
         high: '#FFB200',
         text: '#FFFFFF',
         textocean: '#2632D9',
         subtext: '#227CF2',
         select: '#CCD2D3', // Corrigido: estava sem #
-        btn: '#3A86FF',
+        btn: '#0065fd',
         btn2: '#FBA518',
 
         input: 'hsl(var(--input))',

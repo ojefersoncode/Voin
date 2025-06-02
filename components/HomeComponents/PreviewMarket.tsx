@@ -87,10 +87,10 @@ export default function PreviewMarket() {
               </TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody className="bg-subbackground hover:bg-btn border border-background/20">
+          <TableBody className="bg-subbackground hover:bg-subbackground/50 border border-background/20">
             {data.map((crypto) => (
               <TableRow
-                className="bg-subbackground font-titan border border-background/20"
+                className="bg-subbackground hover:bg-subbackground/40 font-titan border border-background/20"
                 key={crypto.symbol}
               >
                 <TableCell className=" text-text ">

@@ -76,7 +76,7 @@ export default function ButtonMenu() {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger className="touch-pan-x touch-pan-y" asChild>
-          <Button className="px-0 border-none outline-none bg-transparent hover:bg-transparent transition-transform data-[state=open]:rotate-90">
+          <Button className="px-0 border-none rounded-lg outline-none bg-subbackground hover:bg-subbackground transition-transform data-[state=open]:rotate-90">
             <div className="flex w-full justify-center items-center p-2 rounded-xl">
               <Grip className="text-text/90 size-6 " />
             </div>
@@ -85,21 +85,19 @@ export default function ButtonMenu() {
 
         <DropdownMenuContent className="w-56 touch-pan-x touch-pan-y bg-background">
           <DropdownMenuLabel className="p-1 touch-pan-x touch-pan-y">
-            <div className="w-full flex flex-col rounded-lg p-2 bg-btn">
+            <div className="w-full flex flex-col rounded-lg p-2 bg-subbackground">
               <div className="flex flex-col items-center py-2">
                 <div className="flex w-full items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center">
-                    <UserCircle className="w-8 h-8 text-btn" />
+                  <div className="w-10 h-10 rounded-full bg-btn flex items-center justify-center">
+                    <UserCircle className="w-8 h-8 text-text" />
                   </div>
                   <div className="flex flex-col">
-                    <h2 className="text-x px-1 font-titan text-background">
+                    <h2 className="text-x px-1 font-titan text-text">
                       Sr Jeferson
                     </h2>
                     <div className="flex items-center mt-1 gap-1">
                       <img src="/Rank/Rank1.svg" alt="" className="size-4" />
-                      <p className="text-sm font-titan text-background">
-                        Nível 1
-                      </p>
+                      <p className="text-sm font-titan text-text">Nível 1</p>
                     </div>
                   </div>
                   <div>
@@ -107,7 +105,7 @@ export default function ButtonMenu() {
                       variant="ghost"
                       onClick={navigateToProfile}
                       size="sm"
-                      className="ml-auto bg-transparent hover:bg-transparent hover:text-background border-none focus:border-none text-background px-2 py-0"
+                      className="ml-auto bg-transparent hover:bg-transparent hover:text-text border-none focus:border-none text-text px-2 py-0"
                     >
                       <Pen className="size-4" />
                     </Button>
@@ -115,7 +113,7 @@ export default function ButtonMenu() {
                 </div>
               </div>
 
-              <form className="flex flex-col px-1 pb-2 text-background">
+              <form className="flex flex-col px-1 pb-2 text-text">
                 <label className="text-[0.70rem] mr-1 font-inter">
                   Id da conta
                 </label>
