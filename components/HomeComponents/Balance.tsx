@@ -9,7 +9,7 @@ export default function Balance() {
 
   return (
     <div className="w-full px-6 max-md:px-4">
-      <Card className="rounded-xl mt-4 px-4 border-none bg-background">
+      <Card className="rounded-xl pt-10 pb-2 px-4 border-none bg-background">
         {/* Card do Saldo */}
         <div className="w-full flex justify-between md:items-center md:gap-12">
           <div className="flex flex-col items-start text-text">
