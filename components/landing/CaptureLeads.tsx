@@ -160,10 +160,10 @@ export const CaptureLeads = () => {
           {loading ? 'Enviando cadastro...' : 'Quero entrar'}
         </Button>
       </form>
-      <div className="flex w-full items-center justify-center mt-6 gap-2 px-1">
+      <div className="flex w-full items-center justify-center mt-6 gap-2 px-4">
         <hr className="w-full border-btn" />
 
-        <span className="w-full text-nowrap text-text/70 font-inter lg:text-sm text-sm">
+        <span className="w-full text-nowrap text-text/80 font-inter lg:text-sm text-xs">
           Garanta seu acesso antecipado!
         </span>
 
