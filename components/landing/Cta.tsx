@@ -10,7 +10,7 @@ export const Cta = () => {
           Ganhe cryptos e faça parte da nova comunidade gamer
         </h1>
 
-        <h2 className="text-start text-text/80 md:text-base text-base font-semibold my-6">
+        <h2 className="text-start text-text/80 md:text-base text-base font-semibold mt-4 mb-6">
           Compre, venda, jogue e ganhe criptomoedas. Cadastre-se e receba acesso
           antecipado!
         </h2>
