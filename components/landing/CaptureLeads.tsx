@@ -145,21 +145,30 @@ export const CaptureLeads = () => {
       >
         <Input
           type="email"
-          placeholder="Digite seu e-mail"
-          className="flex-1 bg-background p-3 border-btn rounded-xl text-text min-w-0"
+          placeholder="Seu melhor e-mail…"
+          className="flex-1 bg-subbackground/80 p-3 border-2 border-btn rounded-xl text-text min-w-0"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
 
         <Button
-          className="rounded-xl text-background font-inter bg-btn hover:bg-btn/80 transition-all p-4 text-md max-md:text-sm"
+          className="rounded-lg text-text font-inter bg-btn hover:bg-btn/80 transition-all px-3 py-4 text-md max-md:text-sm text-base"
           type="submit"
           disabled={loading || isButtonDisabled}
         >
-          {loading ? 'Enviando cadastro...' : 'Cadastrar'}
+          {loading ? 'Enviando cadastro...' : 'Quero entrar'}
         </Button>
       </form>
+      <div className="flex w-full items-center justify-center mt-10 gap-2 px-1">
+        <hr className="w-full border-btn" />
+
+        <span className="w-full text-nowrap text-text/70 font-inter lg:text-sm text-xs">
+          Garanta seu acesso antecipado!
+        </span>
+
+        <hr className="w-full border-btn" />
+      </div>
     </div>
   );
 };
