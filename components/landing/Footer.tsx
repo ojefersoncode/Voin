@@ -6,10 +6,7 @@ import { BlurFade } from '../magicui/blur-fade';
 export const Footer = () => {
   return (
     <BlurFade className="bg-transparent " delay={0.2 * 0.03} inView>
-      <footer
-        id="footer"
-        className="bg-background border-t rounded-xl border-btn"
-      >
+      <footer id="footer" className="bg-background border-t rounded border-btn">
         <section className="container py-10 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8 text-gray-100">
           <div className="col-span-full xl:col-span-2">
             <div className="flex items-center select-none">
