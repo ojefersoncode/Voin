@@ -11,7 +11,7 @@ export default function NavBattle() {
   const navigateToHistory = () => router.push('/History');
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-btn rounded-t-xl z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-subbackground rounded-t-lg z-50">
       <div className="flex justify-around items-center h-20">
         <button
           title="Início"

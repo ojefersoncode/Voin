@@ -40,7 +40,7 @@ export default function SubMenu() {
       route: '/blog'
     },
 
-    { icon: <Calendar className="size-7" />, label: 'Tarefas', route: null },
+    { icon: <Calendar className="size-7" />, label: 'Tarefas', route: '/task' },
 
     { icon: <Bell className="size-7" />, label: 'Notificação', route: null }
   ];

@@ -32,7 +32,7 @@ export default function Balance() {
 
           <div className="flex items-center bg-transparent border-none text-text">
             <div className="flex w-full justify-around items-center space-x-3">
-              <button className="flex items-center gap-2 p-3 rounded-lg text-text bg-btn/40 hover:text-text/80 transition-all duration-200">
+              <button className="flex items-center gap-2 p-3 rounded-lg text-text bg-btn hover:text-text/80 transition-all duration-200">
                 <Wallet2 className="size-6 max-md:size-5" />
                 <span className="font-inter text-base max-sm:text-sm">
                   Conectado

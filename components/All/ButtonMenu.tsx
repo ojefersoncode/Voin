@@ -76,7 +76,7 @@ export default function ButtonMenu() {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger className="touch-pan-x touch-pan-y" asChild>
-          <Button className="px-0 border-none rounded-lg outline-none bg-subbackground hover:bg-subbackground transition-transform data-[state=open]:rotate-90">
+          <Button className="px-0 border-none rounded-lg outline-none bg-background hover:bg-background transition-transform data-[state=open]:rotate-90">
             <div className="flex w-full justify-center items-center p-2 rounded-xl">
               <Grip className="text-text/90 size-6 " />
             </div>

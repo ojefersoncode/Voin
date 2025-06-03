@@ -28,14 +28,14 @@ module.exports = {
       },
       colors: {
         border: '#F5C45E',
-        background: '#161622',
-        subbackground: '#27273a',
+        background: '#0c1014',
+        subbackground: '#2b3036',
         high: '#FFB200',
-        text: '#FFFFFF',
+        text: '#f0f1f5',
         textocean: '#2632D9',
         subtext: '#227CF2',
         select: '#CCD2D3', // Corrigido: estava sem #
-        btn: '#0065fd',
+        btn: '#4a5df9',
         btn2: '#FBA518',
 
         input: 'hsl(var(--input))',
