@@ -47,7 +47,7 @@ function NotificationCard({ title, subtitle, date }: NotificationItem) {
       </div>
       <div className="flex w-full items-center justify-between px-2 pb-2">
         <span className="text-sm text-text/80 font-normal">{date}</span>
-        <Button className="rounded-lg font-inter text-sm text-text bg-btn hover:bg-btn/80">
+        <Button className="rounded-lg font-inter text-sm text-text bg-btn hover:bg-btn/80 transition-all">
           Resgatar
         </Button>
       </div>
@@ -69,7 +69,7 @@ export default function Notification({ user }: { user: User }) {
         <Button
           variant="ghost"
           size="sm"
-          className="flex items-center gap-1 text-xs p-2 font-semibold text-text bg-subbackground hover:bg-subbackground/80 transition-all"
+          className="flex items-center gap-1 text-xs p-2 font-semibold text-text bg-red-600 hover:bg-red-700 transition-all"
         >
           <Check className="w-4 h-4" /> Marcar como lidas
         </Button>
