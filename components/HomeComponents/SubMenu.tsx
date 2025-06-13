@@ -7,6 +7,7 @@ import {
   Send,
   Share,
   Swords,
+  TrendingUp,
   Trophy,
   Users
 } from 'lucide-react';
@@ -18,7 +19,7 @@ export default function SubMenu() {
 
   const menuItems = [
     {
-      icon: <Swords className="size-7" />,
+      icon: <TrendingUp className="size-7" />,
       label: 'Trade',
       route: '/trade'
     },
