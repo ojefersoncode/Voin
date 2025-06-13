@@ -19,8 +19,8 @@ export default function SubMenu() {
   const menuItems = [
     {
       icon: <Swords className="size-7" />,
-      label: 'Batalhar',
-      route: '/battle'
+      label: 'Trade',
+      route: '/trade'
     },
     {
       icon: <Trophy className="size-7" />,
@@ -67,7 +67,7 @@ export default function SubMenu() {
                     {item.icon}
                   </div>{' '}
                 </div>
-                <span className="mt-4 sm:mt-6 font-inter text-xs sm:text-base text-text">
+                <span className="mt-2 sm:mt-6 font-inter text-xs sm:text-base text-text">
                   {item.label}
                 </span>
               </div>
