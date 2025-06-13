@@ -28,7 +28,7 @@ module.exports = {
       },
       colors: {
         border: '#F5C45E',
-        background: '#0c1014',
+        background: '#oeoeoe',
         subbackground: '#2b3036',
         high: '#FFB200',
         text: '#f0f1f5',
