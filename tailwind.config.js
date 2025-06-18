@@ -29,7 +29,7 @@ module.exports = {
       colors: {
         border: '#F5C45E',
         background: '#0e0e0e',
-        subbackground: '#2b3036',
+        subbackground: '#181818',
         high: '#FFB200',
         text: '#f0f1f5',
         textocean: '#2632D9',
