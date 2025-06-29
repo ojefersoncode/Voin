@@ -100,13 +100,11 @@ export default function TradingAll() {
             <span className="font-titan text-base pl-1">Jeferson</span>
           </div>
 
-          <div className="flex justify-center items-center pr-5">
-            <Order />
-          </div>
+          
 
           <div className="flex justify-center items-center pr-2 touch-pan-x touch-pan-y">
-            <div className="font-titan text-lg bg-none rounded-lg">
-              <span className="text-btn">10:00</span>
+            <div className="font-inter text-base bg-none rounded-lg">
+              <span className="text-btn">Nex 10,000</span>
             </div>
           </div>
         </nav>
@@ -193,7 +191,9 @@ export default function TradingAll() {
                 <span>Para baixo</span>
                 <ArrowDown className="h-5 w-5" />
               </button>
-
+          <div className="px-1">
+            <Order />
+          </div>
               <button
                 onClick={handleUpOperation}
                 className="bg-[#097261] hover:bg-[#135a4e] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
