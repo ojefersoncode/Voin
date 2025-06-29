@@ -209,19 +209,21 @@ export default function TradingAll() {
             <div className="flex w-full items-center justify-between  gap-2 mt-4 mb-2 touch-pan-x touch-pan-y">
               <button
                 onClick={handleDownOperation}
-                className="bg-[#dd3240] max-w-md hover:bg-[#af2732] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
+                className="bg-[#dd3240] w-full hover:bg-[#af2732] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
               >
                 <span>Para baixo</span>
                 <ArrowDown className="h-5 w-5" />
               </button>
 
-              
-            <Order />
+              <div className="flex w-full">
+                <Order />
+              </div>
+            
 
               
               <button
                 onClick={handleUpOperation}
-                className="bg-[#097261] max-w-md hover:bg-[#135a4e] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
+                className="bg-[#097261] w-full hover:bg-[#135a4e] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
               >
                 <span>Para cima</span>
                 <ArrowUp className="h-5 w-5" />
