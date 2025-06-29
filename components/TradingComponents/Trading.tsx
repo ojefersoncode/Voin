@@ -94,7 +94,7 @@ export default function TradingAll() {
       {/* Header */}
 
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
-        <nav className="flex items-center justify-between px-3 py-2">
+        <nav className="flex items-center justify-between p-2">
           <div className="flex items-center">
             <Image src="/Rank/Rank1.svg" alt="Logo" width={30} height={30} />
           </div>
@@ -190,7 +190,7 @@ export default function TradingAll() {
                 <span>Para baixo</span>
                 <ArrowDown className="h-5 w-5" />
               </button>
-          <div className="bg-white rounded-lg">
+          <div className="bg-btn rounded-lg p-1">
             <Order />
           </div>
               <button
