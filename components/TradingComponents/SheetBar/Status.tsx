@@ -60,7 +60,7 @@ export function Status() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-sm">
+    <div className="mx-auto w-full max-w-xl">
       <ScrollArea className="flex-1 pb-4">
         {mockTrades.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-gray-400">
