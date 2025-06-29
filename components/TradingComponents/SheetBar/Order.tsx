@@ -20,7 +20,7 @@ export function Order() {
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger asChild>
         <Button 
-          className="border border-zinc-400 bg-transparent hover:bg-transparent p-2">
+          className="border border-zinc-300 dark:border-zinc-700 bg-transparent hover:bg-transparent p-4">
           <History className="w-5 h-5" />
         </Button>
       </DrawerTrigger>
