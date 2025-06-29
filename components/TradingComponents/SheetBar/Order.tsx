@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useState } from 'react';
-import { Swords } from 'lucide-react';
+import { History } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Drawer,
@@ -22,12 +22,9 @@ export function Order() {
         <Button className="bg-transparent hover:bg-transparent">
           <div className="flex flex-col justify-center items-center">
             <div title="Ordens" className="flex items-center justify-center">
-              <div className="flex items-center gap-2 font-titan text-2xl bg-none rounded-lg">
-                <span className="text-yellow-600">1</span>
-                <div>
-                  <Swords className="size-5 text-text" />
-                </div>
-                <span className="text-red-600">0</span>
+              <div className="flex items-center gap-2 font-titan text-lg bg-none rounded-lg">
+                <History />
+                <span>Histórico</span>
               </div>
             </div>
           </div>
