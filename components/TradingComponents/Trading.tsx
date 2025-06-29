@@ -9,7 +9,7 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import { ArrowUp, ArrowDown, Plus, Minus } from 'lucide-react';
+import { ArrowUp, ArrowDown, Plus, Minus, Wallet } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
@@ -97,14 +97,13 @@ export default function TradingAll() {
         <nav className="flex items-center justify-between px-3 py-2">
           <div className="flex items-center">
             <Image src="/Rank/Rank1.svg" alt="Logo" width={30} height={30} />
-            <span className="font-titan text-base pl-1">Jeferson</span>
           </div>
 
           
 
           <div className="flex justify-center items-center pr-2 touch-pan-x touch-pan-y">
-            <div className="font-inter text-base bg-none rounded-lg">
-              <span className="text-btn">Nex 10,000</span>
+            <div className="bg-btn p-2 text-white rounded-lg">
+              <Wallet className="w-4 h-4" />
             </div>
           </div>
         </nav>
@@ -183,7 +182,7 @@ export default function TradingAll() {
             </div>
 
             {/* Action Buttons */}
-            <div className="grid grid-cols-2 gap-4 mt-6 mb-2 touch-pan-x touch-pan-y">
+            <div className="grid grid-cols-3 gap-4 mt-6 mb-2 touch-pan-x touch-pan-y">
               <button
                 onClick={handleDownOperation}
                 className="bg-[#dd3240] hover:bg-[#af2732] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
@@ -191,7 +190,7 @@ export default function TradingAll() {
                 <span>Para baixo</span>
                 <ArrowDown className="h-5 w-5" />
               </button>
-          <div className="px-1">
+          <div className="bg-white rounded-lg">
             <Order />
           </div>
               <button
