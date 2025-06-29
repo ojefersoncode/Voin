@@ -94,16 +94,14 @@ export default function TradingAll() {
       {/* Header */}
 
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
-        <nav className="flex items-center justify-between p-2">
+        <nav className="flex items-center justify-between px-2 py-4">
           <div className="flex items-center">
             <Image src="/Rank/Rank1.svg" alt="Logo" width={30} height={30} />
           </div>
 
-          
-
           <div className="flex justify-center items-center pr-2 touch-pan-x touch-pan-y">
             <div className="bg-btn p-2 text-white rounded-lg">
-              <Wallet className="w-4 h-4" />
+              <Wallet className="w-5 h-5" />
             </div>
           </div>
         </nav>
@@ -146,7 +144,11 @@ export default function TradingAll() {
               </Select>
             </div>
 
-            {/* Amount Input */}
+
+
+            <div className="flex items-center gap-3">
+            
+            
             <div className="mb-4 touch-pan-x touch-pan-y">
               <div className="flex justify-between items-center">
                 <h3 className="text-sm text-gray-400 mb-2">Ordens</h3>
@@ -180,7 +182,43 @@ export default function TradingAll() {
                 </button>
               </div>
             </div>
+            
+            <div className="mb-4 touch-pan-x touch-pan-y">
+              <div className="flex justify-between items-center">
+                <h3 className="text-sm text-gray-400 mb-2">Ordens</h3>
+                <div className="flex items-center gap-2 px-1 font-inter text-xs">
+                  <p className="font-sans text-slate-300">Disponivel: </p>
+                  <span>10</span>
+                </div>
+              </div>
 
+              <div className="flex items-center bg-subbackground rounded-md p-1">
+                <button
+                  onClick={handleDecrement}
+                  disabled={inputValue <= 1}
+                  className={`p-2 text-btn ${inputValue <= 1 ? 'opacity-50 cursor-not-allowed' : 'hover:text-btn/80'}`}
+                >
+                  <Minus size={18} />
+                </button>
+
+                <Input
+                  type="text"
+                  value={inputValue}
+                  onChange={handleChange}
+                  className="bg-transparent border-none text-center text-lg font-inter flex-1 text-white"
+                />
+                <button
+                  onClick={handleIncrement}
+                  disabled={inputValue >= 10}
+                  className={`p-2 text-btn hover:text-btn/80 ${inputValue >= 10 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                >
+                  <Plus size={18} />
+                </button>
+              </div>
+            </div>
+            </div>
+
+              
             {/* Action Buttons */}
             <div className="grid grid-cols-3 gap-4 mt-6 mb-2 touch-pan-x touch-pan-y">
               <button
@@ -190,9 +228,11 @@ export default function TradingAll() {
                 <span>Para baixo</span>
                 <ArrowDown className="h-5 w-5" />
               </button>
-          <div className="bg-btn rounded-lg p-1">
+
+              
             <Order />
-          </div>
+
+              
               <button
                 onClick={handleUpOperation}
                 className="bg-[#097261] hover:bg-[#135a4e] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
