@@ -99,7 +99,7 @@ export default function TradingAll() {
            <UserRound className="w-5 h-5" />
           </div>
 
-          <div className="flex justify-center items-center pr-2 touch-pan-x touch-pan-y">
+          <div className="flex justify-center items-center touch-pan-x touch-pan-y">
             <div className="bg-btn p-2 text-white rounded-lg">
               <Wallet className="w-5 h-5" />
             </div>
@@ -122,7 +122,7 @@ export default function TradingAll() {
         <div className={`lg:w-[350px] w-full flex flex-col bg-background`}>
           {/* Trading Controls */}
           <div className="px-4 max-md:pt-2 touch-pan-x touch-pan-y">
-            <h3 className="text-sm text-gray-400 mb-3">Par de moedas</h3>
+            <h3 className="text-sm text-gray-400 pt-4 mb-2">Par de moedas</h3>
 
             {/* Time Selection */}
             <div className="flex w-full justify-between items-center mb-4 touch-pan-x touch-pan-y">
@@ -150,9 +150,6 @@ export default function TradingAll() {
             
             
             <div className="mb-4 touch-pan-x touch-pan-y">
-              <div className="flex justify-start items-center">
-                <h3 className="text-sm text-gray-400 mb-2">Tempo</h3>
-              </div>
 
               <div className="flex items-center bg-subbackground rounded-md p-1">
                 <button
@@ -180,11 +177,7 @@ export default function TradingAll() {
             </div>
             
             <div className="mb-4 touch-pan-x touch-pan-y">
-              <div className="flex justify-end items-center">
-                <h3 className="text-sm text-gray-400 mb-2">Ordens</h3>
-                
-              </div>
-
+              
               <div className="flex items-center bg-subbackground rounded-md p-1">
                 <button
                   onClick={handleDecrement}
@@ -213,7 +206,7 @@ export default function TradingAll() {
 
               
             {/* Action Buttons */}
-            <div className="flex items-center justify-between  gap-2 mt-6 mb-2 touch-pan-x touch-pan-y">
+            <div className="flex items-center justify-between  gap-2 mt-4 mb-2 touch-pan-x touch-pan-y">
               <button
                 onClick={handleDownOperation}
                 className="bg-[#dd3240] hover:bg-[#af2732] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 rounded-lg font-medium flex items-center justify-between"
