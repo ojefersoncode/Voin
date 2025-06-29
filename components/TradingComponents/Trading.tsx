@@ -150,12 +150,8 @@ export default function TradingAll() {
             
             
             <div className="mb-4 touch-pan-x touch-pan-y">
-              <div className="flex justify-between items-center">
-                <h3 className="text-sm text-gray-400 mb-2">Ordens</h3>
-                <div className="flex items-center gap-2 px-1 font-inter text-xs">
-                  <p className="font-sans text-slate-300">Disponivel: </p>
-                  <span>10</span>
-                </div>
+              <div className="flex justify-start items-center">
+                <h3 className="text-sm text-gray-400 mb-2">Tempo</h3>
               </div>
 
               <div className="flex items-center bg-subbackground rounded-md p-1">
@@ -184,12 +180,9 @@ export default function TradingAll() {
             </div>
             
             <div className="mb-4 touch-pan-x touch-pan-y">
-              <div className="flex justify-between items-center">
+              <div className="flex justify-end items-center">
                 <h3 className="text-sm text-gray-400 mb-2">Ordens</h3>
-                <div className="flex items-center gap-2 px-1 font-inter text-xs">
-                  <p className="font-sans text-slate-300">Disponivel: </p>
-                  <span>10</span>
-                </div>
+                
               </div>
 
               <div className="flex items-center bg-subbackground rounded-md p-1">
