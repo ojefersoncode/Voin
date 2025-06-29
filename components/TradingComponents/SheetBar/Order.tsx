@@ -19,14 +19,8 @@ export function Order() {
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger asChild>
-        <Button className="bg-transparent hover:bg-transparent">
-          <div className="flex flex-col justify-center items-center">
-            <div title="Ordens" className="flex items-center justify-center">
-              <div className="flex items-center gap-2 font-inter text-base bg-none rounded-lg">
-                <History className="w-4 h-4" />
-              </div>
-            </div>
-          </div>
+        <Button className="bg-transparent hover:bg-transparent p-2">
+          <History className="w-4 h-4" />
         </Button>
       </DrawerTrigger>
       <DrawerContent className="bg-background border-t border-btn rounded-lg p-1">
