@@ -23,8 +23,7 @@ export function Order() {
           <div className="flex flex-col justify-center items-center">
             <div title="Ordens" className="flex items-center justify-center">
               <div className="flex items-center gap-2 font-inter text-base bg-none rounded-lg">
-                <History />
-                <span>Histórico</span>
+                <History className="w-4 h-4" />
               </div>
             </div>
           </div>
