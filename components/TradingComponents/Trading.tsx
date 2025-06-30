@@ -144,7 +144,7 @@ export default function TradingAll() {
             <div className="flex w-full items-center justify-between">
               {/* Input de Tempo */}
               <div className="touch-pan-x touch-pan-y">
-                <div className="flex flex-col w-full bg-subbackground rounded-xl px-4 py-1 w-full text-white">
+                <div className="flex flex-col flex-1  w-full bg-subbackground rounded-xl px-4 py-1 w-full text-white">
                   <span className="text-sm text-text/60">Tempo</span>
                   <Select
                     value={inputTempo.toString()}
@@ -170,7 +170,7 @@ export default function TradingAll() {
 
               {/* Input de Saldo */}
               <div className="touch-pan-x touch-pan-y">
-                <div className="w-full bg-subbackground rounded-xl px-4 py-2 flex flex-col items-center text-center">
+                <div className="flex flex-col w-full flex-1 bg-subbackground rounded-xl px-4 py-2 items-center text-center">
                   <span className="text-sm text-text/60">Valor</span>
                   <div className="flex items-center gap-4 justify-between w-full">
                     <button
