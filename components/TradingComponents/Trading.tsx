@@ -29,29 +29,22 @@ export default function TradingAll() {
   const [inputValue, setInputValue] = useState<number>(0);
   const [isChartFullscreen] = useState(false);
 
-  const handleIncrement = () => {
-    setInputValue((prev) => {
-      if (prev < 10) {
-        return prev + 1;
-      } else {
-        return prev;
-      }
-    });
-  };
+  // Estados separados
+const [inputTempo, setInputTempo] = useState<number>(1);
+const [inputSaldo, setInputSaldo] = useState<number>(10);
 
-  const handleDecrement = () => {
-    setInputValue((prev) => (prev > 1 ? prev - 1 : 1));
-  };
+const handleChangeTempo = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const value = e.target.value.replace(/\D/g, '');
+  const numericValue = Number(value);
+  setInputTempo(numericValue < 1 ? 1 : numericValue > 10 ? 10 : numericValue);
+};
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, '');
-    const numericValue = Number(value);
-    if (numericValue >= 1 && numericValue <= 10) {
-      setInputValue(numericValue);
-    } else if (numericValue < 1) {
-      setInputValue(1);
-    }
-  };
+const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const value = e.target.value.replace(/\D/g, '');
+  const numericValue = Number(value);
+  setInputSaldo(numericValue < 1 ? 1 : numericValue);
+};
+  
 
   const handleUpOperation = () => {
     const now = new Date();
@@ -143,61 +136,60 @@ export default function TradingAll() {
           <div className=" max-md:pt-4 touch-pan-x touch-pan-y">
 
             <div className="flex items-center gap-3">
-            
-            
-            <div className="touch-pan-x touch-pan-y">
+  {/* Input de Tempo */}
+  <div className="touch-pan-x touch-pan-y">
+    <div className="flex items-center bg-subbackground rounded-md p-1">
+      <button
+        onClick={() => setInputTempo((prev) => Math.max(1, prev - 1))}
+        disabled={inputTempo <= 1}
+        className={`p-2 text-btn ${inputTempo <= 1 ? 'opacity-50 cursor-not-allowed' : 'hover:text-btn/80'}`}
+      >
+        <Minus size={18} />
+      </button>
 
-              <div className="flex items-center bg-subbackground rounded-md p-1">
-                <button
-                  onClick={handleDecrement}
-                  disabled={inputValue <= 1}
-                  className={`p-2 text-btn ${inputValue <= 1 ? 'opacity-50 cursor-not-allowed' : 'hover:text-btn/80'}`}
-                >
-                  <Minus size={18} />
-                </button>
+      <Input
+        type="text"
+        value={inputTempo}
+        onChange={handleChangeTempo}
+        className="bg-transparent border-none text-center text-lg font-inter flex-1 text-white"
+      />
 
-                <Input
-                  type="text"
-                  value={inputValue}
-                  onChange={handleChange}
-                  className="bg-transparent border-none text-center text-lg font-inter flex-1 text-white"
-                />
-                <button
-                  onClick={handleIncrement}
-                  disabled={inputValue >= 10}
-                  className={`p-2 text-btn hover:text-btn/80 ${inputValue >= 10 ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
-                  <Plus size={18} />
-                </button>
-              </div>
-            </div>
-            
-            <div className="touch-pan-x touch-pan-y">
-              
-              <div className="flex items-center bg-subbackground rounded-md p-1">
-                <button
-                  onClick={handleDecrement}
-                  disabled={inputValue <= 1}
-                  className={`p-2 text-btn ${inputValue <= 1 ? 'opacity-50 cursor-not-allowed' : 'hover:text-btn/80'}`}
-                >
-                  <Minus size={18} />
-                </button>
+      <button
+        onClick={() => setInputTempo((prev) => Math.min(10, prev + 1))}
+        disabled={inputTempo >= 10}
+        className={`p-2 text-btn hover:text-btn/80 ${inputTempo >= 10 ? 'opacity-50 cursor-not-allowed' : ''}`}
+      >
+        <Plus size={18} />
+      </button>
+    </div>
+  </div>
 
-                <Input
-                  type="text"
-                  value={inputValue}
-                  onChange={handleChange}
-                  className="bg-transparent border-none text-center text-lg font-inter flex-1 text-white"
-                />
-                <button
-                  onClick={handleIncrement}
-                  disabled={inputValue >= 10}
-                  className={`p-2 text-btn hover:text-btn/80 ${inputValue >= 10 ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
-                  <Plus size={18} />
-                </button>
-              </div>
-            </div>
+  {/* Input de Saldo */}
+  <div className="touch-pan-x touch-pan-y">
+    <div className="flex items-center bg-subbackground rounded-md p-1">
+      <button
+        onClick={() => setInputSaldo((prev) => Math.max(1, prev - 1))}
+        className={`p-2 text-btn hover:text-btn/80`}
+      >
+        <Minus size={18} />
+      </button>
+
+      <Input
+        type="text"
+        value={inputSaldo}
+        onChange={handleChangeSaldo}
+        className="bg-transparent border-none text-center text-lg font-inter flex-1 text-white"
+      />
+
+      <button
+        onClick={() => setInputSaldo((prev) => prev + 1)}
+        className={`p-2 text-btn hover:text-btn/80`}
+      >
+        <Plus size={18} />
+      </button>
+    </div>
+  </div>
+</div>
             </div>
 
               
