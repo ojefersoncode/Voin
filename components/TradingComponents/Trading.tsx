@@ -9,7 +9,7 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import { ArrowUp, ArrowDown, Plus, Minus, Wallet, UserRound, RefreshCw } from 'lucide-react';
+import { ArrowUp, ArrowDown, Plus, Minus, UserRound, RefreshCw } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
@@ -115,9 +115,6 @@ export default function TradingAll() {
             <div className="flex flex-col items-start justify-start">
               <h1 className="text-sm font-semibold">Saldo</h1>
               <h2 className="text-base font-medium">R$ 1200,00</h2>
-            </div>
-            <div className="bg-btn p-2 text-white rounded-lg">
-              <Wallet className="w-5 h-5" />
             </div>
             <div className="p-2 rounded-full text-black bg-white">
               <UserRound className="w-5 h-5" />
