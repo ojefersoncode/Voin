@@ -109,9 +109,12 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
 
 
           <div className="flex gap-4 items-center touch-pan-x touch-pan-y">
-            <div className="flex flex-col items-center justify-center">
+            <div>
+              ♡
+            </div>
+            <div className="flex flex-col items-start justify-start">
               <h1 className="text-sm font-semibold">Saldo</h1>
-              <h2 className="text-lg font-sans">BRL:1200,00</h2>
+              <h2 className="text-base font-medium">R$ 1200,00</h2>
             </div>
             <div className="bg-btn p-2 text-white rounded-lg">
               <Wallet className="w-5 h-5" />
