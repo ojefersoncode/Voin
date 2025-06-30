@@ -89,9 +89,9 @@ export default function TradingAll() {
       {/* Header */}
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between px-2 py-4">
-          <div className="flex flex-1 justify-between items-center touch-pan-x touch-pan-y">
+          <div className="flex justify-between items-center touch-pan-x touch-pan-y">
             <Select value={selectedPair} onValueChange={setSelectedPair}>
-              <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none w-12 h-10">
+              <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none h-10">
                 <SelectValue placeholder="Selecione um par" />
               </SelectTrigger>
               <SelectContent className="bg-background text-white border border-gray-700">
@@ -149,7 +149,7 @@ export default function TradingAll() {
                     value={inputTempo.toString()}
                     onValueChange={(value) => setInputTempo(Number(value))}
                   >
-                    <SelectTrigger className="bg-subbackground text-white border-none rounded-md h-6 px-3">
+                    <SelectTrigger className="bg-subbackground text-white border-none rounded-md w-24 h-6 px-3">
                       <SelectValue placeholder="Selecione o tempo" />
                     </SelectTrigger>
                     <SelectContent className="bg-subbackground text-white border border-border">
