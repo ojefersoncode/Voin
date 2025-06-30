@@ -29,8 +29,17 @@ export default function TradingAll() {
   const [inputValue, setInputValue] = useState<number>(0);
   const [isChartFullscreen] = useState(false);
 
-  // Estados separados
-const [inputTempo, setInputTempo] = useState<number>(1);
+  const tempoOptions = [
+  { label: '1 min', value: 1 },
+  { label: '5 min', value: 5 },
+  { label: '10 min', value: 10 },
+  { label: '15 min', value: 15 },
+  { label: '30 min', value: 30 },
+  { label: '1 hora', value: 60 },
+  { label: '12 horas', value: 720 },
+  { label: '24 horas', value: 1440 },
+];
+
 const [inputSaldo, setInputSaldo] = useState<number>(10);
 
 const handleChangeTempo = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -145,30 +154,29 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
     <div className="flex items-center gap-3">
       {/* Input de Tempo */}
         <div className="touch-pan-x touch-pan-y">
-         <div className="flex items-center bg-subbackground rounded-md p-1">
-          <button
-        onClick={() => setInputTempo((prev) => Math.max(1, prev - 1))}
-        disabled={inputTempo <= 1}
-        className={`p-2 text-btn ${inputTempo <= 1 ? 'opacity-50 cursor-not-allowed' : 'hover:text-btn/80'}`}
-      >
-        <Minus size={18} />
-      </button>
-
-      <Input
-        type="text"
-        value={inputTempo}
-        onChange={handleChangeTempo}
-        className="bg-transparent border-none text-center text-lg font-inter flex-1 text-white"
-      />
-
-      <button
-        onClick={() => setInputTempo((prev) => Math.min(10, prev + 1))}
-        disabled={inputTempo >= 10}
-        className={`p-2 text-btn hover:text-btn/80 ${inputTempo >= 10 ? 'opacity-50 cursor-not-allowed' : ''}`}
-      >
-        <Plus size={18} />
-      </button>
-    </div>
+         {/* Select de Tempo com tema atual */}
+<div className="flex flex-col gap-1 bg-subbackground rounded-xl px-4 py-3 w-full text-white">
+  <span className="text-sm text-text/60">Tempo</span>
+  <Select
+    value={inputTempo.toString()}
+    onValueChange={(value) => setInputTempo(Number(value))}
+  >
+    <SelectTrigger className="bg-background text-white border-none rounded-md h-10 px-3">
+      <SelectValue placeholder="Selecione o tempo" />
+    </SelectTrigger>
+    <SelectContent className="bg-subbackground text-white border border-border">
+      {tempoOptions.map((option) => (
+        <SelectItem
+          key={option.value}
+          value={option.value.toString()}
+          className="hover:bg-background hover:text-white cursor-pointer"
+        >
+          {option.label}
+        </SelectItem>
+      ))}
+    </SelectContent>
+  </Select>
+</div>
   </div>
 
   {/* Input de Saldo */}
