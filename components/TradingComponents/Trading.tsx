@@ -95,6 +95,25 @@ export default function TradingAll() {
 
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between px-2 py-4">
+          <div className="flex w-full justify-between items-center mb-4 touch-pan-x touch-pan-y">
+              <Select value={selectedPair} onValueChange={setSelectedPair}>
+                <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none h-10">
+                  <SelectValue placeholder="Selecione um par" />
+                </SelectTrigger>
+                <SelectContent className="bg-background text-white border border-gray-700">
+                  {availablePairs.map((pair) => (
+                    <SelectItem
+                      className="font-inter hover:bg-subbackground hover:text-black focus:bg-subbackground focus:text-text"
+                      key={pair.value}
+                      value={pair.value}
+                    >
+                      {pair.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
           <div className="p-2 rounded-full text-black bg-white">
            <UserRound className="w-5 h-5" />
           </div>
@@ -122,28 +141,8 @@ export default function TradingAll() {
         <div className={`lg:w-[350px] w-full flex flex-col bg-background`}>
           {/* Trading Controls */}
           <div className="px-4 max-md:pt-2 touch-pan-x touch-pan-y">
-            <h3 className="text-sm text-gray-400 pt-4 mb-2">Par de moedas</h3>
 
-            {/* Time Selection */}
-            <div className="flex w-full justify-between items-center mb-4 touch-pan-x touch-pan-y">
-              <Select value={selectedPair} onValueChange={setSelectedPair}>
-                <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none h-10">
-                  <SelectValue placeholder="Selecione um par" />
-                </SelectTrigger>
-                <SelectContent className="bg-background text-white border border-gray-700">
-                  {availablePairs.map((pair) => (
-                    <SelectItem
-                      className="font-inter hover:bg-subbackground hover:text-black focus:bg-subbackground focus:text-text"
-                      key={pair.value}
-                      value={pair.value}
-                    >
-                      {pair.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
+            
 
 
             <div className="flex items-center gap-3">
