@@ -131,15 +131,15 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
         </div>
 
         {/* Trading Panel */}
-        <div className={`lg:w-[350px] w-full flex flex-col bg-background`}>
-          {/* Trading Controls */}
-          <div className=" max-md:pt-4 touch-pan-x touch-pan-y">
-
-            <div className="flex items-center gap-3">
-  {/* Input de Tempo */}
-  <div className="touch-pan-x touch-pan-y">
-    <div className="flex items-center bg-subbackground rounded-md p-1">
-      <button
+   <div className={`lg:w-[350px] w-full flex flex-col bg-background`}>
+    
+{/* Trading Controls */}
+ <div className=" max-md:pt-4 touch-pan-x touch-pan-y">
+    <div className="flex items-center gap-3">
+      {/* Input de Tempo */}
+       <div className="touch-pan-x touch-pan-y">
+         <div className="flex items-center bg-subbackground rounded-md p-1">
+          <button
         onClick={() => setInputTempo((prev) => Math.max(1, prev - 1))}
         disabled={inputTempo <= 1}
         className={`p-2 text-btn ${inputTempo <= 1 ? 'opacity-50 cursor-not-allowed' : 'hover:text-btn/80'}`}
@@ -189,8 +189,8 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
       </button>
     </div>
   </div>
+ </div>
 </div>
-            </div>
 
               
             {/* Action Buttons */}
@@ -206,8 +206,6 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
               <div className="">
                 <Order />
               </div>
-            
-
               
               <button
                 onClick={handleUpOperation}
@@ -222,4 +220,3 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
       </div>
     </div>
   );
-}
