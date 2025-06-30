@@ -141,10 +141,10 @@ export default function TradingAll() {
         <div className="lg:w-[350px] w-full flex flex-col bg-background">
           {/* Trading Controls */}
           <div className="max-md:pt-4 touch-pan-x touch-pan-y">
-            <div className="flex w-full items-center gap-3">
+            <div className="flex w-full items-center justify-between">
               {/* Input de Tempo */}
               <div className="touch-pan-x touch-pan-y">
-                <div className="flex flex-col w-full gap-1 bg-subbackground rounded-xl px-4 py-1 w-full text-white">
+                <div className="flex flex-col w-full bg-subbackground rounded-xl px-4 py-1 w-full text-white">
                   <span className="text-sm text-text/60">Tempo</span>
                   <Select
                     value={inputTempo.toString()}
