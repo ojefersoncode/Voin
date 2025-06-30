@@ -141,7 +141,7 @@ export default function TradingAll() {
         <div className="lg:w-[350px] w-full flex flex-col bg-background">
           {/* Trading Controls */}
           <div className="max-md:pt-4 touch-pan-x touch-pan-y">
-            <div className="flex w-full items-center justify-between">
+            <div className="flex flex-1 w-full items-center justify-between">
               {/* Input de Tempo */}
               <div className="touch-pan-x touch-pan-y">
                 <div className="flex flex-col flex-1  w-full bg-subbackground rounded-xl px-4 py-1 w-full text-white">
@@ -172,14 +172,14 @@ export default function TradingAll() {
               <div className="touch-pan-x touch-pan-y">
                 <div className="flex flex-col w-full flex-1 bg-subbackground rounded-xl px-4 py-2 items-center text-center">
                   <span className="text-sm text-text/60">Valor</span>
-                  <div className="flex items-center gap-4 justify-between w-full">
+                  <div className="flex flex-1 items-center gap-4 justify-between w-full">
                     <button
                       onClick={() => setInputSaldo((prev) => Math.max(1, prev - 1))}
                       className="text-btn hover:text-btn/80 transition-colors"
                     >
                       <Minus size={20} />
                     </button>
-                    <span className="text-xl font-bold text-white">R${inputSaldo}</span>
+                    <span className="text-base font-bold text-white">R${inputSaldo}</span>
                     <button
                       onClick={() => setInputSaldo((prev) => prev + 1)}
                       className="text-btn hover:text-btn/80 transition-colors"
