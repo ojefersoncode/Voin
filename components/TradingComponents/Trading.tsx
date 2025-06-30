@@ -95,7 +95,7 @@ export default function TradingAll() {
 
       <header className="bg-background top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between px-2 py-4">
-          <div className="flex w-full justify-between items-center mb-4 touch-pan-x touch-pan-y">
+          <div className="flex justify-between items-center mb-4 touch-pan-x touch-pan-y">
               <Select value={selectedPair} onValueChange={setSelectedPair}>
                 <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border-none h-10">
                   <SelectValue placeholder="Selecione um par" />
