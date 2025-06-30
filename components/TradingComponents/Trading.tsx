@@ -141,7 +141,7 @@ export default function TradingAll() {
         <div className="lg:w-[350px] w-full flex flex-col bg-background">
           {/* Trading Controls */}
           <div className="max-md:pt-4 touch-pan-x touch-pan-y">
-            <div className="flex flex-1 w-full items-center justify-between">
+            <div className="flex flex-1 w-full items-center justify-between gap-4">
               {/* Input de Tempo */}
                 <div className="flex flex-col flex-1  w-full bg-subbackground rounded-xl px-4 py-1 w-full text-white">
                   <span className="text-sm text-text/60">Tempo</span>
@@ -167,7 +167,6 @@ export default function TradingAll() {
               </div>
 
               {/* Input de Saldo */}
-              <div className="touch-pan-x touch-pan-y">
                 <div className="flex flex-col w-full flex-1 bg-subbackground rounded-xl px-4 py-2 items-center text-center">
                   <span className="text-sm text-text/60">Valor</span>
                   <div className="flex flex-1 items-center gap-4 justify-between w-full">
@@ -186,7 +185,6 @@ export default function TradingAll() {
                     </button>
                   </div>
                 </div>
-              </div>
             </div>
 
             {/* Action Buttons */}
