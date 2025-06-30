@@ -109,7 +109,7 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
 
 
           <div className="flex gap-4 items-center touch-pan-x touch-pan-y">
-            <div className"flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center">
               <h1 className="text-sm font-semibold">Saldo</h1>
               <h2 className="text-lg font-sans">BRL:1200,00</h2>
             </div>
@@ -220,6 +220,6 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
           </div>
         </div>
       </div>
-    
+    </div>
   );
 }
