@@ -173,9 +173,9 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
 
   {/* Input de Saldo */}
   <div className="touch-pan-x touch-pan-y">
-<div className="bg-subbackground rounded-xl px-6 py-3 w-full flex flex-col items-center text-center">
-  <span className="text-sm text-text/60 mb-1">Valor</span>
-  <div className="flex items-center justify-between w-full">
+<div className="bg-subbackground rounded-xl px-4 py-2 flex flex-col items-center text-center">
+  <span className="text-sm text-text/60 ">Valor</span>
+  <div className="flex items-center gap-4 justify-between w-full">
     <button
       onClick={() => setInputSaldo((prev) => Math.max(1, prev - 1))}
       className="text-btn hover:text-btn/80 transition-colors"
