@@ -152,7 +152,7 @@ export default function TradingAll() {
                     <SelectTrigger className="bg-subbackground text-base text-white border-none rounded-md w-20 h-6 px-3">
                       <SelectValue placeholder="Selecione o tempo" />
                     </SelectTrigger>
-                    <SelectContent className="bg-subbackground text-white border border-border">
+                    <SelectContent className="bg-subbackground text-white border border-zinc-600">
                       {tempoOptions.map((option) => (
                         <SelectItem
                           key={option.value}
