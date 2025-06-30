@@ -147,13 +147,14 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
     
 {/* Trading Controls */}
  <div className=" max-md:pt-4 touch-pan-x touch-pan-y">
-    <div className="flex items-center gap-3">
+    <div className="flex w-full items-center gap-3">
       {/* Input de Tempo */}
         <div className="touch-pan-x touch-pan-y">
          {/* Select de Tempo com tema atual */}
 <div className="flex flex-col gap-1 bg-subbackground rounded-xl px-4 py-3 w-full text-white">
   <span className="text-sm text-text/60">Tempo</span>
   <Select
+    className="bg-subbackground"
     value={inputTempo.toString()}
     onValueChange={(value) => setInputTempo(Number(value))}
   >
