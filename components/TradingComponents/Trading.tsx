@@ -141,7 +141,7 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
  <div className=" max-md:pt-4 touch-pan-x touch-pan-y">
     <div className="flex items-center gap-3">
       {/* Input de Tempo */}
-       <div className="touch-pan-x touch-pan-y">
+        <div className="touch-pan-x touch-pan-y">
          <div className="flex items-center bg-subbackground rounded-md p-1">
           <button
         onClick={() => setInputTempo((prev) => Math.max(1, prev - 1))}
@@ -220,6 +220,6 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 }
