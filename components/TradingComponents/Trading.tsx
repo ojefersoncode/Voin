@@ -144,13 +144,13 @@ export default function TradingAll() {
             <div className="flex items-center gap-3">
               {/* Input de Tempo */}
               <div className="touch-pan-x touch-pan-y">
-                <div className="flex flex-col gap-1 bg-subbackground rounded-xl px-4 py-3 w-full text-white">
+                <div className="flex flex-col w-full gap-1 bg-subbackground rounded-xl px-4 py-1 w-full text-white">
                   <span className="text-sm text-text/60">Tempo</span>
                   <Select
                     value={inputTempo.toString()}
                     onValueChange={(value) => setInputTempo(Number(value))}
                   >
-                    <SelectTrigger className="bg-background text-white border-none rounded-md h-10 px-3">
+                    <SelectTrigger className="bg-subbackground text-white border-none rounded-md h-10 px-3">
                       <SelectValue placeholder="Selecione o tempo" />
                     </SelectTrigger>
                     <SelectContent className="bg-subbackground text-white border border-border">
@@ -170,7 +170,7 @@ export default function TradingAll() {
 
               {/* Input de Saldo */}
               <div className="touch-pan-x touch-pan-y">
-                <div className="bg-subbackground rounded-xl px-4 py-2 flex flex-col items-center text-center">
+                <div className="w-full bg-subbackground rounded-xl px-4 py-2 flex flex-col items-center text-center">
                   <span className="text-sm text-text/60">Valor</span>
                   <div className="flex items-center gap-4 justify-between w-full">
                     <button
