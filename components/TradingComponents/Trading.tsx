@@ -190,8 +190,6 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
     </div>
   </div>
  </div>
-</div>
-
               
             {/* Action Buttons */}
             <div className="flex w-full items-center justify-between  gap-2 mt-4 mb-2 touch-pan-x touch-pan-y">
@@ -220,3 +218,4 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
       </div>
     </div>
   );
+}
