@@ -42,11 +42,6 @@ export default function TradingAll() {
 
 const [inputSaldo, setInputSaldo] = useState<number>(10);
 
-const handleChangeTempo = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const value = e.target.value.replace(/\D/g, '');
-  const numericValue = Number(value);
-  setInputTempo(numericValue < 1 ? 1 : numericValue > 10 ? 10 : numericValue);
-};
 
 const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
   const value = e.target.value.replace(/\D/g, '');
