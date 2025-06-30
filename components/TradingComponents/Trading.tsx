@@ -143,7 +143,6 @@ export default function TradingAll() {
           <div className="max-md:pt-4 touch-pan-x touch-pan-y">
             <div className="flex flex-1 w-full items-center justify-between">
               {/* Input de Tempo */}
-              <div className="touch-pan-x touch-pan-y">
                 <div className="flex flex-col flex-1  w-full bg-subbackground rounded-xl px-4 py-1 w-full text-white">
                   <span className="text-sm text-text/60">Tempo</span>
                   <Select
@@ -165,7 +164,6 @@ export default function TradingAll() {
                       ))}
                     </SelectContent>
                   </Select>
-                </div>
               </div>
 
               {/* Input de Saldo */}
