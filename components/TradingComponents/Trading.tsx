@@ -40,8 +40,9 @@ export default function TradingAll() {
   { label: '24 horas', value: 1440 },
 ];
 
+// Estados
+const [inputTempo, setInputTempo] = useState<number>(1);
 const [inputSaldo, setInputSaldo] = useState<number>(10);
-
 
 const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
   const value = e.target.value.replace(/\D/g, '');
