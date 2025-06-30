@@ -59,11 +59,8 @@ export const Navbar = ({ user }: { user: User | null }) => {
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container py-2 px-3 md:p-6 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
-            <div className="flex gap-2 text-xl font-bold items-center">
+            <div className="flex items-center">
               <img className="size-8" src="/Nexbattle.png" alt="logo" />
-              <div className="flex">
-                <h1 className="text-gray-100 text-sm font-titan">Nex Battle</h1>
-              </div>
             </div>
           </NavigationMenuItem>
 
@@ -85,9 +82,8 @@ export const Navbar = ({ user }: { user: User | null }) => {
                 side={'right'}
               >
                 <SheetHeader>
-                  <SheetTitle className="flex items-center gap-2 font-titan text-text text-xl select-none">
-                    <img className="size-10" src="/Nexbattle.png" alt="logo" />{' '}
-                    <span>Nex Battle</span>
+                  <SheetTitle className="flex items-center select-none">
+                    <img className="size-8" src="/Nexbattle.png" alt="logo" />
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center text-xl text-text font-titan gap-2 mt-7">
