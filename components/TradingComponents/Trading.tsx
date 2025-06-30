@@ -9,7 +9,7 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import { ArrowUp, ArrowDown, Plus, Minus, Wallet, UserRound } from 'lucide-react';
+import { ArrowUp, ArrowDown, Plus, Minus, Wallet, UserRound, RefreshCw } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
