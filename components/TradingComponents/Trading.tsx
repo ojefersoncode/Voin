@@ -91,13 +91,13 @@ export default function TradingAll() {
         <nav className="flex items-center justify-between px-2 py-4">
           <div className="flex justify-between items-center touch-pan-x touch-pan-y">
             <Select value={selectedPair} onValueChange={setSelectedPair}>
-              <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border border-zinc-300  dark:border-border h-10">
+              <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-titan rounded-lg border border-zinc-300  dark:border-gray-700 h-10">
                 <SelectValue placeholder="Selecione um par" />
               </SelectTrigger>
               <SelectContent className="bg-background text-white border border-gray-700">
                 {availablePairs.map((pair) => (
                   <SelectItem
-                    className="font-inter hover:bg-subbackground hover:text-black focus:bg-subbackground focus:text-text"
+                    className="font-inter hover:bg-subbackground hover:text-black focus:bg-background focus:text-text"
                     key={pair.value}
                     value={pair.value}
                   >
@@ -109,7 +109,7 @@ export default function TradingAll() {
           </div>
 
           <div className="flex gap-4 items-center touch-pan-x touch-pan-y">
-            <div className="p-2 rounded-lg border border-zinc-400 dark:border-zinc-700">
+            <div className="p-2 rounded-lg border border-zinc-400 dark:border-gray-700">
               <RefreshCw className="w-5 h-5" />
             </div>
             <div className="flex flex-col items-start justify-start">
@@ -143,13 +143,13 @@ export default function TradingAll() {
           <div className="max-md:pt-4 touch-pan-x touch-pan-y">
             <div className="flex flex-1 w-full items-center justify-between gap-4">
               {/* Input de Tempo */}
-                <div className="flex flex-col flex-1 items-center justify-center bg-subbackground border border-zinc-300 dark:border-border rounded-xl px-4 py-2 text-white">
+                <div className="flex flex-col flex-1 items-center justify-center bg-subbackground border border-zinc-300 dark:border-zinc-800 rounded-xl px-4 py-2 text-white">
                   <span className="text-xs text-text/60">Tempo</span>
                   <Select
                     value={inputTempo.toString()}
                     onValueChange={(value) => setInputTempo(Number(value))}
                   >
-                    <SelectTrigger className="bg-subbackground text-white border-none rounded-md w-18 h-6 px-3">
+                    <SelectTrigger className="bg-subbackground text-white border-none rounded-md w-20 h-6 px-3">
                       <SelectValue placeholder="Selecione o tempo" />
                     </SelectTrigger>
                     <SelectContent className="bg-subbackground text-white border border-border">
@@ -167,7 +167,7 @@ export default function TradingAll() {
               </div>
 
               {/* Input de Saldo */}
-                <div className="flex flex-col w-full flex-1 bg-subbackground border border-zinc-300 dark:border-border rounded-xl px-4 py-2 items-center text-center">
+                <div className="flex flex-col w-full flex-1 bg-subbackground border border-zinc-300 dark:border-zinc-800 rounded-xl px-4 py-2 items-center text-center">
                   <span className="text-sm text-text/60">Valor</span>
                   <div className="flex flex-1 items-center gap-4 justify-between w-full">
                     <button
@@ -176,7 +176,7 @@ export default function TradingAll() {
                     >
                       <Minus size={20} />
                     </button>
-                    <span className="text-base font-bold text-white">R${inputSaldo}</span>
+                    <span className="text-base text-white">R${inputSaldo}</span>
                     <button
                       onClick={() => setInputSaldo((prev) => prev + 1)}
                       className="text-btn hover:text-btn/80 transition-colors"
