@@ -144,7 +144,7 @@ export default function TradingAll() {
             <div className="flex flex-1 w-full items-center justify-between gap-4">
               {/* Input de Tempo */}
                 <div className="flex flex-col flex-1 items-center justify-center bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-xl px-4 py-2 text-white">
-                  <span className="text-xs text-text/60">Tempo</span>
+                  <span className="text-sm text-text/60">Tempo</span>
                   <Select
                     value={inputTempo.toString()}
                     onValueChange={(value) => setInputTempo(Number(value))}
