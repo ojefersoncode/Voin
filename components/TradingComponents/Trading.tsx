@@ -109,7 +109,7 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
 
 
           <div className="flex gap-4 items-center touch-pan-x touch-pan-y">
-            <div className="p-2 border border-zinc-400 dark:border-border">
+            <div className="p-2 rounded-lg border border-zinc-400 dark:border-border/80">
               <RefreshCw className="w-5 h-5" />
             </div>
             <div className="flex flex-col items-start justify-start">
@@ -173,28 +173,24 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
 
   {/* Input de Saldo */}
   <div className="touch-pan-x touch-pan-y">
-    <div className="flex items-center bg-subbackground rounded-md p-1">
-      <button
-        onClick={() => setInputSaldo((prev) => Math.max(1, prev - 1))}
-        className={`p-2 text-btn hover:text-btn/80`}
-      >
-        <Minus size={18} />
-      </button>
-
-      <Input
-        type="text"
-        value={inputSaldo}
-        onChange={handleChangeSaldo}
-        className="bg-transparent border-none text-center text-lg font-inter flex-1 text-white"
-      />
-
-      <button
-        onClick={() => setInputSaldo((prev) => prev + 1)}
-        className={`p-2 text-btn hover:text-btn/80`}
-      >
-        <Plus size={18} />
-      </button>
-    </div>
+<div className="bg-subbackground rounded-xl px-6 py-3 w-full flex flex-col items-center text-center">
+  <span className="text-sm text-text/60 mb-1">Valor</span>
+  <div className="flex items-center justify-between w-full">
+    <button
+      onClick={() => setInputSaldo((prev) => Math.max(1, prev - 1))}
+      className="text-btn hover:text-btn/80 transition-colors"
+    >
+      <Minus size={20} />
+    </button>
+    <span className="text-xl font-bold text-white">R${inputSaldo}</span>
+    <button
+      onClick={() => setInputSaldo((prev) => prev + 1)}
+      className="text-btn hover:text-btn/80 transition-colors"
+    >
+      <Plus size={20} />
+    </button>
+  </div>
+</div>
   </div>
  </div>
               
