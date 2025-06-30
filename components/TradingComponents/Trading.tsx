@@ -109,7 +109,7 @@ export default function TradingAll() {
           </div>
 
           <div className="flex gap-4 items-center touch-pan-x touch-pan-y">
-            <div className="p-2 rounded-lg border border-zinc-400 dark:border-border/80">
+            <div className="p-2 rounded-lg border border-zinc-400 dark:border-zinc-700">
               <RefreshCw className="w-5 h-5" />
             </div>
             <div className="flex flex-col items-start justify-start">
@@ -143,13 +143,13 @@ export default function TradingAll() {
           <div className="max-md:pt-4 touch-pan-x touch-pan-y">
             <div className="flex flex-1 w-full items-center justify-between gap-4">
               {/* Input de Tempo */}
-                <div className="flex flex-col flex-1  w-full bg-subbackground rounded-xl px-4 py-1 w-full text-white">
-                  <span className="text-sm text-text/60">Tempo</span>
+                <div className="flex flex-col flex-1 w-full items-center bg-subbackground rounded-xl px-4 py-1 w-full text-white">
+                  <span className="text-xs text-text/60">Tempo</span>
                   <Select
                     value={inputTempo.toString()}
                     onValueChange={(value) => setInputTempo(Number(value))}
                   >
-                    <SelectTrigger className="bg-subbackground text-white border-none rounded-md h-10 px-3">
+                    <SelectTrigger className="bg-subbackground text-white border-none rounded-md h-6 px-3">
                       <SelectValue placeholder="Selecione o tempo" />
                     </SelectTrigger>
                     <SelectContent className="bg-subbackground text-white border border-border">
