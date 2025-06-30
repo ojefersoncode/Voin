@@ -109,8 +109,8 @@ const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
 
 
           <div className="flex gap-4 items-center touch-pan-x touch-pan-y">
-            <div>
-              ♡
+            <div className="p-2 border border-zinc-400 dark:border-border">
+              <RefreshCw className="w-5 h-5" />
             </div>
             <div className="flex flex-col items-start justify-start">
               <h1 className="text-sm font-semibold">Saldo</h1>
