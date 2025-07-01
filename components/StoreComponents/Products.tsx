@@ -15,7 +15,7 @@ export default function Store() {
   return (
     <div className="w-full min-h-screen bg-background text-white flex flex-col">
       {/* Conteúdo que pode rolar */}
-      <div className="p-4 space-y-6">
+      <div className="flex-1 p-4 space-y-6">
         {/* Tabs */}
         <div className="flex justify-between items-center">
           <div className="flex gap-2 bg-[#1c1c1e] rounded-full w-fit overflow-hidden">
