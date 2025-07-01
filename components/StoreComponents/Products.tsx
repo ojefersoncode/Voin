@@ -14,7 +14,7 @@ export default function Store() {
   };
 
   return (
-    <div className="w-full bg-background text-white h-auto flex-1 flex flex-col justify-between p-4">
+    <div className="w-full bg-background text-white flex-1 flex flex-col justify-between p-4">
       <div className="space-y-6">
         {/* Tabs */}
         <div className="flex justify-between items-center">
@@ -52,7 +52,7 @@ export default function Store() {
           <div
             onClick={() => handleSelect('pix')}
             className={`border rounded-xl p-4 bg-[#1c1c1e] flex justify-between items-center cursor-pointer ${
-              selected === 'pix' ? 'border-yellow-400' : 'border-transparent'
+              selected === 'pix' ? 'border-blue-400' : 'border-transparent'
             }`}
           >
             <div>
@@ -62,7 +62,7 @@ export default function Store() {
                 <span className="bg-white/10 px-2 py-0.5 rounded">Instantâneo</span>
               </div>
             </div>
-            <span className="text-xs text-yellow-400 bg-yellow-900 px-2 py-0.5 rounded">
+            <span className="text-xs text-yellow-400 bg-blue-900 px-2 py-0.5 rounded">
               Usado pela última vez
             </span>
           </div>
@@ -76,7 +76,7 @@ export default function Store() {
           <div
             onClick={() => handleSelect('picpay')}
             className={`border rounded-xl p-4 bg-[#1c1c1e] flex justify-between items-center cursor-pointer ${
-              selected === 'picpay' ? 'border-yellow-400' : 'border-transparent'
+              selected === 'picpay' ? 'border-blue-400' : 'border-transparent'
             }`}
           >
             <div>
@@ -95,7 +95,7 @@ export default function Store() {
           <div
             onClick={() => handleSelect('ted')}
             className={`border rounded-xl p-4 bg-[#1c1c1e] flex justify-between items-center cursor-pointer ${
-              selected === 'ted' ? 'border-yellow-400' : 'border-transparent'
+              selected === 'ted' ? 'border-blue-400' : 'border-transparent'
             }`}
           >
             <div>
@@ -110,7 +110,7 @@ export default function Store() {
       </div>
 
       {/* Footer */}
-      <div className="bottom-0 border-t border-zinc-700 p-4 space-y-4 bg-[#0f0f0f]">
+      <div className=" border-t border-zinc-700 p-4 space-y-4 bg-[#0f0f0f]">
         <label className="flex items-center text-sm  gap-2">
           <input
             type="checkbox"
