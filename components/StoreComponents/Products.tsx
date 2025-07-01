@@ -14,7 +14,7 @@ export default function Store() {
   };
 
   return (
-    <div className="w-full bg-background min-h-dvh text-white flex flex-col justify-between p-4">
+    <div className="w-full bg-background h-dvh text-white flex flex-col justify-between p-4">
       <div className="space-y-6">
         {/* Tabs */}
         <div className="flex justify-between items-center">
@@ -110,8 +110,8 @@ export default function Store() {
       </div>
 
       {/* Footer */}
-      <div className="border-t border-zinc-700 p-4 space-y-4 bg-[#0f0f0f]">
-        <label className="flex items-center text-sm gap-2">
+      <div className="border-t border-zinc-700 px-4 space-y-4 bg-[#0f0f0f]">
+        <label className="flex items-center text-sm pt-2 gap-2">
           <input
             type="checkbox"
             checked={agreed}
