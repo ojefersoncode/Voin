@@ -22,7 +22,7 @@ export default function Profile({ user }: { user: User }) {
   };
 
   return (
-    <div className=" w-full mx-auto bg-background dark:bg-muted/40 min-h-screen mb-24 touch-pan-x touch-pan-y">
+    <div className=" w-full mx-auto bg-background min-h-screen mb-24 touch-pan-x touch-pan-y">
       <div className=" w-full">
         <NavbarAll />
       </div>
