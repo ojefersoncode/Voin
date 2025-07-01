@@ -13,7 +13,7 @@ export default function Store() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-background text-white flex flex-col">
+    <div className="w-full flex-1 min-h-screen bg-background text-white flex flex-col">
       {/* Conteúdo que pode rolar */}
       <div className="flex-1 p-4 space-y-6">
         {/* Tabs */}
