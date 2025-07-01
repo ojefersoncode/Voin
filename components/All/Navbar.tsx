@@ -9,7 +9,7 @@ export default function NavbarAll() {
         <nav className="flex items-center justify-between py-2 px-2">
           <div className="flex items-center gap-1 sm:px-1 px-2 cursor-pointer">
             <img className="size-10" src="/Nexbattle.png" alt="Nexcoin" />
-            <span className="font-inter text-lg">Nex</span>
+            <span className="font-inter text-lg text-text">Nex</span>
           </div>
 
           <div className="flex gap-4 py-2 px-2">
