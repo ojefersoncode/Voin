@@ -17,7 +17,7 @@ export default function NavbarAll() {
               <BalanceButton />
             </div>
 
-            <div>
+            <div className="rounded-lg border border-zinc-700">
               <ButtonMenu />
             </div>
           </div>
