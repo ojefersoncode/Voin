@@ -13,7 +13,7 @@ export default function NavbarAll() {
           </div>
 
           <div className="flex gap-4 py-2 px-2">
-            <div>
+            <div className="border border-zinc-600">
               <BalanceButton />
             </div>
 
