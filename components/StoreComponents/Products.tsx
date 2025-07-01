@@ -13,7 +13,7 @@ export default function Store() {
   };
 
   return (
-    <div className="w-full h-screen bg-background text-white flex flex-col">
+    <div className="w-full min-h-screen bg-background text-white flex flex-col">
       {/* Conteúdo que pode rolar */}
       <div className="flex-1 overflow-auto p-4 space-y-6">
         {/* Tabs */}
@@ -63,7 +63,7 @@ export default function Store() {
               </div>
             </div>
             <span className="text-xs text-blue-400 bg-blue-900 px-2 py-0.5 rounded">
-              Usado pela última vez
+              Mais usado
             </span>
           </div>
         </div>
