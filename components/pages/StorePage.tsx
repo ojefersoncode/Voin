@@ -13,7 +13,10 @@ export default function StorePage({ user }: { user: User }) {
       <header>
         <NavbarAll />
       </header>
+
+      <main className="flex flex-col flex-1 w-full">
         <Products />
+      </main>
     </div>
   );
 }
