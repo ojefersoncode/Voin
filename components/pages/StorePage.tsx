@@ -4,7 +4,6 @@ import { User } from '@supabase/supabase-js';
 import NavbarAll from '../All/Navbar';
 import Products from '../StoreComponents/Products';
 import { useRouter } from 'next/navigation';
-import Pageback from '../All/Pageback';
 
 export default function StorePage({ user }: { user: User }) {
   const router = useRouter();
@@ -15,11 +14,7 @@ export default function StorePage({ user }: { user: User }) {
         <NavbarAll />
       </header>
 
-      <div className="px-2">
-        <Pageback />
-      </div>
-
-      <main className="flex w-full justify-center items-center py-4">
+      <main className="flex w-full justify-center items-center">
         <Products />
       </main>
     </div>
