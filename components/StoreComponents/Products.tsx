@@ -14,11 +14,11 @@ export default function Store() {
   };
 
   return (
-    <div className="w-full bg-background min-h-screen bg-[#0f0f0f] text-white flex flex-col justify-between">
-      <div className="p-4 space-y-6">
+    <div className="w-full bg-background min-h-dvh text-white flex flex-col justify-between">
+      <div className="px-4 space-y-6">
         {/* Tabs */}
         <div className="flex justify-between items-center">
-          <div className="flex bg-[#1c1c1e] rounded-full w-fit overflow-hidden">
+          <div className="flex gap-2 bg-[#1c1c1e] rounded-full w-fit overflow-hidden">
             <button
               className={`px-4 py-1 text-sm rounded-full ${
                 selected !== 'withdraw'
