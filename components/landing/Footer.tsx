@@ -156,7 +156,7 @@ export const Footer = () => {
               href="https://github.com/Ojefersoncode"
               className="text-btn font-inter transition-all"
             >
-              Nex Battle
+              Nex
             </a>
           </h3>
         </section>
