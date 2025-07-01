@@ -17,9 +17,6 @@ export default function NexWallet({ user }: { user: User }) {
         <NavbarAll />
       </div>
 
-      <div className="flex w-full items-center p-3">
-        <Pageback />
-      </div>
       <div className="pt-2">
         <Balance />
       </div>
