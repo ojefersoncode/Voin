@@ -14,8 +14,8 @@ export default function Store() {
   };
 
   return (
-    <div className="w-full bg-background min-h-dvh text-white flex flex-col justify-between">
-      <div className="px-4 space-y-6">
+    <div className="w-full bg-background min-h-dvh text-white flex flex-col justify-between p-4">
+      <div className="space-y-6">
         {/* Tabs */}
         <div className="flex justify-between items-center">
           <div className="flex gap-2 bg-[#1c1c1e] rounded-full w-fit overflow-hidden">
@@ -110,20 +110,19 @@ export default function Store() {
       </div>
 
       {/* Footer */}
-      <div className="border-t border-white/10 p-4 space-y-4 bg-[#0f0f0f]">
+      <div className="border-t border-zinc-700 p-4 space-y-4 bg-[#0f0f0f]">
         <label className="flex items-center text-sm gap-2">
           <input
             type="checkbox"
             checked={agreed}
             onChange={(e) => setAgreed(e.target.checked)}
           />
-          Eu li e concordo com os{' '}
-          <span className="text-yellow-400 underline">Termos e Condições</span> para
-          o uso da funcionalidade de Trading Fiduciário.
+          Eu li e concordo com os
+          <span className="text-blue-600 underline">Termos e Condições</span>
         </label>
         <button
           onClick={handleContinue}
-          className="bg-yellow-400 w-full py-3 rounded-lg font-medium text-black hover:bg-yellow-300"
+          className="bg-btn w-full py-3 rounded-lg font-medium text-black hover:bg-btn/80"
         >
           Continuar
         </button>
