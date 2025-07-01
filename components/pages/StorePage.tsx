@@ -9,7 +9,7 @@ export default function StorePage({ user }: { user: User }) {
   const router = useRouter();
 
   return (
-    <div className="relative flex flex-col w-full bg-background touch-pan-x touch-pan-y">
+    <div className="min-h-screen flex flex-col w-full bg-background touch-pan-x touch-pan-y">
       <header>
         <NavbarAll />
       </header>
