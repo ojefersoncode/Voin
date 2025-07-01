@@ -108,7 +108,7 @@ export default function Store() {
       </div>
 
       {/* Rodapé fixo */}
-      <div className="border-t border-zinc-700 p-4 space-y-4 bg-[#0f0f0f]">
+      <div className="p-4 relative bottom-0 border-t border-zinc-700 p-4 space-y-4 bg-[#0f0f0f]">
         <label className="flex items-center text-sm gap-2">
           <input
             type="checkbox"
