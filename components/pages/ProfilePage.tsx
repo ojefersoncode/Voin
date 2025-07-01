@@ -7,6 +7,7 @@ import { User } from '@supabase/supabase-js';
 import { Pencil } from 'lucide-react';
 import NavbarAll from '../All/Navbar';
 import NavBottom from '../All/NavBottom';
+import { Footer } from '../landing/Footer';
 
 export default function Profile({ user }: { user: User }) {
   const [name, setName] = useState('Jeferson code');
@@ -134,6 +135,9 @@ export default function Profile({ user }: { user: User }) {
             </Button>
           </CardFooter>
         </div>
+      </div>
+      <div className="w-full">
+        <Footer />
       </div>
     </div>
   );
