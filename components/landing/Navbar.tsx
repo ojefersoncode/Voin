@@ -61,6 +61,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
           <NavigationMenuItem className="font-bold flex">
             <div className="flex items-center">
               <img className="size-8" src="/Nexbattle.png" alt="logo" />
+              <span className="font-inter text-lg">Nex</span>
             </div>
           </NavigationMenuItem>
 
