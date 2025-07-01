@@ -14,7 +14,7 @@ export default function Store() {
   };
 
   return (
-    <div className="w-full bg-background text-white flex flex-col justify-between p-4">
+    <div className="w-full bg-background text-white h-auto flex-1 flex flex-col justify-between p-4">
       <div className="space-y-6">
         {/* Tabs */}
         <div className="flex justify-between items-center">
