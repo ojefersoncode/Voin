@@ -18,7 +18,7 @@ export default function Store() {
       <div className="p-4 space-y-6">
         {/* Tabs */}
         <div className="flex justify-between items-center">
-          <div className="flex gap-2 bg-[#1c1c1e] rounded-full w-fit overflow-hidden">
+          <div className="flex gap-2 bg-[#1c1c1e] rounded-full w-fit overflow-hidden pt-4">
             <button
               className={`px-4 py-1 text-sm rounded-full ${
                 selected !== 'withdraw'
