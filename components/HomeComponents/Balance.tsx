@@ -52,10 +52,13 @@ export default function Balance() {
         onClick={navigateToStore}
         className="p-4 flex w-full justify-between items-center border-none bg-background">
         <Button>
-          Adicionar saldo
+          Adicionar
         </Button>
         <Button>
-          Retirar saldo
+          Retirar
+        </Button>
+        <Button>
+          Transferir
         </Button>
       </Card>
     </div>
