@@ -1,14 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState } from 'react'
+import { useRouter } from 'next/navigation';
 import { Card } from '@/components/ui/card';
 import { Eye, Wallet2 } from 'lucide-react';
 
 export default function Balance() {
   const [showBalance, setShowBalance] = useState(true);
+  const router = useRouter();
+  const navigateToStore = () => router.push('/store');
 
   return (
-    <div className="w-full px-6 max-md:px-4">
+    <div className="w-full">
       <Card className="rounded-xl pt-7 px-4 border-none bg-background">
         {/* Card do Saldo */}
         <div className="w-full flex justify-between md:items-center md:gap-12">
@@ -41,6 +44,18 @@ export default function Balance() {
             </div>
           </div>
         </div>
+      </Card>
+
+      
+      <Card 
+        onClick={navigateToStore}
+        className="flex w-full justify-between items-center">
+        <Button>
+          Adicionar saldo
+        </Button>
+        <Button>
+          Retirar saldo
+        </Button>
       </Card>
     </div>
   );
