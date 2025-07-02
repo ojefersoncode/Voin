@@ -2,6 +2,7 @@
 import { User } from '@supabase/supabase-js';
 import NavbarAll from '../All/Navbar';
 import PreviewMarket from '../HomeComponents/PreviewMarket';
+import TradingViewWidget from './TradingViewWidget'
 import SubMenu from '../HomeComponents/SubMenu';
 import Balance from '../HomeComponents/Balance';
 import { Footer } from '../landing/Footer';
@@ -25,6 +26,7 @@ export default function HomePage({ user }: { user: User }) {
           <SubMenu />
         </div>
 
+        <TradingViewWidget />
         <div className="sm:px-2">
           <PreviewMarket />
         </div>
