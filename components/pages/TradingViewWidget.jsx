@@ -95,7 +95,7 @@ function TradingViewWidget() {
             }
           ],
           "support_host": "https://www.tradingview.com",
-          "backgroundColor": "#131722",
+          "backgroundColor": "#212121",
           "width": "400",
           "height": "550",
           "showSymbolLogo": true,
