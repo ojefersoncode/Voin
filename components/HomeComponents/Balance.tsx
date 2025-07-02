@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/Button';
 import { Eye, Wallet2 } from 'lucide-react';
 
 export default function Balance() {
