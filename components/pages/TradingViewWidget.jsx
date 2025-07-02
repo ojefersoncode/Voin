@@ -107,9 +107,10 @@ function TradingViewWidget() {
   );
 
   return (
-    <div className="tradingview-widget-container" ref={container}>
-      <div className="tradingview-widget-container__widget"></div>
-      <div className="tradingview-widget-copyright"><a href="https://br.tradingview.com/" rel="noopener nofollow" target="_blank"><span className="blue-text">Monitore todos os mercados no TradingView</span></a></div>
+    <div className="flex w-full">
+       <div className="tradingview-widget-container" ref={container}>
+         <div className="tradingview-widget-container__widget"></div>
+       </div>
     </div>
   );
 }
