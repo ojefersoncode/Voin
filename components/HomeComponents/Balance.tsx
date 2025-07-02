@@ -51,13 +51,13 @@ export default function Balance() {
       <Card 
         onClick={navigateToStore}
         className="p-4 flex gap-4 justify-between items-center border-none bg-background">
-         <Button className="flex-1">
+         <Button className="flex-1 bg-subbackground border border-zinc-700">
             Adicionar
           </Button>
-          <Button className="flex-1">
+          <Button className="flex-1 bg-subbackground border border-zinc-700">
             Retirar
           </Button>
-          <Button className="flex-1">
+          <Button className="flex-1 bg-subbackground border border-zinc-700">
             Transferir
           </Button>
        </Card>
