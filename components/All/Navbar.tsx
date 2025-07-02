@@ -1,5 +1,4 @@
 import { Dessert } from 'lucide-react';
-import BalanceButton from './BalanceButton';
 import ButtonMenu from './ButtonMenu';
 
 export default function NavbarAll() {
@@ -9,18 +8,11 @@ export default function NavbarAll() {
         <nav className="flex items-center justify-between px-2">
           <div className="flex items-center gap-1 sm:px-1 px-2 cursor-pointer">
             <img className="size-8" src="/Nexbattle.png" alt="Nexcoin" />
-            
           </div>
-
-          <div className="flex gap-4 py-2 px-2">
-            <div className="rounded-lg border border-zinc-700">
-              <BalanceButton />
-            </div>
-
+        
             <div className="rounded-lg border border-zinc-700">
               <ButtonMenu />
             </div>
-          </div>
         </nav>
       </header>
     </>
