@@ -62,7 +62,7 @@ export default function Store() {
                 <span className="bg-white/10 px-2 py-0.5 rounded">Instantâneo</span>
               </div>
             </div>
-            <span className="text-xs text-blue-400 bg-blue-900 px-2 py-0.5 rounded">
+            <span className="text-xs text-text bg-blue-900 px-2 py-0.5 rounded">
               Mais usado
             </span>
           </div>
@@ -120,7 +120,7 @@ export default function Store() {
         </label>
         <button
           onClick={handleContinue}
-          className="bg-btn w-full py-3 rounded-lg font-medium text-black hover:bg-btn/80"
+          className="bg-btn w-full py-3 rounded-lg font-medium text-text hover:bg-btn/80"
         >
           Continuar
         </button>
