@@ -13,10 +13,10 @@ export default function BalanceButton() {
     <>
        <Button 
          onClick={navigateToStore}
-         className="p-0 border-none outline-none rounded-lg bg-background hover:bg-background/80">
-            <div className="flex w-full text-text justify-center items-center gap-2 p-2 rounded-xl">
+          className="p-0 border-none outline-none rounded-lg bg-subbackground hover:bg-subbackground">
+            <div className="flex w-full text-text justify-center items-center gap-2 p-2">
               <img className="size-6" src="/Coin/Nexcoin.png" alt="logo" />
-              <h1 className="mr-1 font-inter text-text/90 text-base">
+              <h1 className="font-inter text-text/90 text-base">
                 130.000.00
               </h1>
             </div>
