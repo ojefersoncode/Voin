@@ -107,7 +107,7 @@ function TradingViewWidget() {
   );
 
   return (
-    <div className="flex w-full">
+    <div className="flex w-full justify-center items-center">
        <div className="tradingview-widget-container" ref={container}>
          <div className="tradingview-widget-container__widget"></div>
        </div>
