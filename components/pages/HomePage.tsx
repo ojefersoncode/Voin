@@ -21,7 +21,7 @@ export default function HomePage({ user }: { user: User }) {
           <Balance />
         </div>
 
-        <div className="py-6">
+        <div className="pb-4">
           <SubMenu />
         </div>
 
