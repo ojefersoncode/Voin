@@ -27,9 +27,6 @@ export default function HomePage({ user }: { user: User }) {
         </div>
 
         <TradingViewWidget />
-        <div className="sm:px-2">
-          <PreviewMarket />
-        </div>
 
         <hr className="border-subbackground opacity-70 my-2" />
 
