@@ -50,7 +50,7 @@ export default function Balance() {
       
       <Card 
         onClick={navigateToStore}
-        className="flex w-full justify-between items-center">
+        className="p-4 flex w-full justify-between items-center border-none bg-background">
         <Button>
           Adicionar saldo
         </Button>
