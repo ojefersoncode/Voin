@@ -30,8 +30,8 @@ const poppins = PoppinsFont({
 });
 
 const meta = {
-  title: 'Nex Battle',
-  description: 'Participe de torneios de trading.',
+  title: 'Nex',
+  description: 'Plataformas de cripto para gamers.',
   cardImage: '/banner.png',
   robots: 'follow, index',
   favicon: '/Nexbattle.png',
@@ -44,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: meta.description,
     referrer: 'origin-when-cross-origin',
     keywords: [
-      'Voin',
+      'Nex',
       'Trade',
       'Cripto',
       'Bitcoin',
@@ -54,13 +54,14 @@ export async function generateMetadata(): Promise<Metadata> {
       'Campeonatos',
       'Grana extra',
       'Ativo',
+      'Games',
       'Earn',
       'Gain',
       'Green',
       'Game',
       'Jogos'
     ],
-    authors: [{ name: 'Nex battle', url: 'https://Nexbattle.com/' }],
+    authors: [{ name: 'Nex', url: 'https://Nexprotocol.com/' }],
     creator: 'OjersonCode',
     publisher: 'OjefersonCode',
     robots: meta.robots,
@@ -76,7 +77,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      site: '@nexbattle',
+      site: '@nexprotocol',
       creator: 'ojefersoncode',
       title: meta.title,
       description: meta.description,
