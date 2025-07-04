@@ -10,7 +10,7 @@ export default function NavbarAll() {
             <img className="size-8" src="/Nexbattle.png" alt="Nexcoin" />
           </div>
         
-            <div className="rounded-lg border border-zinc-700">
+            <div className="rounded-lg border border-zinc-800">
               <ButtonMenu />
             </div>
         </nav>
