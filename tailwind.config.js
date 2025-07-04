@@ -33,7 +33,7 @@ module.exports = {
         high: '#FFB200',
         text: '#f0f1f5',
         textocean: '#2632D9',
-        subtext: '#007dff',
+        subtext: '#0075ff',
         select: '#CCD2D3',
         btn: '#4a5df9',
         btn2: '#FBA518',
