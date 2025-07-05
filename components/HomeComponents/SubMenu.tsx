@@ -18,15 +18,14 @@ export default function SubMenu() {
       label: 'Trade',
       route: '/trade'
     },
-    { icon: <Gift className="size-6" />, label: 'Bônus', route: '/bonus' },
-    { icon: <Share className="size-6" />, label: 'Convidar', route: '/Invite' },
     {
       icon: <Megaphone className="size-6" />,
       label: 'Novidades',
       route: '/blog'
     },
-
+    { icon: <Gift className="size-6" />, label: 'Bônus', route: '/bonus' },
     { icon: <Calendar className="size-6" />, label: 'Tarefas', route: '/task' },
+    { icon: <Share className="size-6" />, label: 'Convidar', route: '/Invite' }
   ];
 
   return (
