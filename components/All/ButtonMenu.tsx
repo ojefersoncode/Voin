@@ -92,22 +92,18 @@ export default function ButtonMenu() {
                     <UserCircle className="w-8 h-8 text-text" />
                   </div>
                   <div className="flex">
-                    <h2 className="text-sm font-inter text-text">
-                      Jeferson
+                    <h2 className="text-[1.3rem] font-inter text-text">
+                      BRL
                     </h2>
                   </div>
+                  <div className="flex w-full text-zinc-400 items-center text-xs gap-1 py-0 cursor-pointer">
+                  <span className="font-inter">#268434192</span>
+                  <Copy className="size-3" />
+                </div>
                 </div>
               </div>
 
-              <form className="flex flex-col px-1 pb-2 text-text">
-                <label className="text-[0.70rem] mr-1 font-inter">
-                  Id da conta
-                </label>
-                <div className="flex w-full items-center text-xs gap-1 py-0 cursor-pointer">
-                  <span className="font-bold">ID: 268434192</span>
-                  <Copy className="size-3" />
-                </div>
-              </form>
+              
             </div>
           </DropdownMenuLabel>
           <DropdownMenuGroup className="touch-pan-x touch-pan-y text-text font-inter">
