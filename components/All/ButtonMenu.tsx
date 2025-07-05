@@ -96,16 +96,6 @@ export default function ButtonMenu() {
                       Jeferson
                     </h2>
                   </div>
-                  <div>
-                    <Button
-                      variant="ghost"
-                      onClick={navigateToProfile}
-                      size="sm"
-                      className="ml-auto bg-transparent hover:bg-transparent hover:text-text border-none focus:border-none text-text px-2 py-0"
-                    >
-                      <Pen className="size-4" />
-                    </Button>
-                  </div>
                 </div>
               </div>
 
