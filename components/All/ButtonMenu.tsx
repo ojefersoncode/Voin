@@ -88,16 +88,14 @@ export default function ButtonMenu() {
             <div className="w-full flex flex-col rounded-lg p-2 bg-subbackground">
               <div className="flex flex-col items-center py-2">
                 <div className="flex w-full items-center gap-3">
-                  <div className="rounded-full flex items-center justify-center">
+                  <div className="flex items-center gap-2">
                     <img className="size-5" src="/Nexbattle.png" alt="BRL" />
+                   <h2 className="text-[0.65rem] font-inter text-text">BRL</h2>
                   </div>
-                  <div className="flex">
-                    <h2 className="text-[0.65rem] font-inter text-text">
-                      BRL
-                    </h2>
-                  </div>
+                  
+                  
                   <div className="flex w-full text-zinc-400 items-center text-xs gap-1 py-0 cursor-pointer">
-                  <span className="font-inter">#268434192</span>
+                  <span className="text-[p.65rem] font-inter">#268434192</span>
                   <Copy className="size-3" />
                 </div>
                 </div>
