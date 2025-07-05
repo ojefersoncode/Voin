@@ -14,18 +14,18 @@ export default function SubMenu() {
 
   const menuItems = [
     {
-      icon: <TrendingUp className="size-6" />,
+      icon: <TrendingUp className="size-6 max-md:size-5" />,
       label: 'Trade',
       route: '/trade'
     },
     {
-      icon: <Megaphone className="size-6" />,
+      icon: <Megaphone className="size-6 max-md:size-5" />,
       label: 'Novidades',
       route: '/blog'
     },
-    { icon: <Gift className="size-6" />, label: 'Bônus', route: '/bonus' },
-    { icon: <Calendar className="size-6" />, label: 'Tarefas', route: '/task' },
-    { icon: <Share className="size-6" />, label: 'Convidar', route: '/Invite' }
+    { icon: <Gift className="size-6 max-md:size-5" />, label: 'Bônus', route: '/bonus' },
+    { icon: <Calendar className="size-6 max-md:size-5" />, label: 'Tarefas', route: '/task' },
+    { icon: <Share className="size-6 max-md:size-5" />, label: 'Convidar', route: '/Invite' }
   ];
 
   return (
