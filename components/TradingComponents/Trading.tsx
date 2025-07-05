@@ -152,7 +152,7 @@ export default function TradingAll() {
                     value={inputTempo.toString()}
                     onValueChange={(value) => setInputTempo(Number(value))}
                   >
-                    <SelectTrigger className="bg-subbackground text-base text-white border-none rounded-md w-20 h-6 px-3">
+                    <SelectTrigger className="bg-subbackground text-base text-white border-none rounded-md w-24 h-6 px-2">
                       <SelectValue placeholder="Selecione o tempo" />
                     </SelectTrigger>
                     <SelectContent className="bg-subbackground text-white border border-zinc-600">
