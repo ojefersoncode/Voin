@@ -30,7 +30,7 @@ export default function SubMenu() {
 
   return (
     <div className="w-full bg-background mt-4 pb-2 max-md:px-2">
-      <div className="bg-background border-none">
+      <div className="bg-background border border-zinc-800">
         <div className="flex flex-col">
           <div className="grid grid-cols-5 justify-between gap-4">
             {menuItems.map((item, index) => (
