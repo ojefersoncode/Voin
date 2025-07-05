@@ -108,13 +108,13 @@ export default function TradingAll() {
             </Select>
           </div>
 
-          <div className="flex gap-2 px-3 py-1 items-center rounded-lg border border-zinc-700 touch-pan-x touch-pan-y">
-            <div className="">
+          <div className="flex gap-2 px-2 py-1 items-center rounded-lg border border-zinc-700 touch-pan-x touch-pan-y">
+            <div className="p-0">
               <RefreshCw className="w-5 h-5" />
             </div>
-            <div className="flex flex-col items-start justify-start">
+            <div className="flex p-0 flex-col items-start justify-start">
               <h1 className="text-xs text-zinc-400 p-0 m-0 font-semibold">Saldo</h1>
-              <h2 className="text-sm font-inter">R$ 1200,00</h2>
+              <h2 className="text-xs font-inter p-0">R$ 1200,00</h2>
             </div>
           </div>
 
