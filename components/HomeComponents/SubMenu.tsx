@@ -47,7 +47,7 @@ export default function SubMenu() {
                     {item.icon}
                   </div>
                 </div>
-                <span className="mt-2 sm:mt-6 font-inter text-xs sm:text-base text-text">
+                <span className="mt-2 font-inter text-xs sm:text-base text-text">
                   {item.label}
                 </span>
               </div>
