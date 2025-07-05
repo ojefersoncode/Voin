@@ -38,7 +38,7 @@ export default function SubMenu() {
                 key={index}
                 className="flex flex-col justify-center items-center"
               >
-                <div className="flex flex-col justify-center items-center bg-subbackground border border-zinc-800 active:scale-90  rounded-lg transition-all duration-300">
+                <div className="flex flex-col justify-center items-center bg-subbackground border border-zinc-700 active:scale-90  rounded-lg transition-all duration-300">
                   <div
                     onClick={() => item.route && router.push(item.route)}
                     className="bg-subbackground duration-300 rounded-xl p-4 flex flex-col items-center justify-center cursor-pointer font-inter text-center active:scale-90 transition-all text-subtext"
