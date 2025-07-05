@@ -20,7 +20,7 @@ export default function SubMenu() {
     },
     {
       icon: <Megaphone className="size-6 max-md:size-5" />,
-      label: 'Notícias,
+      label: 'Notícias',
       route: '/blog'
     },
     { icon: <Gift className="size-6 max-md:size-5" />, label: 'Bônus', route: '/bonus' },
