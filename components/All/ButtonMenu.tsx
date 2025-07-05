@@ -92,7 +92,7 @@ export default function ButtonMenu() {
                     <UserCircle className="w-8 h-8 text-text" />
                   </div>
                   <div className="flex">
-                    <h2 className="text-[1.3rem] font-inter text-text">
+                    <h2 className="text-[0.45rem] font-inter text-text">
                       BRL
                     </h2>
                   </div>
@@ -101,6 +101,9 @@ export default function ButtonMenu() {
                   <Copy className="size-3" />
                 </div>
                 </div>
+
+
+                
               </div>
 
               
