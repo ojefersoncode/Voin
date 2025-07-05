@@ -30,7 +30,7 @@ export default function SubMenu() {
 
   return (
     <div className="w-full bg-background mt-4 pb-2 max-md:px-2">
-      <div className="bg-background border border-zinc-800">
+      <div className="bg-background">
         <div className="flex flex-col">
           <div className="grid grid-cols-5 justify-between gap-4">
             {menuItems.map((item, index) => (
@@ -38,7 +38,7 @@ export default function SubMenu() {
                 key={index}
                 className="flex flex-col justify-center items-center"
               >
-                <div className="flex flex-col justify-center items-center bg-subbackground active:scale-90  rounded-xl transition-all duration-300">
+                <div className="flex flex-col justify-center items-center bg-subbackground border border-zinc-800 active:scale-90  rounded-lg transition-all duration-300">
                   <div
                     onClick={() => item.route && router.push(item.route)}
                     className="bg-subbackground duration-300 rounded-xl p-4 flex flex-col items-center justify-center cursor-pointer font-inter text-center active:scale-90 transition-all text-subtext"
