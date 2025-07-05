@@ -108,8 +108,8 @@ export default function TradingAll() {
             </Select>
           </div>
 
-          <div className="flex gap-4 items-center touch-pan-x touch-pan-y">
-            <div className="p-2 rounded-lg border border-zinc-600 dark:border-zinc-600">
+          <div className="flex gap-4 items-center rounded-lg border border-zinc-700 touch-pan-x touch-pan-y">
+            <div className="">
               <RefreshCw className="w-5 h-5" />
             </div>
             <div className="flex flex-col items-start justify-start">
