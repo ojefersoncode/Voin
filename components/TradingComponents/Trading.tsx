@@ -108,7 +108,9 @@ export default function TradingAll() {
             </Select>
           </div>
 
-          <div className="flex gap-2 px-2 py-1 items-center rounded-lg border border-zinc-700 touch-pan-x touch-pan-y">
+
+          <div className="flex items-center gap-4">
+          <div className="flex gap-2 px-3 py-1 items-center rounded-lg border border-zinc-700 touch-pan-x touch-pan-y">
             <div className="p-0">
               <RefreshCw className="w-5 h-5" />
             </div>
@@ -120,7 +122,10 @@ export default function TradingAll() {
 
           <div className="rounded-full p-2 text-black bg-white">
               <UserRound className="w-5 h-5" />
-            </div>
+         </div>
+
+
+          </div>
         </nav>
       </header>
 
