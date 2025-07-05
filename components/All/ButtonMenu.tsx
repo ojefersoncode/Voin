@@ -112,37 +112,37 @@ export default function ButtonMenu() {
           </DropdownMenuLabel>
           <DropdownMenuGroup className="touch-pan-x touch-pan-y text-text font-inter">
             <DropdownMenuItem
-              className="mt-2 text-text hover:text-btn"
+              className="mt-2 text-xs text-text hover:text-btn"
               onClick={navigateToProfile}
             >
-              <User className="size-5 mr-2 hover:text-btn" />
+              <User className="size-4 mr-2 hover:text-btn" />
               <span>Perfil</span>
             </DropdownMenuItem>
             <DropdownMenuItem
-              className="mt-2 text-text hover:text-text"
+              className="mt-2 text-xs text-text hover:text-text"
               onClick={navigateToWallet}
             >
-              <Wallet className="size-5 mr-2 " />
+              <Wallet className="size-4 mr-2 " />
               <span>Carteira</span>
             </DropdownMenuItem>
 
-            <DropdownMenuItem className="mt-2 text-text hover:text-text">
-              <PhoneCall className="size-5 mr-2" />
+            <DropdownMenuItem className="mt-2 text-xs text-text hover:text-text">
+              <PhoneCall className="size-4 mr-2" />
               <span>Suporte</span>
             </DropdownMenuItem>
             <DropdownMenuItem
-              className="mt-2 text-text hover:text-text"
+              className="mt-2 text-xs text-text hover:text-text"
               onClick={navigateToSettings}
             >
-              <Settings className="size-5 mr-2" />
+              <Settings className="size-4 mr-2" />
               <span>Configurações</span>
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={handleSignOut}
               disabled={loading}
-              className="my-2 text-text hover:text-text"
+              className="my-2 text-xs text-text hover:text-text"
             >
-              <LogOut className="size-5 mr-2" />
+              <LogOut className="size-4 mr-2" />
               <span>Sair</span>
             </DropdownMenuItem>
           </DropdownMenuGroup>
