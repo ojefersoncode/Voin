@@ -20,7 +20,7 @@ export default function SubMenu() {
     },
     {
       icon: <Megaphone className="size-6 max-md:size-5" />,
-      label: 'Novidades',
+      label: 'Notícias,
       route: '/blog'
     },
     { icon: <Gift className="size-6 max-md:size-5" />, label: 'Bônus', route: '/bonus' },
@@ -41,7 +41,7 @@ export default function SubMenu() {
                 <div className="flex flex-col justify-center items-center bg-subbackground border border-zinc-700 active:scale-90  rounded-lg transition-all duration-300">
                   <div
                     onClick={() => item.route && router.push(item.route)}
-                    className="bg-subbackground duration-300 rounded-xl p-4 flex flex-col items-center justify-center cursor-pointer font-inter text-center active:scale-90 transition-all text-subtext"
+                    className="bg-subbackground duration-300 rounded-xl p-4 flex flex-col items-center justify-center cursor-pointer font-inter text-center active:scale-90 transition-all text-btn"
                   >
                     {item.icon}
                   </div>
