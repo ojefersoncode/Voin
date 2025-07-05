@@ -92,7 +92,7 @@ export default function ButtonMenu() {
                     <UserCircle className="w-8 h-8 text-text" />
                   </div>
                   <div className="flex">
-                    <h2 className="text-base px-1 font-inter text-text">
+                    <h2 className="text-sm font-inter text-text">
                       Jeferson
                     </h2>
                   </div>
