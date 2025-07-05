@@ -89,10 +89,10 @@ export default function ButtonMenu() {
               <div className="flex flex-col items-center py-2">
                 <div className="flex w-full items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-btn flex items-center justify-center">
-                    <UserCircle className="w-8 h-8 text-text" />
+                    <img className="size-6" src="/Nexbattle.png" alt="BRL" />
                   </div>
                   <div className="flex">
-                    <h2 className="text-[0.45rem] font-inter text-text">
+                    <h2 className="text-[0.65rem] font-inter text-text">
                       BRL
                     </h2>
                   </div>
