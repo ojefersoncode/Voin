@@ -1,7 +1,6 @@
 'use client';
 
 import {
-  Copy,
   Grip,
   LogOut,
   Pen,
@@ -93,11 +92,7 @@ export default function ButtonMenu() {
                    <h2 className="text-[0.65rem] font-inter text-text">BRL</h2>
                   </div>
                   
-                  
-                  <div className="flex w-full text-zinc-400 items-center text-xs gap-1 py-0 cursor-pointer">
-                  <span className="text-[p.65rem] font-inter">#268434192</span>
-                  <Copy className="size-3" />
-                </div>
+                  </Wallet>
                 </div>
 
 
