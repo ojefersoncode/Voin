@@ -92,7 +92,7 @@ export default function ButtonMenu() {
                    <h2 className="text-[0.65rem] font-inter text-text">BRL</h2>
                   </div>
                   
-                  </Wallet>
+                  <Wallet />
                 </div>
 
 
