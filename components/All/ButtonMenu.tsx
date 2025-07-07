@@ -86,15 +86,15 @@ export default function ButtonMenu() {
           <DropdownMenuLabel className="p-1 touch-pan-x touch-pan-y">
             <div className="w-full flex flex-col rounded-lg p-2 bg-subbackground">
               <div className="flex flex-col items-center py-2">
+
+                
                 <div className="flex w-full items-center justify-between">
                   <div className="flex items-center gap-1">
-                    <img className="size-5" src="/Nexbattle.png" alt="BRL" />
+                    <img className="size-5" src="/Brl.png" alt="BRL" />
                    <h2 className="text-[0.65rem] font-inter text-text">BRL</h2>
                   </div>
-                  
                   <Wallet />
                 </div>
-
 
                 
               </div>
