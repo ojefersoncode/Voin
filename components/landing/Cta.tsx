@@ -1,7 +1,5 @@
 'use client';
 
-import { CaptureLeads } from './CaptureLeads';
-
 export const Cta = () => {
   return (
     <section id="cta" className="w-full mt-2">
@@ -16,9 +14,7 @@ export const Cta = () => {
         </h2>
       </div>
 
-      <div className="w-full">
-        <CaptureLeads />
-      </div>
+      <div className="w-full"></div>
     </section>
   );
 };
