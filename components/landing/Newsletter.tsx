@@ -11,13 +11,15 @@ export const Newsletter = () => {
   return (
     <section id="newsletter">
       <div className="container py-4 sm:py-4">
-        <div className="border py-12">
+        <div className=" bg-subbackground rounded py-12">
           <div className="px-4">
-            <h3 className="text-center text-4xl md:text-5xl font-bold">
+            <h3 className="text-center text-umber-50 text-4xl md:text-5xl font-bold">
               Entre para nossa{' '}
-              <span className="bg-gradient-to-b text-red-600">Newsletter</span>
+              <span className="bg-gradient-to-b text-umber-400">
+                Newsletter
+              </span>
             </h3>
-            <p className="text-xl text-muted-foreground text-center mt-4 mb-8">
+            <p className="text-xl text-umber-50/70 text-center mt-4 mb-8">
               Receba as melhores novidades e atualizações direto no seu email.
             </p>
 
@@ -27,10 +29,12 @@ export const Newsletter = () => {
             >
               <Input
                 placeholder="ojefersoncode@gmail.com"
-                className="bg-muted/50 dark:bg-muted/80 "
+                className="border bg-umber-400 dark:bg-umber-400 font-inter text-blackground"
                 aria-label="email"
               />
-              <Button className="w-full">Inscrever</Button>
+              <Button className="w-full border bg-subbackground dark:bg-subbackground">
+                Inscrever
+              </Button>
             </form>
           </div>
         </div>

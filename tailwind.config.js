@@ -27,10 +27,10 @@ module.exports = {
         yellow: 'url("/cursor.png"), auto'
       },
       colors: {
-        border: '#163395',
-        blackground: '#0F0F10',
-        background: '#010D35',
-        subbackground: '#181818',
+        border: '#f2ff30',
+        blackground: '#0E0E11',
+        background: '#0E0E11',
+        subbackground: '#18181B',
         high: '#093ADB',
         text: '#f0f1f5',
         textocean: '#2632D9',
@@ -38,6 +38,19 @@ module.exports = {
         select: '#CCD2D3',
         btn: '#103AC5',
         btn2: '#FBA518',
+        umber: {
+          50: '#fcffe5',
+          100: '#f6ffbc',
+          200: '#f1ff7c',
+          300: '#f2ff30',
+          400: '#feff00',
+          500: '#ffe400',
+          600: '#e3b200',
+          700: '#b47e00',
+          800: '#946200',
+          900: '#7a4d06',
+          950: '#492900'
+        },
 
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

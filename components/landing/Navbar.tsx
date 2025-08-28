@@ -68,18 +68,18 @@ export const Navbar = ({ user }: { user: User | null }) => {
           {/* mobile */}
           <span className="flex md:hidden bg-transparent">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger className="px-2 text-btn" asChild>
+              <SheetTrigger className="px-2 text-umber-500" asChild>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-btn bg-transparent hover:bg-transparent"
+                  className="text-umber-500 bg-transparent hover:bg-transparent"
                 >
-                  <Menu className="size-5 text-btn" />
+                  <Menu className="size-5 text-umber-500" />
                 </Button>
               </SheetTrigger>
 
               <SheetContent
-                className="w-full bg-background border-none text-btn"
+                className="w-full bg-background border-none text-umber-500"
                 side={'right'}
               >
                 <SheetHeader>
@@ -87,14 +87,14 @@ export const Navbar = ({ user }: { user: User | null }) => {
                     <img className="size-8" src="/Nexbattle.png" alt="logo" />
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col justify-center items-center text-xl text-text font-titan gap-2 mt-7">
+                <nav className="flex flex-col justify-center items-center text-lg text-text font-inter gap-2 mt-7">
                   {routeList.map(({ href, label }: RouteProps) => (
                     <a
                       rel="noreferrer noopener"
                       key={label}
                       href={href}
                       onClick={() => setIsOpen(false)}
-                      className="mt-4 hover:text-btn transition-colors"
+                      className="mt-4 hover:text-umber-500 transition-colors"
                     >
                       {label}
                     </a>
@@ -105,7 +105,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                     passHref
                   >
                     <Button
-                      className="w-full px-4 py-0.5 rounded-lg font-inter text-base text-text bg-btn/80 hover:bg-btn/70 transition-colors shadow-btn shadow-md drop-shadow-md"
+                      className="w-full px-4 py-0.5 rounded-lg font-inter text-lg text-umber-950 bg-umber-500 hover:text-blackground transition-colors"
                       variant="ghost"
                     >
                       Entrar
@@ -124,8 +124,8 @@ export const Navbar = ({ user }: { user: User | null }) => {
                 href={route.href}
                 key={i}
                 className={`text-[14px] ${
-                  route.label === 'Inicio' ? 'text-btn' : 'text-white'
-                } ${buttonVariants({ variant: 'ghost' })} hover:text-text/70`}
+                  route.label === 'Inicio' ? 'text-umber-500' : 'text-white'
+                } ${buttonVariants({ variant: 'ghost' })} hover:text-umber-100`}
               >
                 {route.label}
               </a>
@@ -135,7 +135,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
           <div className="hidden md:flex gap-4">
             <Link href="/Home" passHref>
               <Button
-                className="px-4 py-0.5 font-inter rounded-lg text-base shadow-btn shadow-md drop-shadow-md text-text bg-btn hover:bg-btn/80"
+                className="px-4 py-0.5 font-inter rounded-lg text-base text-umber-950 bg-umber-200 hover:bg-umber-200"
                 variant="ghost"
               >
                 Entrar
