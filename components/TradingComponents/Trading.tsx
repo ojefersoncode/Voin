@@ -17,7 +17,8 @@ import {
   UserRound,
   RefreshCw,
   Wallet,
-  History
+  History,
+  Menu
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useToast } from '../ui/use-toast';
@@ -100,11 +101,11 @@ export default function TradingAll() {
       <header className="bg-blackground top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between px-2 py-2">
           <div className="flex gap-4 items-center touch-pan-x touch-pan-y">
-            <span className="font-inter px-2 text-lg max-md:text-base text-umber-500 dark:text-umber-500 select-none">
+            <span className="font-inter text-lg max-md:text-base text-umber-500 dark:text-umber-500 select-none">
               NEX
             </span>
             <Select value={selectedPair} onValueChange={setSelectedPair}>
-              <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-inter rounded-sm border border-zinc-600  dark:border-gray-600 h-10 max-md:w-28 w-32">
+              <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-inter rounded-sm border border-zinc-600  dark:border-gray-600 h-10">
                 <SelectValue placeholder="Selecione um par" />
               </SelectTrigger>
               <SelectContent className="bg-black text-white border border-gray-700">
@@ -122,7 +123,7 @@ export default function TradingAll() {
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="flex gap-2 px-3 py-1 items-center rounded-lg touch-pan-x touch-pan-y">
+            <div className="flex gap-2 items-center rounded-lg touch-pan-x touch-pan-y">
               <Order />
               <div className="flex p-1 flex-col items-start justify-start">
                 <div className="flex items-center gap-1 text-xs text-red-500 p-0 m-0 font-semibold">
@@ -137,9 +138,9 @@ export default function TradingAll() {
               </Button>
             </div>
 
-            <div className="rounded-full p-2 text-black bg-white">
-              <UserRound className="w-5 h-5" />
-            </div>
+            <Button className="p-0 text-text dark:text-text">
+              <Menu className="size-6" />
+            </Button>
           </div>
         </nav>
       </header>
