@@ -119,7 +119,7 @@ export function DotPattern({
     >
       <defs>
         <radialGradient id={`${id}-gradient`}>
-          <stop offset="0%" stopColor="currentColor" stopOpacity="1" />
+          <stop offset="70%" stopColor="currentColor" stopOpacity="1" />
           <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
         </radialGradient>
       </defs>
@@ -130,7 +130,7 @@ export function DotPattern({
           cy={dot.y}
           r={cr}
           fill={glow ? `url(#${id}-gradient)` : 'currentColor'}
-          className="text-neutral-400/80"
+          className="text-umber-300"
           initial={glow ? { opacity: 0.4, scale: 1 } : {}}
           animate={
             glow

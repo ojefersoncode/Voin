@@ -27,7 +27,7 @@ module.exports = {
         yellow: 'url("/cursor.png"), auto'
       },
       colors: {
-        border: '#f2ff30',
+        border: '#77fe81',
         blackground: '#0E0E11',
         background: '#0E0E11',
         subbackground: '#18181B',
@@ -36,20 +36,20 @@ module.exports = {
         textocean: '#2632D9',
         subtext: '#0075ff',
         select: '#CCD2D3',
-        btn: '#103AC5',
+        btn: '#068f11',
         btn2: '#FBA518',
         umber: {
-          50: '#fcffe5',
-          100: '#f6ffbc',
-          200: '#f1ff7c',
-          300: '#f2ff30',
-          400: '#feff00',
-          500: '#ffe400',
-          600: '#e3b200',
-          700: '#b47e00',
-          800: '#946200',
-          900: '#7a4d06',
-          950: '#492900'
+          50: '#eeffee',
+          100: '#d7ffda',
+          200: '#b2ffb7',
+          300: '#77fe81',
+          400: '#55f561',
+          500: '#0bdc1b',
+          600: '#02b711',
+          700: '#068f11',
+          800: '#0b7014',
+          900: '#0b5c14',
+          950: '#003406'
         },
 
         input: 'hsl(var(--input))',

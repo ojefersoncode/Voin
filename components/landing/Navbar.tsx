@@ -60,8 +60,9 @@ export const Navbar = ({ user }: { user: User | null }) => {
         <NavigationMenuList className="container py-2 px-3 md:p-6 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
             <div className="flex items-center">
-              <img className="size-8" src="/Nexbattle.png" alt="logo" />
-              <span className="font-inter text-lg text-text">Nex</span>
+              <span className="font-inter text-lg max-md:text-base text-umber-500 dark:text-umber-500 select-none">
+                NEX
+              </span>
             </div>
           </NavigationMenuItem>
 
@@ -84,7 +85,9 @@ export const Navbar = ({ user }: { user: User | null }) => {
               >
                 <SheetHeader>
                   <SheetTitle className="flex items-center select-none">
-                    <img className="size-8" src="/Nexbattle.png" alt="logo" />
+                    <span className="font-inter text-lg max-md:text-base select-none text-umber-500 dark:text-umber-500">
+                      NEX
+                    </span>
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center text-lg text-text font-inter gap-2 mt-7">
@@ -105,7 +108,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
                     passHref
                   >
                     <Button
-                      className="w-full px-4 py-0.5 rounded-lg font-inter text-lg text-umber-950 bg-umber-500 hover:text-blackground transition-colors"
+                      className="w-full px-4 py-0.5 rounded-sm font-inter text-lg text-text dark:text-text bg-btn hover:text-text dark:hover:text-text transition-colors"
                       variant="ghost"
                     >
                       Entrar
@@ -135,7 +138,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
           <div className="hidden md:flex gap-4">
             <Link href="/Home" passHref>
               <Button
-                className="px-4 py-0.5 font-inter rounded-lg text-base text-umber-950 bg-umber-200 hover:bg-umber-200"
+                className="px-4 py-0.5 font-inter rounded-sm text-base text-text dark:text-text bg-btn hover:bg-umber-800"
                 variant="ghost"
               >
                 Entrar

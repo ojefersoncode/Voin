@@ -13,14 +13,9 @@ export const Footer = () => {
         <section className="container py-8 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8 text-gray-100">
           <div className="col-span-full xl:col-span-2">
             <div className="flex items-center select-none">
-              <Image
-                height={44}
-                width={44}
-                priority={true}
-                className="size-8"
-                src="/Nexbattle.png"
-                alt="logo"
-              />
+              <span className="font-inter text-lg max-md:text-base text-umber-500 dark:text-umber-500">
+                NEX
+              </span>
             </div>
           </div>
 
@@ -154,7 +149,7 @@ export const Footer = () => {
               rel="noreferrer noopener"
               target="_blank"
               href="https://github.com/Ojefersoncode"
-              className="text-btn font-inter transition-all"
+              className="text-umber-500 dark:text-umber-500 font-inter transition-all"
             >
               Nex
             </a>

@@ -1,12 +1,17 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import Image from 'next/image';
+import { cn } from '../../utils/cn';
+import { DotPattern } from '../magicui/dot-pattern';
 
 export default function HeroLeads() {
   return (
     <section className="flex w-full justify-center items-center  bg-background to-muted py-20">
+      <DotPattern
+        className={cn(
+          '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]'
+        )}
+      />
       <div className="flex w-full items-center px-6">
         {/* Texto */}
         <div className="flex flex-col w-full justify-center items-center space-y-6">
@@ -22,15 +27,9 @@ export default function HeroLeads() {
           <div className="flex gap-4">
             <Button
               size="lg"
-              className="border border-umber-300 bg-umber-400 font-inter dark:bg-umber-400 hover:bg-umber-400 dark:hover:bg-umber-400 text-blackground dark:text-blackground"
+              className="border-none z-10 bg-umber-700 font-inter dark:bg-umber-700 hover:bg-umber-800 dark:hover:bg-umber-800 text-text dark:text-text rounded-sm"
             >
-              Começar Agora
-            </Button>
-            <Button
-              size="lg"
-              className="border border-umber-300 bg-subbackground dark:bg-subbackground hover:bg-subbackground dark:hover:bg-subbackground text-text dark:text-text"
-            >
-              Saiba Mais
+              <span>Começar Agora</span>
             </Button>
           </div>
         </div>
