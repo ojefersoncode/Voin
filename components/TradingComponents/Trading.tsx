@@ -15,13 +15,16 @@ import {
   Plus,
   Minus,
   UserRound,
-  RefreshCw
+  RefreshCw,
+  Wallet,
+  History
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
 import { Order } from './SheetBar/Order';
 import Image from 'next/image';
+import { Button } from '../ui/button';
 
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
@@ -96,9 +99,12 @@ export default function TradingAll() {
       {/* Header */}
       <header className="bg-blackground top-0 z-30 touch-pan-x touch-pan-y">
         <nav className="flex items-center justify-between px-2 py-2">
-          <div className="flex justify-between items-center touch-pan-x touch-pan-y">
+          <div className="flex gap-4 items-center touch-pan-x touch-pan-y">
+            <span className="font-inter px-2 text-lg max-md:text-base text-umber-500 dark:text-umber-500 select-none">
+              NEX
+            </span>
             <Select value={selectedPair} onValueChange={setSelectedPair}>
-              <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-inter rounded-lg border border-zinc-600  dark:border-gray-600 h-10">
+              <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-inter rounded-sm border border-zinc-600  dark:border-gray-600 h-10 max-md:w-28 w-32">
                 <SelectValue placeholder="Selecione um par" />
               </SelectTrigger>
               <SelectContent className="bg-black text-white border border-gray-700">
@@ -116,16 +122,19 @@ export default function TradingAll() {
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="flex gap-2 px-3 py-1 items-center rounded-lg border border-zinc-700 touch-pan-x touch-pan-y">
-              <div className="p-0">
-                <RefreshCw className="w-5 h-5" />
+            <div className="flex gap-2 px-3 py-1 items-center rounded-lg touch-pan-x touch-pan-y">
+              <Order />
+              <div className="flex p-1 flex-col items-start justify-start">
+                <div className="flex items-center gap-1 text-xs text-red-500 p-0 m-0 font-semibold">
+                  Conta demo <ArrowDown className="size-3" />
+                </div>
+                <h2 className="text-base max-md:text-sm  font-inter p-0">
+                  R$ 1200,00
+                </h2>
               </div>
-              <div className="flex p-0 flex-col items-start justify-start">
-                <h1 className="text-xs text-zinc-400 p-0 m-0 font-semibold">
-                  Saldo
-                </h1>
-                <h2 className="text-xs font-inter p-0">R$ 1200,00</h2>
-              </div>
+              <Button className="bg-btn px-2 dark:bg-btn hover:bg-btn dark:hover:bg-btn">
+                <Wallet className="size-5" />
+              </Button>
             </div>
 
             <div className="rounded-full p-2 text-black bg-white">
@@ -152,12 +161,12 @@ export default function TradingAll() {
           <div className="max-md:pt-4 touch-pan-x touch-pan-y">
             <div className="flex md:flex-col flex-1 px-2 w-full items-center justify-between gap-4">
               {/* Input de Tempo */}
-              <div className="flex flex-col flex-1 w-full items-center justify-center bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-xl px-2 py-2 md:py-4 text-white">
+              <div className="flex flex-col flex-1 w-full items-center justify-center bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-sm px-2 py-2 md:py-4 text-white">
                 <Select
                   value={inputTempo.toString()}
                   onValueChange={(value) => setInputTempo(Number(value))}
                 >
-                  <SelectTrigger className="bg-subbackground text-base text-white border-none rounded-md w-26 h-6 px-2">
+                  <SelectTrigger className="bg-subbackground text-base text-white border-none rounded-sm w-26 h-6 px-2">
                     <SelectValue placeholder="Selecione o tempo" />
                   </SelectTrigger>
                   <SelectContent className="bg-subbackground text-white border border-zinc-600">
@@ -175,7 +184,7 @@ export default function TradingAll() {
               </div>
 
               {/* Input de Saldo */}
-              <div className="flex flex-col w-full justify-center px-2 flex-1 bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-xl py-2 md:py-6 items-center text-center">
+              <div className="flex flex-col w-full justify-center px-2 flex-1 bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-sm py-2 md:py-6 items-center text-center">
                 <div className="flex flex-1 items-center gap-3 justify-between w-full">
                   <button
                     onClick={() =>
@@ -200,7 +209,7 @@ export default function TradingAll() {
             <div className="flex md:flex-col w-full items-center justify-center px-2 gap-2 mt-4 mb-2 touch-pan-x touch-pan-y">
               <button
                 onClick={handleUpOperation}
-                className="bg-[#097261] w-full flex-1 hover:bg-[#135a4e] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 md:py-6 rounded-lg font-medium flex items-center justify-between"
+                className="bg-btn w-full flex-1 hover:bg-umber-800 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 md:py-4 rounded-sm font-medium flex items-center justify-between"
               >
                 <span>Comprar</span>
                 <ArrowUp className="h-5 w-5" />
@@ -208,7 +217,7 @@ export default function TradingAll() {
 
               <button
                 onClick={handleDownOperation}
-                className="bg-[#dd3240] w-full flex-1 hover:bg-[#af2732] transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 md:py-6 rounded-lg font-medium flex items-center justify-between"
+                className="bg-red-600 w-full flex-1 hover:bg-red-700 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 md:py-4 rounded-sm font-medium flex items-center justify-between"
               >
                 <span>Vender</span>
                 <ArrowDown className="h-5 w-5" />

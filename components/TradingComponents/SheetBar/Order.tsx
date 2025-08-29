@@ -19,9 +19,8 @@ export function Order() {
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger asChild>
-        <Button 
-          className="border border-zinc-700 dark:border-zinc-700 bg-transparent hover:bg-transparent py-5 p-3">
-          <History className="w-5 h-5" />
+        <Button className="bg-btn/10 rounded-full px-2 dark:bg-btn/10 hover:bg-btn/20 dark:hover:bg-btn/20">
+          <History className="size-7" />
         </Button>
       </DrawerTrigger>
       <DrawerContent className="bg-background rounded-lg">
