@@ -13,9 +13,7 @@ export const Footer = () => {
         <section className="container py-8 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8 text-gray-100">
           <div className="col-span-full xl:col-span-2">
             <div className="flex items-center select-none">
-              <span className="font-inter text-lg max-md:text-base text-umber-500 dark:text-umber-500">
-                NEX
-              </span>
+              <img className="h-8 w-8" src="/Bronk.png" alt="logo" />
             </div>
           </div>
 
@@ -148,10 +146,10 @@ export const Footer = () => {
             <a
               rel="noreferrer noopener"
               target="_blank"
-              href="https://github.com/Ojefersoncode"
+              href="https://github.com"
               className="text-umber-500 dark:text-umber-500 font-inter transition-all"
             >
-              Nex
+              Bronk
             </a>
           </h3>
         </section>

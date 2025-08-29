@@ -60,9 +60,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
         <NavigationMenuList className="container py-2 px-3 md:p-6 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
             <div className="flex items-center">
-              <span className="font-inter text-lg max-md:text-base text-umber-500 dark:text-umber-500 select-none">
-                NEX
-              </span>
+              <img className="h-8 w-8" src="/Bronk.png" alt="logo" />
             </div>
           </NavigationMenuItem>
 
@@ -85,9 +83,7 @@ export const Navbar = ({ user }: { user: User | null }) => {
               >
                 <SheetHeader>
                   <SheetTitle className="flex items-center select-none">
-                    <span className="font-inter text-lg max-md:text-base select-none text-umber-500 dark:text-umber-500">
-                      NEX
-                    </span>
+                    <img className="h-8 w-8" src="/Bronk.png" alt="logo" />
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center text-lg text-text font-inter gap-2 mt-7">
