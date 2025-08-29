@@ -9,17 +9,7 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import {
-  ArrowUp,
-  ArrowDown,
-  Plus,
-  Minus,
-  UserRound,
-  RefreshCw,
-  Wallet,
-  History,
-  Menu
-} from 'lucide-react';
+import { ArrowUp, ArrowDown, Plus, Minus, Wallet, Menu } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
@@ -105,7 +95,7 @@ export default function TradingAll() {
               NEX
             </span>
             <Select value={selectedPair} onValueChange={setSelectedPair}>
-              <SelectTrigger className="bg-subbackground text-text py-1.5 px-3 font-inter rounded-sm border border-zinc-600  dark:border-gray-600 h-10">
+              <SelectTrigger className="bg-subbackground text-text py-1.5 font-inter rounded-sm border border-zinc-600  dark:border-gray-600 h-10">
                 <SelectValue placeholder="Selecione um par" />
               </SelectTrigger>
               <SelectContent className="bg-black text-white border border-gray-700">
