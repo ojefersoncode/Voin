@@ -10,8 +10,6 @@ import {
   SelectItem
 } from '@/components/ui/select';
 import {
-  ArrowUp,
-  ArrowDown,
   Plus,
   Minus,
   Wallet,

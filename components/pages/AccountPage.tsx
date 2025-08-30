@@ -1,7 +1,6 @@
 'use client';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
-import { Navbar } from '../HomeComponents/NavBar';
 import { User } from '@supabase/supabase-js';
 import { createClient } from '../../utils/supabase/client';
 import { useState } from 'react';
@@ -10,6 +9,7 @@ import { useToast } from '../ui/use-toast';
 import { useRouter } from 'next/navigation';
 import { SubscriptionWithPriceAndProduct } from '../../utils/types';
 import { Footer } from '../landing/Footer';
+import NavbarAll from '../All/Navbar';
 
 export default function AccountPage({
   user,
@@ -63,7 +63,7 @@ export default function AccountPage({
         </div>
 
         <div className="flex gap-2">
-          <Navbar />
+          <NavbarAll />
         </div>
       </nav>
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
