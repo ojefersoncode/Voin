@@ -85,7 +85,7 @@ export default function Tournament() {
         </div>
 
         {/* Prizes */}
-        <section className="mt-8 px-4">
+        <section className="mt-8 px-2">
           <h2 className="text-xl font-bold mb-4">
             Participe e receba um destes prêmios
           </h2>
@@ -111,11 +111,11 @@ export default function Tournament() {
         </section>
 
         {/* Leaderboard */}
-        <section className="mt-8 px-4">
+        <section className="mt-8 px-2">
           <h3 className="text-lg font-bold mb-4">3 posições vencedoras</h3>
           <div className="rounded-xl overflow-hidden bg-subbackground">
             <div className="w-full">
-              <div className="grid grid-cols-12 gap-4 px-4 py-3 text-gray-400 text-sm border-b border-gray-800">
+              <div className="grid grid-cols-12 gap-4 px-2 py-3 text-gray-400 text-sm border-b border-gray-800">
                 <div className="col-span-2">LUGAR</div>
                 <div className="col-span-5">JOGADOR</div>
                 <div className="col-span-3">PONTOS</div>
