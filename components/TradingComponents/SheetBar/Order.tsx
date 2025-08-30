@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useState } from 'react';
-import { History } from 'lucide-react';
+import { Hourglass } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Drawer,
@@ -19,8 +19,10 @@ export function Order() {
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger asChild>
-        <Button className="bg-btn/10 rounded-full px-1 dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent">
-          <History className="size-6" />
+        <Button className="bg-transparent rounded-full py-0 pr-0 pl-2 dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent">
+          <div className="flex items-center gap-4">
+            <Hourglass className="size-6" />
+          </div>
         </Button>
       </DrawerTrigger>
       <DrawerContent className="bg-background rounded-lg">

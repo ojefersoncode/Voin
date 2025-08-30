@@ -1,6 +1,6 @@
 'use client';
 
-import type React from 'react';
+import * as React from 'react';
 import { useState } from 'react';
 import {
   Select,
@@ -9,23 +9,12 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import {
-  ArrowUp,
-  ArrowDown,
-  Plus,
-  Minus,
-  Wallet,
-  Menu,
-  Coins,
-  Bitcoin,
-  BadgeCent
-} from 'lucide-react';
-import { Input } from '@/components/ui/input';
+import { ArrowUp, ArrowDown, Plus, Minus, Wallet, Menu } from 'lucide-react';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
 import { Order } from './SheetBar/Order';
-import Image from 'next/image';
 import { Button } from '../ui/button';
+import { Progress } from '../ui/progress';
 
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
@@ -41,6 +30,12 @@ export default function TradingAll() {
   const [inputTempo, setInputTempo] = useState<number>(1); // Linha adicionada
   const [inputSaldo, setInputSaldo] = useState<number>(10);
   const [isChartFullscreen] = useState(false);
+
+  const [progress, setProgress] = React.useState(13);
+  React.useEffect(() => {
+    const timer = setTimeout(() => setProgress(66), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const tempoOptions = [
     { label: '1 min', value: 1 },
@@ -106,15 +101,15 @@ export default function TradingAll() {
               src="/Bronk.png"
               alt="logo"
             />
-            <div className="flex items-center gap-4 max-md:hidden">
+            <div className="flex items-center">
               <Select value={selectedPair} onValueChange={setSelectedPair}>
-                <SelectTrigger className="bg-subbackground text-text py-1.5 font-inter rounded-sm border border-zinc-600  dark:border-gray-600 h-10">
+                <SelectTrigger className="bg-subbackground text-text py-1.5 font-inter rounded-sm border border-zinc-600  dark:border-gray-600 max-md:text-xs h-10 max-md:h-8">
                   <SelectValue placeholder="Selecione um par" />
                 </SelectTrigger>
-                <SelectContent className="bg-black text-white border border-gray-700">
+                <SelectContent className="bg-black max-md:text-xs text-white border border-gray-700">
                   {availablePairs.map((pair) => (
                     <SelectItem
-                      className="font-inter hover:bg-subbackground hover:text-black focus:bg-background focus:text-text"
+                      className="font-inter hover:bg-subbackground hover:text-black focus:bg-background focus:text-text max-md:text-xs"
                       key={pair.value}
                       value={pair.value}
                     >
@@ -123,28 +118,24 @@ export default function TradingAll() {
                   ))}
                 </SelectContent>
               </Select>
-              <Button className="border border-zinc-600 rounded-sm p-2">
-                <Plus className="size-5" />
-              </Button>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
             <div className="flex gap-2 items-center rounded-lg touch-pan-x touch-pan-y">
-              <Order />
-              <div className="flex p-1 flex-col items-start justify-start">
-                <div className="flex w-full items-center gap-1 m-0 p-0 text-umber-500">
-                  <span className="text-sm max-md:text-xs font-semibold">
-                    Seus coins
-                  </span>
+              <div className="flex items-center rounded-sm bg-btn">
+                <div className="flex flex-col items-start rounded-l-sm bg-black/30 py-1 px-2 justify-center">
+                  <div className="flex w-full items-center m-0 p-0 text-text">
+                    <span className="text-xs font-semibold">Seus coins</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-sm text-text font-inter m-0 p-0">
+                    1200.00
+                  </div>
                 </div>
-                <div className="flex items-center gap-1 text-base max-md:text-sm  font-inter m-0 p-0">
-                  1200.00 <BadgeCent className="size-3" />
-                </div>
+                <Button className="bg-btn px-2 py-0 dark:bg-btn hover:bg-btn dark:hover:bg-btn">
+                  <Wallet className="size-5" />
+                </Button>
               </div>
-              <Button className="bg-btn px-2 py-0 dark:bg-btn hover:bg-btn dark:hover:bg-btn">
-                <Wallet className="size-5" />
-              </Button>
             </div>
 
             <Button className="p-0 text-text dark:text-text">
@@ -154,26 +145,19 @@ export default function TradingAll() {
         </nav>
       </header>
 
-      <div className="flex items-center gap-4 pb-3 px-2 md:hidden">
-        <Select value={selectedPair} onValueChange={setSelectedPair}>
-          <SelectTrigger className="bg-subbackground text-text py-1.5 font-inter rounded-sm border border-zinc-600  dark:border-gray-600 h-10">
-            <SelectValue placeholder="Selecione um par" />
-          </SelectTrigger>
-          <SelectContent className="bg-black text-white border border-gray-700">
-            {availablePairs.map((pair) => (
-              <SelectItem
-                className="font-inter hover:bg-subbackground hover:text-black focus:bg-background focus:text-text"
-                key={pair.value}
-                value={pair.value}
-              >
-                {pair.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Button className="border border-zinc-600 rounded-sm p-2">
-          <Plus className="size-5" />
-        </Button>
+      <div className="flex w-full items-center gap-4 pb-3 px-2 md:hidden">
+        <div className="flex flex-col flex-1">
+          <h1 className="text-sm mt-1">Termina em 30s</h1>
+          <Progress
+            value={progress}
+            className="h-2"
+            indicatorClassName={progress > 50 ? 'bg-green-500' : 'bg-red-500'}
+          />
+        </div>
+
+        <div className="shrink-0 mt-1">
+          <Order />
+        </div>
       </div>
 
       {/* Main */}
@@ -192,6 +176,22 @@ export default function TradingAll() {
           {/* Trading Controls */}
           <div className="max-md:pt-4 touch-pan-x touch-pan-y">
             <div className="flex md:flex-col flex-1 px-2 w-full items-center justify-between gap-4">
+              <div className="flex w-full items-center  max-md:hidden">
+                <div className="flex flex-col flex-1">
+                  <h1 className="text-sm mt-1">Termina em 30s</h1>
+                  <Progress
+                    value={progress}
+                    className="h-2"
+                    indicatorClassName={
+                      progress > 50 ? 'bg-green-500' : 'bg-red-500'
+                    }
+                  />
+                </div>
+
+                <div className="shrink-0 mt-4">
+                  <Order />
+                </div>
+              </div>
               {/* Input de Tempo */}
               <div className="flex flex-col flex-1 w-full items-center justify-center bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-sm px-2 py-2 md:py-4 text-white">
                 <Select
