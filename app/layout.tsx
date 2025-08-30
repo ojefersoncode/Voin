@@ -27,11 +27,11 @@ const poppins = PoppinsFont({
 });
 
 const meta = {
-  title: 'Nex',
+  title: 'Bronk',
   description: 'Plataformas de cripto para gamers.',
   cardImage: '/banner.png',
   robots: 'follow, index',
-  favicon: '/Nexbattle.png',
+  favicon: '/Bronk.png',
   url: getURL()
 };
 
@@ -58,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'Game',
       'Jogos'
     ],
-    authors: [{ name: 'Nex', url: 'https://Nexprotocol.com/' }],
+    authors: [{ name: 'Bronk', url: 'https://Nexprotocol.com/' }],
     creator: 'OjersonCode',
     publisher: 'OjefersonCode',
     robots: meta.robots,
