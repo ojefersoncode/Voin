@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { Footer } from '../landing/Footer';
 
 const prizes = [
   { place: 1, amount: 'R$:500', coin: '/coins/coin1.png' },
@@ -25,10 +26,10 @@ const leaderboard = Array.from({ length: 3 }).map((_, i) => ({
 
 export default function Tournament() {
   return (
-    <main className="min-h-screen bg-background text-white py-4 flex justify-center">
+    <main className="min-h-screen bg-background text-white py-4 flex flex-col justify-center">
       <div className="w-full px-2">
         {/* Header / Banner */}
-        <div className="rounded-md overflow-hidden px-2 bg-gradient-to-b from-[#1f1f1f] to-[#0b0b0b] shadow-sm">
+        <div className="rounded-md overflow-hidden bg-gradient-to-b from-[#1f1f1f] to-[#0b0b0b] shadow-sm">
           <div className="relative h-48 sm:h-56 w-full bg-black">
             <Image
               src="/bannert.png"
@@ -42,7 +43,7 @@ export default function Tournament() {
           </div>
 
           <div className="py-4">
-            <div className="flex w-full flex-wrap items-center justify-between">
+            <div className="flex w-full flex-wrap items-center justify-between px-2">
               <div className="flex items-center gap-4">
                 <h1 className="text-xl sm:text-2xl font-extrabold">
                   Torneio diario
@@ -54,7 +55,7 @@ export default function Tournament() {
               </span>
             </div>
 
-            <div className="mt-6 border-t border-zinc-700 pt-5 flex justify-around  gap-4 sm:flex sm:items-center sm:justify-between">
+            <div className="mt-6 border-t border-zinc-700 pt-5 px-2 flex justify-around  gap-4 sm:flex sm:items-center sm:justify-between">
               <div className="text-center sm:text-left">
                 <div className="text-xs text-text/60">TAXA DE INSCRIÇÃO</div>
                 <div className="text-lg font-bold mt-1">R$:10</div>
@@ -72,13 +73,13 @@ export default function Tournament() {
               </div>
             </div>
 
-            <div className="flex w-full py-4 md:hidden">
+            <div className="flex w-full py-4 px-2 md:hidden">
               <button className="mt-3 flex-1 sm:mt-0 max-sm:w-full sm:w-auto bg-btn text-text text-sm px-6 py-3 rounded-sm font-bold shadow">
                 Inscreva-se
               </button>
             </div>
 
-            <div className="mt-3 flex text-sm text-umber-300 font-medium">
+            <div className="mt-3 flex text-sm text-umber-300 px-2 font-medium">
               <button className="underline">Detalhes do torneio</button>
             </div>
           </div>
@@ -86,14 +87,14 @@ export default function Tournament() {
 
         {/* Prizes */}
         <section className="mt-8 px-2">
-          <h2 className="text-xl font-bold mb-4">
+          <h2 className="w-full flex justify-center text-xl font-bold px-2 mb-4">
             Participe e receba um destes prêmios
           </h2>
-          <div className="flex w-full items-center justify-between md:justify-center md:gap-16">
+          <div className="flex w-full bg-subbackground items-center justify-around md:justify-center md:gap-16">
             {prizes.map((p) => (
               <div
                 key={p.place}
-                className="rounded-xl bg-subbackground p-4  md:px-6 flex flex-col items-center text-center"
+                className="rounded-xl  p-4  md:px-6 flex flex-col items-center text-center"
               >
                 <div className="w-16 h-16 relative mb-3">
                   <Image
@@ -112,7 +113,7 @@ export default function Tournament() {
 
         {/* Leaderboard */}
         <section className="mt-8 px-2">
-          <h3 className="text-lg font-bold mb-4">3 posições vencedoras</h3>
+          <h3 className="text-lg font-bold mb-4 px-2">3 posições vencedoras</h3>
           <div className="rounded-xl overflow-hidden bg-subbackground">
             <div className="w-full">
               <div className="grid grid-cols-12 gap-4 px-2 py-3 text-gray-400 text-sm border-b border-gray-800">
@@ -150,6 +151,9 @@ export default function Tournament() {
             </div>
           </div>
         </section>
+      </div>
+      <div className="border-t border-zinc-700 mt-6">
+        <Footer />
       </div>
     </main>
   );
