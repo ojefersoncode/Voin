@@ -122,7 +122,7 @@ export default function Tournament() {
                 <div className="col-span-2">LUGAR</div>
                 <div className="col-span-5">JOGADOR</div>
                 <div className="col-span-3">PONTOS</div>
-                <div className="col-span-2 text-right">PRÊMIO, BRL</div>
+                <div className="col-span-2 text-right">PRÊMIOS</div>
               </div>
 
               <div className="divide-y divide-gray-800">
