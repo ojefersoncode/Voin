@@ -18,11 +18,11 @@ export default function NavbarAll() {
           <div className="flex items-center gap-4">
             <div className="flex gap-2 items-center rounded-lg touch-pan-x touch-pan-y">
               <div className="flex items-center rounded-sm bg-btn">
-                <div className="flex flex-col items-start rounded-l-sm bg-black/30 py-1 px-2 justify-center">
+                <div className="flex flex-col items-start rounded-l-sm bg-black/30 py-1 px-4 justify-center">
                   <div className="flex w-full items-center m-0 p-0 text-text">
-                    <span className="text-xs font-semibold">Seus coins</span>
+                    <span className="text-[0.7rem] font-medium">Moedas</span>
                   </div>
-                  <div className="flex items-center gap-1 text-sm text-text font-inter m-0 p-0">
+                  <div className="flex items-center gap-1 text-xs text-text font-inter m-0 p-0">
                     1200.00
                   </div>
                 </div>
