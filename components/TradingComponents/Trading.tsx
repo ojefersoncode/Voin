@@ -9,12 +9,22 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import { ArrowUp, ArrowDown, Plus, Minus, Wallet, Menu } from 'lucide-react';
+import {
+  ArrowUp,
+  ArrowDown,
+  Plus,
+  Minus,
+  Wallet,
+  Menu,
+  TrendingUp,
+  TrendingDown
+} from 'lucide-react';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
 import { Order } from './SheetBar/Order';
 import { Button } from '../ui/button';
 import { Progress } from '../ui/progress';
+import { Input } from '../ui/input';
 
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
@@ -43,9 +53,7 @@ export default function TradingAll() {
     { label: '10 min', value: 10 },
     { label: '15 min', value: 15 },
     { label: '30 min', value: 30 },
-    { label: '1 hora', value: 60 },
-    { label: '12 horas', value: 720 },
-    { label: '24 horas', value: 1440 }
+    { label: '1 hora', value: 60 }
   ];
 
   const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -216,8 +224,8 @@ export default function TradingAll() {
               </div>
 
               {/* Input de Saldo */}
-              <div className="flex flex-col w-full justify-center px-2 flex-1 bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-sm py-2 md:py-6 items-center text-center">
-                <div className="flex flex-1 items-center gap-3 justify-between w-full">
+              <div className="flex flex-col w-full justify-center px-2 flex-1 bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-sm md:py-2 items-center text-center">
+                <div className="flex flex-1 items-center gap-4 justify-center w-full">
                   <button
                     onClick={() =>
                       setInputSaldo((prev) => Math.max(1, prev - 1))
@@ -226,7 +234,17 @@ export default function TradingAll() {
                   >
                     <Minus size={20} />
                   </button>
-                  <span className="text-base text-white">R${inputSaldo}</span>
+                  <Input
+                    type="number"
+                    placeholder="Valor"
+                    className="border-none w-20 text-center text-base text-white bg-subbackground
+             [appearance:textfield] 
+             [&::-webkit-outer-spin-button]:appearance-none 
+             [&::-webkit-inner-spin-button]:appearance-none"
+                    value={inputSaldo}
+                    onChange={handleChangeSaldo}
+                  />
+
                   <button
                     onClick={() => setInputSaldo((prev) => prev + 1)}
                     className="text-btn hover:text-btn/80 transition-colors"
@@ -241,18 +259,18 @@ export default function TradingAll() {
             <div className="flex md:flex-col w-full items-center justify-center px-2 gap-4 mt-4 mb-2 touch-pan-x touch-pan-y">
               <button
                 onClick={handleUpOperation}
-                className="bg-btn w-full flex-1 hover:bg-umber-800 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 md:py-4 rounded-sm font-medium flex items-center justify-between"
+                className="bg-btn w-full flex-1 hover:bg-umber-800 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 md:py-4 rounded-sm font-medium flex text-center items-center justify-center gap-2"
               >
                 <span>Comprar</span>
-                <ArrowUp className="h-5 w-5" />
+                <TrendingUp className="h-5 w-5" />
               </button>
 
               <button
                 onClick={handleDownOperation}
-                className="bg-red-600 w-full flex-1 hover:bg-red-700 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 md:py-4 rounded-sm font-medium flex items-center justify-between"
+                className="bg-red-600 w-full flex-1 hover:bg-red-700 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 md:py-4 rounded-sm font-medium flex text-center items-center justify-center gap-2"
               >
                 <span>Vender</span>
-                <ArrowDown className="h-5 w-5" />
+                <TrendingDown className="h-5 w-5" />
               </button>
             </div>
           </div>
