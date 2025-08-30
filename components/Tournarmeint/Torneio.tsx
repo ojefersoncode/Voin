@@ -25,78 +25,75 @@ const leaderboard = Array.from({ length: 3 }).map((_, i) => ({
 
 export default function Tournament() {
   return (
-    <main className="min-h-screen bg-background text-white p-6 sm:p-10 flex justify-center">
-      <div className="w-full max-w-3xl">
+    <main className="min-h-screen bg-background text-white py-4 flex justify-center">
+      <div className="w-full px-2">
         {/* Header / Banner */}
-        <div className="rounded-2xl overflow-hidden bg-gradient-to-b from-[#1f1f1f] to-[#0b0b0b] shadow-md">
+        <div className="rounded-md overflow-hidden px-2 bg-gradient-to-b from-[#1f1f1f] to-[#0b0b0b] shadow-sm">
           <div className="relative h-48 sm:h-56 w-full bg-black">
             <Image
               src="/bannert.png"
               alt="banner"
               fill
-              style={{ objectFit: 'cover' }}
-              className="brightness-90"
+              className="brightness-90 h-4 object-cover"
             />
             <div className="absolute left-2 top-2 bg-umber-600/90 text-white px-3 py-1 rounded-full text-xs font-medium">
               24:00:00
             </div>
           </div>
 
-          <div className="p-6 sm:p-8">
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-lg bg-[#111111] flex items-center justify-center">
-                <img
-                  className="h-8 w-8 max-md:h-7 max-md:w-7"
-                  src="/Bronk.png"
-                  alt="logo"
-                />
-              </div>
-
-              <div className="flex-1">
+          <div className="py-4">
+            <div className="flex w-full flex-wrap items-center justify-between">
+              <div className="flex items-center gap-4">
                 <h1 className="text-xl sm:text-2xl font-extrabold">
                   Torneio diario
                 </h1>
               </div>
+
+              <span className="max-md:text-xs text-sm text-text/70">
+                Termina dia 04/09 as 00:00
+              </span>
             </div>
 
-            <div className="mt-6 border-t border-gray-800 pt-5 grid grid-cols-2 gap-4 sm:flex sm:items-center sm:justify-between">
+            <div className="mt-6 border-t border-zinc-700 pt-5 flex justify-around  gap-4 sm:flex sm:items-center sm:justify-between">
               <div className="text-center sm:text-left">
-                <div className="text-xs text-gray-400">TAXA DE INSCRIÇÃO</div>
+                <div className="text-xs text-text/60">TAXA DE INSCRIÇÃO</div>
                 <div className="text-lg font-bold mt-1">R$:10</div>
               </div>
 
               <div className="text-center sm:text-left">
-                <div className="text-xs text-gray-400">TOTAL DE PRÊMIOS</div>
+                <div className="text-xs text-text/60">TOTAL DE PRÊMIOS</div>
                 <div className="text-lg font-bold mt-1">1000 R$</div>
               </div>
 
-              <div className="sm:ml-auto sm:flex sm:items-center">
-                <button className="mt-3 sm:mt-0 w-full sm:w-auto bg-umber-400 text-black px-6 py-3 rounded-xl font-semibold shadow">
-                  Junte-se
+              <div className="sm:ml-auto flex max-sm:w-full max-md:hidden sm:flex sm:items-center">
+                <button className="mt-3 flex-1 sm:mt-0 max-sm:w-full sm:w-auto bg-btn text-text text-base px-8 py-3 rounded-sm font-bold shadow">
+                  Inscreva-se
                 </button>
               </div>
             </div>
 
-            <div className="mt-4 text-xs text-gray-400">
-              O torneio terminará em setembro 04 em 00:00
+            <div className="flex w-full py-4 md:hidden">
+              <button className="mt-3 flex-1 sm:mt-0 max-sm:w-full sm:w-auto bg-btn text-text text-sm px-6 py-3 rounded-sm font-bold shadow">
+                Inscreva-se
+              </button>
             </div>
-            <div className="mt-3 flex gap-6 text-sm text-umber-300 font-medium">
-              <button className="underline">Como jogar?</button>
+
+            <div className="mt-3 flex text-sm text-umber-300 font-medium">
               <button className="underline">Detalhes do torneio</button>
             </div>
           </div>
         </div>
 
         {/* Prizes */}
-        <section className="mt-8">
+        <section className="mt-8 px-4">
           <h2 className="text-xl font-bold mb-4">
             Participe e receba um destes prêmios
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="flex w-full items-center justify-between md:justify-center md:gap-16">
             {prizes.map((p) => (
               <div
                 key={p.place}
-                className="rounded-xl bg-[#111111] p-4 flex flex-col items-center text-center"
+                className="rounded-xl bg-subbackground p-4  md:px-6 flex flex-col items-center text-center"
               >
                 <div className="w-16 h-16 relative mb-3">
                   <Image
@@ -114,9 +111,9 @@ export default function Tournament() {
         </section>
 
         {/* Leaderboard */}
-        <section className="mt-8">
-          <h3 className="text-lg font-bold mb-4">50 posições vencedoras</h3>
-          <div className="rounded-xl overflow-hidden bg-[#0f0f0f]">
+        <section className="mt-8 px-4">
+          <h3 className="text-lg font-bold mb-4">3 posições vencedoras</h3>
+          <div className="rounded-xl overflow-hidden bg-subbackground">
             <div className="w-full">
               <div className="grid grid-cols-12 gap-4 px-4 py-3 text-gray-400 text-sm border-b border-gray-800">
                 <div className="col-span-2">LUGAR</div>
