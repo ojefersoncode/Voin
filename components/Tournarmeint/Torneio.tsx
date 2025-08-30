@@ -10,7 +10,7 @@ const prizes = [
 
 const leaderboard = Array.from({ length: 3 }).map((_, i) => ({
   place: i + 1,
-  player: `5********${1000 + i}`,
+  player: `5***${1000 + i}`,
   points: Math.floor(Math.random() * 130000),
   prize:
     i === 0
