@@ -238,7 +238,7 @@ export default function TradingAll() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex md:flex-col w-full items-center justify-center px-2 gap-2 mt-4 mb-2 touch-pan-x touch-pan-y">
+            <div className="flex md:flex-col w-full items-center justify-center px-2 gap-4 mt-4 mb-2 touch-pan-x touch-pan-y">
               <button
                 onClick={handleUpOperation}
                 className="bg-btn w-full flex-1 hover:bg-umber-800 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 md:py-4 rounded-sm font-medium flex items-center justify-between"
