@@ -158,7 +158,7 @@ export default function TradingAll() {
         <div className="lg:w-[350px] w-full flex flex-col bg-blackground">
           {/* Trading Controls */}
           <div className="max-md:pt-2 touch-pan-x touch-pan-y">
-            <div className="flex md:flex-col flex-1 px-2 w-full items-center justify-between gap-4">
+            <div className="flex flex-col flex-1 px-2 w-full items-center justify-between gap-4">
               <div className="flex w-full items-center">
                 <div className="flex flex-col flex-1">
                   <h1 className="text-sm mt-1">Termina em 30s</h1>
