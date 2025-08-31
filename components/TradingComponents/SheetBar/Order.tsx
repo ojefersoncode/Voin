@@ -39,7 +39,7 @@ const mockTrades = [
     selectedTime: 5,
     amount: 50,
     result: 'loss',
-    profit: -50
+    profit: 0
   },
   {
     id: '3',
@@ -49,9 +49,9 @@ const mockTrades = [
     exitPrice: 110.123456,
     entryTime: Date.now() - 90000,
     selectedTime: 5,
-    amount: 75,
+    amount: 100,
     result: 'draw',
-    profit: 0
+    profit: 50
   },
   {
     id: '4',
@@ -97,9 +97,9 @@ const mockTrades = [
     exitPrice: 29900.654321,
     entryTime: Date.now() - 360000,
     selectedTime: 5,
-    amount: 50,
+    amount: 100,
     result: 'loss',
-    profit: 90
+    profit: 0
   },
   {
     id: '8',
@@ -121,9 +121,9 @@ const mockTrades = [
     exitPrice: 29900.654321,
     entryTime: Date.now() - 360000,
     selectedTime: 5,
-    amount: 50,
+    amount: 100,
     result: 'loss',
-    profit: -50
+    profit: 0
   }
 ];
 
