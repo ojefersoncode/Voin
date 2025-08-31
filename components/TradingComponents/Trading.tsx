@@ -175,63 +175,66 @@ export default function TradingAll() {
                   <Order />
                 </div>
               </div>
-              {/* Input de Tempo */}
-              <div className="flex flex-col flex-1 w-full items-center justify-center bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-sm px-2 py-2 md:py-4 text-white">
-                <Select
-                  value={inputTempo.toString()}
-                  onValueChange={(value) => setInputTempo(Number(value))}
-                >
-                  <SelectTrigger className="bg-subbackground text-base text-white border-none rounded-sm w-26 h-6 px-2">
-                    <SelectValue placeholder="Selecione o tempo" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-subbackground text-white border border-zinc-600">
-                    {tempoOptions.map((option) => (
-                      <SelectItem
-                        key={option.value}
-                        value={option.value.toString()}
-                        className="hover:bg-background hover:text-white cursor-pointer"
-                      >
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
 
-              {/* Input de Saldo */}
-              <div className="flex flex-col w-full justify-center px-2 flex-1 bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-sm md:py-2 items-center text-center">
-                <div className="flex flex-1 items-center gap-4 justify-center w-full">
-                  <button
-                    onClick={() =>
-                      setInputSaldo((prev) => Math.max(1, prev - 1))
-                    }
-                    className="text-btn hover:text-btn/80 transition-colors"
+              <div className="flex lg:flex-col w-full gap-4">
+                {/* Input de Tempo */}
+                <div className="flex flex-1 w-full items-center justify-center bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-sm px-2 py-2 md:py-4 text-white">
+                  <Select
+                    value={inputTempo.toString()}
+                    onValueChange={(value) => setInputTempo(Number(value))}
                   >
-                    <Minus size={20} />
-                  </button>
-                  <Input
-                    type="number"
-                    placeholder="Valor"
-                    className="border-none w-20 text-center text-base text-white bg-subbackground
+                    <SelectTrigger className="bg-subbackground text-base text-white border-none rounded-sm w-26 h-6 px-2">
+                      <SelectValue placeholder="Selecione o tempo" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-subbackground text-white border border-zinc-600">
+                      {tempoOptions.map((option) => (
+                        <SelectItem
+                          key={option.value}
+                          value={option.value.toString()}
+                          className="hover:bg-background hover:text-white cursor-pointer"
+                        >
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Input de Saldo */}
+                <div className="flex flex-col w-full justify-center px-2 flex-1 bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-sm md:py-2 items-center text-center">
+                  <div className="flex flex-1 items-center gap-4 justify-center w-full">
+                    <button
+                      onClick={() =>
+                        setInputSaldo((prev) => Math.max(1, prev - 1))
+                      }
+                      className="text-btn hover:text-btn/80 transition-colors"
+                    >
+                      <Minus size={20} />
+                    </button>
+                    <Input
+                      type="number"
+                      placeholder="Valor"
+                      className="border-none w-20 text-center text-base text-white bg-subbackground
              [appearance:textfield] 
              [&::-webkit-outer-spin-button]:appearance-none 
              [&::-webkit-inner-spin-button]:appearance-none"
-                    value={inputSaldo}
-                    onChange={handleChangeSaldo}
-                  />
+                      value={inputSaldo}
+                      onChange={handleChangeSaldo}
+                    />
 
-                  <button
-                    onClick={() => setInputSaldo((prev) => prev + 1)}
-                    className="text-btn hover:text-btn/80 transition-colors"
-                  >
-                    <Plus size={20} />
-                  </button>
+                    <button
+                      onClick={() => setInputSaldo((prev) => prev + 1)}
+                      className="text-btn hover:text-btn/80 transition-colors"
+                    >
+                      <Plus size={20} />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex md:flex-col w-full items-center justify-center px-2 gap-4 mt-4 mb-2 touch-pan-x touch-pan-y">
+            <div className="flex lg:flex-col w-full items-center justify-center px-2 gap-4 mt-4 mb-2 touch-pan-x touch-pan-y">
               <button
                 onClick={handleUpOperation}
                 className="bg-btn w-full flex-1 hover:bg-umber-800 transition-colors duration-200 text-text hover:text-text/80 py-3 px-4 md:py-4 rounded-sm font-medium flex text-center items-center justify-center gap-2"
