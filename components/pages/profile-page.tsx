@@ -17,7 +17,6 @@ import {
 import { User } from '@supabase/supabase-js';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import NavBottom from '../All/NavBottom';
 import NavbarAll from '../All/Navbar';
 
 export default function ProfilePage({ user }: { user: User }) {
