@@ -1,6 +1,5 @@
 'use client';
 
-import { Status } from './SheetBar/Status';
 import { Historyc } from './SheetBar/Historyc';
 import { Order } from './SheetBar/Order';
 

@@ -9,15 +9,13 @@ import {
   ArrowDown,
   CheckCircle,
   XCircle,
-  AlertCircle,
-  Filter
+  AlertCircle
 } from 'lucide-react';
 
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
@@ -65,6 +63,9 @@ const mockTrades = [
 ];
 
 export function Historyc() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
   function formatCurrency(profit: number) {
     return profit.toLocaleString('pt-BR', {
       style: 'currency',
@@ -73,7 +74,9 @@ export function Historyc() {
     });
   }
 
-  const [isOpen, setIsOpen] = useState(false);
+  const toggleItem = (id: string) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
 
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
@@ -94,10 +97,9 @@ export function Historyc() {
       <DrawerContent className="w-full bg-background border-t border-purple-500 rounded-lg p-1">
         <div className="mx-auto w-full max-w-xl h-[80vh] flex flex-col">
           <DrawerHeader className="flex flex-col w-full justify-center items-center text-white pt-7">
-            <DrawerTitle>
-              <span className="text-xl font-inter">Historico de Batalha</span>
+            <DrawerTitle className="text-xl font-inter">
+              Historico de Batalha
             </DrawerTitle>
-            <DrawerDescription className="pt-4"></DrawerDescription>
           </DrawerHeader>
 
           <ScrollArea className="flex-1 pb-4">
@@ -107,68 +109,33 @@ export function Historyc() {
                 <p className="text-sm">Suas operações aparecerão aqui</p>
               </div>
             ) : (
-              <div className="space-y-3 py-2">
-                {mockTrades.map((trade) => (
-                  <div
-                    key={trade.id}
-                    className={`p-4 rounded-md ${
-                      trade.result === 'win'
-                        ? 'bg-green-900/30'
-                        : trade.result === 'loss'
-                          ? 'bg-red-700/30'
-                          : 'bg-gray-700/30'
-                    }`}
-                  >
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <div className="font-medium flex items-center text-white">
-                          {trade.symbol} •
+              <div className="space-y-2 py-2">
+                {mockTrades.map((trade) => {
+                  const isExpanded = expandedId === trade.id;
+                  return (
+                    <div
+                      key={trade.id}
+                      className={`rounded-md p-3 cursor-pointer transition-colors ${
+                        trade.result === 'win'
+                          ? 'bg-green-900/20'
+                          : trade.result === 'loss'
+                            ? 'bg-red-700/20'
+                            : 'bg-gray-700/20'
+                      }`}
+                      onClick={() => toggleItem(trade.id)}
+                    >
+                      {/* Cabeçalho */}
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center gap-2 text-white font-medium">
+                          {trade.symbol}
                           {trade.direction === 'up' ? (
-                            <span className="flex items-center ml-1 text-green-500">
-                              <ArrowUp className="h-4 w-4 mr-1" /> ACIMA
-                            </span>
+                            <ArrowUp className="h-4 w-4 text-green-500" />
                           ) : (
-                            <span className="flex items-center ml-1 text-red-500">
-                              <ArrowDown className="h-4 w-4 mr-1" /> ABAIXO
-                            </span>
+                            <ArrowDown className="h-4 w-4 text-red-500" />
                           )}
                         </div>
 
-                        <div className="text-sm text-gray-200 mt-1">
-                          {new Date(trade.entryTime).toLocaleString()} •{' '}
-                          {trade.selectedTime}min
-                        </div>
-
-                        <div className="text-sm mt-1 text-gray-200">
-                          <span className="text-gray-200">Entrada:</span>{' '}
-                          {trade.entryPrice.toFixed(6)}
-                          {trade.exitPrice && (
-                            <>
-                              <span className="text-gray-200 ml-2">Saída:</span>{' '}
-                              {trade.exitPrice.toFixed(6)}
-                            </>
-                          )}
-                        </div>
-                      </div>
-
-                      <div className="flex gap-0.5 mt-5 items-end">
-                        <div className="font-bold">
-                          <span
-                            className={`${
-                              trade.result === 'win'
-                                ? 'text-green-500'
-                                : trade.result === 'loss'
-                                  ? 'text-red-500'
-                                  : 'text-gray-400'
-                            }`}
-                          >
-                            {trade.profit !== undefined
-                              ? formatCurrency(trade.profit)
-                              : '-'}
-                          </span>
-                        </div>
-
-                        <div className="mt-1">
+                        <div className="flex items-center gap-1">
                           {trade.result === 'win' ? (
                             <CheckCircle className="h-5 w-5 text-green-500" />
                           ) : trade.result === 'loss' ? (
@@ -176,11 +143,35 @@ export function Historyc() {
                           ) : (
                             <AlertCircle className="h-5 w-5 text-blue-500" />
                           )}
+                          <span
+                            className={`font-bold ${
+                              trade.result === 'win'
+                                ? 'text-green-500'
+                                : trade.result === 'loss'
+                                  ? 'text-red-500'
+                                  : 'text-gray-400'
+                            }`}
+                          >
+                            {formatCurrency(trade.profit)}
+                          </span>
                         </div>
                       </div>
+
+                      {/* Detalhes expandidos */}
+                      {isExpanded && (
+                        <div className="mt-2 text-sm text-gray-200 space-y-1">
+                          <div>Entrada: {trade.entryPrice}</div>
+                          <div>Saída: {trade.exitPrice}</div>
+                          <div>Tempo: {trade.selectedTime} min</div>
+                          <div>Valor: {formatCurrency(trade.amount)}</div>
+                          <div>
+                            Data: {new Date(trade.entryTime).toLocaleString()}
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
           </ScrollArea>
