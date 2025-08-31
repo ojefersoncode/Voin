@@ -21,7 +21,7 @@ export function Order() {
       <DrawerTrigger asChild>
         <Button className="bg-transparent rounded-full py-0 pr-0 pl-2 dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent">
           <div className="flex items-center gap-4">
-            <Hourglass className="size-6" />
+            <Hourglass className="size-5" />
           </div>
         </Button>
       </DrawerTrigger>

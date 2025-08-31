@@ -1,6 +1,7 @@
 import { Dessert, Menu, Wallet } from 'lucide-react';
 
 import { Button } from '../ui/button';
+import ButtonMenu from './ButtonMenu';
 
 export default function NavbarAll() {
   return (
@@ -15,26 +16,17 @@ export default function NavbarAll() {
             />
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex gap-2 items-center rounded-lg touch-pan-x touch-pan-y">
-              <div className="flex items-center rounded-sm bg-btn">
-                <div className="flex flex-col items-start rounded-l-sm bg-black/30 py-1 px-4 justify-center">
-                  <div className="flex w-full items-center m-0 p-0 text-text">
-                    <span className="text-[0.7rem] font-medium">Moedas</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-xs text-text font-inter m-0 p-0">
-                    1200.00
-                  </div>
-                </div>
-                <Button className="bg-btn px-2 py-0 dark:bg-btn hover:bg-btn dark:hover:bg-btn">
-                  <Wallet className="size-5" />
-                </Button>
+          <div className="flex items-center gap-4 touch-pan-x touch-pan-y">
+            <Button className=" py-0 px-2 rounded-sm border-none text-sm">
+              <div className="flex items-center justify-center gap-1">
+                <Wallet className="size-5 md:size-6 text-btn" />
+                <span className="text-text/80 text-sm md:text-lg font-bold">
+                  1200.00
+                </span>
               </div>
-            </div>
-
-            <Button className="p-0 text-text dark:text-text">
-              <Menu className="size-6" />
             </Button>
+
+            <ButtonMenu />
           </div>
         </nav>
       </header>

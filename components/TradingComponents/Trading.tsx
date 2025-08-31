@@ -23,6 +23,7 @@ import { Order } from './SheetBar/Order';
 import { Button } from '../ui/button';
 import { Progress } from '../ui/progress';
 import { Input } from '../ui/input';
+import ButtonMenu from '../All/ButtonMenu';
 
 const availablePairs = [
   { value: 'BTCUSDT', label: 'BTC/USDT' },
@@ -97,7 +98,7 @@ export default function TradingAll() {
   };
 
   return (
-    <div className="bg-blackground h-dvh text-white flex flex-col touch-pan-x touch-pan-y">
+    <div className="bg-blackground h-screen text-white flex flex-col touch-pan-x touch-pan-y">
       {/* Header */}
       <header className="bg-blackground top-0 z-30 touch-pan-x touch-pan-y border-b border-zinc-700 mb-3">
         <nav className="flex items-center justify-between px-2 py-2">
@@ -127,44 +128,20 @@ export default function TradingAll() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex gap-2 items-center rounded-lg touch-pan-x touch-pan-y">
-              <div className="flex items-center rounded-sm bg-btn">
-                <div className="flex flex-col items-start rounded-l-sm bg-black/30 py-1 px-2 justify-center">
-                  <div className="flex w-full items-center m-0 p-0 text-text">
-                    <span className="text-xs font-semibold">Seus coins</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-sm text-text font-inter m-0 p-0">
-                    1200.00
-                  </div>
-                </div>
-                <Button className="bg-btn px-2 py-0 dark:bg-btn hover:bg-btn dark:hover:bg-btn">
-                  <Wallet className="size-5" />
-                </Button>
+          <div className="flex items-center gap-4 md:gap-6 touch-pan-x touch-pan-y">
+            <Button className=" py-0 px-2 rounded-sm border-none text-sm">
+              <div className="flex items-center justify-center gap-1">
+                <Wallet className="size-5 md:size-6 text-btn" />
+                <span className="text-text/80 text-sm md:text-lg font-bold">
+                  1200.00
+                </span>
               </div>
-            </div>
-
-            <Button className="p-0 text-text dark:text-text">
-              <Menu className="size-6" />
             </Button>
+
+            <ButtonMenu />
           </div>
         </nav>
       </header>
-
-      <div className="flex w-full items-center gap-4 pb-3 px-2 md:hidden">
-        <div className="flex flex-col flex-1">
-          <h1 className="text-sm mt-1">Termina em 30s</h1>
-          <Progress
-            value={progress}
-            className="h-2"
-            indicatorClassName={progress > 50 ? 'bg-green-500' : 'bg-red-500'}
-          />
-        </div>
-
-        <div className="shrink-0 mt-1">
-          <Order />
-        </div>
-      </div>
 
       {/* Main */}
       <div
@@ -180,21 +157,21 @@ export default function TradingAll() {
         {/* Trading Panel */}
         <div className="lg:w-[350px] w-full flex flex-col bg-blackground">
           {/* Trading Controls */}
-          <div className="max-md:pt-4 touch-pan-x touch-pan-y">
+          <div className="max-md:pt-2 touch-pan-x touch-pan-y">
             <div className="flex md:flex-col flex-1 px-2 w-full items-center justify-between gap-4">
-              <div className="flex w-full items-center  max-md:hidden">
+              <div className="flex w-full items-center">
                 <div className="flex flex-col flex-1">
                   <h1 className="text-sm mt-1">Termina em 30s</h1>
                   <Progress
                     value={progress}
-                    className="h-2"
+                    className="h-1"
                     indicatorClassName={
                       progress > 50 ? 'bg-green-500' : 'bg-red-500'
                     }
                   />
                 </div>
 
-                <div className="shrink-0 mt-4">
+                <div className="shrink-0 mt-4 px-2">
                   <Order />
                 </div>
               </div>
