@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger
 } from '@/components/ui/sheet';
-import { LogOut, MenuIcon, User } from 'lucide-react';
+import { Home, LogOut, MenuIcon, Trophy, User } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '../../utils/supabase/client';
 import { useState } from 'react';
@@ -63,10 +63,26 @@ export default function ButtonMenu() {
           <Button
             variant="ghost"
             className="justify-start hover:bg-subbackground dark:hover:bg-subbackground text-text hover:text-text/90"
+            onClick={() => router.push('/Home')}
+          >
+            <Home className="w-5 h-5 mr-2" />
+            Inicio
+          </Button>
+          <Button
+            variant="ghost"
+            className="justify-start hover:bg-subbackground dark:hover:bg-subbackground text-text hover:text-text/90"
             onClick={() => router.push('/profile')}
           >
             <User className="w-5 h-5 mr-2" />
             Minha conta
+          </Button>
+          <Button
+            variant="ghost"
+            className="justify-start hover:bg-subbackground dark:hover:bg-subbackground text-text hover:text-text/90"
+            onClick={() => router.push('/Tournament')}
+          >
+            <Trophy className="w-5 h-5 mr-2" />
+            Torneios
           </Button>
           <Button
             variant="ghost"

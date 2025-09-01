@@ -129,10 +129,10 @@ export default function TradingAll() {
           </div>
 
           <div className="flex items-center gap-4 md:gap-6 touch-pan-x touch-pan-y">
-            <Button className=" py-0 px-2 rounded-sm border-none text-sm">
+            <Button className=" py-0 px-2 rounded-sm border border-zinc-700 bg-subbackground text-sm">
               <div className="flex items-center justify-center gap-1">
-                <Wallet className="size-5 md:size-6 text-btn" />
-                <span className="text-text/80 text-sm md:text-lg font-bold">
+                <Wallet className="size-5 md:size-5 text-btn" />
+                <span className="text-text/80 text-sm md:text-lg font-poppins">
                   1200.00
                 </span>
               </div>

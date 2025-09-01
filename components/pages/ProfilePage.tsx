@@ -21,21 +21,21 @@ export default function Profile({ user }: { user: User }) {
   };
 
   return (
-    <div className=" w-full mx-auto bg-background min-h-screen mb-24 touch-pan-x touch-pan-y">
+    <div className=" w-full mx-auto bg-background min-h-screen touch-pan-x touch-pan-y">
       <div className=" w-full">
         <NavbarAll />
       </div>
 
       <div className="flex justify-center max-sm:px-4 mt-7  text-green-50 bg-background touch-pan-x touch-pan-y">
-        <div className="w-full h-full max-w-4xl max-md:max-w-full  border border-zinc-700 bg-btn rounded-lg touch-pan-x touch-pan-y">
+        <div className="w-full h-full max-w-4xl max-md:max-w-full  border border-zinc-700 bg-subbackground rounded-lg touch-pan-x touch-pan-y">
           <CardHeader>
-            <h2 className="text-xl font-titan text-text">Editar perfil</h2>
+            <h2 className="text-xl font-inter text-text">Editar perfil</h2>
           </CardHeader>
 
           <CardContent>
             {/* Image */}
             <div className="flex flex-col items-center space-x-4 mb-6">
-              <img src="/Voin.png" alt="" className="size-28" />
+              <img src="/Bronk.png" alt="" className="size-28" />
               <div className="flex items-center">
                 <Button
                   variant={'ghost'}
@@ -128,14 +128,17 @@ export default function Profile({ user }: { user: User }) {
             </div>
           </CardContent>
 
-          <CardFooter>
-            <Button className="w-full md:w-auto mt-4 border border-opacity-35 bg-background/20 hover:bg-background/40 text-gray-50 hover:text-gray-100 ">
+          <CardFooter className="flex w-full justify-between gap-6 items-center">
+            <Button className="w-full md:w-auto mt-4 border-none bg-red-600 hover:bg-red-600 text-gray-50 hover:text-gray-100 ">
+              Cancelar Alterações
+            </Button>
+            <Button className="w-full md:w-auto mt-4 border border-opacity-35 bg-btn hover:bg-btn text-gray-50 hover:text-gray-100 ">
               Salvar Alterações
             </Button>
           </CardFooter>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full border-t border-zinc-700 mt-6">
         <Footer />
       </div>
     </div>
