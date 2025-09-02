@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Select,
   SelectTrigger,
@@ -13,9 +13,10 @@ import {
   Plus,
   Minus,
   Wallet,
-  Menu,
   TrendingUp,
-  TrendingDown
+  TrendingDown,
+  CircleChevronRight,
+  ChartNoAxesCombined
 } from 'lucide-react';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
@@ -36,15 +37,12 @@ export default function TradingAll() {
   const { toast } = useToast();
   const [selectedPair, setSelectedPair] = useState('BTCUSDT');
   const [inputValue, setInputValue] = useState<number>(0);
-  const [inputTempo, setInputTempo] = useState<number>(1); // Linha adicionada
+  const [inputTempo, setInputTempo] = useState<number>(1);
   const [inputSaldo, setInputSaldo] = useState<number>(10);
   const [isChartFullscreen] = useState(false);
 
-  const [progress, setProgress] = React.useState(13);
-  React.useEffect(() => {
-    const timer = setTimeout(() => setProgress(66), 500);
-    return () => clearTimeout(timer);
-  }, []);
+  const [progress, setProgress] = React.useState(0);
+  const [countdown, setCountdown] = useState<number>(0);
 
   const tempoOptions = [
     { label: '1 min', value: 1 },
@@ -61,40 +59,48 @@ export default function TradingAll() {
     setInputSaldo(numericValue < 1 ? 1 : numericValue);
   };
 
-  const handleUpOperation = () => {
-    const now = new Date();
-    const formattedDate = now.toLocaleString('pt-BR', {
-      weekday: 'long',
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
+  // Contagem regressiva sincronizada com horário de Brasília
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date();
+      const brasiliaTime = new Date(
+        now.toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' })
+      );
 
+      const minutes = brasiliaTime.getMinutes();
+      const seconds = brasiliaTime.getSeconds();
+
+      const totalSeconds = minutes * 60 + seconds;
+      const step = inputTempo * 60;
+
+      const next = Math.ceil(totalSeconds / step) * step;
+      let remaining = next - totalSeconds;
+      if (remaining === 0) remaining = step;
+
+      setCountdown(remaining);
+
+      // Progresso em %
+      const elapsed = step - remaining;
+      setProgress((elapsed / step) * 100);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [inputTempo]);
+
+  const startCountdown = (valor: string, tipo: string) => {
     toast({
-      title: 'Operação: Para cima',
-      description: `${formattedDate}`,
-      variant: 'success'
+      title: `Operação: ${tipo}`,
+      description: `Valor: ${valor}`,
+      variant: tipo === 'Para cima' ? 'success' : 'destructive'
     });
   };
 
-  const handleDownOperation = () => {
-    const now = new Date();
-    const formattedDate = now.toLocaleString('pt-BR', {
-      weekday: 'long',
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
+  const handleUpOperation = () => {
+    startCountdown(inputSaldo.toString(), 'Para cima');
+  };
 
-    toast({
-      title: 'Operação: Para baixo',
-      description: `${formattedDate}`,
-      variant: 'destructive'
-    });
+  const handleDownOperation = () => {
+    startCountdown(inputSaldo.toString(), 'Para baixo');
   };
 
   return (
@@ -131,8 +137,8 @@ export default function TradingAll() {
           <div className="flex items-center gap-4 md:gap-6 touch-pan-x touch-pan-y">
             <Button className=" py-0 px-2 rounded-sm border border-zinc-700 bg-subbackground text-sm">
               <div className="flex items-center justify-center gap-1">
-                <Wallet className="size-5 md:size-5 text-btn" />
-                <span className="text-text/80 text-sm md:text-lg font-poppins">
+                <Wallet className="size-5 md:size-5 text-umber-500" />
+                <span className="text-text text-sm md:text-lg font-poppins">
                   1200.00
                 </span>
               </div>
@@ -161,29 +167,33 @@ export default function TradingAll() {
             <div className="flex flex-col flex-1 px-2 w-full items-center justify-between gap-4">
               <div className="flex w-full items-center">
                 <div className="flex flex-col flex-1">
-                  <h1 className="text-sm mt-1">Termina em 30s</h1>
                   <Progress
                     value={progress}
-                    className="h-1"
+                    className="h-1  mt-1"
                     indicatorClassName={
-                      progress > 50 ? 'bg-green-500' : 'bg-red-500'
+                      countdown <= 10 ? 'bg-red-500' : 'bg-umber-500'
                     }
                   />
+                  <p className="text-xs font-sans text-text">
+                    Tempo restante:{' '}
+                    {String(Math.floor(countdown / 60)).padStart(2, '0')}:
+                    {String(countdown % 60).padStart(2, '0')}
+                  </p>
                 </div>
 
-                <div className="shrink-0 mt-4 px-2">
+                <div className="shrink-0 px-2">
                   <Order />
                 </div>
               </div>
 
               <div className="flex lg:flex-col w-full gap-4">
                 {/* Input de Tempo */}
-                <div className="flex flex-1 w-full items-center justify-center bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-sm px-2 py-2 md:py-4 text-white">
+                <div className="flex flex-1 w-full items-center justify-center bg-subbackground border border-zinc-600 dark:border-zinc-600 hover:border-zinc-200 dark:hover:border-zinc-200 transition-all duration-300 rounded-sm px-2 py-2 md:py-4 text-white">
                   <Select
                     value={inputTempo.toString()}
                     onValueChange={(value) => setInputTempo(Number(value))}
                   >
-                    <SelectTrigger className="bg-subbackground text-base text-white border-none rounded-sm w-26 h-6 px-2">
+                    <SelectTrigger className="bg-subbackground text-base text-white border-none rounded-sm justify-center w-full h-6 px-2">
                       <SelectValue placeholder="Selecione o tempo" />
                     </SelectTrigger>
                     <SelectContent className="bg-subbackground text-white border border-zinc-600">
@@ -201,13 +211,13 @@ export default function TradingAll() {
                 </div>
 
                 {/* Input de Saldo */}
-                <div className="flex flex-col w-full justify-center px-2 flex-1 bg-subbackground border border-zinc-600 dark:border-zinc-600 rounded-sm md:py-2 items-center text-center">
+                <div className="flex flex-col w-full justify-center px-2 flex-1 bg-subbackground border border-zinc-600 dark:border-zinc-600 hover:border-zinc-200 dark:hover:border-zinc-200 transition-all duration-300 rounded-sm md:py-2 items-center text-center">
                   <div className="flex flex-1 items-center gap-4 justify-center w-full">
                     <button
                       onClick={() =>
                         setInputSaldo((prev) => Math.max(1, prev - 1))
                       }
-                      className="text-btn hover:text-btn/80 transition-colors"
+                      className="text-umber-500 hover:text-umber-500/80 transition-colors"
                     >
                       <Minus size={20} />
                     </button>
