@@ -9,21 +9,12 @@ import {
   SelectContent,
   SelectItem
 } from '@/components/ui/select';
-import {
-  Plus,
-  Minus,
-  Wallet,
-  TrendingUp,
-  TrendingDown,
-  CircleChevronRight,
-  ChartNoAxesCombined
-} from 'lucide-react';
+import { Plus, Minus, Wallet, TrendingUp, TrendingDown } from 'lucide-react';
 import { useToast } from '../ui/use-toast';
 import TradingViewWidget from './TradingViewWidget';
 import { Order } from './SheetBar/Order';
 import { Button } from '../ui/button';
 import { Progress } from '../ui/progress';
-import { Input } from '../ui/input';
 import ButtonMenu from '../All/ButtonMenu';
 
 const availablePairs = [
@@ -52,6 +43,35 @@ export default function TradingAll() {
     { label: '30 min', value: 30 },
     { label: '1 hora', value: 60 }
   ];
+
+  // Opções de valores pré-definidos
+  const saldoOptions = [
+    { label: '5', value: 5 },
+    { label: '10', value: 10 },
+    { label: '25', value: 25 },
+    { label: '50', value: 50 },
+    { label: '100', value: 100 },
+    { label: '200', value: 200 },
+    { label: '500', value: 500 },
+    { label: '1000', value: 1000 },
+    { label: '2000', value: 2000 },
+    { label: '5000', value: 5000 },
+    { label: '10000', value: 10000 }
+  ];
+
+  const handleIncrement = () => {
+    const currentIndex = saldoOptions.findIndex((o) => o.value === inputSaldo);
+    if (currentIndex < saldoOptions.length - 1) {
+      setInputSaldo(saldoOptions[currentIndex + 1].value);
+    }
+  };
+
+  const handleDecrement = () => {
+    const currentIndex = saldoOptions.findIndex((o) => o.value === inputSaldo);
+    if (currentIndex > 0) {
+      setInputSaldo(saldoOptions[currentIndex - 1].value);
+    }
+  };
 
   const handleChangeSaldo = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\D/g, '');
@@ -212,28 +232,35 @@ export default function TradingAll() {
 
                 {/* Input de Saldo */}
                 <div className="flex flex-col w-full justify-center px-2 flex-1 bg-subbackground border border-zinc-600 dark:border-zinc-600 hover:border-zinc-200 dark:hover:border-zinc-200 transition-all duration-300 rounded-sm md:py-2 items-center text-center">
-                  <div className="flex flex-1 items-center gap-4 justify-center w-full">
+                  <div className="flex flex-1 items-center px-4 justify-between w-full bg-subbackground dark:bg-subbackground  md:py-2">
                     <button
-                      onClick={() =>
-                        setInputSaldo((prev) => Math.max(1, prev - 1))
-                      }
-                      className="text-umber-500 hover:text-umber-500/80 transition-colors"
+                      onClick={handleDecrement}
+                      className="text-btn hover:text-btn/80 transition-colors"
                     >
                       <Minus size={20} />
                     </button>
-                    <Input
-                      type="number"
-                      placeholder="Valor"
-                      className="border-none w-20 text-center text-base text-white bg-subbackground
-             [appearance:textfield] 
-             [&::-webkit-outer-spin-button]:appearance-none 
-             [&::-webkit-inner-spin-button]:appearance-none"
-                      value={inputSaldo}
-                      onChange={handleChangeSaldo}
-                    />
+                    <Select
+                      value={inputSaldo.toString()}
+                      onValueChange={(value) => setInputSaldo(Number(value))}
+                    >
+                      <SelectTrigger className="bg-subbackground text-base text-white border-none rounded-sm justify-center h-6 px-2">
+                        <SelectValue placeholder="Selecione o valor" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-subbackground text-white border border-zinc-600">
+                        {saldoOptions.map((option) => (
+                          <SelectItem
+                            key={option.value}
+                            value={option.value.toString()}
+                            className="hover:bg-background hover:text-white cursor-pointer"
+                          >
+                            {option.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
 
                     <button
-                      onClick={() => setInputSaldo((prev) => prev + 1)}
+                      onClick={handleIncrement}
                       className="text-btn hover:text-btn/80 transition-colors"
                     >
                       <Plus size={20} />
