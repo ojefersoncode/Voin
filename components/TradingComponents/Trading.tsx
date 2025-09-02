@@ -181,7 +181,7 @@ export default function TradingAll() {
         </div>
 
         {/* Trading Panel */}
-        <div className="lg:w-[350px] w-full flex flex-col bg-blackground">
+        <div className="lg:w-[350px] w-full flex flex-col bg-background">
           {/* Trading Controls */}
           <div className="max-md:pt-2 touch-pan-x touch-pan-y">
             <div className="flex flex-col flex-1 px-2 w-full items-center justify-between gap-4">
@@ -289,6 +289,15 @@ export default function TradingAll() {
               </button>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="rounded-sm text-xs p-2 bg-btn absolute z-40 bottom-2 max-md:bottom-48 left-2">
+        <div className="flex items-center justify-center gap-2">
+          <span className="text-xs font-medium text-text">100</span>
+          <p className="text-xs font-medium text-text">
+            {String(Math.floor(countdown / 60)).padStart(2, '0')}:
+            {String(countdown % 60).padStart(2, '0')}
+          </p>
         </div>
       </div>
     </div>
